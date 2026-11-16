@@ -7,9 +7,10 @@
   "data": "data/2026-W46.json",
   "counts": {
    "video": 29,
-   "x": 39,
+   "x": 35,
    "cve": 1096,
-   "blog": 13,
+   "threat": 6,
+   "blog": 11,
    "learn": 0,
    "reddit": 5
   }

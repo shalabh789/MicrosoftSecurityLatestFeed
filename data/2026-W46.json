@@ -2,26 +2,26 @@
  "week": "2026-W46",
  "start": "2026-11-09T00:00:00+05:30",
  "end": "2026-11-15T23:59:59+05:30",
- "generated": "2026-11-16T02:00:01+00:00",
+ "generated": "2026-11-16T10:53:24+00:00",
  "themes": [
   {
    "name": "Securing AI agents moves to the front",
    "summary": "Most official output this week was about governing AI agents: Entra Agent ID, egress limits and traces in Foundry, Purview labels enforced on agents at runtime, Defender blocking malicious agent tool calls, MCP server governance, and a 19-part Zero Trust AI pillar video series, all ahead of Ignite (17-20 Nov).",
    "item_ids": [
-    "x37",
     "x33",
-    "x30",
+    "x31",
     "x28",
-    "x27",
-    "x24",
-    "x21",
+    "x26",
+    "x25",
+    "x22",
+    "x19",
     "x13",
     "x08",
     "x06",
     "x03",
     "x01",
-    "x29",
-    "x25",
+    "x27",
+    "x23",
     "v02",
     "v03",
     "v04",
@@ -42,19 +42,19 @@
     "v19",
     "v20",
     "v01",
-    "b10"
+    "b09"
    ]
   },
   {
    "name": "Active campaigns: ScreenConnect/SCKit, GSocket, Storm-3350, outage-themed phishing",
    "summary": "Microsoft Threat Intelligence covered four live threats: SCKit spreading through ScreenConnect at MSPs, GSocket backdoors that keep access to Linux servers after patching, the Brazil-focused Storm-3350 cluster abusing password reset, and phishing that reused the 12 Nov M365 outage incident number.",
    "item_ids": [
-    "x35",
-    "x34",
-    "x20",
-    "x14",
-    "b11",
-    "b05"
+    "t01",
+    "t02",
+    "t03",
+    "t04",
+    "t05",
+    "t06"
    ]
   },
   {
@@ -62,12 +62,12 @@
    "summary": "Microsoft research showed that models can be backdoored through a few neuron edits or poisoned fine-tuning, and that its own agentic tools (MDASH/Hyenas) found Rust standard-library and Linux kernel bugs, with 33 kernel CVEs assigned.",
    "item_ids": [
     "b02",
-    "b09",
+    "b08",
     "b01",
     "b03",
-    "x26",
-    "x15",
-    "x18",
+    "x24",
+    "x14",
+    "x17",
     "x05"
    ]
   },
@@ -92,27 +92,27 @@
    "name": "Identity, data and endpoint hardening (Entra, Purview, Intune, Azure Backup)",
    "summary": "Day-to-day controls also got attention: Entra Private Access and Internet Access in place of VPNs, tenant configuration snapshots, Connect Sync anchor migration, Purview classification and DSPM, Intune compliance with Autopatch, Edge extension control, and Azure Backup cyber recovery. Community threads covered passkey rollout and GSA tooling.",
    "item_ids": [
-    "x36",
-    "x22",
-    "x16",
+    "x32",
+    "x20",
+    "x15",
     "x07",
     "x04",
     "x02",
-    "x19",
-    "x17",
+    "x18",
+    "x16",
     "x12",
     "x09",
-    "x32",
-    "x31",
-    "x23",
-    "x39",
-    "x38",
-    "b13",
-    "b08",
-    "b04",
-    "b06",
+    "x30",
+    "x29",
+    "x21",
+    "x35",
+    "x34",
+    "b11",
     "b07",
-    "b12",
+    "b04",
+    "b05",
+    "b06",
+    "b10",
     "v25",
     "v26",
     "v28",
@@ -139,7 +139,7 @@
    "url": "https://www.youtube.com/watch?v=4vCbQMUVV-I",
    "date": "2026-11-09T21:35:51+05:30",
    "summary": "Mechanics demo of the Copilot harness in Foundry, with per-agent Entra Agent ID, egress limits and traces.",
-   "asset": "assets/yt-new-microsoft-copilot-harness-more-power-toke-4vcbqmuvv-i.png",
+   "asset": "research/2026-W46/assets/yt-new-microsoft-copilot-harness-more-power-toke-4vcbqmuvv-i.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -159,7 +159,7 @@
    "url": "https://www.youtube.com/watch?v=nflmD2D9T4k",
    "date": "2026-11-09T23:43:39+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: how to gain visibility into AI usage.",
-   "asset": "assets/yt-ai-pillar-deep-dive-gain-ai-visibility-swimla-nflmd2d9t4k.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-gain-ai-visibility-swimla-nflmd2d9t4k.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -179,7 +179,7 @@
    "url": "https://www.youtube.com/watch?v=B_Ecumz451U",
    "date": "2026-11-09T23:45:21+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: preparing an agent registry.",
-   "asset": "assets/yt-ai-pillar-deep-dive-registry-readiness-swimla-b_ecumz451u.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-registry-readiness-swimla-b_ecumz451u.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -199,7 +199,7 @@
    "url": "https://www.youtube.com/watch?v=RkTaet71ZaU",
    "date": "2026-11-09T23:50:30+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: running agent registry operations.",
-   "asset": "assets/yt-ai-pillar-deep-dive-agent-registry-operations-rktaet71zau.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-agent-registry-operations-rktaet71zau.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -219,7 +219,7 @@
    "url": "https://www.youtube.com/watch?v=P34pqLKWH88",
    "date": "2026-11-09T23:51:18+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: moving workload identities to Entra Agent ID.",
-   "asset": "assets/yt-ai-pillar-deep-dive-workload-id-migration-to-p34pqlkwh88.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-workload-id-migration-to-p34pqlkwh88.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -239,7 +239,7 @@
    "url": "https://www.youtube.com/watch?v=_Ja51-0LVy0",
    "date": "2026-11-09T23:52:29+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: access controls for AI.",
-   "asset": "assets/yt-ai-pillar-deep-dive-access-swimlane-overview-_ja51-0lvy0.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-access-swimlane-overview-_ja51-0lvy0.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -259,7 +259,7 @@
    "url": "https://www.youtube.com/watch?v=oUBW4DYVnvA",
    "date": "2026-11-09T23:59:05+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: identity governance for agents.",
-   "asset": "assets/yt-ai-pillar-deep-dive-identity-governance-swiml-oubw4dyvnva.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-identity-governance-swiml-oubw4dyvnva.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -279,7 +279,7 @@
    "url": "https://www.youtube.com/watch?v=TrskCxNNgiE",
    "date": "2026-11-10T00:01:25+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: network security readiness.",
-   "asset": "assets/yt-ai-pillar-deep-dive-network-security-readines-trskcxnngie.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-network-security-readines-trskcxnngie.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -299,7 +299,7 @@
    "url": "https://www.youtube.com/watch?v=TAO6uk2ksMU",
    "date": "2026-11-10T00:04:31+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: controlling web destinations reached by AI.",
-   "asset": "assets/yt-ai-pillar-deep-dive-web-destination-control-s-tao6uk2ksmu.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-web-destination-control-s-tao6uk2ksmu.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -319,7 +319,7 @@
    "url": "https://www.youtube.com/watch?v=9ZhoV8dzZBc",
    "date": "2026-11-10T00:09:06+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: prompt and content protection.",
-   "asset": "assets/yt-ai-pillar-deep-dive-prompt-content-protection-9zhov8dzzbc.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-prompt-content-protection-9zhov8dzzbc.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -339,7 +339,7 @@
    "url": "https://www.youtube.com/watch?v=tCgBYrQqI-8",
    "date": "2026-11-10T00:09:30+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: readiness of data access for AI.",
-   "asset": "assets/yt-ai-pillar-deep-dive-data-access-readiness-swi-tcgbyrqqi-8.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-data-access-readiness-swi-tcgbyrqqi-8.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -359,7 +359,7 @@
    "url": "https://www.youtube.com/watch?v=6fKLT6O4NLE",
    "date": "2026-11-10T00:10:25+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: monitoring how AI uses data.",
-   "asset": "assets/yt-ai-pillar-deep-dive-ai-data-usage-monitoring-6fklt6o4nle.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-ai-data-usage-monitoring-6fklt6o4nle.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -379,7 +379,7 @@
    "url": "https://www.youtube.com/watch?v=CghlABVbgRY",
    "date": "2026-11-10T00:14:12+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: data loss prevention for AI.",
-   "asset": "assets/yt-ai-pillar-deep-dive-data-loss-prevention-swim-cghlabvbgry.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-data-loss-prevention-swim-cghlabvbgry.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -399,7 +399,7 @@
    "url": "https://www.youtube.com/watch?v=g0aKWuu_ktY",
    "date": "2026-11-10T00:17:21+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: insider risk management.",
-   "asset": "assets/yt-ai-pillar-deep-dive-insider-risk-management-s-g0akwuu_kty.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-insider-risk-management-s-g0akwuu_kty.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -419,7 +419,7 @@
    "url": "https://www.youtube.com/watch?v=8i4C3zs_a6Y",
    "date": "2026-11-10T00:24:04+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: readiness for building agents.",
-   "asset": "assets/yt-ai-pillar-deep-dive-agent-development-readine-8i4c3zs_a6y.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-agent-development-readine-8i4c3zs_a6y.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -439,7 +439,7 @@
    "url": "https://www.youtube.com/watch?v=JbYr5ijo9Hc",
    "date": "2026-11-10T00:27:21+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: governing MCP servers.",
-   "asset": "assets/yt-ai-pillar-deep-dive-mcp-server-governance-swi-jbyr5ijo9hc.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-mcp-server-governance-swi-jbyr5ijo9hc.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -459,7 +459,7 @@
    "url": "https://www.youtube.com/watch?v=wTVTWFVBV48",
    "date": "2026-11-10T00:34:17+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: assessing AI risk.",
-   "asset": "assets/yt-ai-pillar-deep-dive-assess-ai-risk-swimlane-o-wtvtwfvbv48.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-assess-ai-risk-swimlane-o-wtvtwfvbv48.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -479,7 +479,7 @@
    "url": "https://www.youtube.com/watch?v=E149ztL7OwY",
    "date": "2026-11-10T00:35:24+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: detecting and responding to AI threats.",
-   "asset": "assets/yt-ai-pillar-deep-dive-ai-threat-detection-respo-e149ztl7owy.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-ai-threat-detection-respo-e149ztl7owy.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -499,7 +499,7 @@
    "url": "https://www.youtube.com/watch?v=pZzzoluFlt0",
    "date": "2026-11-10T00:40:09+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: validating security controls.",
-   "asset": "assets/yt-ai-pillar-deep-dive-security-validation-swiml-pzzzoluflt0.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-security-validation-swiml-pzzzoluflt0.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -519,7 +519,7 @@
    "url": "https://www.youtube.com/watch?v=dJ_2CdPKxiA",
    "date": "2026-11-10T00:58:27+05:30",
    "summary": "Zero Trust Workshop AI pillar walkthrough: controls on agent platforms.",
-   "asset": "assets/yt-ai-pillar-deep-dive-agent-platform-controls-s-dj_2cdpkxia.png",
+   "asset": "research/2026-W46/assets/yt-ai-pillar-deep-dive-agent-platform-controls-s-dj_2cdpkxia.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -539,7 +539,7 @@
    "url": "https://www.youtube.com/watch?v=dbPNIxHXYLU",
    "date": "2026-11-10T03:14:36+05:30",
    "summary": "Short: Microsoft Security marketing VP previews Entra news planned for Ignite 2026.",
-   "asset": "assets/yt-ai-is-changing-how-we-think-about-access-and-dbpnixhxylu.png",
+   "asset": "research/2026-W46/assets/yt-ai-is-changing-how-we-think-about-access-and-dbpnixhxylu.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -559,7 +559,7 @@
    "url": "https://www.youtube.com/watch?v=awUDlAhm7tM",
    "date": "2026-11-11T03:50:31+05:30",
    "summary": "Short: Entra team previews three Ignite sessions on access for people and AI agents.",
-   "asset": "assets/yt-3-sessions-15-seconds-each-go-awudlahm7tm.png",
+   "asset": "research/2026-W46/assets/yt-3-sessions-15-seconds-each-go-awudlahm7tm.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -580,7 +580,7 @@
    "url": "https://www.youtube.com/watch?v=mYwsmmb4MAI",
    "date": "2026-11-11T22:00:08+05:30",
    "summary": "MSRC monthly briefing on the November release, covering four CVEs including the exploited Outlook spoofing bug.",
-   "asset": "assets/yt-english-security-update-release-summary-novem-mywsmmb4mai.png",
+   "asset": "research/2026-W46/assets/yt-english-security-update-release-summary-novem-mywsmmb4mai.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -600,7 +600,7 @@
    "url": "https://www.youtube.com/watch?v=YQ2J5K5kljI",
    "date": "2026-11-12T03:06:04+05:30",
    "summary": "Short: Entra team pitches more Ignite sessions, including finding and securing local agents.",
-   "asset": "assets/yt-can-you-pitch-an-ignite-session-in-15-seconds-yq2j5k5klji.png",
+   "asset": "research/2026-W46/assets/yt-can-you-pitch-an-ignite-session-in-15-seconds-yq2j5k5klji.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -620,7 +620,7 @@
    "url": "https://www.youtube.com/watch?v=caW13LqRrQw",
    "date": "2026-11-12T23:30:26+05:30",
    "summary": "Demo of Azure Backup bulk restore, recovering many VMs in one job after an attack or disaster.",
-   "asset": "assets/yt-bulk-restore-using-azure-backup-caw13lqrrqw.png",
+   "asset": "research/2026-W46/assets/yt-bulk-restore-using-azure-backup-caw13lqrrqw.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -640,7 +640,7 @@
    "url": "https://www.youtube.com/watch?v=cKqeTw5mBfM",
    "date": "2026-11-13T01:30:09+05:30",
    "summary": "Demo of cyber recovery readiness with Azure Backup: air-gapped vaults, immutability and cross-tenant restore.",
-   "asset": "assets/yt-from-backups-to-cyber-recovery-readiness-with-ckqetw5mbfm.png",
+   "asset": "research/2026-W46/assets/yt-from-backups-to-cyber-recovery-readiness-with-ckqetw5mbfm.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -660,7 +660,7 @@
    "url": "https://www.youtube.com/watch?v=4Z1yruxmXVE",
    "date": "2026-11-13T08:50:34+05:30",
    "summary": "Customer story: an Australian MSP put guardrails in place before its SMB clients adopted AI.",
-   "asset": "assets/yt-security-at-scale-how-abt-readied-its-clients-4z1yruxmxve.png",
+   "asset": "research/2026-W46/assets/yt-security-at-scale-how-abt-readied-its-clients-4z1yruxmxve.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -680,7 +680,7 @@
    "url": "https://www.youtube.com/watch?v=vkEXYb2gdq4",
    "date": "2026-11-13T08:50:42+05:30",
    "summary": "Customer story: a uniform supplier classified and protected its data ahead of an AI rollout.",
-   "asset": "assets/yt-securing-data-before-scaling-ai-rww-group-vkexyb2gdq4.png",
+   "asset": "research/2026-W46/assets/yt-securing-data-before-scaling-ai-rww-group-vkexyb2gdq4.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -700,7 +700,7 @@
    "url": "https://www.youtube.com/watch?v=xvzmzbE58F4",
    "date": "2026-11-13T08:50:52+05:30",
    "summary": "Customer story: RWW Group and its partner hardened identity, data and threat protection before using AI.",
-   "asset": "assets/yt-secure-first-then-ai-rww-groups-growth-story-xvzmzbe58f4.png",
+   "asset": "research/2026-W46/assets/yt-secure-first-then-ai-rww-groups-growth-story-xvzmzbe58f4.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -720,7 +720,7 @@
    "url": "https://x.com/MSFTMechanics/status/2119510111542538498",
    "date": "2026-11-09T00:49:23+05:30",
    "summary": "Treat the MCP catalog like a supply chain: deny unapproved tools and scope servers per agent via API Management.",
-   "asset": "assets/x-msftmechanics-2119510111542538498.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -744,7 +744,7 @@
    "url": "https://x.com/MSFTMechanics/status/2119811910598087016",
    "date": "2026-11-09T20:48:38+05:30",
    "summary": "Entra Internet Access Secure Web and AI Gateway stops sensitive file uploads to AI apps.",
-   "asset": "assets/x-msftmechanics-2119811910598087016.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -769,7 +769,7 @@
    "url": "https://x.com/MSFTMechanics/status/2119827846906437909",
    "date": "2026-11-09T21:51:57+05:30",
    "summary": "Foundry agents now run on the Copilot harness, with Entra Agent ID, egress rules and traces as guardrails.",
-   "asset": "assets/x-msftmechanics-2119827846906437909.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -793,7 +793,7 @@
    "url": "https://x.com/MSFTMechanics/status/2119871294875296067",
    "date": "2026-11-10T00:44:36+05:30",
    "summary": "Entra policies can automatically block uploads of risky file types to ChatGPT and similar tools.",
-   "asset": "assets/x-msftmechanics-2119871294875296067.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -817,7 +817,7 @@
    "url": "https://x.com/MsftSecIntel/status/2119890522466578648",
    "date": "2026-11-10T02:01:00+05:30",
    "summary": "FORGE Lab found memory-safety bugs in Rust core and std, including undefined behaviour reachable from safe code.",
-   "asset": "assets/x-msftsecintel-2119890522466578648.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -841,7 +841,7 @@
    "url": "https://x.com/MSFTMechanics/status/2119890883390656765",
    "date": "2026-11-10T02:02:26+05:30",
    "summary": "Agent 365 CLI and SDK can give an unmanaged agent an Entra Agent ID with lifecycle controls.",
-   "asset": "assets/x-msftmechanics-2119890883390656765.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -865,7 +865,7 @@
    "url": "https://x.com/MSFTMechanics/status/2120150561169326576",
    "date": "2026-11-10T19:14:18+05:30",
    "summary": "Extends Conditional Access and MFA to on-premises resources through Entra.",
-   "asset": "assets/x-msftmechanics-2120150561169326576.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -890,7 +890,7 @@
    "url": "https://x.com/MSFTMechanics/status/2120174021295620514",
    "date": "2026-11-10T20:47:32+05:30",
    "summary": "Foundry agents each get an Entra Agent ID, egress rules and action traces, enforced at infrastructure level.",
-   "asset": "assets/x-msftmechanics-2120174021295620514.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -914,7 +914,7 @@
    "url": "https://x.com/MSFTMechanics/status/2120174308794192101",
    "date": "2026-11-10T20:48:40+05:30",
    "summary": "Recommends unified data classification in Purview for consistent sensitive-data definitions.",
-   "asset": "assets/x-msftmechanics-2120174308794192101.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -939,7 +939,7 @@
    "url": "https://x.com/msftsecresponse/status/2120220395018318285",
    "date": "2026-11-10T23:51:48+05:30",
    "summary": "MSRC announces the November 2026 Patch Tuesday release and links the Security Update Guide.",
-   "asset": "assets/x-msftsecresponse-2120220395018318285.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -964,7 +964,7 @@
    "url": "https://x.com/MsftSecIntel/status/2120230988621992403",
    "date": "2026-11-11T00:33:54+05:30",
    "summary": "Notes that the November 2026 security updates are out, with a link to the release.",
-   "asset": "assets/x-msftsecintel-2120230988621992403.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -988,7 +988,7 @@
    "url": "https://x.com/MSFTMechanics/status/2120233636473471144",
    "date": "2026-11-11T00:44:25+05:30",
    "summary": "Encourages labelling critical files so protection follows them into workflows and AI use.",
-   "asset": "assets/x-msftmechanics-2120233636473471144.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1012,7 +1012,7 @@
    "url": "https://x.com/MSFTMechanics/status/2120253272686522585",
    "date": "2026-11-11T02:02:27+05:30",
    "summary": "Purview DSPM shows which agents are active, what data they touch and where policy gaps are.",
-   "asset": "assets/x-msftmechanics-2120253272686522585.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1030,37 +1030,13 @@
    "type": "x",
    "source": "@MsftSecIntel",
    "product": [
-    "Entra"
-   ],
-   "title": "@MsftSecIntel post 2120290394869006572",
-   "url": "https://x.com/MsftSecIntel/status/2120290394869006572",
-   "date": "2026-11-11T04:29:57+05:30",
-   "summary": "Introduces Storm-3350, a cluster active since October against Brazilian finance, payments and digital-asset firms.",
-   "asset": "assets/x-msftsecintel-2120290394869006572.png",
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": {
-    "likes": 52,
-    "replies": 4,
-    "reposts": 13,
-    "quotes": 1,
-    "impressions": 7639
-   }
-  },
-  {
-   "id": "x15",
-   "type": "x",
-   "source": "@MsftSecIntel",
-   "product": [
     "Other"
    ],
    "title": "@MsftSecIntel post 2120299667443396688",
    "url": "https://x.com/MsftSecIntel/status/2120299667443396688",
    "date": "2026-11-11T05:06:48+05:30",
    "summary": "Microsoft Research showed that editing under ten neurons can make an agent model a hidden sleeper that passes evaluations.",
-   "asset": "assets/x-msftsecintel-2120299667443396688.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1074,7 +1050,7 @@
    }
   },
   {
-   "id": "x16",
+   "id": "x15",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1084,7 +1060,7 @@
    "url": "https://x.com/MSFTMechanics/status/2120513022783344816",
    "date": "2026-11-11T19:14:36+05:30",
    "summary": "Shows how to set up Entra Private Access as identity-aware remote access without a VPN.",
-   "asset": "assets/x-msftmechanics-2120513022783344816.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1098,7 +1074,7 @@
    }
   },
   {
-   "id": "x17",
+   "id": "x16",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1108,7 +1084,7 @@
    "url": "https://x.com/MSFTMechanics/status/2120536711096615334",
    "date": "2026-11-11T20:48:44+05:30",
    "summary": "Introduces Purview Information Protection for finding and labelling sensitive data.",
-   "asset": "assets/x-msftmechanics-2120536711096615334.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1122,7 +1098,7 @@
    }
   },
   {
-   "id": "x18",
+   "id": "x17",
    "type": "x",
    "source": "@MsftSecIntel",
    "product": [
@@ -1132,7 +1108,7 @@
    "url": "https://x.com/MsftSecIntel/status/2120562349236965430",
    "date": "2026-11-11T22:30:36+05:30",
    "summary": "FORGE Lab's MDASH scanning of Linux kernel code produced 59 upstream reports and 33 CVEs, with root exploits for eight.",
-   "asset": "assets/x-msftsecintel-2120562349236965430.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1146,7 +1122,7 @@
    }
   },
   {
-   "id": "x19",
+   "id": "x18",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1156,7 +1132,7 @@
    "url": "https://x.com/MSFTMechanics/status/2120596035261075725",
    "date": "2026-11-12T00:44:28+05:30",
    "summary": "Suggests layering Purview classification and labelling on top of existing DLP.",
-   "asset": "assets/x-msftmechanics-2120596035261075725.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1170,31 +1146,7 @@
    }
   },
   {
-   "id": "x20",
-   "type": "x",
-   "source": "@MsftSecIntel",
-   "product": [
-    "Defender"
-   ],
-   "title": "@MsftSecIntel post 2120609029001032115",
-   "url": "https://x.com/MsftSecIntel/status/2120609029001032115",
-   "date": "2026-11-12T01:36:06+05:30",
-   "summary": "Attackers plant GSocket on breached Linux servers so access survives after the original flaw is patched.",
-   "asset": "assets/x-msftsecintel-2120609029001032115.png",
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": {
-    "likes": 291,
-    "replies": 17,
-    "reposts": 78,
-    "quotes": 15,
-    "impressions": 223712
-   }
-  },
-  {
-   "id": "x21",
+   "id": "x19",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1204,7 +1156,7 @@
    "url": "https://x.com/MSFTMechanics/status/2120615625135394986",
    "date": "2026-11-12T02:02:18+05:30",
    "summary": "Purview sensitivity labels stop an agent at runtime when it reaches a labelled file.",
-   "asset": "assets/x-msftmechanics-2120615625135394986.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1218,7 +1170,7 @@
    }
   },
   {
-   "id": "x22",
+   "id": "x20",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1228,7 +1180,7 @@
    "url": "https://x.com/MSFTMechanics/status/2120875396430278759",
    "date": "2026-11-12T19:14:33+05:30",
    "summary": "Pitches Entra identity-based access as a VPN replacement.",
-   "asset": "assets/x-msftmechanics-2120875396430278759.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1242,7 +1194,7 @@
    }
   },
   {
-   "id": "x23",
+   "id": "x21",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1252,7 +1204,7 @@
    "url": "https://x.com/MSFTMechanics/status/2120899056721416380",
    "date": "2026-11-12T20:48:34+05:30",
    "summary": "Edge for Business lets admins block extensions by permission type and handle exceptions in the M365 admin center.",
-   "asset": "assets/x-msftmechanics-2120899056721416380.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1266,7 +1218,7 @@
    }
   },
   {
-   "id": "x24",
+   "id": "x22",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1276,7 +1228,7 @@
    "url": "https://x.com/MSFTMechanics/status/2120899960073859189",
    "date": "2026-11-12T20:52:09+05:30",
    "summary": "Project Perception agents are pitched as finding, proving and fixing vulnerabilities with a human in control.",
-   "asset": "assets/x-msftmechanics-2120899960073859189.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1290,7 +1242,7 @@
    }
   },
   {
-   "id": "x25",
+   "id": "x23",
    "type": "x",
    "source": "@msftsecurity",
    "product": [
@@ -1300,7 +1252,7 @@
    "url": "https://x.com/msftsecurity/status/2120924712427499805",
    "date": "2026-11-12T22:30:30+05:30",
    "summary": "Promotes a CISO interview on how E.ON approaches securing agents with Microsoft Security.",
-   "asset": "assets/x-msftsecurity-2120924712427499805.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1314,7 +1266,7 @@
    }
   },
   {
-   "id": "x26",
+   "id": "x24",
    "type": "x",
    "source": "@MsftSecIntel",
    "product": [
@@ -1325,7 +1277,7 @@
    "url": "https://x.com/MsftSecIntel/status/2120927480588484989",
    "date": "2026-11-12T22:41:30+05:30",
    "summary": "Explains that a backdoored model can stay dormant until triggered and then drive an agent's tools, generalising past exact triggers.",
-   "asset": "assets/x-msftsecintel-2120927480588484989.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1339,7 +1291,7 @@
    }
   },
   {
-   "id": "x27",
+   "id": "x25",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1349,7 +1301,7 @@
    "url": "https://x.com/MSFTMechanics/status/2120978124678570166",
    "date": "2026-11-13T02:02:45+05:30",
    "summary": "Defender watches Copilot Studio agents in real time, blocks malicious tool calls and alerts on jailbreak attempts.",
-   "asset": "assets/x-msftmechanics-2120978124678570166.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1363,7 +1315,7 @@
    }
   },
   {
-   "id": "x28",
+   "id": "x26",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1374,7 +1326,7 @@
    "url": "https://x.com/MSFTMechanics/status/2121065110898610541",
    "date": "2026-11-13T07:48:24+05:30",
    "summary": "Foundry ties each agent to an Entra Agent ID, egress rules and logged traces that stop unapproved web calls.",
-   "asset": "assets/x-msftmechanics-2121065110898610541.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1388,7 +1340,7 @@
    }
   },
   {
-   "id": "x29",
+   "id": "x27",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1398,7 +1350,7 @@
    "url": "https://x.com/MSFTMechanics/status/2121237741862101481",
    "date": "2026-11-13T19:14:23+05:30",
    "summary": "Windows 365 output protection blocks screenshots and screen scraping on policy-protected Cloud PCs.",
-   "asset": "assets/x-msftmechanics-2121237741862101481.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1412,7 +1364,7 @@
    }
   },
   {
-   "id": "x30",
+   "id": "x28",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1423,7 +1375,7 @@
    "url": "https://x.com/MSFTMechanics/status/2121261204937089459",
    "date": "2026-11-13T20:47:37+05:30",
    "summary": "Hosted agents in Foundry can run any harness under the same Entra Agent ID, telemetry and guardrails.",
-   "asset": "assets/x-msftmechanics-2121261204937089459.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1437,7 +1389,7 @@
    }
   },
   {
-   "id": "x31",
+   "id": "x29",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1447,7 +1399,7 @@
    "url": "https://x.com/MSFTMechanics/status/2121261399552712889",
    "date": "2026-11-13T20:48:23+05:30",
    "summary": "Windows Autopatch report in Intune shows which devices are current, missing updates or at risk.",
-   "asset": "assets/x-msftmechanics-2121261399552712889.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1461,7 +1413,7 @@
    }
   },
   {
-   "id": "x32",
+   "id": "x30",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1471,7 +1423,7 @@
    "url": "https://x.com/MSFTMechanics/status/2121320766264295729",
    "date": "2026-11-14T00:44:17+05:30",
    "summary": "Intune Conditional Access limits internal access to compliant devices, paired with Windows Autopatch.",
-   "asset": "assets/x-msftmechanics-2121320766264295729.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1485,7 +1437,7 @@
    }
   },
   {
-   "id": "x33",
+   "id": "x31",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1495,7 +1447,7 @@
    "url": "https://x.com/MSFTMechanics/status/2121340430075793874",
    "date": "2026-11-14T02:02:25+05:30",
    "summary": "Admins can block a risky agent from the Agent Registry in the M365 admin center until it is resubmitted.",
-   "asset": "assets/x-msftmechanics-2121340430075793874.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1509,56 +1461,7 @@
    }
   },
   {
-   "id": "x34",
-   "type": "x",
-   "source": "@MsftSecIntel",
-   "product": [
-    "Defender"
-   ],
-   "title": "@MsftSecIntel post 2121357112009732242",
-   "url": "https://x.com/MsftSecIntel/status/2121357112009732242",
-   "date": "2026-11-14T03:08:43+05:30",
-   "summary": "Points to Microsoft's write-up on a campaign that abuses ScreenConnect against MSPs to spread the SCKit worm and add rogue clients.",
-   "asset": "assets/x-msftsecintel-2121357112009732242.png",
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": {
-    "likes": 139,
-    "replies": 8,
-    "reposts": 30,
-    "quotes": 3,
-    "impressions": 15074
-   }
-  },
-  {
-   "id": "x35",
-   "type": "x",
-   "source": "@MsftSecIntel",
-   "product": [
-    "Defender",
-    "M365"
-   ],
-   "title": "@MsftSecIntel post 2121491564161581148",
-   "url": "https://x.com/MsftSecIntel/status/2121491564161581148",
-   "date": "2026-11-14T12:02:58+05:30",
-   "summary": "Phishing lures pose as M365 service-health mail and cite the real 12 Nov Exchange Online incident number; Defender blocks the domains.",
-   "asset": "assets/x-msftsecintel-2121491564161581148.png",
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": {
-    "likes": 3270,
-    "replies": 143,
-    "reposts": 1281,
-    "quotes": 135,
-    "impressions": 402752
-   }
-  },
-  {
-   "id": "x36",
+   "id": "x32",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1568,7 +1471,7 @@
    "url": "https://x.com/MSFTMechanics/status/2121600175986585964",
    "date": "2026-11-14T19:14:34+05:30",
    "summary": "Configuration Snapshots in Entra Tenant Governance baseline settings across 200+ resource types to catch drift.",
-   "asset": "assets/x-msftmechanics-2121600175986585964.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1582,7 +1485,7 @@
    }
   },
   {
-   "id": "x37",
+   "id": "x33",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1592,7 +1495,7 @@
    "url": "https://x.com/MSFTMechanics/status/2121684426455134224",
    "date": "2026-11-15T00:49:20+05:30",
    "summary": "Purview Communication Compliance can flag agent behaviour; Agent 365 can block agent access to labelled files.",
-   "asset": "assets/x-msftmechanics-2121684426455134224.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1606,7 +1509,7 @@
    }
   },
   {
-   "id": "x38",
+   "id": "x34",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1617,7 +1520,7 @@
    "url": "https://x.com/MSFTMechanics/status/2121816060680626292",
    "date": "2026-11-15T09:32:24+05:30",
    "summary": "Defender for Cloud can open a GitHub issue for a container CVE fix and sync the resolution back.",
-   "asset": "assets/x-msftmechanics-2121816060680626292.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -1631,7 +1534,7 @@
    }
   },
   {
-   "id": "x39",
+   "id": "x35",
    "type": "x",
    "source": "@MSFTMechanics",
    "product": [
@@ -1642,7 +1545,7 @@
    "url": "https://x.com/MSFTMechanics/status/2121962580998602892",
    "date": "2026-11-15T19:14:38+05:30",
    "summary": "Defender for Cloud groups 19 container alerts from one multi-stage attack into a single incident timeline.",
-   "asset": "assets/x-msftmechanics-2121962580998602892.png",
+   "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -21394,7 +21297,7 @@
    "url": "https://www.microsoft.com/en-us/security/blog/2026/11/09/forge-lab-uses-agentic-tools-to-identify-memory-safety-issues-in-rust/",
    "date": "2026-11-10T01:47:31+05:30",
    "summary": "FORGE Lab used agentic tooling to find memory-safety flaws in Rust's standard libraries, some triggerable from safe code.",
-   "asset": null,
+   "asset": "research/2026-W46/assets/blog-forge-lab-rust.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -21412,7 +21315,7 @@
    "url": "https://www.microsoft.com/en-us/security/blog/2026/11/10/detecting-sleeper-agents-hiding-in-ai-model-neurons/",
    "date": "2026-11-11T04:30:00+05:30",
    "summary": "A handful of neuron edits can hide a payload in an agent model; frontier agents can spot the anomalous weights.",
-   "asset": "assets/blog-sleeper-agents-neurons.png",
+   "asset": "research/2026-W46/assets/blog-sleeper-agents-neurons.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -21430,7 +21333,7 @@
    "url": "https://www.microsoft.com/en-us/security/blog/2026/11/11/lessons-from-59-linux-kernel-bug-reports/",
    "date": "2026-11-11T22:25:00+05:30",
    "summary": "MDASH-driven kernel research: 59 reports, 33 CVEs, 38 merged fixes and lessons on validating AI findings.",
-   "asset": "assets/blog-linux-kernel-59-reports.png",
+   "asset": "research/2026-W46/assets/blog-linux-kernel-59-reports.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -21448,7 +21351,7 @@
    "url": "https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/microsoft-ignite-2026-new-sentinel-connectors-announcement/ba-p/4565258",
    "date": "2026-11-11T22:30:00+05:30",
    "summary": "New Sentinel connectors announced for Ignite, feeding Microsoft and third-party signals into the integrated SOC.",
-   "asset": null,
+   "asset": "research/2026-W46/assets/blog-sentinel-connectors-ignite.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -21457,24 +21360,6 @@
   },
   {
    "id": "b05",
-   "type": "blog",
-   "source": "Microsoft Security Blog",
-   "product": [
-    "Defender"
-   ],
-   "title": "The global socket: how threat actors are weaponizing GSocket for stealthy C2",
-   "url": "https://www.microsoft.com/en-us/security/blog/2026/11/11/global-socket-how-threat-actors-weaponizing-gsocket-stealthy-c2/",
-   "date": "2026-11-12T01:19:57+05:30",
-   "summary": "How attackers keep encrypted access to patched Linux servers with GSocket, and how to detect and remove it.",
-   "asset": "assets/blog-gsocket.png",
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null
-  },
-  {
-   "id": "b06",
    "type": "blog",
    "source": "Microsoft Defender Blog",
    "product": [
@@ -21493,7 +21378,7 @@
    "engagement": null
   },
   {
-   "id": "b07",
+   "id": "b06",
    "type": "blog",
    "source": "Microsoft Sentinel Blog",
    "product": [
@@ -21511,7 +21396,7 @@
    "engagement": null
   },
   {
-   "id": "b08",
+   "id": "b07",
    "type": "blog",
    "source": "Microsoft Security Community Blog",
    "product": [
@@ -21529,7 +21414,7 @@
    "engagement": null
   },
   {
-   "id": "b09",
+   "id": "b08",
    "type": "blog",
    "source": "Microsoft Security Blog",
    "product": [
@@ -21539,7 +21424,7 @@
    "url": "https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/",
    "date": "2026-11-12T22:30:00+05:30",
    "summary": "Poisoned fine-tuning data or checkpoints can make coding agents run attacker code; research from Defender and the AI Red Team.",
-   "asset": "assets/blog-trained-to-betray.png",
+   "asset": "research/2026-W46/assets/blog-trained-to-betray.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -21547,7 +21432,7 @@
    "engagement": null
   },
   {
-   "id": "b10",
+   "id": "b09",
    "type": "blog",
    "source": "Microsoft Security Community Blog",
    "product": [
@@ -21566,25 +21451,7 @@
    "engagement": null
   },
   {
-   "id": "b11",
-   "type": "blog",
-   "source": "Microsoft Security Blog",
-   "product": [
-    "Defender"
-   ],
-   "title": "SCKit abuses ScreenConnect to deploy remote access and target technician sessions",
-   "url": "https://www.microsoft.com/en-us/security/blog/2026/11/13/sckit-abuses-screenconnect-deploy-remote-access-target-technician-sessions/",
-   "date": "2026-11-14T03:01:44+05:30",
-   "summary": "Attack chain of SCKit abusing ScreenConnect against MSP technicians, with mitigations and Defender XDR hunting queries.",
-   "asset": "assets/blog-sckit.png",
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null
-  },
-  {
-   "id": "b12",
+   "id": "b10",
    "type": "blog",
    "source": "Microsoft Security Community Blog",
    "product": [
@@ -21602,7 +21469,7 @@
    "engagement": null
   },
   {
-   "id": "b13",
+   "id": "b11",
    "type": "blog",
    "source": "Core Infrastructure and Security Blog",
    "product": [
@@ -21618,6 +21485,224 @@
    "exploited": null,
    "disclosed": null,
    "engagement": null
+  },
+  {
+   "id": "t01",
+   "type": "threat",
+   "source": "@MsftSecIntel",
+   "product": [
+    "Entra",
+    "Azure",
+    "M365"
+   ],
+   "title": "@MsftSecIntel post 2120290394869006572",
+   "url": "https://x.com/MsftSecIntel/status/2120290394869006572",
+   "date": "2026-11-11T04:29:57+05:30",
+   "summary": "Storm-3350 takes over cloud identities via vishing and self-service password reset, adds its own Authenticator method, then harvests Graph, M365 and Azure data.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": {
+    "likes": 52,
+    "replies": 4,
+    "reposts": 13,
+    "quotes": 1,
+    "impressions": 7639
+   },
+   "actor": "Storm-3350",
+   "aliases": [],
+   "geo": [
+    {
+     "country": "BR",
+     "role": "targeted"
+    }
+   ],
+   "region": null,
+   "sectors": [
+    "financial services",
+    "payments",
+    "banking",
+    "digital assets",
+    "healthcare",
+    "transportation",
+    "logistics"
+   ],
+   "techniques": [],
+   "cves": []
+  },
+  {
+   "id": "t02",
+   "type": "threat",
+   "source": "Microsoft Security Blog (Microsoft Threat Intelligence)",
+   "product": [
+    "Defender"
+   ],
+   "title": "The global socket: how threat actors are weaponizing GSocket for stealthy C2",
+   "url": "https://www.microsoft.com/en-us/security/blog/2026/11/11/global-socket-how-threat-actors-weaponizing-gsocket-stealthy-c2/",
+   "date": "2026-11-12T01:19:57+05:30",
+   "summary": "Multiple unattributed actors exploit web apps and drop GSocket for relay-based C2 that outlives patching; includes detections, hunting queries and IOCs.",
+   "asset": "research/2026-W46/assets/blog-gsocket.png",
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "actor": null,
+   "aliases": [],
+   "geo": [],
+   "region": null,
+   "sectors": [
+    "education and research",
+    "technology and telecommunications"
+   ],
+   "techniques": [
+    "T1190",
+    "T1059.004",
+    "T1105",
+    "T1036",
+    "T1564.001",
+    "T1053.003",
+    "T1543.002",
+    "T1070.004",
+    "T1070.006",
+    "T1222.002",
+    "T1090.002"
+   ],
+   "cves": [
+    "CVE-2026-43284"
+   ]
+  },
+  {
+   "id": "t03",
+   "type": "threat",
+   "source": "@MsftSecIntel",
+   "product": [
+    "Defender"
+   ],
+   "title": "@MsftSecIntel post 2120609029001032115",
+   "url": "https://x.com/MsftSecIntel/status/2120609029001032115",
+   "date": "2026-11-12T01:36:06+05:30",
+   "summary": "Thread pointing to the GSocket research: Linux web servers kept under attacker control via a public relay after the entry flaw is fixed.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": {
+    "likes": 291,
+    "replies": 17,
+    "reposts": 78,
+    "quotes": 15,
+    "impressions": 223712
+   },
+   "actor": null,
+   "aliases": [],
+   "geo": [],
+   "region": null,
+   "sectors": [],
+   "techniques": [],
+   "cves": []
+  },
+  {
+   "id": "t04",
+   "type": "threat",
+   "source": "Microsoft Security Blog (Microsoft Threat Intelligence)",
+   "product": [
+    "Defender"
+   ],
+   "title": "SCKit abuses ScreenConnect to deploy remote access and target technician sessions",
+   "url": "https://www.microsoft.com/en-us/security/blog/2026/11/13/sckit-abuses-screenconnect-deploy-remote-access-target-technician-sessions/",
+   "date": "2026-11-14T03:01:44+05:30",
+   "summary": "Unnamed actor abuses MSP ScreenConnect instances to push rogue clients and the SCKit worm, whose RelayTrap part targets connecting technicians.",
+   "asset": "research/2026-W46/assets/blog-sckit.png",
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "actor": null,
+   "aliases": [],
+   "geo": [],
+   "region": null,
+   "sectors": [
+    "managed service providers"
+   ],
+   "techniques": [],
+   "cves": [
+    "CVE-2026-84869"
+   ]
+  },
+  {
+   "id": "t05",
+   "type": "threat",
+   "source": "@MsftSecIntel",
+   "product": [
+    "Defender"
+   ],
+   "title": "@MsftSecIntel post 2121357112009732242",
+   "url": "https://x.com/MsftSecIntel/status/2121357112009732242",
+   "date": "2026-11-14T03:08:43+05:30",
+   "summary": "Thread summarising the SCKit campaign against MSPs and pointing to IOCs, Defender XDR hunting and remediation steps.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": {
+    "likes": 139,
+    "replies": 8,
+    "reposts": 30,
+    "quotes": 3,
+    "impressions": 15074
+   },
+   "actor": null,
+   "aliases": [],
+   "geo": [],
+   "region": null,
+   "sectors": [
+    "managed service providers"
+   ],
+   "techniques": [],
+   "cves": []
+  },
+  {
+   "id": "t06",
+   "type": "threat",
+   "source": "@MsftSecIntel",
+   "product": [
+    "Defender",
+    "M365"
+   ],
+   "title": "@MsftSecIntel post 2121491564161581148",
+   "url": "https://x.com/MsftSecIntel/status/2121491564161581148",
+   "date": "2026-11-14T12:02:58+05:30",
+   "summary": "Credential-phishing lures exploit the 12 Nov M365 outage, citing the real incident ID; sent via three sender domains and SendGrid redirects.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": {
+    "likes": 3270,
+    "replies": 143,
+    "reposts": 1281,
+    "quotes": 135,
+    "impressions": 402752
+   },
+   "actor": null,
+   "aliases": [],
+   "geo": [
+    {
+     "country": "US",
+     "role": "targeted"
+    }
+   ],
+   "region": null,
+   "sectors": [],
+   "techniques": [],
+   "cves": []
   },
   {
    "id": "r01",
