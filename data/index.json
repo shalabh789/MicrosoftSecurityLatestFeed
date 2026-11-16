@@ -1,0 +1,18 @@
+[
+ {
+  "week": "2026-W46",
+  "start": "2026-11-09T00:00:00+05:30",
+  "end": "2026-11-15T23:59:59+05:30",
+  "readme": "research/2026-W46/README.md",
+  "data": "data/2026-W46.json",
+  "counts": {
+   "video": 29,
+   "x": 35,
+   "cve": 1096,
+   "threat": 6,
+   "blog": 11,
+   "learn": 0,
+   "reddit": 5
+  }
+ }
+]
