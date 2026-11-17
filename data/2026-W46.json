@@ -2,7 +2,7 @@
  "week": "2026-W46",
  "start": "2026-11-09T00:00:00+05:30",
  "end": "2026-11-15T23:59:59+05:30",
- "generated": "2026-11-17T05:14:54+00:00",
+ "generated": "2026-11-17T05:42:31+00:00",
  "themes": [
   {
    "name": "Securing AI agents moves to the front",
@@ -21673,7 +21673,7 @@
    ],
    "title": "General availability - Microsoft Entra Kerberos key rotation improved reliability for incoming trust referral flows",
    "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---microsoft-entra-kerberos-key-rotation-improved-reliability-for-incoming-trust-referral-flows",
-   "date": null,
+   "date": "2026-06-01",
    "summary": "Entra Kerberos now tries both the primary and secondary key on incoming trust referral tickets, so key rollover causes fewer sign-in failures.",
    "asset": "research/2026-W46/assets/learn-microsoft-entra-id.png",
    "severity": null,
@@ -21684,7 +21684,8 @@
    "learn_product": "Microsoft Entra ID",
    "section": "June 2026",
    "status": "GA",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l02",
@@ -21695,7 +21696,7 @@
    ],
    "title": "Generally available - Jailbreak/Root Detection in Authenticator App",
    "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#generally-available---jailbreakroot-detection-in-authenticator-app",
-   "date": null,
+   "date": "2026-06-01",
    "summary": "Authenticator now refuses work or school accounts on jailbroken or rooted phones by default, with nothing for admins to configure.",
    "asset": "research/2026-W46/assets/learn-microsoft-entra-id.png",
    "severity": null,
@@ -21706,7 +21707,8 @@
    "learn_product": "Microsoft Entra ID",
    "section": "June 2026",
    "status": "GA",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l03",
@@ -21717,7 +21719,7 @@
    ],
    "title": "Public Preview - Extended Conditional Access protections for Agent's user accounts",
    "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---extended-conditional-access-protections-for-agents-user-accounts",
-   "date": null,
+   "date": "2026-06-01",
    "summary": "Conditional Access gains finer controls for agents that hold user accounts: per-agent targeting, agent-risk conditions and compliant-device requirements.",
    "asset": "research/2026-W46/assets/learn-microsoft-entra-id.png",
    "severity": null,
@@ -21728,7 +21730,8 @@
    "learn_product": "Microsoft Entra ID",
    "section": "June 2026",
    "status": "Preview",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l04",
@@ -21739,7 +21742,7 @@
    ],
    "title": "General Availability - Domainless SAML IdP federation for workforce tenants",
    "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---domainless-saml-idp-federation-for-workforce-tenants",
-   "date": null,
+   "date": "2026-06-01",
    "summary": "Guests can federate through a SAML identity provider even when their email domain does not match a domain configured for that IdP.",
    "asset": "research/2026-W46/assets/learn-microsoft-entra-id.png",
    "severity": null,
@@ -21750,7 +21753,8 @@
    "learn_product": "Microsoft Entra ID",
    "section": "June 2026",
    "status": "GA",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l05",
@@ -21761,7 +21765,7 @@
    ],
    "title": "General Availability - SCIM 2.0 APIs for Microsoft Entra ID in US Gov cloud",
    "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---scim-20-apis-for-microsoft-entra-id-in-us-gov-cloud",
-   "date": null,
+   "date": "2026-06-01",
    "summary": "The SCIM 2.0 APIs for provisioning Entra users and groups reach general availability in the US Government cloud.",
    "asset": "research/2026-W46/assets/learn-microsoft-entra-id.png",
    "severity": null,
@@ -21772,7 +21776,8 @@
    "learn_product": "Microsoft Entra ID",
    "section": "June 2026",
    "status": "GA",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l06",
@@ -21783,7 +21788,7 @@
    ],
    "title": "General Availability - Microsoft Entra Backup and Recovery is now available",
    "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---microsoft-entra-backup-and-recovery-is-now-available",
-   "date": null,
+   "date": "2026-06-01",
    "summary": "Always-on Entra Backup and Recovery keeps daily snapshots of key directory objects so admins can compare changes and roll objects back.",
    "asset": "research/2026-W46/assets/learn-microsoft-entra-id.png",
    "severity": null,
@@ -21794,7 +21799,8 @@
    "learn_product": "Microsoft Entra ID",
    "section": "June 2026",
    "status": "GA",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l07",
@@ -21805,7 +21811,7 @@
    ],
    "title": "Upcoming change - Improved restore experience for device-bound Authenticator app passkeys on iOS",
    "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#upcoming-change---improved-restore-experience-for-device-bound-authenticator-app-passkeys-on-ios",
-   "date": null,
+   "date": "2026-06-01",
    "summary": "From August 2026, moving Authenticator to a new iPhone restores device-bound passkeys more smoothly when iCloud Keychain backup is on; no action needed.",
    "asset": "research/2026-W46/assets/learn-microsoft-entra-id.png",
    "severity": null,
@@ -21816,7 +21822,8 @@
    "learn_product": "Microsoft Entra ID",
    "section": "June 2026",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l08",
@@ -21828,7 +21835,7 @@
    ],
    "title": "Public Preview - New built-in Entra role for SOC identity response in Microsoft Defender",
    "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---new-built-in-entra-role-for-soc-identity-response-in-microsoft-defender",
-   "date": null,
+   "date": "2026-06-01",
    "summary": "A new SOC Identity Responder role lets analysts disable accounts, revoke sessions and reset passwords from Defender without broad directory rights.",
    "asset": "research/2026-W46/assets/learn-microsoft-entra-id.png",
    "severity": null,
@@ -21839,7 +21846,8 @@
    "learn_product": "Microsoft Entra ID",
    "section": "June 2026",
    "status": "Preview",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l09",
@@ -21850,7 +21858,7 @@
    ],
    "title": "Public Preview - Prevent unauthorized changes to AD groups with AD group enforcement",
    "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---prevent-unauthorized-changes-to-ad-groups-with-ad-group-enforcement",
-   "date": null,
+   "date": "2026-06-01",
    "summary": "Cloud Sync can lock selected on-premises AD groups so only the Entra provisioning service may change them, preventing drift.",
    "asset": "research/2026-W46/assets/learn-microsoft-entra-id.png",
    "severity": null,
@@ -21861,7 +21869,8 @@
    "learn_product": "Microsoft Entra ID",
    "section": "June 2026",
    "status": "Preview",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l10",
@@ -21872,7 +21881,7 @@
    ],
    "title": "General Availability - External users can be directly assigned to Access Packages",
    "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---external-users-can-be-directly-assigned-to-access-packages",
-   "date": null,
+   "date": "2026-06-01",
    "summary": "Entitlement management admins can assign people outside the directory to an access package by email; they join as guests and stay governed.",
    "asset": "research/2026-W46/assets/learn-entra-id-governance.png",
    "severity": null,
@@ -21883,7 +21892,8 @@
    "learn_product": "Entra ID Governance",
    "section": "June 2026",
    "status": "GA",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l11",
@@ -21894,7 +21904,7 @@
    ],
    "title": "General Availability - BYOD support for Windows client using Entra registration",
    "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---byod-support-for-windows-client-using-entra-registration",
-   "date": null,
+   "date": "2026-06-01",
    "summary": "Private app traffic can now come from personal, Entra-registered Windows devices, removing the need for those PCs to be domain-joined.",
    "asset": "research/2026-W46/assets/learn-global-secure-access.png",
    "severity": null,
@@ -21905,7 +21915,8 @@
    "learn_product": "Global Secure Access",
    "section": "June 2026",
    "status": "GA",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l12",
@@ -21917,7 +21928,7 @@
    ],
    "title": "Integrated Security Operations Center (ISOC) in Microsoft Defender",
    "url": "https://learn.microsoft.com/en-us/defender-xdr/whats-new#september-2026",
-   "date": null,
+   "date": "2026-09-01",
    "summary": "ISOC puts XDR, SIEM, threat intel, automation and AI in one Defender portal experience; from 23 Sep 2026 eligible E5/E7 tenants without Sentinel can use it.",
    "asset": "research/2026-W46/assets/learn-defender-xdr.png",
    "severity": null,
@@ -21928,7 +21939,8 @@
    "learn_product": "Defender XDR",
    "section": "September 2026",
    "status": "Preview",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l13",
@@ -21939,7 +21951,7 @@
    ],
    "title": "Identity Security dashboard and Coverage & Maturity",
    "url": "https://learn.microsoft.com/en-us/defender-xdr/whats-new#september-2026",
-   "date": null,
+   "date": "2026-09-01",
    "summary": "A single dashboard for identity risk and posture, plus a coverage view that shows protection gaps across on-prem, cloud, SaaS and partner identity sources.",
    "asset": "research/2026-W46/assets/learn-defender-xdr.png",
    "severity": null,
@@ -21950,7 +21962,8 @@
    "learn_product": "Defender XDR",
    "section": "September 2026",
    "status": "GA",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l14",
@@ -21961,7 +21974,7 @@
    ],
    "title": "Build 101.26092.0012",
    "url": "https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint#november-2026",
-   "date": null,
+   "date": "2026-11-01",
    "summary": "Defender for Endpoint on macOS build 101.26092.0012 (version 20.126092.12.0) is out; its changes are on the releases page.",
    "asset": "research/2026-W46/assets/learn-defender-for-endpoint.png",
    "severity": null,
@@ -21972,7 +21985,8 @@
    "learn_product": "Defender for Endpoint",
    "section": "November 2026",
    "status": "GA",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l15",
@@ -21984,7 +21998,7 @@
    ],
    "title": "Hunt for synthetic media (deepfake) detection events",
    "url": "https://learn.microsoft.com/en-us/defender-office-365/defender-for-office-365-whats-new#november-2026",
-   "date": null,
+   "date": "2026-11-01",
    "summary": "A new advanced hunting table, SyntheticMediaDetectionEvents, logs deepfakes detected in Teams to support impersonation and fraud investigations.",
    "asset": "research/2026-W46/assets/learn-defender-for-office-365.png",
    "severity": null,
@@ -21995,7 +22009,8 @@
    "learn_product": "Defender for Office 365",
    "section": "November 2026",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l16",
@@ -22006,7 +22021,7 @@
    ],
    "title": "Automatic sensor v3.x activation and Windows auditing for existing customers",
    "url": "https://learn.microsoft.com/en-us/defender-for-identity/whats-new#automatic-sensor-v3x-activation-and-windows-auditing-for-existing-customers",
-   "date": null,
+   "date": "2026-10-01",
    "summary": "Eligible tenants see a 30-day banner, after which v3.x sensor activation and Windows auditing switch on automatically unless they opt out.",
    "asset": "research/2026-W46/assets/learn-defender-for-identity.png",
    "severity": null,
@@ -22017,7 +22032,8 @@
    "learn_product": "Defender for Identity",
    "section": "October 2026",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l17",
@@ -22029,7 +22045,7 @@
    ],
    "title": "New Defender for Identity security alerts",
    "url": "https://learn.microsoft.com/en-us/defender-for-identity/whats-new#new-defender-for-identity-security-alerts",
-   "date": null,
+   "date": "2026-10-01",
    "summary": "New detections cover Entra ID MFA-method and device registration abuse plus AD attacks such as diamond tickets, AD CS ESC8/ESC11 abuse and DNS exfiltration.",
    "asset": "research/2026-W46/assets/learn-defender-for-identity.png",
    "severity": null,
@@ -22040,7 +22056,8 @@
    "learn_product": "Defender for Identity",
    "section": "October 2026",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l18",
@@ -22051,7 +22068,7 @@
    ],
    "title": "General availability of sensor v3.x activation without Defender for Endpoint",
    "url": "https://learn.microsoft.com/en-us/defender-for-identity/whats-new#general-availability-of-sensor-v3x-activation-without-defender-for-endpoint",
-   "date": null,
+   "date": "2026-10-01",
    "summary": "The v3.x sensor can be activated on DCs, AD FS, AD CS and Entra Connect servers (Windows Server 2019+) without deploying Defender for Endpoint.",
    "asset": "research/2026-W46/assets/learn-defender-for-identity.png",
    "severity": null,
@@ -22062,7 +22079,8 @@
    "learn_product": "Defender for Identity",
    "section": "October 2026",
    "status": "GA",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l19",
@@ -22073,7 +22091,7 @@
    ],
    "title": "Known limitation: Sensor v3.x activation without Defender for Endpoint isn't supported in government clouds",
    "url": "https://learn.microsoft.com/en-us/defender-for-identity/whats-new#known-limitation-sensor-v3x-activation-without-defender-for-endpoint-isnt-supported-in-government-clouds",
-   "date": null,
+   "date": "2026-10-01",
    "summary": "Government cloud tenants cannot yet activate the v3.x sensor on servers that lack Defender for Endpoint.",
    "asset": "research/2026-W46/assets/learn-defender-for-identity.png",
    "severity": null,
@@ -22084,7 +22102,8 @@
    "learn_product": "Defender for Identity",
    "section": "October 2026",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l20",
@@ -22095,7 +22114,7 @@
    ],
    "title": "Automatic enablement of SaaS accounts integration with Identity inventory",
    "url": "https://learn.microsoft.com/en-us/defender-cloud-apps/release-notes#automatic-enablement-of-saas-accounts-integration-with-identity-inventory",
-   "date": null,
+   "date": "2026-10-01",
    "summary": "From 15 Oct 2026 the link between Cloud Apps SaaS accounts and Identity inventory turns on by default for eligible tenants instead of being opt-in.",
    "asset": "research/2026-W46/assets/learn-defender-for-cloud-apps.png",
    "severity": null,
@@ -22106,7 +22125,8 @@
    "learn_product": "Defender for Cloud Apps",
    "section": "October 2026",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l21",
@@ -22129,7 +22149,8 @@
    "learn_product": "Defender for Cloud",
    "section": "November 2026",
    "status": null,
-   "in_window": false
+   "in_window": false,
+   "date_precision": "day"
   },
   {
    "id": "l22",
@@ -22152,7 +22173,8 @@
    "learn_product": "Security Exposure Management",
    "section": "October 2026",
    "status": "Preview",
-   "in_window": false
+   "in_window": false,
+   "date_precision": "day"
   },
   {
    "id": "l23",
@@ -22163,7 +22185,7 @@
    ],
    "title": "Detect use of vulnerable SAP BTP custom apps (Preview)",
    "url": "https://learn.microsoft.com/en-us/azure/sentinel/whats-new#detect-use-of-vulnerable-sap-btp-custom-apps-preview",
-   "date": null,
+   "date": "2026-10-01",
    "summary": "A new SAP BTP analytics rule flags logins to custom apps that still have open high or critical findings in the SAP vulnerability report.",
    "asset": "research/2026-W46/assets/learn-sentinel.png",
    "severity": null,
@@ -22174,7 +22196,8 @@
    "learn_product": "Sentinel",
    "section": "October 2026",
    "status": "Preview",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l24",
@@ -22185,7 +22208,7 @@
    ],
    "title": "Data Loss Prevention",
    "url": "https://learn.microsoft.com/en-us/purview/whats-new#data-loss-prevention",
-   "date": null,
+   "date": "2026-10-01",
    "summary": "Endpoint DLP can now watch sensitive files sent over FTP or SFTP and restrict those transfers according to policy.",
    "asset": "research/2026-W46/assets/learn-purview.png",
    "severity": null,
@@ -22196,7 +22219,8 @@
    "learn_product": "Purview",
    "section": "October 2026",
    "status": "GA",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l25",
@@ -22207,7 +22231,7 @@
    ],
    "title": "Newly available protected apps for Intune",
    "url": "https://learn.microsoft.com/en-us/intune/whats-new/#newly-available-protected-apps-for-intune",
-   "date": null,
+   "date": "2026-11-16",
    "summary": "Ten more partner apps, among them Everbridge 360, Ramp and Zoho Mail, can now be managed as Intune protected apps.",
    "asset": "research/2026-W46/assets/learn-intune.png",
    "severity": null,
@@ -22218,7 +22242,8 @@
    "learn_product": "Intune",
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "week"
   },
   {
    "id": "l26",
@@ -22229,7 +22254,7 @@
    ],
    "title": "Automate tasks with local actions on Android Enterprise devices",
    "url": "https://learn.microsoft.com/en-us/intune/whats-new/#automate-tasks-with-local-actions-on-android-enterprise-devices",
-   "date": null,
+   "date": "2026-11-16",
    "summary": "Fully managed and dedicated Android Enterprise devices can run up to five automated local actions per trigger such as restart, sign-in or a schedule.",
    "asset": "research/2026-W46/assets/learn-intune.png",
    "severity": null,
@@ -22240,7 +22265,8 @@
    "learn_product": "Intune",
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "week"
   },
   {
    "id": "l27",
@@ -22252,7 +22278,7 @@
    ],
    "title": "New settings for macOS in the settings catalog",
    "url": "https://learn.microsoft.com/en-us/intune/whats-new/#new-settings-for-macos-in-the-settings-catalog",
-   "date": null,
+   "date": "2026-11-16",
    "summary": "The macOS settings catalog adds options for EWS retirement alerts, Edge and Copilot behaviour, and Defender runtime protection for AI agents.",
    "asset": "research/2026-W46/assets/learn-intune.png",
    "severity": null,
@@ -22263,7 +22289,8 @@
    "learn_product": "Intune",
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "week"
   },
   {
    "id": "l28",
@@ -22275,7 +22302,7 @@
    ],
    "title": "Group exclusions and built-in group targeting for PowerShell scripts on Windows",
    "url": "https://learn.microsoft.com/en-us/intune/whats-new/#group-exclusions-and-built-in-group-targeting-for-powershell-scripts-on-windows",
-   "date": null,
+   "date": "2026-11-16",
    "summary": "PowerShell script assignments on Windows now accept group exclusions and the built-in All Users and All Devices groups.",
    "asset": "research/2026-W46/assets/learn-intune.png",
    "severity": null,
@@ -22286,7 +22313,8 @@
    "learn_product": "Intune",
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "week"
   },
   {
    "id": "l29",
@@ -22297,7 +22325,7 @@
    ],
    "title": "Require Google Workspace authentication on Android Enterprise devices",
    "url": "https://learn.microsoft.com/en-us/intune/whats-new/#require-google-workspace-authentication-on-android-enterprise-devices",
-   "date": null,
+   "date": "2026-11-16",
    "summary": "Admins can make users sign in with a managed Google Workspace account on supported Android Enterprise devices.",
    "asset": "research/2026-W46/assets/learn-intune.png",
    "severity": null,
@@ -22308,7 +22336,8 @@
    "learn_product": "Intune",
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "week"
   },
   {
    "id": "l30",
@@ -22319,7 +22348,7 @@
    ],
    "title": "Increase Intune management agent check-ins on macOS",
    "url": "https://learn.microsoft.com/en-us/intune/whats-new/#increase-intune-management-agent-check-ins-on-macos",
-   "date": null,
+   "date": "2026-11-16",
    "summary": "Newly enrolled Macs check in much more often during onboarding, and the regular agent check-in interval drops from about eight hours to one.",
    "asset": "research/2026-W46/assets/learn-intune.png",
    "severity": null,
@@ -22330,7 +22359,8 @@
    "learn_product": "Intune",
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "week"
   },
   {
    "id": "l31",
@@ -22342,7 +22372,7 @@
    ],
    "title": "Maintenance windows for operating system and driver updates on Windows",
    "url": "https://learn.microsoft.com/en-us/intune/whats-new/#maintenance-windows-for-operating-system-and-driver-updates-on-windows",
-   "date": null,
+   "date": "2026-11-16",
    "summary": "Maintenance windows let admins decide when Windows OS and driver update operations are allowed to run.",
    "asset": "research/2026-W46/assets/learn-intune.png",
    "severity": null,
@@ -22353,7 +22383,8 @@
    "learn_product": "Intune",
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "week"
   },
   {
    "id": "l32",
@@ -22364,7 +22395,7 @@
    ],
    "title": "Configure evaluation frequency for custom compliance scripts on Windows and macOS",
    "url": "https://learn.microsoft.com/en-us/intune/whats-new/#configure-evaluation-frequency-for-custom-compliance-scripts-on-windows-and-macos",
-   "date": null,
+   "date": "2026-11-16",
    "summary": "Custom compliance scripts on Windows and macOS can be re-evaluated every 15 or 30 minutes, or every one to eight hours.",
    "asset": "research/2026-W46/assets/learn-intune.png",
    "severity": null,
@@ -22375,7 +22406,8 @@
    "learn_product": "Intune",
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "week"
   },
   {
    "id": "l33",
@@ -22387,7 +22419,7 @@
    ],
    "title": "Get more remediation guidance in Windows Autopatch reports",
    "url": "https://learn.microsoft.com/en-us/intune/whats-new/#get-more-remediation-guidance-in-windows-autopatch-reports",
-   "date": null,
+   "date": "2026-11-16",
    "summary": "Windows Autopatch reports add extra data, fix guidance and guardrails for configuration problems.",
    "asset": "research/2026-W46/assets/learn-intune.png",
    "severity": null,
@@ -22398,7 +22430,8 @@
    "learn_product": "Intune",
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
-   "in_window": null
+   "in_window": false,
+   "date_precision": "week"
   },
   {
    "id": "l34",
@@ -22409,7 +22442,7 @@
    ],
    "title": "Security Analyst Agent - Public preview",
    "url": "https://learn.microsoft.com/en-us/copilot/security/whats-new-copilot-security#security-analyst-agent---public-preview",
-   "date": null,
+   "date": "2026-04-01",
    "summary": "The Security Analyst Agent runs multi-step investigations over Defender and Sentinel data and returns ranked risk findings with supporting evidence.",
    "asset": "research/2026-W46/assets/learn-security-copilot.png",
    "severity": null,
@@ -22420,7 +22453,8 @@
    "learn_product": "Security Copilot",
    "section": "April 2026",
    "status": "Preview",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "l35",
@@ -22431,7 +22465,7 @@
    ],
    "title": "Codename MDASH - MAI Cyber configuration now uses MAI-Cyber-1.1-Flash",
    "url": "https://learn.microsoft.com/en-us/security-exposure-management/whats-new#codename-mdash---mai-cyber-configuration-now-uses-mai-cyber-11-flash",
-   "date": null,
+   "date": "2026-10-01",
    "summary": "The MAI Cyber scan configuration in MDASH switches to the MAI-Cyber-1.1-Flash model, and existing Foundry setups are upgraded automatically.",
    "asset": "research/2026-W46/assets/learn-mdash.png",
    "severity": null,
@@ -22442,7 +22476,8 @@
    "learn_product": "MDASH",
    "section": "October 2026",
    "status": "Preview",
-   "in_window": null
+   "in_window": false,
+   "date_precision": "month"
   },
   {
    "id": "r01",
