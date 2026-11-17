@@ -1,0 +1,50 @@
+name: Weekly build
+description: Request the weekly Microsoft security feed build from a finished research branch.
+title: "Weekly build: "
+labels: [build, needs-approval]
+body:
+  - type: input
+    id: week
+    attributes:
+      label: Week
+      description: ISO week, e.g. 2026-W47
+    validations:
+      required: true
+  - type: input
+    id: window
+    attributes:
+      label: Window
+      description: IST time window covered, e.g. 2026-11-10 00:00 IST to 2026-11-16 23:59 IST
+    validations:
+      required: true
+  - type: textarea
+    id: research-links
+    attributes:
+      label: Research links
+      description: Links to the research branch and files.
+    validations:
+      required: true
+  - type: textarea
+    id: counts
+    attributes:
+      label: Counts
+      description: Item counts by source or category.
+  - type: textarea
+    id: themes
+    attributes:
+      label: Themes
+      description: Top themes for the week.
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+      description: What should be built.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: Conditions the build must meet to be accepted.
+    validations:
+      required: true
