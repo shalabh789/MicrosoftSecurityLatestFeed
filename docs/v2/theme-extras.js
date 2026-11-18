@@ -44,8 +44,11 @@
   function spy() {
     if (spyPaused) return
     var cur = 0, bottom = innerHeight + scrollY >= root.scrollHeight - 4
-    var threshold = parseFloat(getComputedStyle(root).scrollPaddingTop) + 1
-    nodes.forEach(function (n, i) { if (n && n.offsetHeight && n.getBoundingClientRect().top < threshold) cur = i })
+    var padding = parseFloat(getComputedStyle(root).scrollPaddingTop) || 0
+    nodes.forEach(function (n, i) {
+      var margin = n ? parseFloat(getComputedStyle(n).scrollMarginTop) || 0 : 0
+      if (n && n.offsetHeight && n.getBoundingClientRect().top < padding + margin + 24) cur = i
+    })
     if (bottom) cur = nodes.length - 1
     links.forEach(function (l, i) { l.parentNode.hidden = !(nodes[i] && nodes[i].offsetHeight); if (i === cur) l.setAttribute("aria-current", "location"); else l.removeAttribute("aria-current") })
   }
