@@ -28,6 +28,15 @@
     return Number.isNaN(date.getTime()) ? String(value || "Date unavailable") :
       new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeZone: "UTC" }).format(date);
   };
+  const generatedDateValue = (value) => {
+    const date = new Date(value);
+    if (value == null || value === "" || Number.isNaN(date.getTime())) return "";
+    const parts = Object.fromEntries(new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Kolkata", year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23"
+    }).formatToParts(date).map(({ type, value: part }) => [type, part]));
+    return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}:${parts.second}`;
+  };
   const dateKey = (value) => {
     const date = new Date(value);
     return Number.isNaN(date.getTime()) ? "" : date.toISOString().slice(0, 10);
@@ -590,7 +599,15 @@
       state.data = data;
     }
     populateOptions(state.data);
+    const generated = generatedDateValue(state.data.generated);
+    $("#generated-stamp").textContent = generated ? `generated ${generated} IST` : "";
     renderFooter();
+  }
+
+  function ensureWeekOption(week) {
+    if ([...controls.week.options].some((option) => option.value === week)) return;
+    const entry = state.weeks.find((record) => record.week === week);
+    if (entry) controls.week.add(new Option(entry.week, entry.week));
   }
 
   async function boot() {
@@ -599,14 +616,17 @@
       if (!response.ok) throw new Error(`Could not load week index (${response.status}).`);
       state.weeks = await response.json();
       if (!Array.isArray(state.weeks) || !state.weeks.length) throw new Error("No weekly data is available.");
+      state.weeks.sort((a, b) => b.week.localeCompare(a.week, undefined, { numeric: true }));
       const rawHash = location.hash.slice(1);
       const initialAnchor = rawHash && !rawHash.includes("=") && document.getElementById(decodeURIComponent(rawHash))
         ? decodeURIComponent(rawHash)
         : "";
       const params = initialAnchor ? {} : parseHash();
-      const defaultWeek = state.weeks[state.weeks.length - 1].week;
+      const defaultWeek = state.weeks[0].week;
       const week = state.weeks.some((entry) => entry.week === params.week) ? params.week : defaultWeek;
-      controls.week.innerHTML = state.weeks.map((entry) => `<option value="${escapeHtml(entry.week)}">${escapeHtml(entry.week)}</option>`).join("");
+      controls.week.innerHTML = state.weeks.slice(0, 10)
+        .map((entry) => `<option value="${escapeHtml(entry.week)}">${escapeHtml(entry.week)}</option>`).join("");
+      ensureWeekOption(week);
       controls.week.value = week;
       await loadWeek(week);
       applyHash(params);
@@ -763,6 +783,7 @@
     }
     const params = parseHash();
     if (params.week && params.week !== controls.week.value && state.weeks.some((entry) => entry.week === params.week)) {
+      ensureWeekOption(params.week);
       controls.week.value = params.week;
       await loadWeek(params.week);
     }

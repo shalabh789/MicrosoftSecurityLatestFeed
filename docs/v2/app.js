@@ -606,20 +606,29 @@
     renderFooter();
   }
 
+  function ensureWeekOption(week) {
+    if ([...controls.week.options].some((option) => option.value === week)) return;
+    const entry = state.weeks.find((record) => record.week === week);
+    if (entry) controls.week.add(new Option(entry.week, entry.week));
+  }
+
   async function boot() {
     try {
       const response = await fetch(new URL("data/index.json", CONTENT_ROOT));
       if (!response.ok) throw new Error(`Could not load week index (${response.status}).`);
       state.weeks = await response.json();
       if (!Array.isArray(state.weeks) || !state.weeks.length) throw new Error("No weekly data is available.");
+      state.weeks.sort((a, b) => b.week.localeCompare(a.week, undefined, { numeric: true }));
       const rawHash = location.hash.slice(1);
       const initialAnchor = rawHash && !rawHash.includes("=") && document.getElementById(decodeURIComponent(rawHash))
         ? decodeURIComponent(rawHash)
         : "";
       const params = initialAnchor ? {} : parseHash();
-      const defaultWeek = state.weeks[state.weeks.length - 1].week;
+      const defaultWeek = state.weeks[0].week;
       const week = state.weeks.some((entry) => entry.week === params.week) ? params.week : defaultWeek;
-      controls.week.innerHTML = state.weeks.map((entry) => `<option value="${escapeHtml(entry.week)}">${escapeHtml(entry.week)}</option>`).join("");
+      controls.week.innerHTML = state.weeks.slice(0, 10)
+        .map((entry) => `<option value="${escapeHtml(entry.week)}">${escapeHtml(entry.week)}</option>`).join("");
+      ensureWeekOption(week);
       controls.week.value = week;
       await loadWeek(week);
       applyHash(params);
@@ -776,6 +785,7 @@
     }
     const params = parseHash();
     if (params.week && params.week !== controls.week.value && state.weeks.some((entry) => entry.week === params.week)) {
+      ensureWeekOption(params.week);
       controls.week.value = params.week;
       await loadWeek(params.week);
     }
