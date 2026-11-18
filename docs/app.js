@@ -1,36 +1,12 @@
 (() => {
   "use strict";
 
-  const PRODUCT_CHOICES = [
-    "Microsoft Entra ID", "Entra ID Governance", "Global Secure Access", "Defender XDR",
-    "Defender for Endpoint", "Defender for Office 365", "Defender for Identity",
-    "Defender for Cloud Apps", "Defender for Cloud", "Defender Vulnerability Management",
-    "Defender Threat Intelligence", "Security Exposure Management", "Sentinel", "Purview",
-    "Intune", "Security Copilot", "Azure network security", "Windows security"
+  const PRODUCT_FAMILIES = [
+    "Defender", "Entra", "Purview", "Intune", "Sentinel", "Security Copilot", "Azure", "Windows"
   ];
   const TYPE_NAMES = {
     video: "Video", x: "X", threat: "Threat", cve: "CVE",
     blog: "Blog", learn: "Learn", reddit: "Reddit"
-  };
-  const PRODUCT_TAGS = {
-    "Microsoft Entra ID": ["entra"],
-    "Entra ID Governance": ["entra"],
-    "Global Secure Access": ["global secure access", "entra"],
-    "Defender XDR": ["defender"],
-    "Defender for Endpoint": ["defender"],
-    "Defender for Office 365": ["defender"],
-    "Defender for Identity": ["defender"],
-    "Defender for Cloud Apps": ["defender"],
-    "Defender for Cloud": ["defender"],
-    "Defender Vulnerability Management": ["defender"],
-    "Defender Threat Intelligence": ["defender"],
-    "Security Exposure Management": ["security exposure management"],
-    Sentinel: ["sentinel"],
-    Purview: ["purview"],
-    Intune: ["intune"],
-    "Security Copilot": ["security copilot"],
-    "Azure network security": ["azure"],
-    "Windows security": ["windows"]
   };
   const FAMILY_MAP = {
     defender: "Defender", sentinel: "Sentinel", entra: "Entra", purview: "Purview",
@@ -78,13 +54,10 @@
 
   const controls = {
     week: $("#week-select"),
-    product: $("#by-product"),
-    type: $("#type-filter"),
-    family: $("#family-filter"),
-    country: $("#country-filter"),
-    actor: $("#actor-filter"),
-    from: $("#date-from"),
-    to: $("#date-to"),
+    learnFamily: $("#learn-family"),
+    learnStatus: $("#learn-status"),
+    learnFrom: $("#learn-date-from"),
+    learnTo: $("#learn-date-to"),
     focus: $("#cve-focus"),
     cvss7: $("#cve-cvss7"),
     exploited: $("#cve-exploited"),
@@ -98,6 +71,7 @@
     page: 0,
     theme: "light",
     section: "",
+    type: "",
     syncing: false
   };
 
@@ -113,13 +87,11 @@
     const activeSection = state.section || parseHash().section;
     const values = {
       week: controls.week.value,
-      product: controls.product.value,
-      type: controls.type.value,
-      family: controls.family.value,
-      country: controls.country.value,
-      actor: controls.actor.value,
-      from: controls.from.value,
-      to: controls.to.value,
+      type: state.type || "",
+      learnFamily: controls.learnFamily.value,
+      learnStatus: controls.learnStatus.value,
+      learnFrom: controls.learnFrom.value,
+      learnTo: controls.learnTo.value,
       focus: controls.focus.checked ? "1" : "0",
       cvss7: controls.cvss7.checked ? "1" : "",
       exploited: controls.exploited.checked ? "1" : "",
@@ -136,14 +108,12 @@
   function applyHash(params) {
     state.syncing = true;
     state.section = params.section || "";
+    state.type = params.type || "";
     const fields = {
-      product: controls.product,
-      type: controls.type,
-      family: controls.family,
-      country: controls.country,
-      actor: controls.actor,
-      from: controls.from,
-      to: controls.to
+      learnFamily: controls.learnFamily,
+      learnStatus: controls.learnStatus,
+      learnFrom: controls.learnFrom,
+      learnTo: controls.learnTo
     };
     Object.entries(fields).forEach(([key, field]) => {
       field.value = params[key] || "";
@@ -157,74 +127,35 @@
 
   function productMatches(item, selected) {
     if (!selected) return true;
-    const needles = PRODUCT_TAGS[selected] || [selected.toLowerCase()];
     const tags = allText(item.product).map((tag) => tag.toLowerCase());
-    if (item.learn_product) return String(item.learn_product).toLowerCase() === selected.toLowerCase();
-    return needles.some((needle) => tags.some((tag) => tag.includes(needle)));
+    return tags.some((tag) => (FAMILY_MAP[tag] || tag).toLowerCase() === selected.toLowerCase());
   }
 
   function selectedFilterItems() {
-    const product = controls.product.value;
-    const family = controls.family.value.toLowerCase();
-    const type = controls.type.value;
-    const country = controls.country.value;
-    const actor = controls.actor.value;
-    const from = controls.from.value;
-    const to = controls.to.value;
     return state.data.items.filter((item) => {
-      if (type && item.type !== type) return false;
-      if (!productMatches(item, product)) return false;
-      if (family && !allText(item.product).some((tag) => tag.toLowerCase().includes(family))) return false;
-      if (country && !(item.geo || []).some((geo) => geo.country === country)) return false;
-      if (actor && item.actor !== actor) return false;
-      const date = dateKey(item.date);
-      if (from && date && date < from) return false;
-      if (to && date && date > to) return false;
-      return true;
+      return !state.type || item.type === state.type;
     });
   }
 
-  function ensureOption(select, value, label) {
-    if (!value || Array.from(select.options).some((option) => option.value === value)) return;
-    const option = document.createElement("option");
-    option.value = value;
-    option.textContent = label || value;
-    select.append(option);
-  }
-
   function populateOptions(data) {
-    controls.product.innerHTML = '<option value="">All products</option>' +
-      PRODUCT_CHOICES.map((product) => `<option value="${escapeHtml(product)}">${escapeHtml(product)}</option>`).join("");
-    const families = [...new Set(data.items.flatMap((item) => allText(item.product).map((tag) => FAMILY_MAP[tag.toLowerCase()] || tag)))].sort();
-    controls.family.innerHTML = '<option value="">All families</option>' +
-      families.map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("");
-    const countries = [...new Set(data.items.flatMap((item) => (item.geo || []).map((geo) => geo.country)).filter(Boolean))].sort();
-    controls.country.innerHTML = '<option value="">All countries</option>' +
-      countries.map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("");
-    const actors = [...new Set(data.items.map((item) => item.actor).filter(Boolean))].sort();
-    controls.actor.innerHTML = '<option value="">All actors</option>' +
-      actors.map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("");
-    controls.type.innerHTML = '<option value="">All types</option>' +
-      Object.entries(TYPE_NAMES).map(([value, name]) => `<option value="${value}">${name}</option>`).join("");
+    controls.learnFamily.innerHTML = '<option value="">All families</option>' +
+      PRODUCT_FAMILIES.map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("");
     const start = dateKey(data.start);
     const end = dateKey(data.end);
-    controls.from.min = start;
-    controls.from.max = end;
-    controls.to.min = start;
-    controls.to.max = end;
+    controls.learnFrom.min = start;
+    controls.learnFrom.max = end;
+    controls.learnTo.min = start;
+    controls.learnTo.max = end;
   }
 
-  function renderTypeChips(items) {
-    const active = controls.type.value;
-    controls.type.value = "";
-    const availableItems = selectedFilterItems();
-    controls.type.value = active;
+  function renderTypeChips() {
+    const active = state.type || "";
     $("#type-chips").innerHTML = Object.entries(TYPE_NAMES).map(([type, label]) =>
-      `<button class="chip" type="button" data-type="${type}" aria-pressed="${active === type}">${label} <span>${count(availableItems.filter((item) => item.type === type))}</span></button>`
+      `<button class="chip" type="button" data-type="${type}" aria-pressed="${active === type}">${label} <span>${count(state.data.items.filter((item) => item.type === type))}</span></button>`
     ).join("");
     $("#type-chips").querySelectorAll("[data-type]").forEach((button) => {
       button.addEventListener("click", () => {
-        controls.type.value = controls.type.value === button.dataset.type ? "" : button.dataset.type;
+        state.type = state.type === button.dataset.type ? "" : button.dataset.type;
         state.page = 0;
         render();
       });
@@ -255,7 +186,7 @@
       const index = themes.indexOf(theme);
       const available = (theme.item_ids || []).filter((id) => itemMap.has(id));
       const representative = available.map((id) => itemMap.get(id)).sort((a, b) => engagementScore(b) - engagementScore(a))[0];
-      return `<article class="theme-card"><p class="eyebrow">Theme ${index + 1}</p><h3>${escapeHtml(theme.name)}</h3><p>${escapeHtml(theme.summary)}</p>${representative ? `<a href="${escapeHtml(itemUrl(representative))}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(representative.title)}">${imageMarkup(representative, `${theme.name}: ${representative.title}`)}</a>` : ""}<button class="button secondary" type="button" data-theme-index="${index}">Explore ${count(available)} items</button></article>`;
+      return `<article class="theme-card"><p class="eyebrow">Theme ${index + 1}</p><h3>${escapeHtml(theme.name)}</h3><p>${escapeHtml(theme.summary)}</p>${representative ? linkedImageMarkup(representative, `${theme.name}: ${representative.title}`) : ""}<button class="button secondary" type="button" data-theme-index="${index}">Explore ${count(available)} items</button></article>`;
     }).join("") || '<p class="muted">No themes match the current filters.</p>';
     $("#theme-grid").querySelectorAll("[data-theme-index]").forEach((button) => {
       button.addEventListener("click", () => openTheme(Number(button.dataset.themeIndex), items));
@@ -268,15 +199,26 @@
     $("#theme-dialog-title").textContent = theme.name;
     $("#theme-dialog-summary").textContent = theme.summary;
     $("#theme-dialog-items").innerHTML = (theme.item_ids || []).map((id) => map.get(id)).filter(Boolean)
-      .map((item) => `<li><a href="${escapeHtml(itemUrl(item))}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a> <span class="muted">· ${escapeHtml(TYPE_NAMES[item.type] || item.type)} · ${escapeHtml(dateValue(item.date))}</span></li>`).join("") ||
+      .map((item) => `<li><a href="${escapeHtml(itemUrl(item))}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a> <span class="muted">· ${escapeHtml(TYPE_NAMES[item.type] || item.type)} · ${escapeHtml(dateValue(item.date))}</span>${linkedImageMarkup(item, item.title)}</li>`).join("") ||
       "<li>No matching items for the current filters.</li>";
     $("#theme-dialog").showModal();
   }
 
   function imageMarkup(item, alt) {
     const src = assetUrl(item);
-    return src ? `<img class="media-image" src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'media-placeholder',textContent:'Image unavailable'}))">` :
-      '<span class="media-placeholder">No image supplied</span>';
+    return src && item.type !== "threat"
+      ? `<img class="media-image" src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" loading="lazy" onerror="this.remove()">`
+      : "";
+  }
+
+  function linkedImageMarkup(item, alt) {
+    const image = imageMarkup(item, alt);
+    return image ? `<a href="${escapeHtml(itemUrl(item))}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(alt)}">${image}</a>` : "";
+  }
+
+  function expandableMarkup(text, lines) {
+    if (!text) return "";
+    return `<div class="expandable-block"><p class="expandable-text clamped" style="--line-count:${lines}">${escapeHtml(text)}</p><button class="text-toggle" type="button" aria-expanded="false">Show more</button></div>`;
   }
 
   function renderMedia(items, type, target, showEngagement = false) {
@@ -287,10 +229,10 @@
     element.innerHTML = records.map((item) => {
       const source = item.source || "Microsoft";
       const caption = showEngagement ? `${source} · ${dateValue(item.date)} · ${engagementLabel(item)}` : `${source} · ${dateValue(item.date)}`;
-      const summary = showEngagement ? `<p>${escapeHtml(item.summary)}</p>` : `<p>${escapeHtml(item.summary)}</p>`;
+      const description = type === "video" ? expandableMarkup(item.description, 3) : "";
       return `<article class="content-card media-card" data-item-id="${escapeHtml(item.id)}">
-        <a href="${escapeHtml(itemUrl(item))}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(item.title)}">${imageMarkup(item, item.title)}</a>
-        <div class="card-copy"><h3><a href="${escapeHtml(itemUrl(item))}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a></h3>${summary}<p class="meta">${escapeHtml(caption)}</p></div>
+        ${linkedImageMarkup(item, item.title)}
+        <div class="card-copy"><h3><a href="${escapeHtml(itemUrl(item))}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a></h3><p>${escapeHtml(item.summary)}</p>${description}<p class="meta">${escapeHtml(caption)}</p></div>
       </article>`;
     }).join("") || '<p class="muted">No matching items.</p>';
   }
@@ -307,11 +249,9 @@
     $("#threat-table").innerHTML = records.map((item) => `<tr data-item-id="${escapeHtml(item.id)}">
       <td>${escapeHtml(dateValue(item.date))}</td>
       <td><a href="${escapeHtml(itemUrl(item))}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a><p>${escapeHtml(item.summary)}</p></td>
-      <td>${escapeHtml(item.actor || "Not attributed")}</td>
-      <td>${escapeHtml(allText(item.sectors).join(", ") || "Not specified")}</td>
       <td>${(item.cves || []).map((cve) => `<a href="https://msrc.microsoft.com/update-guide/vulnerability/${encodeURIComponent(cve)}" target="_blank" rel="noopener noreferrer">${escapeHtml(cve)}</a>`).join(", ") || "—"}</td>
       <td>${escapeHtml(item.source)}</td>
-    </tr>`).join("") || '<tr><td colspan="6">No matching threat reports.</td></tr>';
+    </tr>`).join("") || '<tr><td colspan="4">No matching threat reports.</td></tr>';
   }
 
   function renderBlogs(items) {
@@ -330,8 +270,17 @@
   }
 
   function learnMatchesProduct(learnItem, selected) {
-    if (!selected) return true;
     return productMatches(learnItem, selected);
+  }
+
+  function learnMatchesFilters(item) {
+    if (controls.learnFamily.value && !learnMatchesProduct(item, controls.learnFamily.value)) return false;
+    if (controls.learnStatus.value && item.status !== controls.learnStatus.value) return false;
+    const date = dateKey(item.date);
+    if ((controls.learnFrom.value || controls.learnTo.value) && !date) return false;
+    if (controls.learnFrom.value && date < controls.learnFrom.value) return false;
+    if (controls.learnTo.value && date > controls.learnTo.value) return false;
+    return true;
   }
 
   function renderProducts(items) {
@@ -343,42 +292,36 @@
       if (!groups.has(name)) groups.set(name, []);
       groups.get(name).push(item);
     });
-    const selected = controls.product.value;
-    const selectedGroup = selected ? [...groups.entries()].find(([name, group]) =>
-      name.toLowerCase() === selected.toLowerCase() || group.some((item) => learnMatchesProduct(item, selected))
-    ) : null;
-    const visibleGroups = selected
-      ? (selectedGroup ? [selectedGroup] : [[selected, []]])
-      : [...new Set([...PRODUCT_CHOICES, ...groups.keys()])].map((name) => [name, groups.get(name) || []]);
-    $("#learn-count").textContent = `${count(learnItems)} updates`;
+    const visibleGroups = [...groups.entries()].map(([name, group]) => [
+      name,
+      group.filter((item) => learnItems.includes(item) && learnMatchesFilters(item))
+    ]).filter(([, visible]) => visible.length);
+    const visibleLearnCount = visibleGroups.reduce((total, [, visible]) => total + visible.length, 0);
+    $("#learn-count").textContent = `${count(visibleLearnCount)} updates`;
     $("#product-list").innerHTML = visibleGroups.map(([name, group]) => {
-      const visible = group.filter((item) => learnItems.includes(item));
+      const visible = group;
       const newestSection = visible.slice().sort((a, b) => new Date(b.date) - new Date(a.date))[0]?.section || "No matching Learn updates";
-      const groupProduct = selected || PRODUCT_CHOICES.find((product) => product.toLowerCase() === name.toLowerCase()) || productNameForGroup(name);
+      const groupProduct = allText(visible[0]?.product).map((tag) => FAMILY_MAP[tag.toLowerCase()] || tag)[0] || "";
       const related = items.filter((item) => (item.type === "cve" || item.type === "x" || item.type === "blog") &&
         productMatches(item, groupProduct));
       const cveTotal = related.filter((item) => item.type === "cve").length;
       const xTotal = related.filter((item) => item.type === "x").length;
       const blogTotal = related.filter((item) => item.type === "blog").length;
       const latestItem = visible.slice().sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+      const imageItem = visible.find((item) => assetUrl(item));
       const row = `<article class="product-row">
         <h3>${escapeHtml(name)}</h3>
-        <p>Latest heading: ${escapeHtml(newestSection)} · ${count(visible.length)} of ${count(group.length)} Learn items match<br>${count(cveTotal)} CVEs · ${count(xTotal)} X posts · ${count(blogTotal)} blogs</p>
-        ${latestItem ? `<a href="${escapeHtml(itemUrl(latestItem))}" target="_blank" rel="noopener noreferrer">Latest Learn update</a>` : "<span class=\"muted\">No Learn updates this week</span>"}
+        <div class="product-summary"><p>Latest heading: ${escapeHtml(newestSection)} · ${count(visible.length)} of ${count(group.length)} Learn items match<br>${count(cveTotal)} CVEs · ${count(xTotal)} X posts · ${count(blogTotal)} blogs</p>
+        ${latestItem ? `<a href="${escapeHtml(itemUrl(latestItem))}" target="_blank" rel="noopener noreferrer">Latest Learn update</a>` : ""}</div>
+        <div class="product-image">${imageItem ? linkedImageMarkup(imageItem, `${name}: ${imageItem.title}`) : ""}</div>
         <div class="learn-items">${visible.map((item) => `<article class="learn-item" data-item-id="${escapeHtml(item.id)}">
           <div><h3><a href="${escapeHtml(itemUrl(item))}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a></h3>
-            <p>${escapeHtml(item.summary)}</p><p class="meta">${escapeHtml(item.section || "Learn")} · ${escapeHtml(dateValue(item.date))} · ${escapeHtml(item.status || "Update")} · ${escapeHtml(item.date_precision || "date")}</p>
-          </div>${imageMarkup(item, `${name}: ${item.title}`)}
+            <p>${escapeHtml(item.summary)}</p>${expandableMarkup(item.details, 4)}<p class="meta">${escapeHtml(item.section || "Learn")} · ${escapeHtml(dateValue(item.date))} · ${escapeHtml(item.status || "Update")} · ${escapeHtml(item.date_precision || "date")}</p>
+          </div>
         </article>`).join("")}</div>
       </article>`;
       return row;
     }).join("") || '<p class="muted">No matching Learn updates.</p>';
-  }
-
-  function productNameForGroup(name) {
-    return PRODUCT_CHOICES.find((product) =>
-      (PRODUCT_TAGS[product] || []).some((needle) => name.toLowerCase().includes(needle))
-    ) || "";
   }
 
   function renderCommunity(items) {
@@ -386,7 +329,7 @@
     $("#reddit-count").textContent = `${count(records)} threads`;
     $("#reddit-table").innerHTML = records.map((item) => `<tr data-item-id="${escapeHtml(item.id)}">
       <td>${escapeHtml(dateValue(item.date))}</td>
-      <td><a href="${escapeHtml(itemUrl(item))}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a></td>
+      <td><a href="${escapeHtml(itemUrl(item))}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a>${linkedImageMarkup(item, item.title)}</td>
       <td>${escapeHtml(item.summary)}</td>
       <td>${escapeHtml(allText(item.product).join(", ") || "—")}</td>
       <td>${escapeHtml(engagementLabel(item))}</td>
@@ -493,7 +436,7 @@
     if (!state.data) return;
     const items = selectedFilterItems();
     state.filtered = items;
-    renderTypeChips(items);
+    renderTypeChips();
     renderTiles(items);
     renderThemes(items);
     renderMedia(items, "video", "#video-grid");
@@ -552,23 +495,7 @@
     }
   }
 
-  function clearFilters() {
-    controls.product.value = "";
-    controls.type.value = "";
-    controls.family.value = "";
-    controls.country.value = "";
-    controls.actor.value = "";
-    controls.from.value = "";
-    controls.to.value = "";
-    controls.focus.checked = false;
-    controls.cvss7.checked = false;
-    controls.exploited.checked = false;
-    controls.disclosed.checked = false;
-    state.page = 0;
-    render();
-  }
-
-  [controls.product, controls.type, controls.family, controls.country, controls.actor, controls.from, controls.to].forEach((control) => {
+  [controls.learnFamily, controls.learnStatus, controls.learnFrom, controls.learnTo].forEach((control) => {
     control.addEventListener("change", () => {
       state.page = 0;
       render();
@@ -591,7 +518,6 @@
       $("#filter-summary").textContent = error.message;
     }
   });
-  $("#clear-filters").addEventListener("click", clearFilters);
   $("#cve-show-all").addEventListener("click", () => {
     controls.focus.checked = false;
     controls.cvss7.checked = false;
@@ -607,6 +533,14 @@
   $("#theme-dialog-close").addEventListener("click", () => $("#theme-dialog").close());
   $("#theme-dialog").addEventListener("click", (event) => {
     if (event.target === $("#theme-dialog")) $("#theme-dialog").close();
+  });
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest(".text-toggle");
+    if (!button) return;
+    const expanded = button.getAttribute("aria-expanded") !== "true";
+    button.setAttribute("aria-expanded", String(expanded));
+    button.textContent = expanded ? "Show less" : "Show more";
+    button.previousElementSibling.classList.toggle("clamped", !expanded);
   });
   document.addEventListener("click", (event) => {
     const link = event.target.closest('a[href^="#"]');
