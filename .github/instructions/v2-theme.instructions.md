@@ -1,0 +1,59 @@
+---
+applyTo: "docs/v2/**"
+---
+
+# V2 of the Microsoft Security Latest Feed (docs/v2/)
+
+V2 is a redesign of the same dashboard. It lives only in docs/v2/ and publishes at
+https://shalabh789.github.io/MicrosoftSecurityLatestFeed/v2/. V1 (docs/index.html, docs/app.js,
+docs/styles.css) is a separate, live site and must not change when you work on V2.
+
+## Overrides to .github/copilot-instructions.md (for docs/v2/ only)
+- The "Look and feel" section of .github/copilot-instructions.md does NOT apply to V2. Use the design
+  system below instead.
+- Changelog entries for V2 go in docs/v2/CHANGELOG.md, never in docs/CHANGELOG.md.
+- Every other rule in .github/copilot-instructions.md still applies: static site, no build step, data
+  fetched at runtime, never edit data/ or research/, accessibility, small self-contained PRs, finish
+  within 30 minutes, no browsers, Playwright or Lighthouse.
+
+## Scope
+- Change files in docs/v2/ only. Do not modify, rename or delete anything outside docs/v2/ unless the
+  issue explicitly names that file.
+- Do not link V2 from V1 or V1 from V2.
+- docs/v2/index.html must keep `<meta name="robots" content="noindex">` until the owner says V2 is launched.
+
+## Design system (reuse it; do not invent a new look)
+- Dark first (#040404 ground, #d1d1d1 text) with a light theme (#fafafa / #171717), switched by
+  `<html data-theme="dark|light">`. All colours are CSS variables in the token block at the top of
+  docs/v2/styles.css. Never hard-code a colour anywhere else; add a token if you need one.
+- Fonts: Geist for text; Geist Mono for data, labels, tags, numbers and eyebrows. Google Fonts is the
+  only external request allowed besides the data fetches app.js already makes.
+- No rounded corners. Frames are dashed lines with small "+" marks at the corners (the `.frame`
+  pattern and the shared selector lists near the top of styles.css). Dividers are dashed or dotted.
+- Accent: variables --a, --a2, --a3, set by theme-extras.js and saved in localStorage under "accent".
+  Lightness comes from --L. Use var(--a) for emphasis. Red (--critical, --exploited) is reserved for
+  exploited and critical items.
+- Data visuals are CSS only: hatched bars (.bar-track / .bar-fill), severity columns, bracketed tags
+  ("[ EXPLOITED ]", the .badge pattern). Meaning must never depend on colour alone.
+- Layout: slim sticky top bar, left sidebar contents with scroll-spy, main column, dotted rails.
+
+## Hard rules (the app depends on these)
+1. app.js and theme-extras.js depend on fixed element IDs and class names. Do not rename or remove any
+   of them. New features get new classes, styled in the same vocabulary.
+2. docs/v2/index.html is a Jekyll template. Keep the two `---` front matter lines at the top and the
+   `{{ site.github.build_revision }}` and `{{ site.time | date_to_xmlschema }}` tags exactly as they are.
+3. Keep hash routing intact (`#week=2026-W46&focus=1` and plain `#section` anchors). Sidebar links stay
+   plain `#section` anchors; app.js handles every `a[href^="#"]` click.
+4. No frameworks, no build step, no new dependencies: plain HTML, one stylesheet, vanilla JavaScript.
+5. Every new section has an id, appears in the sidebar list in index.html, sets `hidden` when it has no
+   data, and works with the scroll-spy (which skips hidden sections).
+6. Accessibility: visible focus outline in var(--a), skip link, existing aria-live regions kept, text
+   contrast of at least 4.5:1 in both themes, prefers-reduced-motion respected, native <details>,
+   <dialog> and popover preferred over custom widgets.
+7. Keep files readable (no minification) with LF line endings.
+8. Never change the data contract or anything under data/ and research/.
+
+## Done means
+The /v2/ page loads the latest week with no console errors; every section renders with real data;
+search, type chips, week selector, Learn filters, pagination and every "Show all" button work; both
+themes and the accent picker work and persist; no horizontal scrolling at 420 px; V1 is unchanged.

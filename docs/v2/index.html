@@ -1,0 +1,194 @@
+---
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="A weekly dashboard of Microsoft security news, threats, vulnerabilities, and community discussion.">
+  <title>Microsoft Security Latest Feed</title>
+  <meta name="color-scheme" content="dark light">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap">
+  <script>(function(){var r=document.documentElement,t="dark",a="prism";try{var s=localStorage.getItem("theme");if(s==="light"||s==="dark")t=s;a=localStorage.getItem("accent")||a}catch(e){}r.dataset.theme=t;r.dataset.accent=a;r.classList.add("js")})()</script>
+  <link rel="stylesheet" href="styles.css?v={{ site.github.build_revision }}">
+  <script src="app.js?v={{ site.github.build_revision }}" defer></script>
+  <script src="theme-extras.js?v={{ site.github.build_revision }}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="bar-inner">
+      <a class="brand" href="#main"><svg width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><rect class="mk-frame" fill="none" height="23" width="23" x="4.5" y="4.5" stroke-dasharray="2 2"/><path class="mk-ink" fill="none" d="M4.5 2v5M2 4.5h5M27.5 2v5M25 4.5h5M4.5 25v5M2 27.5h5M27.5 25v5M25 27.5h5"/><rect class="mk-c" height="6" width="4" x="8" y="18"/><rect class="mk-b" height="11" width="4" x="14" y="13"/><rect class="mk-a" height="16" width="4" x="20" y="8"/></svg><span>security feed</span></a>
+      <div class="header-controls">
+        <label for="week-select">Week</label>
+        <select id="week-select" aria-label="Select report week"></select>
+        <span id="last-updated" class="muted" aria-live="polite"></span>
+        <div class="search-control">
+          <input id="feed-search" type="search" placeholder="search" aria-label="Search by title, summary, CVE ID, or product">
+          <button id="search-clear" class="button secondary" type="button" aria-label="Clear search">Clear</button>
+        </div>
+        <button id="accent-btn" class="icon-btn" type="button" popovertarget="accent-pop" aria-label="Accent colour"><span class="dot"></span></button>
+        <button id="theme-toggle" class="button secondary" type="button" aria-pressed="true">Light mode</button>
+      </div>
+    </div>
+  </header>
+  <div id="accent-pop" popover class="pop frame"><p class="eyebrow">accent</p><div data-swatches></div></div>
+
+  <div class="layout">
+  <aside class="side"><nav class="toc" aria-label="On this page"><p class="eyebrow">on this page</p><ol>
+        <li><a href="#top-of-feed">overview</a></li>
+        <li><a href="#leadership">for security leaders</a></li>
+        <li><a href="#themes">themes</a></li>
+        <li><a href="#cves">cves</a></li>
+        <li><a href="#changes">changing soon</a></li>
+        <li><a href="#roadmap">coming soon</a></li>
+        <li><a href="#videos">videos</a></li>
+        <li><a href="#x-posts">from x</a></li>
+        <li><a href="#threats">threat intelligence</a></li>
+        <li><a href="#blogs">blogs</a></li>
+        <li><a href="#products">by product</a></li>
+        <li><a href="#community">community</a></li>
+      </ol></nav></aside>
+  <main id="main">
+    <section id="top-of-feed" class="hero"><p class="eyebrow">Weekly intelligence brief</p><h1>Microsoft Security Latest Feed</h1><p class="hero-intro">This site shows automatic weekly Microsoft security reports for <a class="author-link" href="https://www.linkedin.com/in/shalabhpr/" target="_blank" rel="noopener noreferrer">Shalabh</a>. AI agents from Grok and GitHub Copilot find the sources, write each report and build the site.</p><p id="generated-stamp" class="generated-stamp"></p></section>
+    <div id="key-dates" class="key-dates" aria-label="Upcoming key dates"></div>
+    <div class="feed-filters frame">
+      <div id="type-chips" class="chips" aria-label="Filter by item type"></div>
+      <p id="filter-summary" class="muted" aria-live="polite"></p>
+    </div>
+    <section id="summary-tiles" class="summary-tiles" aria-label="Week summary"></section>
+
+    <section id="leadership" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Executive brief</p><h2>For security leaders</h2></div></div>
+      <ul id="leadership-list" class="leadership-list panel"></ul>
+    </section>
+
+    <section id="themes" class="content-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">TL;DR</p><h2>Themes of the week</h2></div>
+        <span id="theme-count" class="muted"></span>
+      </div>
+      <div id="theme-grid" class="theme-grid"></div>
+    </section>
+
+    <section id="cves" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Patch Tuesday</p><h2>CVE tracker</h2></div><span id="cve-count" class="muted"></span></div>
+      <div id="cve-tiles" class="cve-tiles"></div>
+      <div class="cve-controls panel">
+        <label class="check-label"><input id="cve-focus" type="checkbox" checked> Focus view: exploited, Critical or CVSS ≥ 9</label>
+        <label class="check-label"><input id="cve-cvss7" type="checkbox"> CVSS ≥ 7</label>
+        <label class="check-label"><input id="cve-exploited" type="checkbox"> Exploited</label>
+        <label class="check-label"><input id="cve-disclosed" type="checkbox"> Publicly disclosed</label>
+        <button id="cve-show-all" class="button secondary" type="button">Show all CVEs</button>
+      </div>
+      <div id="cve-charts" class="chart-grid"></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">CVE</th><th scope="col">Severity</th><th scope="col">CVSS</th><th scope="col">Product</th><th scope="col">Title</th><th scope="col">Status</th></tr></thead>
+          <tbody id="cve-table"></tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <button id="cve-prev" class="button secondary" type="button">Previous</button>
+        <span id="cve-page" class="muted" aria-live="polite"></span>
+        <button id="cve-next" class="button secondary" type="button">Next</button>
+      </div>
+    </section>
+
+    <section id="changes" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Plan ahead</p><h2>Retiring and changing soon</h2></div><span id="change-count" class="muted"></span></div>
+      <div id="change-list" class="change-list"></div>
+    </section>
+
+    <section id="roadmap" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Microsoft roadmap</p><h2>Coming soon</h2></div><span id="roadmap-count" class="muted"></span></div>
+      <div id="roadmap-list"></div>
+    </section>
+
+    <section id="videos" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Watch</p><h2>Videos</h2></div><span id="video-count" class="muted"></span></div>
+      <div id="video-grid" class="media-grid"></div>
+      <button id="video-toggle" class="button secondary media-toggle" type="button" hidden></button>
+    </section>
+
+    <section id="x-posts" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Social signals</p><h2>From X</h2></div><span id="x-count" class="muted"></span></div>
+      <div id="x-grid" class="media-grid"></div>
+      <button id="x-toggle" class="button secondary media-toggle" type="button" hidden></button>
+    </section>
+
+    <section id="threats" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Active campaigns and reporting</p><h2>Threat intelligence</h2></div><span id="threat-count" class="muted"></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Date</th><th scope="col">Report</th><th scope="col">Linked CVEs</th><th scope="col">Source</th></tr></thead>
+          <tbody id="threat-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="blogs" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Latest news</p><h2>Blogs</h2></div><span id="blog-count" class="muted"></span></div>
+      <div id="blog-grid" class="card-grid"></div>
+    </section>
+
+    <section id="products" class="content-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Microsoft Learn</p><h2>By product</h2></div>
+        <span id="learn-count" class="muted"></span>
+      </div>
+      <div id="product-status-strip" class="product-status-strip" aria-label="Learn updates by product status"></div>
+      <p class="section-intro">Learn updates are grouped by product. Filters here apply only to these Learn panels.</p>
+      <div class="learn-filters" aria-label="Filter Learn updates">
+        <label>Product family
+          <select id="learn-family"><option value="">All families</option></select>
+        </label>
+        <label>Status
+          <select id="learn-status">
+            <option value="">All statuses</option>
+            <option>GA</option>
+            <option>Preview</option>
+            <option>Deprecation</option>
+            <option>Retirement</option>
+          </select>
+        </label>
+        <label>From date
+          <input id="learn-date-from" type="date">
+        </label>
+        <label>To date
+          <input id="learn-date-to" type="date">
+        </label>
+      </div>
+      <div id="product-list" class="product-list"></div>
+    </section>
+
+    <section id="community" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Practitioner discussion</p><h2>Community</h2></div><span id="reddit-count" class="muted"></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Date</th><th scope="col">Thread</th><th scope="col">Summary</th><th scope="col">Product</th><th scope="col">Engagement</th></tr></thead>
+          <tbody id="reddit-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>Microsoft Security Latest Feed · <span id="footer-week"></span> · <a id="release-link">Release notes for this week</a></p>
+    <p id="build-stamp" data-commit="{{ site.github.build_revision }}" data-built-at="{{ site.time | date_to_xmlschema }}"></p>
+  </footer>
+
+  <dialog id="theme-dialog" aria-labelledby="theme-dialog-title">
+    <div class="dialog-heading">
+      <div><p class="eyebrow">Theme items</p><h2 id="theme-dialog-title"></h2></div>
+      <button id="theme-dialog-close" class="button secondary" type="button">Close</button>
+    </div>
+    <p id="theme-dialog-summary"></p>
+    <ul id="theme-dialog-items" class="theme-items"></ul>
+  </dialog>
+</body>
+</html>
