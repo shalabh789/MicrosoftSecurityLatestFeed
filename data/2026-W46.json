@@ -2,7 +2,7 @@
  "week": "2026-W46",
  "start": "2026-11-09T00:00:00+05:30",
  "end": "2026-11-15T23:59:59+05:30",
- "generated": "2026-11-18T03:12:54+00:00",
+ "generated": "2026-11-18T03:24:02+00:00",
  "leadership_summary": [
   {
    "text": "Patch exposure: one November flaw is already exploited, an Outlook spoofing bug that can leak NTLM credentials, and 64 are rated Critical. Ask for Outlook patch coverage and an NTLM reduction plan.",
@@ -40,12 +40,13 @@
    ]
   },
   {
-   "text": "Planned changes: support for Purview Data Governance ends on 12 Nov 2027, with customers steered to Fabric, and many Purview retention and DLP changes roll out by February. Assign owners to review both.",
+   "text": "Planned changes: Purview Data Governance support ends 12 Nov 2027, moving customers to Fabric. Purview retention and DLP changes land by February; Intune is building Defender antivirus and AI-agent compliance controls. Assign owners.",
    "item_ids": [
     "b07",
-    "rm01",
-    "rm02",
-    "rm03"
+    "rm07",
+    "rm08",
+    "rm66",
+    "rm69"
    ]
   }
  ],
@@ -21898,7 +21899,7 @@
    "date_precision": "month",
    "details": "Type: Plan for change\n\nService category: Microsoft Authenticator App\n\nProduct capability: Identity Security & Protection\n\nNo action is required.\n\nWhat is changing? Starting August 2026, users will see an improved restore experience for device-bound Authenticator app passkeys for iOS users. No admin or user action is required.\n\nWith this update:\n\nUsers who already have iCloud and iCloud Keychain backup enabled for the Authenticator app—and have device-bound Authenticator passkeys on their old device—will automatically benefit from this improved experience.\n\nUsers restoring their Authenticator app on a new iOS device will experience an updated restore flow.\n\nThis change streamlines the restore experience by directing users to the right recovery path based on access to their old device and helping them understand cross-device passkey authentication, resulting in a smoother transition to a new phone.\n\nThis update applies to iOS devices only. Android support will follow.\n\nLearn more about the changes to backup and restore in Authenticator app.",
    "change_date": "2026-08",
-   "change_type": "default change"
+   "change_type": "enforcement"
   },
   {
    "id": "l08",
@@ -22604,7 +22605,19 @@
    "roadmap_id": "569363",
    "mc_id": null,
    "status": "Launched",
-   "rollout": "September CY2026"
+   "rollout": "September CY2026",
+   "added_date": "2026-08-17",
+   "last_modified": "2026-11-12",
+   "also_ids": [
+    {
+     "id": "573447",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
    "id": "rm02",
@@ -22626,7 +22639,10 @@
    "roadmap_id": "422501",
    "mc_id": null,
    "status": "Launched",
-   "rollout": "October CY2026"
+   "rollout": "October CY2026",
+   "added_date": "2024-11-19",
+   "last_modified": "2026-11-11",
+   "also_ids": []
   },
   {
    "id": "rm03",
@@ -22648,7 +22664,19 @@
    "roadmap_id": "560820",
    "mc_id": null,
    "status": "Launched",
-   "rollout": "October CY2026"
+   "rollout": "October CY2026",
+   "added_date": "2026-04-23",
+   "last_modified": "2026-11-11",
+   "also_ids": [
+    {
+     "id": "573702",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
    "id": "rm04",
@@ -22670,7 +22698,10 @@
    "roadmap_id": "561032",
    "mc_id": null,
    "status": "Launched",
-   "rollout": "October CY2026"
+   "rollout": "October CY2026",
+   "added_date": "2026-04-24",
+   "last_modified": "2026-11-11",
+   "also_ids": []
   },
   {
    "id": "rm05",
@@ -22692,76 +22723,22 @@
    "roadmap_id": "568935",
    "mc_id": null,
    "status": "Launched",
-   "rollout": "October CY2026"
+   "rollout": "October CY2026",
+   "added_date": "2026-08-07",
+   "last_modified": "2026-11-11",
+   "also_ids": [
+    {
+     "id": "572677",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
    "id": "rm06",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview compliance portal: Information Protection - Sensitivity label grouping modernization",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=386901",
-   "date": "2026-09-28",
-   "summary": "The sensitivity label scheme moves to labels plus label groups, replacing parent and sublabels for easier organisation. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "386901",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "November CY2026"
-  },
-  {
-   "id": "rm07",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview compliance portal: Data Loss Prevention - Microsoft 365 Groups scoping in Teams DLP …",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=401127",
-   "date": "2025-10-27",
-   "summary": "Teams DLP policies scoped to Microsoft 365 Groups will also cover members' 1:1, group and other-group channel chats without extra scoping, unless Teams OCR is on. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "401127",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "November CY2026"
-  },
-  {
-   "id": "rm08",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview compliance portal: Data Lifecycle Management - Introduction of secure workflow to bypass legal …",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=473493",
-   "date": "2026-06-18",
-   "summary": "Priority cleanup lets admins, through a separate secured approval, delete Exchange items despite retention or legal hold. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "473493",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "November CY2026"
-  },
-  {
-   "id": "rm09",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -22780,10 +22757,13 @@
    "roadmap_id": "523201",
    "mc_id": null,
    "status": "In development",
-   "rollout": "November CY2026"
+   "rollout": "November CY2026",
+   "added_date": "2025-11-05",
+   "last_modified": "2026-07-14",
+   "also_ids": []
   },
   {
-   "id": "rm10",
+   "id": "rm07",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -22802,10 +22782,22 @@
    "roadmap_id": "558343",
    "mc_id": null,
    "status": "In development",
-   "rollout": "November CY2026"
+   "rollout": "November CY2026",
+   "added_date": "2026-03-09",
+   "last_modified": "2026-10-26",
+   "also_ids": [
+    {
+     "id": "561034",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
-   "id": "rm11",
+   "id": "rm08",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -22824,32 +22816,22 @@
    "roadmap_id": "558682",
    "mc_id": null,
    "status": "In development",
-   "rollout": "November CY2026"
+   "rollout": "November CY2026",
+   "added_date": "2026-03-24",
+   "last_modified": "2026-08-12",
+   "also_ids": [
+    {
+     "id": "562994",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
-   "id": "rm12",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Data Lifecycle Management – Hard delete capability for OneDrive and SharePoint through secure …",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=561034",
-   "date": "2026-08-19",
-   "summary": "A secured workflow lets compliance admins hard-delete OneDrive and SharePoint content otherwise held by retention. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "561034",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "November CY2026"
-  },
-  {
-   "id": "rm13",
+   "id": "rm09",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -22868,10 +22850,22 @@
    "roadmap_id": "561208",
    "mc_id": null,
    "status": "In development",
-   "rollout": "November CY2026"
+   "rollout": "November CY2026",
+   "added_date": "2026-05-05",
+   "last_modified": "2026-10-12",
+   "also_ids": [
+    {
+     "id": "562345",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
-   "id": "rm14",
+   "id": "rm10",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -22890,10 +22884,13 @@
    "roadmap_id": "569446",
    "mc_id": null,
    "status": "In development",
-   "rollout": "November CY2026"
+   "rollout": "November CY2026",
+   "added_date": "2026-09-01",
+   "last_modified": "2026-09-01",
+   "also_ids": []
   },
   {
-   "id": "rm15",
+   "id": "rm11",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -22912,76 +22909,13 @@
    "roadmap_id": "570445",
    "mc_id": null,
    "status": "Launched",
-   "rollout": "November CY2026"
+   "rollout": "November CY2026",
+   "added_date": "2026-09-03",
+   "last_modified": "2026-11-11",
+   "also_ids": []
   },
   {
-   "id": "rm16",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Information Protection-Auto-labeling scale increase for SharePoint and OneDrive",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=571309",
-   "date": "2026-11-11",
-   "summary": "Daily auto-labeling capacity for SharePoint and OneDrive rises from 100,000 to 500,000 files per tenant. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "571309",
-   "mc_id": null,
-   "status": "Launched",
-   "rollout": "November CY2026"
-  },
-  {
-   "id": "rm17",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Information Protection-Auto-labeling per-policy coverage report ",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=572677",
-   "date": "2026-09-23",
-   "summary": "Each enforced auto-labeling policy gets a report comparing labeled and unlabeled files against its latest simulation. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "572677",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "November CY2026"
-  },
-  {
-   "id": "rm18",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Data Lifecycle Management-Increase in expansion limit for auto-expanding archive beyond 1.5 TB",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573702",
-   "date": "2026-10-06",
-   "summary": "Auto-expanding archive mailboxes can grow past the old 1.5 TB ceiling instead of becoming unusable. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "573702",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "November CY2026"
-  },
-  {
-   "id": "rm19",
+   "id": "rm12",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23000,32 +22934,22 @@
    "roadmap_id": "574363",
    "mc_id": null,
    "status": "In development",
-   "rollout": "November CY2026"
+   "rollout": "November CY2026",
+   "added_date": "2026-10-13",
+   "last_modified": "2026-10-13",
+   "also_ids": [
+    {
+     "id": "578872",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
-   "id": "rm20",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Information Protection - Apply default SharePoint library labels to data at rest",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=575283",
-   "date": "2026-10-12",
-   "summary": "Existing SharePoint files can be auto-labeled to match the default sensitivity label set on their document library. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "575283",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "November CY2026"
-  },
-  {
-   "id": "rm21",
+   "id": "rm13",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23044,32 +22968,13 @@
    "roadmap_id": "575287",
    "mc_id": null,
    "status": "In development",
-   "rollout": "November CY2026"
+   "rollout": "November CY2026",
+   "added_date": "2026-10-13",
+   "last_modified": "2026-10-13",
+   "also_ids": []
   },
   {
-   "id": "rm22",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview compliance portal: Communication Compliance - Enhanced Policy Conditions",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=336046",
-   "date": "2026-10-28",
-   "summary": "Communication Compliance policy conditions add detection of messages to and from external addresses, among other updates. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "336046",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "December CY2026"
-  },
-  {
-   "id": "rm23",
+   "id": "rm14",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23088,32 +22993,22 @@
    "roadmap_id": "392456",
    "mc_id": null,
    "status": "In development",
-   "rollout": "December CY2026"
+   "rollout": "December CY2026",
+   "added_date": "2024-04-12",
+   "last_modified": "2026-04-03",
+   "also_ids": [
+    {
+     "id": "392457",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
-   "id": "rm24",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview compliance portal: Data Lifecycle Management - Bulk replacement or removal of a retention …",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=392457",
-   "date": "2026-03-04",
-   "summary": "Admins can bulk replace or remove a retention label across the tenant or a KQL-targeted scope. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "392457",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "December CY2026"
-  },
-  {
-   "id": "rm25",
+   "id": "rm15",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23132,10 +23027,22 @@
    "roadmap_id": "484086",
    "mc_id": null,
    "status": "In development",
-   "rollout": "December CY2026"
+   "rollout": "December CY2026",
+   "added_date": "2025-03-07",
+   "last_modified": "2026-08-14",
+   "also_ids": [
+    {
+     "id": "565372",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
-   "id": "rm26",
+   "id": "rm16",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23154,10 +23061,22 @@
    "roadmap_id": "557684",
    "mc_id": null,
    "status": "In development",
-   "rollout": "December CY2026"
+   "rollout": "December CY2026",
+   "added_date": "2026-02-25",
+   "last_modified": "2026-08-17",
+   "also_ids": [
+    {
+     "id": "565373",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
-   "id": "rm27",
+   "id": "rm17",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23176,32 +23095,13 @@
    "roadmap_id": "562342",
    "mc_id": null,
    "status": "In development",
-   "rollout": "December CY2026"
+   "rollout": "December CY2026",
+   "added_date": "2026-05-15",
+   "last_modified": "2026-08-11",
+   "also_ids": []
   },
   {
-   "id": "rm28",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Archive SharePoint files under retention policies ",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=562345",
-   "date": "2026-10-19",
-   "summary": "SharePoint file archiving can be used as an action inside existing retention policies. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "562345",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "December CY2026"
-  },
-  {
-   "id": "rm29",
+   "id": "rm18",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23220,10 +23120,13 @@
    "roadmap_id": "562991",
    "mc_id": null,
    "status": "In development",
-   "rollout": "December CY2026"
+   "rollout": "December CY2026",
+   "added_date": "2026-05-26",
+   "last_modified": "2026-09-14",
+   "also_ids": []
   },
   {
-   "id": "rm30",
+   "id": "rm19",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23242,32 +23145,13 @@
    "roadmap_id": "562993",
    "mc_id": null,
    "status": "In development",
-   "rollout": "December CY2026"
+   "rollout": "December CY2026",
+   "added_date": "2026-05-27",
+   "last_modified": "2026-09-18",
+   "also_ids": []
   },
   {
-   "id": "rm31",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Data Loss Prevention - Reduce policy sync status SLA on the Purview UI …",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=562994",
-   "date": "2026-08-25",
-   "summary": "Endpoint DLP policy sync status in the portal updates within 30 minutes rather than two hours. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "562994",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "December CY2026"
-  },
-  {
-   "id": "rm32",
+   "id": "rm20",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23286,10 +23170,13 @@
    "roadmap_id": "564615",
    "mc_id": null,
    "status": "In development",
-   "rollout": "December CY2026"
+   "rollout": "December CY2026",
+   "added_date": "2026-06-10",
+   "last_modified": "2026-06-10",
+   "also_ids": []
   },
   {
-   "id": "rm33",
+   "id": "rm21",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23308,32 +23195,13 @@
    "roadmap_id": "565222",
    "mc_id": null,
    "status": "In development",
-   "rollout": "December CY2026"
+   "rollout": "December CY2026",
+   "added_date": "2026-06-05",
+   "last_modified": "2026-11-04",
+   "also_ids": []
   },
   {
-   "id": "rm34",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: eDiscovery - Advanced Review Set Explorer",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=565372",
-   "date": "2026-08-14",
-   "summary": "A review-set explorer gives eDiscovery reviewers live analytics such as top item types and trends. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "565372",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "December CY2026"
-  },
-  {
-   "id": "rm35",
+   "id": "rm22",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23352,10 +23220,22 @@
    "roadmap_id": "566527",
    "mc_id": null,
    "status": "In development",
-   "rollout": "December CY2026"
+   "rollout": "December CY2026",
+   "added_date": "2026-06-25",
+   "last_modified": "2026-09-21",
+   "also_ids": [
+    {
+     "id": "569721",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
-   "id": "rm36",
+   "id": "rm23",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23374,10 +23254,13 @@
    "roadmap_id": "567472",
    "mc_id": null,
    "status": "In development",
-   "rollout": "December CY2026"
+   "rollout": "December CY2026",
+   "added_date": "2026-07-09",
+   "last_modified": "2026-07-09",
+   "also_ids": []
   },
   {
-   "id": "rm37",
+   "id": "rm24",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23396,10 +23279,13 @@
    "roadmap_id": "567885",
    "mc_id": null,
    "status": "In development",
-   "rollout": "December CY2026"
+   "rollout": "December CY2026",
+   "added_date": "2026-09-01",
+   "last_modified": "2026-09-01",
+   "also_ids": []
   },
   {
-   "id": "rm38",
+   "id": "rm25",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23418,54 +23304,13 @@
    "roadmap_id": "568075",
    "mc_id": null,
    "status": "In development",
-   "rollout": "December CY2026"
+   "rollout": "December CY2026",
+   "added_date": "2026-07-21",
+   "last_modified": "2026-11-03",
+   "also_ids": []
   },
   {
-   "id": "rm39",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Data Lifecycle Management – Ensure regulatory compliance by deleting inactive OneDrives and mailboxes …",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=569721",
-   "date": "2026-10-01",
-   "summary": "Admins can delete content and containers of departed users' inactive OneDrive and SharePoint sites at scale to stay compliant. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "569721",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "December CY2026"
-  },
-  {
-   "id": "rm40",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Data Lifecycle Management-Graph API Support for Archive Mailboxes",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573701",
-   "date": "2026-10-22",
-   "summary": "Microsoft Graph will expose main and auxiliary archive mailboxes as one archive view. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "573701",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "December CY2026"
-  },
-  {
-   "id": "rm41",
+   "id": "rm26",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23484,32 +23329,13 @@
    "roadmap_id": "575285",
    "mc_id": null,
    "status": "In development",
-   "rollout": "December CY2026"
+   "rollout": "December CY2026",
+   "added_date": "2026-10-12",
+   "last_modified": "2026-10-12",
+   "also_ids": []
   },
   {
-   "id": "rm42",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Information Protection-Auto-labeling for legacy Office files",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=578872",
-   "date": "2026-11-04",
-   "summary": "Server-side auto-labeling will classify and label older .doc, .xls and .ppt files stored in SharePoint and OneDrive. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "578872",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "December CY2026"
-  },
-  {
-   "id": "rm43",
+   "id": "rm27",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23528,10 +23354,22 @@
    "roadmap_id": "181825",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2023-10-16",
+   "last_modified": "2026-10-22",
+   "also_ids": [
+    {
+     "id": "529852",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
-   "id": "rm44",
+   "id": "rm28",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23550,10 +23388,22 @@
    "roadmap_id": "392838",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2024-05-22",
+   "last_modified": "2026-11-17",
+   "also_ids": [
+    {
+     "id": "473493",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
-   "id": "rm45",
+   "id": "rm29",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23572,32 +23422,22 @@
    "roadmap_id": "392839",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2024-05-06",
+   "last_modified": "2026-11-17",
+   "also_ids": [
+    {
+     "id": "566324",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
-   "id": "rm46",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview compliance portal: Endpoint Data Loss Prevention - Optical Character Recognition (OCR) on Mac …",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=410247",
-   "date": "2026-04-06",
-   "summary": "Endpoint DLP and auto-labeling on Mac add OCR so sensitive text in images can be detected. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "410247",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "January CY2027"
-  },
-  {
-   "id": "rm47",
+   "id": "rm30",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23616,32 +23456,13 @@
    "roadmap_id": "494839",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2025-05-22",
+   "last_modified": "2026-10-29",
+   "also_ids": []
   },
   {
-   "id": "rm48",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Insider Risk Management-Priority content support for Risky AI usage",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=528978",
-   "date": "2026-10-12",
-   "summary": "The risky AI usage policy can alert only when priority content such as chosen labels or classifiers is involved. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "528978",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "January CY2027"
-  },
-  {
-   "id": "rm49",
+   "id": "rm31",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23660,10 +23481,13 @@
    "roadmap_id": "536576",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2025-12-04",
+   "last_modified": "2026-10-19",
+   "also_ids": []
   },
   {
-   "id": "rm50",
+   "id": "rm32",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23682,54 +23506,13 @@
    "roadmap_id": "549288",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2026-01-21",
+   "last_modified": "2026-08-27",
+   "also_ids": []
   },
   {
-   "id": "rm51",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Data Lifecycle Management - Power Automate integration with records management ",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=558859",
-   "date": "2026-07-14",
-   "summary": "Records management can trigger Power Automate flows when items reach the end of retention, e.g. for approvals. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "558859",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "January CY2027"
-  },
-  {
-   "id": "rm52",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: DSPM – New Microsoft Purview Data Security Posture Management Experience",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=561036",
-   "date": "2026-10-08",
-   "summary": "Data Security Posture Management gets a redesigned experience unifying data risk visibility and controls, including for AI. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "561036",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "January CY2027"
-  },
-  {
-   "id": "rm53",
+   "id": "rm33",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23748,10 +23531,13 @@
    "roadmap_id": "561327",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2026-05-07",
+   "last_modified": "2026-10-13",
+   "also_ids": []
   },
   {
-   "id": "rm54",
+   "id": "rm34",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23770,10 +23556,13 @@
    "roadmap_id": "561919",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2026-05-13",
+   "last_modified": "2026-08-11",
+   "also_ids": []
   },
   {
-   "id": "rm55",
+   "id": "rm35",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23792,10 +23581,13 @@
    "roadmap_id": "564616",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2026-06-02",
+   "last_modified": "2026-07-15",
+   "also_ids": []
   },
   {
-   "id": "rm56",
+   "id": "rm36",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23814,32 +23606,13 @@
    "roadmap_id": "564617",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2026-06-03",
+   "last_modified": "2026-10-13",
+   "also_ids": []
   },
   {
-   "id": "rm57",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: eDiscovery - CMK (Customer managed key) for eDiscovery direct export ",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=565373",
-   "date": "2026-08-17",
-   "summary": "eDiscovery direct export can be encrypted with customer-managed keys. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "565373",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "January CY2027"
-  },
-  {
-   "id": "rm58",
+   "id": "rm37",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23858,32 +23631,13 @@
    "roadmap_id": "566617",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2026-06-25",
+   "last_modified": "2026-07-06",
+   "also_ids": []
   },
   {
-   "id": "rm59",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Data Loss Prevention - User Based Aggregation of DLP Alerts",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=567010",
-   "date": "2026-09-16",
-   "summary": "DLP alerts for the same user are merged into one alert even when several rules match, to cut noise. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "567010",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "January CY2027"
-  },
-  {
-   "id": "rm60",
+   "id": "rm38",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23902,10 +23656,13 @@
    "roadmap_id": "568217",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2026-07-28",
+   "last_modified": "2026-11-17",
+   "also_ids": []
   },
   {
-   "id": "rm61",
+   "id": "rm39",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23924,10 +23681,13 @@
    "roadmap_id": "568372",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2026-07-28",
+   "last_modified": "2026-10-21",
+   "also_ids": []
   },
   {
-   "id": "rm62",
+   "id": "rm40",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23946,32 +23706,13 @@
    "roadmap_id": "571306",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2026-09-18",
+   "last_modified": "2026-10-28",
+   "also_ids": []
   },
   {
-   "id": "rm63",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Adaptive Scope evaluation control with recipient and site owner lifecycle status",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=572676",
-   "date": "2026-10-14",
-   "summary": "Adaptive scopes get explicit control over whether recipient and site-owner lifecycle state is considered when deciding membership. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "572676",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "January CY2027"
-  },
-  {
-   "id": "rm64",
+   "id": "rm41",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23990,10 +23731,13 @@
    "roadmap_id": "575284",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2026-11-05",
+   "last_modified": "2026-11-05",
+   "also_ids": []
   },
   {
-   "id": "rm65",
+   "id": "rm42",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24012,10 +23756,13 @@
    "roadmap_id": "576710",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2026-10-22",
+   "last_modified": "2026-10-22",
+   "also_ids": []
   },
   {
-   "id": "rm66",
+   "id": "rm43",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24034,10 +23781,13 @@
    "roadmap_id": "577187",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2026-10-20",
+   "last_modified": "2026-11-11",
+   "also_ids": []
   },
   {
-   "id": "rm67",
+   "id": "rm44",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24056,10 +23806,13 @@
    "roadmap_id": "68688",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2020-09-14",
+   "last_modified": "2026-06-25",
+   "also_ids": []
   },
   {
-   "id": "rm68",
+   "id": "rm45",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24078,10 +23831,22 @@
    "roadmap_id": "93268",
    "mc_id": null,
    "status": "In development",
-   "rollout": "January CY2027"
+   "rollout": "January CY2027",
+   "added_date": "2022-06-02",
+   "last_modified": "2026-08-17",
+   "also_ids": [
+    {
+     "id": "93269",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
-   "id": "rm69",
+   "id": "rm46",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24100,10 +23865,13 @@
    "roadmap_id": "117569",
    "mc_id": null,
    "status": "In development",
-   "rollout": "February CY2027"
+   "rollout": "February CY2027",
+   "added_date": "2023-03-15",
+   "last_modified": "2026-04-09",
+   "also_ids": []
   },
   {
-   "id": "rm70",
+   "id": "rm47",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24122,32 +23890,22 @@
    "roadmap_id": "472030",
    "mc_id": null,
    "status": "In development",
-   "rollout": "February CY2027"
+   "rollout": "February CY2027",
+   "added_date": "2024-12-11",
+   "last_modified": "2026-10-13",
+   "also_ids": [
+    {
+     "id": "565866",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
   },
   {
-   "id": "rm71",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Insider Risk Management- IRM alerts in XDR",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=560075",
-   "date": "2026-10-16",
-   "summary": "Insider risk alerts and supporting data show up in the Defender XDR alert and incident queues. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "560075",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "February CY2027"
-  },
-  {
-   "id": "rm72",
+   "id": "rm48",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24166,10 +23924,13 @@
    "roadmap_id": "560600",
    "mc_id": null,
    "status": "In development",
-   "rollout": "February CY2027"
+   "rollout": "February CY2027",
+   "added_date": "2026-04-28",
+   "last_modified": "2026-09-29",
+   "also_ids": []
   },
   {
-   "id": "rm73",
+   "id": "rm49",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24188,10 +23949,13 @@
    "roadmap_id": "562343",
    "mc_id": null,
    "status": "In development",
-   "rollout": "February CY2027"
+   "rollout": "February CY2027",
+   "added_date": "2026-05-18",
+   "last_modified": "2026-09-21",
+   "also_ids": []
   },
   {
-   "id": "rm74",
+   "id": "rm50",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24210,32 +23974,13 @@
    "roadmap_id": "562992",
    "mc_id": null,
    "status": "In development",
-   "rollout": "February CY2027"
+   "rollout": "February CY2027",
+   "added_date": "2026-05-26",
+   "last_modified": "2026-10-28",
+   "also_ids": []
   },
   {
-   "id": "rm75",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Data Lifecycle Management - Adaptive Protection integration with Data Lifecycle Management",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=566324",
-   "date": "2026-10-22",
-   "summary": "Adaptive Protection will apply retention labels that keep deleted mail and files of users according to their insider risk level. (US Government clouds)",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "566324",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "February CY2027"
-  },
-  {
-   "id": "rm76",
+   "id": "rm51",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24254,10 +23999,13 @@
    "roadmap_id": "567311",
    "mc_id": null,
    "status": "In development",
-   "rollout": "February CY2027"
+   "rollout": "February CY2027",
+   "added_date": "2026-07-08",
+   "last_modified": "2026-10-06",
+   "also_ids": []
   },
   {
-   "id": "rm77",
+   "id": "rm52",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24276,10 +24024,13 @@
    "roadmap_id": "568371",
    "mc_id": null,
    "status": "In development",
-   "rollout": "February CY2027"
+   "rollout": "February CY2027",
+   "added_date": "2026-07-28",
+   "last_modified": "2026-10-12",
+   "also_ids": []
   },
   {
-   "id": "rm78",
+   "id": "rm53",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24298,29 +24049,475 @@
    "roadmap_id": "571396",
    "mc_id": null,
    "status": "In development",
-   "rollout": "February CY2027"
+   "rollout": "February CY2027",
+   "added_date": "2026-09-15",
+   "last_modified": "2026-11-06",
+   "also_ids": []
   },
   {
-   "id": "rm79",
+   "id": "rm54",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
     "Purview"
    ],
-   "title": "Microsoft Purview compliance portal:  eDiscovery (Premium) – Hold reports (U.S. Government clouds)",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=93269",
-   "date": "2026-08-17",
-   "summary": "eDiscovery Premium adds built-in reports listing all legal holds across cases, with filtering and export. (US Government clouds)",
+   "title": "Microsoft Purview: DSPM-Copilot Readiness and Data Explorer",
+   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=571157",
+   "date": "2026-11-11",
+   "summary": "Purview DSPM adds a Copilot readiness view of exposed, overshared and unprotected data, plus a site-level explorer for investigating where sensitive content sits.",
    "asset": null,
    "severity": null,
    "cvss": null,
    "exploited": null,
    "disclosed": null,
    "engagement": null,
-   "roadmap_id": "93269",
+   "roadmap_id": "571157",
    "mc_id": null,
    "status": "In development",
-   "rollout": "February CY2027"
+   "rollout": "March CY2027",
+   "added_date": "2026-09-15",
+   "last_modified": "2026-11-11",
+   "also_ids": []
+  },
+  {
+   "id": "rm55",
+   "type": "roadmap",
+   "source": "Microsoft 365 Roadmap",
+   "product": [
+    "Purview"
+   ],
+   "title": "Microsoft Purview: Endpoint Data Loss Prevention - Policy Sync & Device Health AI-Powered Investigation",
+   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=562016",
+   "date": "2026-11-11",
+   "summary": "An AI skill in Endpoint DLP will spot devices whose policy sync or configuration is unhealthy and raise an alert for the admin.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": "562016",
+   "mc_id": null,
+   "status": "In development",
+   "rollout": "July CY2027",
+   "added_date": "2026-05-12",
+   "last_modified": "2026-11-11",
+   "also_ids": [
+    {
+     "id": "565374",
+     "clouds": [
+      "GCC",
+      "GCC High",
+      "DoD"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rm56",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune"
+   ],
+   "title": "Scope tags support for Endpoint Privilege Management reports",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#scope-tags-support-for-endpoint-privilege-management-reports",
+   "date": null,
+   "summary": "EPM reports will honour scope tags, so each viewer sees only the users and devices they are allowed to manage.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm57",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune"
+   ],
+   "title": "Declarative VPP app download in Company Portal",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#declarative-vpp-app-download-in-company-portal",
+   "date": null,
+   "summary": "Company Portal on iPhone and iPad will install volume-purchased apps the declarative way: faster installs, overnight updates and live progress.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm58",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune"
+   ],
+   "title": "View eSIM profiles and deployment status for Windows devices",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#view-esim-profiles-and-deployment-status-for-windows-devices-",
+   "date": null,
+   "summary": "The Properties Catalog will show Windows eSIM profiles and whether they deployed, making follow-up on failed devices easier.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm59",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune"
+   ],
+   "title": "Support for the KEYENCE OEMConfig app on Android Enterprise",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#support-for-the-keyence-oemconfig-app-on-android-enterprise-",
+   "date": null,
+   "summary": "Intune's OEMConfig workflow will accept KEYENCE's app, letting admins set that vendor's device options on Android Enterprise.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm60",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune"
+   ],
+   "title": "Disable MAC address randomization on macOS Wi-Fi profiles",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#disable-mac-address-randomization-on-macos-wi-fi-profiles",
+   "date": null,
+   "summary": "macOS Wi-Fi profiles gain a switch to turn off randomized hardware addresses where networks depend on a fixed one.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm61",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune"
+   ],
+   "title": "Just-in-time registration automatically enabled for eligible iOS/iPadOS tenants",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#just-in-time-registration-automatically-enabled-for-eligible-iosipados-tenants-",
+   "date": null,
+   "summary": "Intune will switch on JIT registration for eligible iPhone/iPad tenants by updating their existing SSO extension policy; no admin step needed.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": "2611 release",
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm62",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune"
+   ],
+   "title": "Updated minimum supported version for macOS",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#updated-minimum-supported-version-for-macos",
+   "date": null,
+   "summary": "Once macOS 27 ships, new enrollments need macOS 15 or later; older Macs already enrolled stay managed.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm63",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune"
+   ],
+   "title": "Device query for multiple devices for app inventory on Windows",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#device-query-for-multiple-devices-for-app-inventory-on-windows",
+   "date": null,
+   "summary": "Advanced Analytics will let admins run KQL over installed-app data across many Windows devices at once to find outdated or unwanted software.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm64",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune",
+    "Entra"
+   ],
+   "title": "Agentic identity for the Policy Configuration Agent (public preview)",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#agentic-identity-for-the-policy-configuration-agent-public-preview",
+   "date": null,
+   "summary": "The Policy Configuration Agent will move from a human account to its own Entra agent identity, set up from its Settings tab.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm65",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune",
+    "Defender"
+   ],
+   "title": "New endpoint security template for Microsoft Defender for Endpoint safe deployment settings",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#new-endpoint-security-template-for-microsoft-defender-for-endpoint-safe-deployment-settings",
+   "date": null,
+   "summary": "A dedicated endpoint security template will control which update channel each Windows device uses for Defender for Endpoint updates.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm66",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune",
+    "Defender"
+   ],
+   "title": "Controlled Configuration for Microsoft Defender Antivirus on Windows",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#controlled-configuration-for-microsoft-defender-antivirus-on-windows",
+   "date": null,
+   "summary": "Antivirus settings pushed by Intune or Defender settings management will win over Group Policy, Configuration Manager or local scripts.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm67",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune",
+    "Windows"
+   ],
+   "title": "Configure Quality Update approvals and policies for Quick Machine Recovery (QMR)",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#configure-quality-update-approvals-and-policies-for-quick-machine-recovery-qmr",
+   "date": null,
+   "summary": "Autopatch will let admins approve, reject or schedule specific Windows quality updates by type instead of only expediting the newest fix.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm68",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune",
+    "Defender"
+   ],
+   "title": "New Linux antivirus settings for Microsoft Defender for Endpoint",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#new-linux-antivirus-settings-for-microsoft-defender-for-endpoint",
+   "date": null,
+   "summary": "A Linux antivirus template will add four settings to pick update channels and timing for the Defender engine, platform and signatures.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm69",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune"
+   ],
+   "title": "Mark Windows devices noncompliant when prohibited AI agents are discovered",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#mark-windows-devices-noncompliant-when-prohibited-ai-agents-are-discovered",
+   "date": null,
+   "summary": "Windows compliance policy will flag devices running banned local AI agents, so Conditional Access blocks them until the agent is removed.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm70",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune",
+    "Defender"
+   ],
+   "title": "Support for Intune Device control policy for devices managed by Microsoft Defender for Endpoint",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#support-for-intune-device-control-policy-for-devices-managed-by-microsoft-defender-for-endpoint",
+   "date": null,
+   "summary": "Intune device control rules will also apply to Windows machines managed only through Defender for Endpoint security settings management.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": null,
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
+  },
+  {
+   "id": "rm71",
+   "type": "roadmap",
+   "source": "Microsoft Learn: In development for Microsoft Intune",
+   "product": [
+    "Intune"
+   ],
+   "title": "JIT registration reminder during Apple MDM push certificate renewal for iOS and iPadOS",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#jit-registration-reminder-during-apple-mdm-push-certificate-renewal-for-ios-and-ipados-",
+   "date": null,
+   "summary": "Renewing the Apple MDM push certificate will show a prompt to set up JIT registration ahead of web-based enrollment becoming the default.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "roadmap_id": null,
+   "mc_id": null,
+   "status": "In development",
+   "rollout": "November 2026 release",
+   "added_date": null,
+   "last_modified": null,
+   "also_ids": []
   },
   {
    "id": "r01",
