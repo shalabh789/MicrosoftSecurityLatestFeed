@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A weekly dashboard of Microsoft security news, threats, vulnerabilities, and community discussion.">
   <title>Microsoft Security Latest Feed</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v={{ site.github.build_revision }}">
+  <script src="app.js?v={{ site.github.build_revision }}" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -20,35 +22,41 @@
         <label for="week-select">Week</label>
         <select id="week-select" aria-label="Select report week"></select>
         <span id="last-updated" class="muted" aria-live="polite"></span>
+        <label for="feed-search">Search</label>
+        <div class="search-control">
+          <input id="feed-search" type="search" aria-label="Search by title, summary, CVE ID, or product">
+          <button id="search-clear" class="button secondary" type="button" aria-label="Clear search">Clear</button>
+        </div>
         <button id="theme-toggle" class="button secondary" type="button" aria-pressed="false">Dark mode</button>
       </div>
     </div>
+    <div id="key-dates" class="key-dates" aria-label="Upcoming key dates"></div>
     <nav class="jump-links" aria-label="Jump to dashboard section">
+      <a href="#leadership">For security leaders</a>
       <a href="#themes">Themes</a>
+      <a href="#cves">CVEs</a>
+      <a href="#changes">Changing soon</a>
+      <a href="#roadmap">Coming soon</a>
       <a href="#videos">Videos</a>
       <a href="#x-posts">From X</a>
       <a href="#threats">Threat intelligence</a>
       <a href="#blogs">Blogs</a>
       <a href="#products">By product</a>
       <a href="#community">Community</a>
-      <a href="#cves">CVEs</a>
-      <a href="#method">Gaps &amp; method</a>
     </nav>
+    <div class="feed-filters">
+      <div id="type-chips" class="chips" aria-label="Filter by item type"></div>
+      <p id="filter-summary" class="muted" aria-live="polite"></p>
+    </div>
   </header>
 
   <main id="main">
-    <section class="filter-panel panel" aria-labelledby="filters-heading">
-      <div class="section-heading compact">
-        <div>
-          <p class="eyebrow">Explore the feed</p>
-          <h2 id="filters-heading">Filters</h2>
-        </div>
-      </div>
-      <div id="type-chips" class="chips" aria-label="Filter by item type"></div>
-      <p id="filter-summary" class="muted" aria-live="polite"></p>
-    </section>
-
     <section id="summary-tiles" class="summary-tiles" aria-label="Week summary"></section>
+
+    <section id="leadership" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Executive brief</p><h2>For security leaders</h2></div></div>
+      <ul id="leadership-list" class="leadership-list panel"></ul>
+    </section>
 
     <section id="themes" class="content-section">
       <div class="section-heading">
@@ -58,14 +66,50 @@
       <div id="theme-grid" class="theme-grid"></div>
     </section>
 
+    <section id="cves" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Patch Tuesday</p><h2>CVE tracker</h2></div><span id="cve-count" class="muted"></span></div>
+      <div id="cve-tiles" class="cve-tiles"></div>
+      <div class="cve-controls panel">
+        <label class="check-label"><input id="cve-focus" type="checkbox" checked> Focus view: exploited, Critical or CVSS ≥ 9</label>
+        <label class="check-label"><input id="cve-cvss7" type="checkbox"> CVSS ≥ 7</label>
+        <label class="check-label"><input id="cve-exploited" type="checkbox"> Exploited</label>
+        <label class="check-label"><input id="cve-disclosed" type="checkbox"> Publicly disclosed</label>
+        <button id="cve-show-all" class="button secondary" type="button">Show all CVEs</button>
+      </div>
+      <div id="cve-charts" class="chart-grid"></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">CVE</th><th scope="col">Severity</th><th scope="col">CVSS</th><th scope="col">Product</th><th scope="col">Title</th><th scope="col">Status</th></tr></thead>
+          <tbody id="cve-table"></tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <button id="cve-prev" class="button secondary" type="button">Previous</button>
+        <span id="cve-page" class="muted" aria-live="polite"></span>
+        <button id="cve-next" class="button secondary" type="button">Next</button>
+      </div>
+    </section>
+
+    <section id="changes" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Plan ahead</p><h2>Retiring and changing soon</h2></div><span id="change-count" class="muted"></span></div>
+      <div id="change-list" class="change-list"></div>
+    </section>
+
+    <section id="roadmap" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Microsoft roadmap</p><h2>Coming soon</h2></div><span id="roadmap-count" class="muted"></span></div>
+      <div id="roadmap-list"></div>
+    </section>
+
     <section id="videos" class="content-section">
       <div class="section-heading"><div><p class="eyebrow">Watch</p><h2>Videos</h2></div><span id="video-count" class="muted"></span></div>
       <div id="video-grid" class="media-grid"></div>
+      <button id="video-toggle" class="button secondary media-toggle" type="button" hidden></button>
     </section>
 
     <section id="x-posts" class="content-section">
       <div class="section-heading"><div><p class="eyebrow">Social signals</p><h2>From X</h2></div><span id="x-count" class="muted"></span></div>
       <div id="x-grid" class="media-grid"></div>
+      <button id="x-toggle" class="button secondary media-toggle" type="button" hidden></button>
     </section>
 
     <section id="threats" class="content-section">
@@ -88,6 +132,7 @@
         <div><p class="eyebrow">Microsoft Learn</p><h2>By product</h2></div>
         <span id="learn-count" class="muted"></span>
       </div>
+      <div id="product-status-strip" class="product-status-strip" aria-label="Learn updates by product status"></div>
       <p class="section-intro">Learn updates are grouped by product. Filters here apply only to these Learn panels.</p>
       <div class="learn-filters" aria-label="Filter Learn updates">
         <label>Product family
@@ -122,43 +167,11 @@
       </div>
     </section>
 
-    <section id="cves" class="content-section">
-      <div class="section-heading"><div><p class="eyebrow">Patch Tuesday</p><h2>CVE tracker</h2></div><span id="cve-count" class="muted"></span></div>
-      <div id="cve-tiles" class="cve-tiles"></div>
-      <div class="cve-controls panel">
-        <label class="check-label"><input id="cve-focus" type="checkbox" checked> Focus view: exploited, Critical and CVSS ≥ 9</label>
-        <label class="check-label"><input id="cve-cvss7" type="checkbox"> CVSS ≥ 7</label>
-        <label class="check-label"><input id="cve-exploited" type="checkbox"> Exploited</label>
-        <label class="check-label"><input id="cve-disclosed" type="checkbox"> Publicly disclosed</label>
-        <button id="cve-show-all" class="button secondary" type="button">Show all CVEs</button>
-      </div>
-      <div id="cve-charts" class="chart-grid"></div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th scope="col">CVE</th><th scope="col">Severity</th><th scope="col">CVSS</th><th scope="col">Product</th><th scope="col">Title</th><th scope="col">Status</th></tr></thead>
-          <tbody id="cve-table"></tbody>
-        </table>
-      </div>
-      <div class="pagination">
-        <button id="cve-prev" class="button secondary" type="button">Previous</button>
-        <span id="cve-page" class="muted" aria-live="polite"></span>
-        <button id="cve-next" class="button secondary" type="button">Next</button>
-      </div>
-    </section>
-
-    <section id="method" class="content-section">
-      <div class="section-heading"><div><p class="eyebrow">Context</p><h2>Data gaps and method</h2></div></div>
-      <div class="panel method-panel">
-        <p id="data-gaps">Research coverage notes:</p>
-        <ul id="gap-list"></ul>
-        <p>Items are loaded from the selected week’s JSON. Filters only change the visible feed; clearing filters restores the week’s records. CVEs are sorted by exploitation status and CVSS score, with 50 rows per page.</p>
-        <p><a id="research-link" href="#">Read the research notes</a><span id="verification-link"></span></p>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
-    <p>Microsoft Security Latest Feed · <span id="footer-week"></span></p>
+    <p>Microsoft Security Latest Feed · <span id="footer-week"></span> · <a id="release-link">Release notes for this week</a></p>
+    <p id="build-stamp" data-commit="{{ site.github.build_revision }}" data-built-at="{{ site.time | date_to_xmlschema }}"></p>
   </footer>
 
   <dialog id="theme-dialog" aria-labelledby="theme-dialog-title">
