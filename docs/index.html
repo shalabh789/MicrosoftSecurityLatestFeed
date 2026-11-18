@@ -1,1 +1,177 @@
-<h1>Microsoft Security Latest Feed - coming soon</h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A weekly dashboard of Microsoft security news, threats, vulnerabilities, and community discussion.">
+  <title>Microsoft Security Latest Feed</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-main">
+      <div>
+        <p class="eyebrow">Weekly intelligence brief</p>
+        <h1>Microsoft Security Latest Feed</h1>
+      </div>
+      <div class="header-controls">
+        <label for="week-select">Week</label>
+        <select id="week-select" aria-label="Select report week"></select>
+        <span id="last-updated" class="muted" aria-live="polite"></span>
+        <button id="theme-toggle" class="button secondary" type="button" aria-pressed="false">Dark mode</button>
+      </div>
+    </div>
+    <nav class="jump-links" aria-label="Jump to dashboard section">
+      <a href="#themes">Themes</a>
+      <a href="#videos">Videos</a>
+      <a href="#x-posts">From X</a>
+      <a href="#threats">Threat intelligence</a>
+      <a href="#blogs">Blogs</a>
+      <a href="#products">By product</a>
+      <a href="#community">Community</a>
+      <a href="#cves">CVEs</a>
+      <a href="#method">Gaps &amp; method</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="filter-panel panel" aria-labelledby="filters-heading">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">Explore the feed</p>
+          <h2 id="filters-heading">Filters</h2>
+        </div>
+        <button id="clear-filters" class="button secondary" type="button">Clear filters</button>
+      </div>
+      <div class="filters">
+        <label>By product
+          <select id="by-product"><option value="">All products</option></select>
+        </label>
+        <label>Type
+          <select id="type-filter"><option value="">All types</option></select>
+        </label>
+        <label>Product family
+          <select id="family-filter"><option value="">All families</option></select>
+        </label>
+        <label>Country
+          <select id="country-filter"><option value="">All countries</option></select>
+        </label>
+        <label>Actor
+          <select id="actor-filter"><option value="">All actors</option></select>
+        </label>
+        <label>From date
+          <input id="date-from" type="date">
+        </label>
+        <label>To date
+          <input id="date-to" type="date">
+        </label>
+      </div>
+      <div id="type-chips" class="chips" aria-label="Filter by item type"></div>
+      <p id="filter-summary" class="muted" aria-live="polite"></p>
+    </section>
+
+    <section id="summary-tiles" class="summary-tiles" aria-label="Week summary"></section>
+
+    <section id="themes" class="content-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">TL;DR</p><h2>Themes of the week</h2></div>
+        <span id="theme-count" class="muted"></span>
+      </div>
+      <div id="theme-grid" class="theme-grid"></div>
+    </section>
+
+    <section id="videos" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Watch</p><h2>Videos</h2></div><span id="video-count" class="muted"></span></div>
+      <div id="video-grid" class="media-grid"></div>
+    </section>
+
+    <section id="x-posts" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Social signals</p><h2>From X</h2></div><span id="x-count" class="muted"></span></div>
+      <div id="x-grid" class="media-grid"></div>
+    </section>
+
+    <section id="threats" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Active campaigns and reporting</p><h2>Threat intelligence</h2></div><span id="threat-count" class="muted"></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Date</th><th scope="col">Report</th><th scope="col">Actor</th><th scope="col">Sectors</th><th scope="col">Linked CVEs</th><th scope="col">Source</th></tr></thead>
+          <tbody id="threat-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="blogs" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Latest news</p><h2>Blogs</h2></div><span id="blog-count" class="muted"></span></div>
+      <div id="blog-grid" class="card-grid"></div>
+    </section>
+
+    <section id="products" class="content-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Microsoft Learn</p><h2>By product</h2></div>
+        <span id="learn-count" class="muted"></span>
+      </div>
+      <p class="section-intro">Learn updates are grouped by product. Select a product above to focus its updates and related feed items.</p>
+      <div id="product-list" class="product-list"></div>
+    </section>
+
+    <section id="community" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Practitioner discussion</p><h2>Community</h2></div><span id="reddit-count" class="muted"></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Date</th><th scope="col">Thread</th><th scope="col">Summary</th><th scope="col">Product</th><th scope="col">Engagement</th></tr></thead>
+          <tbody id="reddit-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="cves" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Patch Tuesday</p><h2>CVE tracker</h2></div><span id="cve-count" class="muted"></span></div>
+      <div id="cve-tiles" class="cve-tiles"></div>
+      <div class="cve-controls panel">
+        <label class="check-label"><input id="cve-focus" type="checkbox" checked> Focus view: exploited, Critical and CVSS ≥ 9</label>
+        <label class="check-label"><input id="cve-cvss7" type="checkbox"> CVSS ≥ 7</label>
+        <label class="check-label"><input id="cve-exploited" type="checkbox"> Exploited</label>
+        <label class="check-label"><input id="cve-disclosed" type="checkbox"> Publicly disclosed</label>
+        <button id="cve-show-all" class="button secondary" type="button">Show all CVEs</button>
+      </div>
+      <div id="cve-charts" class="chart-grid"></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">CVE</th><th scope="col">Severity</th><th scope="col">CVSS</th><th scope="col">Product</th><th scope="col">Title</th><th scope="col">Status</th></tr></thead>
+          <tbody id="cve-table"></tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <button id="cve-prev" class="button secondary" type="button">Previous</button>
+        <span id="cve-page" class="muted" aria-live="polite"></span>
+        <button id="cve-next" class="button secondary" type="button">Next</button>
+      </div>
+    </section>
+
+    <section id="method" class="content-section">
+      <div class="section-heading"><div><p class="eyebrow">Context</p><h2>Data gaps and method</h2></div></div>
+      <div class="panel method-panel">
+        <p id="data-gaps">Research coverage notes:</p>
+        <ul id="gap-list"></ul>
+        <p>Items are loaded from the selected week’s JSON. Filters only change the visible feed; clearing filters restores the week’s records. CVEs are sorted by exploitation status and CVSS score, with 50 rows per page.</p>
+        <p><a id="research-link" href="#">Read the research notes</a><span id="verification-link"></span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Microsoft Security Latest Feed · <span id="footer-week"></span></p>
+  </footer>
+
+  <dialog id="theme-dialog" aria-labelledby="theme-dialog-title">
+    <div class="dialog-heading">
+      <div><p class="eyebrow">Theme items</p><h2 id="theme-dialog-title"></h2></div>
+      <button id="theme-dialog-close" class="button secondary" type="button">Close</button>
+    </div>
+    <p id="theme-dialog-summary"></p>
+    <ul id="theme-dialog-items" class="theme-items"></ul>
+  </dialog>
+</body>
+</html>
