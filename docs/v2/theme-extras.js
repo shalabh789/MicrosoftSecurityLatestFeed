@@ -40,12 +40,34 @@
 
   // Scroll-spy for the sidebar. Links are ordinary #section anchors, which app.js already handles.
   var links = all(".toc a"), nodes = links.map(function (l) { return d.getElementById(l.getAttribute("href").slice(1)) })
+  var spyPaused = false, settleTimer
   function spy() {
+    if (spyPaused) return
     var cur = 0, bottom = innerHeight + scrollY >= root.scrollHeight - 4
-    nodes.forEach(function (n, i) { if (n && n.offsetHeight && n.getBoundingClientRect().top < 120) cur = i })
+    var padding = parseFloat(getComputedStyle(root).scrollPaddingTop) || 0
+    nodes.forEach(function (n, i) {
+      var margin = n ? parseFloat(getComputedStyle(n).scrollMarginTop) || 0 : 0
+      if (n && n.offsetHeight && n.getBoundingClientRect().top < padding + margin + 24) cur = i
+    })
     if (bottom) cur = nodes.length - 1
     links.forEach(function (l, i) { l.parentNode.hidden = !(nodes[i] && nodes[i].offsetHeight); if (i === cur) l.setAttribute("aria-current", "location"); else l.removeAttribute("aria-current") })
   }
+  function resumeSpy() {
+    if (!spyPaused) return
+    spyPaused = false
+    clearTimeout(settleTimer)
+    spy()
+  }
+  links.forEach(function (link) {
+    link.addEventListener("click", function () {
+      spyPaused = true
+      clearTimeout(settleTimer)
+      links.forEach(function (other) { other.removeAttribute("aria-current") })
+      link.setAttribute("aria-current", "location")
+      settleTimer = setTimeout(resumeSpy, 1000)
+    })
+  })
+  addEventListener("scrollend", resumeSpy)
   var q = false
   addEventListener("scroll", function () { if (q) return; q = true; requestAnimationFrame(function () { q = false; spy() }) }, { passive: true })
   addEventListener("load", spy); spy()
