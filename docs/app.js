@@ -177,14 +177,15 @@
   }
 
   function renderTiles(items) {
-    const newItems = items.filter((item) => item.type !== "cve" && item.in_window !== false);
+    const additionTypes = new Set(["video", "x", "threat", "blog", "learn", "reddit"]);
+    const newItems = items.filter((item) => additionTypes.has(item.type) && item.in_window !== false);
     const nonCvesInWindow = newItems.length;
     const countType = (type) => newItems.filter((item) => item.type === type).length;
     const cves = items.filter((item) => item.type === "cve");
     const critical = cves.filter((item) => item.severity === "Critical").length;
     const exploited = cves.filter((item) => item.exploited === true).length;
     $("#summary-tiles").innerHTML = [
-      ["New additions this week", count(nonCvesInWindow), `${count(countType("video"))} videos · ${count(countType("x"))} X · ${count(countType("threat"))} threats · ${count(countType("blog"))} blogs · ${count(countType("learn"))} Learn · ${count(countType("reddit"))} community · ${count(countType("change"))} changes · ${count(countType("roadmap"))} roadmap`],
+      ["New additions this week", count(nonCvesInWindow), `${count(countType("video"))} videos · ${count(countType("x"))} X · ${count(countType("threat"))} threats · ${count(countType("blog"))} blogs · ${count(countType("learn"))} Learn · ${count(countType("reddit"))} community`],
       ["Blogs", count(countType("blog")), "Microsoft security reporting"],
       ["Videos", count(countType("video")), "Microsoft security videos"],
       ["CVEs this month", count(cves.length), `${count(exploited)} exploited · ${count(critical)} Critical`]
