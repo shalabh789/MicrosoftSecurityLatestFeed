@@ -2,7 +2,7 @@
  "week": "2026-W46",
  "start": "2026-11-09T00:00:00+05:30",
  "end": "2026-11-15T23:59:59+05:30",
- "generated": "2026-11-18T01:57:17+00:00",
+ "generated": "2026-11-18T02:11:39+00:00",
  "themes": [
   {
    "name": "Securing AI agents moves to the front",
@@ -146,7 +146,8 @@
    "disclosed": null,
    "engagement": {
     "views": 28478
-   }
+   },
+   "description": "Build agents you can trust with your company’s data, apps, and resources using Microsoft Foundry. Start with a fully managed prompt agent and move it onto the Microsoft Copilot harness so it plans, loops, calls subagents, and delivers finished reports. You can also bring your own harness, such as the Claude Agent SDK, and run it as a hosted agent"
   },
   {
    "id": "v02",
@@ -166,7 +167,8 @@
    "disclosed": null,
    "engagement": {
     "views": 364
-   }
+   },
+   "description": "This video provides an overview of the \"Gain AI Visibility\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v03",
@@ -186,7 +188,8 @@
    "disclosed": null,
    "engagement": {
     "views": 797
-   }
+   },
+   "description": "This video provides an overview of the \"Registry Readiness\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v04",
@@ -206,7 +209,8 @@
    "disclosed": null,
    "engagement": {
     "views": 402
-   }
+   },
+   "description": "This video provides an overview of the \"Agent Registry Operations\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v05",
@@ -226,7 +230,8 @@
    "disclosed": null,
    "engagement": {
     "views": 415
-   }
+   },
+   "description": "This video provides an overview of the \"Workload ID Migration to Agent ID\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v06",
@@ -246,7 +251,8 @@
    "disclosed": null,
    "engagement": {
     "views": 148
-   }
+   },
+   "description": "This video provides an overview of the \"Access\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v07",
@@ -266,7 +272,8 @@
    "disclosed": null,
    "engagement": {
     "views": 248
-   }
+   },
+   "description": "This video provides an overview of the \"Identity Governance\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v08",
@@ -286,7 +293,8 @@
    "disclosed": null,
    "engagement": {
     "views": 460
-   }
+   },
+   "description": "This video provides an overview of the \"Network Security Readiness\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v09",
@@ -306,7 +314,8 @@
    "disclosed": null,
    "engagement": {
     "views": 388
-   }
+   },
+   "description": "This video provides an overview of the \"Web & Destination Control\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v10",
@@ -326,7 +335,8 @@
    "disclosed": null,
    "engagement": {
     "views": 444
-   }
+   },
+   "description": "This video provides an overview of the \"Prompt & Content Protection\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v11",
@@ -346,7 +356,8 @@
    "disclosed": null,
    "engagement": {
     "views": 200
-   }
+   },
+   "description": "This video provides an overview of the \"Data Access Readiness\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v12",
@@ -366,7 +377,8 @@
    "disclosed": null,
    "engagement": {
     "views": 209
-   }
+   },
+   "description": "This video provides an overview of the \"AI Data Usage Monitoring\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v13",
@@ -386,7 +398,8 @@
    "disclosed": null,
    "engagement": {
     "views": 153
-   }
+   },
+   "description": "This video provides an overview of the \"Data Loss Prevention\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v14",
@@ -406,7 +419,8 @@
    "disclosed": null,
    "engagement": {
     "views": 628
-   }
+   },
+   "description": "This video provides an overview of the \"Insider Risk Management\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v15",
@@ -426,7 +440,8 @@
    "disclosed": null,
    "engagement": {
     "views": 254
-   }
+   },
+   "description": "This video provides an overview of the \"Agent Development Readiness\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v16",
@@ -446,7 +461,8 @@
    "disclosed": null,
    "engagement": {
     "views": 294
-   }
+   },
+   "description": "This video provides an overview of the \"MCP Server Governance\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v17",
@@ -466,7 +482,8 @@
    "disclosed": null,
    "engagement": {
     "views": 363
-   }
+   },
+   "description": "This video provides an overview of the \"Assess AI Risk\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v18",
@@ -486,7 +503,8 @@
    "disclosed": null,
    "engagement": {
     "views": 580
-   }
+   },
+   "description": "This video provides an overview of the \"AI Threat Detection & Response\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v19",
@@ -506,7 +524,8 @@
    "disclosed": null,
    "engagement": {
     "views": 901
-   }
+   },
+   "description": "This video provides an overview of the \"Security Validation\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v20",
@@ -526,7 +545,8 @@
    "disclosed": null,
    "engagement": {
     "views": 465
-   }
+   },
+   "description": "This video provides an overview of the \"Agent Platform Controls\" swimlane of the AI Pillar of the Microsoft Zero Trust Workshop."
   },
   {
    "id": "v21",
@@ -546,7 +566,8 @@
    "disclosed": null,
    "engagement": {
     "views": 281
-   }
+   },
+   "description": "Alym Rayani, Vice President of Marketing for Microsoft Security, shares what he's most looking forward to at Ignite this year."
   },
   {
    "id": "v22",
@@ -566,7 +587,8 @@
    "disclosed": null,
    "engagement": {
     "views": 378
-   }
+   },
+   "description": "The Microsoft Entra product team gave us a quick preview of what they're bringing to #MSIgnite. AI agents are changing how access works, and these sessions show what that means for your organization. 👇"
   },
   {
    "id": "v23",
@@ -587,7 +609,8 @@
    "disclosed": null,
    "engagement": {
     "views": 1933
-   }
+   },
+   "description": "Our November mini-briefing video includes an overview of the release and then a discussion of a few items from today's release."
   },
   {
    "id": "v24",
@@ -607,7 +630,8 @@
    "disclosed": null,
    "engagement": {
     "views": 164
-   }
+   },
+   "description": "The Microsoft Entra product team is back with another quick preview of #MSIgnite. Here's what to add to your schedule. 👇"
   },
   {
    "id": "v25",
@@ -627,7 +651,8 @@
    "disclosed": null,
    "engagement": {
     "views": 1084
-   }
+   },
+   "description": "Azure Backup Bulk Restore helps customers recover multiple Azure virtual machines through a single orchestrated workflow, simplifying at-scale recovery during cyber attacks or disaster recovery scenarios. Restore up to 100 VMs in bulk by defining a restore point time range and specifying common restore configurations. Azure Backup creates a single Bulk Restore job with individual child jobs for each VM,"
   },
   {
    "id": "v26",
@@ -647,7 +672,8 @@
    "disclosed": null,
    "engagement": {
     "views": 1861
-   }
+   },
+   "description": "Backups only help if you can recover from them when it matters most. Azure Backup helps organizations move from having backups to being ready to recover from a cyberattack."
   },
   {
    "id": "v27",
@@ -667,7 +693,8 @@
    "disclosed": null,
    "engagement": {
     "views": 349
-   }
+   },
+   "description": "Alliance Business Technologies (ABT) is a Brisbane-based managed service provider that helps small and medium businesses across Australia make the most of Microsoft 365, Azure and Microsoft Security."
   },
   {
    "id": "v28",
@@ -687,7 +714,8 @@
    "disclosed": null,
    "engagement": {
     "views": 388
-   }
+   },
+   "description": "RWW Group, a family-owned business, supplies uniforms and PPE to businesses across Australia. With ambitious growth plans and a fast-growing product range, they need technology they can trust."
   },
   {
    "id": "v29",
@@ -707,7 +735,8 @@
    "disclosed": null,
    "engagement": {
     "views": 463
-   }
+   },
+   "description": "Australian workwear and PPE supplier RWW Group is moving on AI, with security first. To lay the groundwork, they teamed up with their Microsoft partner, Alliance Business Technologies (ABT), to strengthen identity, data and threat protection."
   },
   {
    "id": "x01",
@@ -21652,7 +21681,8 @@
    "section": "June 2026",
    "status": "GA",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Type: Changed feature\n\nService category: Authentications (Logins)\n\nProduct capability: User Authentication\n\nGeneral availability of Microsoft Entra Kerberos key rotation improved reliability particularly for environments using incoming trust referral flows. Previously, authentication failures could occur during Kerberos key rotation if referral tickets were encrypted with a secondary key. The update enhances validation logic to attempt decryption with both primary and secondary Kerberos keys, improving resiliency during key rollover operations and reducing authentication disruption during rotation events. For more information, see: Rotate the Kerberos server key for Microsoft Entra Kerberos."
   },
   {
    "id": "l02",
@@ -21675,7 +21705,8 @@
    "section": "June 2026",
    "status": "GA",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Type: New feature\n\nService category: Microsoft Authenticator App\n\nProduct capability: Identity Security & Protection\n\nMicrosoft Authenticator introduced jailbreak/root detection for Microsoft work or school accounts in the Authenticator app. Users with rooted/jailbroken devices will be blocked from adding/using work or school accounts in Authenticator app. Users must move to compliant devices to continue using work or school accounts in Authenticator. This capability is secure by default and does not require any admin configuration or control."
   },
   {
    "id": "l03",
@@ -21698,7 +21729,8 @@
    "section": "June 2026",
    "status": "Preview",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Type: New feature\n\nService category: Conditional Access\n\nProduct capability: Identity Security & Protection\n\nConditional Access now provides broader controls to secure AI agents that have a user account. Administrators can:\n\nTarget agent's user accounts with greater precision by including or excluding individual agents or dynamically grouping agents using Custom Security Attributes.\n\nProtect against risky agent activity by applying Conditional Access policies based on Agent Risk.\n\nRequire compliant devices for agents running on managed endpoints, including Windows 365 for Agents, ensuring agents can only operate from devices that meet your organization's compliance requirements.\n\nApply device platforms, filter for devices and compliant network conditions to agents running on endpoints, enabling policies based on device state and trusted network locations.\n\nThese capabilities extend Zero Trust protections to agent's user accounts while leveraging the familiar Conditional Access policy experience. For more information see: Target agent identities in Conditional Access policies."
   },
   {
    "id": "l04",
@@ -21721,7 +21753,8 @@
    "section": "June 2026",
    "status": "GA",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Type: New feature\n\nService category: B2B\n\nProduct capability: B2B/B2C\n\nDomainless SAML federation with a SAML Identity Provider allows external users to authenticate into your apps or workforce resources using their IdP-managed credentials, regardless of their email domain. Domainless federation removes the need for domain matching between the user's email and preconfigured IdP domains during sign-in or invitation redemption. Learn more at Add a SAML/WS-Fed identity provider - Microsoft Entra External ID."
   },
   {
    "id": "l05",
@@ -21744,7 +21777,8 @@
    "section": "June 2026",
    "status": "GA",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Type: New feature\n\nService category: Provisioning\n\nProduct capability: Identity Lifecycle Management\n\nSCIM 2.0 APIs are now generally available in the US Gov cloud, giving customers, developers, and partners a standards-based option for managing users and groups in Microsoft Entra using the System for Cross-domain Identity Management (SCIM) 2.0 specification. For more information, see: Enable the SCIM Provisioning API in Microsoft Entra ID."
   },
   {
    "id": "l06",
@@ -21767,7 +21801,8 @@
    "section": "June 2026",
    "status": "GA",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Type: New feature\n\nService category: Entra Backup and Recovery\n\nProduct capability: Entra Backup and Recovery\n\nMicrosoft Entra Backup and Recovery is a built-in solution to help restore your tenant after accidental changes or malicious updates. Always on by default, it automatically backs up critical directory objects — including users, groups, applications, service principals, managed identities, Conditional Access policies, named locations, agent IDs, and authentication and authorization policy, so admins can quickly restore them to a previously known good state.\n\nAt preview, Entra Backup and Recovery automatically takes daily backup of a tenant's supported directory objects. If a tenant has Microsoft Entra ID P1 or P2 licenses, one backup is taken each day and retained for 7 days. Admins can view available snapshots, generate difference reports to understand what has changed, and run recovery jobs to restore objects to a prior state.\n\nThis gives your organization a reliable, built-in safety net helping you recover with confidence, minimize downtime, and protect your tenant from accidental changes, misconfigurations, or security compromises. For more information, see: Microsoft Entra Backup and Recovery overview (Preview)."
   },
   {
    "id": "l07",
@@ -21790,7 +21825,8 @@
    "section": "June 2026",
    "status": null,
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Type: Plan for change\n\nService category: Microsoft Authenticator App\n\nProduct capability: Identity Security & Protection\n\nNo action is required.\n\nWhat is changing? Starting August 2026, users will see an improved restore experience for device-bound Authenticator app passkeys for iOS users. No admin or user action is required.\n\nWith this update:\n\nUsers who already have iCloud and iCloud Keychain backup enabled for the Authenticator app—and have device-bound Authenticator passkeys on their old device—will automatically benefit from this improved experience.\n\nUsers restoring their Authenticator app on a new iOS device will experience an updated restore flow.\n\nThis change streamlines the restore experience by directing users to the right recovery path based on access to their old device and helping them understand cross-device passkey authentication, resulting in a smoother transition to a new phone.\n\nThis update applies to iOS devices only. Android support will follow.\n\nLearn more about the changes to backup and restore in Authenticator app."
   },
   {
    "id": "l08",
@@ -21814,7 +21850,8 @@
    "section": "June 2026",
    "status": "Preview",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Type: New feature\n\nService category: RBAC\n\nProduct capability: Identity Security & Protection\n\nStarting June 8 we're introducing a new built-in role in Microsoft Entra—SOC Identity Responder—to further improve how security teams execute identity containment actions initiated from Microsoft Defender using a least-privilege access model.\n\nPreviously, performing these actions required SOC analysts to hold multiple high-privilege Entra roles or depend on identity administrators, creating delays during active investigations.\n\nWith this update, SOC analysts can be assigned a dedicated role purpose-built for identity response actions, allowing them to perform key actions—such as disabling users, revoking sessions, and forcing password resets—without being granted broad directory administrative privileges.\n\nAccess to this role supports flexible assignment models, including role-assignable groups for managing permissions through group membership and delegated ownership. Optional integration with Privileged Identity Management (PIM) enables just-in-time activation and enhanced governance controls.\n\nThese actions continue to be enforced and audited by Microsoft Entra, ensuring consistency with existing RBAC and compliance controls."
   },
   {
    "id": "l09",
@@ -21837,7 +21874,8 @@
    "section": "June 2026",
    "status": "Preview",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Type: New feature\n\nService category: Provisioning\n\nProduct capability: Entra Cloud Sync\n\nFor customers leveraging group provisioning to AD, this capability ensures that changes to AD groups remain consistent with those managed in Microsoft Entra. With this preview, you can designate specific AD groups so that modifications to those groups can only be made through the Entra provisioning service. Changes made outside of Entra are blocked, helping prevent drift before it occurs and maintaining alignment between Entra ID and AD groups.\n\nLearn more: AD group enforcement documentation."
   },
   {
    "id": "l10",
@@ -21860,7 +21898,8 @@
    "section": "June 2026",
    "status": "GA",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Type: New feature\n\nService category: Entitlement Management\n\nProduct capability: Identity Governance\n\nThis feature allows Entitlement Management admins to directly assign external users who are not in the directory to an access package using the user's email. Users are invited into the tenant as Guest users and are governed (as long as Entra ID Governance is configured)."
   },
   {
    "id": "l11",
@@ -21883,7 +21922,8 @@
    "section": "June 2026",
    "status": "GA",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Type: New feature\n\nService category: BYOD\n\nProduct capability: Network Access\n\nWe are excited to announce Bring Your Own Device (BYOD) support for Windows client using Entra-registered devices is now generally available. You can now enable users and partners to access corporate resources from their own devices. Administrators can assign the Private Application traffic profile to users with internal accounts, including internal guest users. This removes the previous requirement for Windows devices to be domain-joined. For more information, see: Bring Your Own Device."
   },
   {
    "id": "l12",
@@ -21907,7 +21947,8 @@
    "section": "September 2026",
    "status": "Preview",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "(Preview) Integrated Security Operations Center (ISOC) in Microsoft Defender brings XDR, SIEM, threat intelligence, automation, and AI capabilities together in the Microsoft Defender portal. Starting September 23, 2026, it's available to eligible Microsoft 365 E5 and E7 customers without an active Microsoft Sentinel workspace. For more information, see ISOC in Microsoft Defender."
   },
   {
    "id": "l13",
@@ -21930,7 +21971,8 @@
    "section": "September 2026",
    "status": "GA",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "(GA) Identity Security dashboard and Coverage & Maturity: The Identity Security dashboard provides a centralized view of identity-related security risks and posture across the organization. Coverage & Maturity helps security teams understand how well their identity environment is protected across on-premises, cloud, SaaS, identity providers, and partner technologies, identify coverage and deployment gaps, and prioritize the actions required to improve identity security posture. For more information, see Coverage & Maturity."
   },
   {
    "id": "l14",
@@ -21953,7 +21995,8 @@
    "section": "November 2026",
    "status": "GA",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Type | Feature | Preview/GA | Description\n\nRelease - macOS | Build 101.26092.0012 | GA | Release version 20.126092.12.0 released: See enhancements and features for this release."
   },
   {
    "id": "l15",
@@ -21977,7 +22020,8 @@
    "section": "November 2026",
    "status": null,
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Hunt for synthetic media (deepfake) detection events: The SyntheticMediaDetectionEvents table in Microsoft Defender XDR advanced hunting contains details about synthetic media (deepfake) detected in Microsoft Teams, helping security teams investigate potential impersonation, fraud, or social engineering."
   },
   {
    "id": "l16",
@@ -22000,7 +22044,8 @@
    "section": "October 2026",
    "status": null,
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "This rollout applies only to organizations that are licensed for Defender for Identity and have an active workspace. Eligible organizations included in the rollout see a banner on the Sensor management tab of the On-premises settings page for 30 days.\n\nAfter the 30-day notice period, Automatic sensor v3.x activation and Automatic Windows auditing configuration are enabled by default through a very gradual rollout, including settings currently set to Off. To keep your current settings, select Opt out in the banner during the notice period.\n\nWhile the banner appears, select Go to Advanced features to enable the settings yourself, or Opt out to prevent automatic enablement.\n\nFor more information, see Activate the Defender for Identity sensor v3.x and Configure Windows event auditing."
   },
   {
    "id": "l17",
@@ -22024,7 +22069,8 @@
    "section": "October 2026",
    "status": null,
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "The October announcement includes the following new alerts:\n\nNew alerts related to Entra ID:\n\nMalicious registration of a device with strong MFA\n\nMalicious registration of an attacker controlled MFA device\n\nNewly created user performed organization branding change\n\nSuspicious registration of a new Authenticator MFA method\n\nSuspicious registration of a new Email MFA method\n\nSuspicious registration of a new Phone MFA method\n\nSuspicious sign-in via Temporary Access Pass\n\nNew alerts related to Active Directory:\n\nKerberos privilege escalation using a diamond ticket\n\nMalicious Kerberos activity and CVE-2025-33073 exploitation attempt\n\nMalicious request of Data Protection API (DPAPI) master key\n\nPossible data exfiltration over DNS\n\nPotential Certighost (CVE-2026-54121) AD CS abuse\n\nSuspicious Active Directory Certificate Services (AD CS) certificate request\n\nSuspicious Active Directory Certificate Services (AD CS) machine certificate issuance abuse (ESC8)\n\nSuspicious Active Directory Certificate Services (AD CS) machine certificate issuance over RPC (ESC11)\n\nSuspicious Active Directory Certificate Services (AD CS) misconfigured certificate template abuse (ESC1)\n\nSuspicious Certificate Authority (CA) certificate and private key theft\n\nSuspicious Kerberos PKINIT authentication (AS-REQ)\n\nSuspicious Kerberos ticket authorization data\n\nNew alerts related to other identity providers:\n\nAnomalous volume of failed Okta authentication attempts\n\nMultifactor authentication method added for a privileged Okta account\n\nOkta access or refresh token grant from a risky context\n\nOkta anomalous privileged account authentication\n\nOkta consent grant from a risky context\n\nPassword of a privileged Okta account was reset by another account\n\nSecondary identity provider added in Okta"
   },
   {
    "id": "l18",
@@ -22047,7 +22093,8 @@
    "section": "October 2026",
    "status": "GA",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Defender for Identity sensor v3.x activation without Defender for Endpoint is now generally available. Supported servers include eligible domain controllers, AD FS, AD CS, and Microsoft Entra Connect servers running Windows Server 2019 or later. This activation method supports only new sensor v3.x deployments on eligible servers without an existing Defender for Identity sensor. Sensor v2.x migration isn't yet available. For more information, see Activate the Defender for Identity sensor."
   },
   {
    "id": "l19",
@@ -22070,7 +22117,8 @@
    "section": "October 2026",
    "status": null,
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Activating the Defender for Identity v3.x sensor on servers without Microsoft Defender for Endpoint deployment is temporarily not supported in government cloud environments."
   },
   {
    "id": "l20",
@@ -22093,7 +22141,8 @@
    "section": "October 2026",
    "status": null,
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Starting October 15, 2026, the SaaS accounts integration between Microsoft Defender for Cloud Apps and Identity inventory will transition from opt-in to automatic enablement. The integration will be enabled automatically for eligible tenants that don't use the User group admin or App/instance admin roles. Eligible tenants don't need to take any action.\n\nFor more information, see Identity inventory integration."
   },
   {
    "id": "l21",
@@ -22117,7 +22166,8 @@
    "section": "November 2026",
    "status": null,
    "in_window": false,
-   "date_precision": "day"
+   "date_precision": "day",
+   "details": "November 4, 2026\n\nDefender for SQL Servers on Machines now supports Azure Arc SQL Server instances with Arc proxy enabled, starting with Defender for SQL extension version 2.0.3585.403. Organizations that don't allow direct internet access from their machines can tunnel outbound communication through Arc proxy and use all Defender for SQL Servers on Machines features.\n\nArc proxy is an optional setting and isn't required for Defender for SQL Servers on Machines to operate if the networking prereqs are met. Learn more about Defender for SQL on machines prerequisites.\n\nVersion 2.0.3585.403 is available for manual update. Automatic rollout hasn't started, giving customers time to review affected resources and prepare for expanded protection coverage.\n\nExtending protection coverage might add billable resources and affect costs. Review potentially affected resources and disable Defender for SQL Servers on Machines for resources you choose to exclude from this coverage expansion.\n\nTo update the extension on an Azure Arc-enabled server or Azure virtual machine, see Update the Defender for SQL extension manually."
   },
   {
    "id": "l22",
@@ -22141,7 +22191,8 @@
    "section": "October 2026",
    "status": "Preview",
    "in_window": false,
-   "date_precision": "day"
+   "date_precision": "day",
+   "details": "October 28, 2026\n\nPosture policies and recommendation exemptions are now available in public preview as part of Microsoft Security Exposure Management for Azure environments.\n\nWith these new capabilities, you can:\n\nGain visibility into your security posture through evaluations of Azure resources against the Microsoft Defender for Cloud baseline policy.\n\nCustomize posture evaluations to align with your business, compliance, and operational requirements by creating and managing your own posture policies.\n\nManage accepted risks at scale with centralized exemption management and lifecycle tracking.\n\nFor more information, see Manage posture policies and Manage exemptions."
   },
   {
    "id": "l23",
@@ -22164,7 +22215,8 @@
    "section": "October 2026",
    "status": "Preview",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "The SAP BTP solution adds an analytics rule that correlates SAP Application Vulnerability Report findings with BTP audit logs to detect use of custom apps with open high or critical vulnerabilities. The rule identifies interactive XSUAA logins that match a vulnerable app and application audit events in the same subaccount, Cloud Foundry organization, and space. It uses a default CVSS threshold of 7.0 and a 14-day finding lookback. For details, see SAP BTP security content."
   },
   {
    "id": "l24",
@@ -22187,7 +22239,8 @@
    "section": "October 2026",
    "status": "GA",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "General availability: Endpoint data loss prevention (DLP) can now monitor sensitive data transferred over FTP and SFTP and apply restrictive actions based on your organization’s requirements. To get started, configure FTP and SFTP transfer activities in your Endpoint DLP policies. See Protect FTP and SFTP transfers with Microsoft Purview Endpoint DLP."
   },
   {
    "id": "l25",
@@ -22210,7 +22263,8 @@
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
    "in_window": false,
-   "date_precision": "week"
+   "date_precision": "week",
+   "details": "The following protected apps are now available for Microsoft Intune:\n\nEnGlobe Mobile by Corporatek Inc. (iOS)\n\nEverbridge 360 by Everbridge, Inc. (iOS, Android)\n\nHypergate Files for Intune by Hypergate (Android)\n\nNewcode by Newcode.ai (iOS)\n\nRamp by Ramp Business Corporation (iOS)\n\nReliaquest GreyMatter by Reliaquest (iOS, Android)\n\nRogo AI by Rogo Technologies, Inc. (iOS)\n\nRogo AI (Intune Wrapped) by Rogo Technologies, Inc. (iOS)\n\nShareCRM by FORSHARE PTE. LTD. (iOS, Android)\n\nZoho Mail - Intune by Zoho Corporation (iOS, Android)\n\nFor more information about protected apps, see Microsoft Intune protected apps."
   },
   {
    "id": "l26",
@@ -22233,7 +22287,8 @@
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
    "in_window": false,
-   "date_precision": "week"
+   "date_precision": "week",
+   "details": "Microsoft Intune now supports local actions for Android Enterprise fully managed and dedicated devices. You can automate tasks in response to device restarts, Managed Home Screen sign-in or sign-out, power connection changes, and scheduled times. Configure up to five actions for each event, such as launching an app activity, sending a broadcast intent, or signing out of Managed Home Screen.\n\nApplies to:\n\nAndroid Enterprise fully managed devices\n\nAndroid Enterprise dedicated devices"
   },
   {
    "id": "l27",
@@ -22257,7 +22312,8 @@
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
    "in_window": false,
-   "date_precision": "week"
+   "date_precision": "week",
+   "details": "Microsoft Intune now includes new settings for macOS in the settings catalog. You can manage Exchange Web Services (EWS) retirement alerts, configure Microsoft Edge browsing and Copilot experiences, and control AI agent runtime protection with Microsoft Defender for Endpoint. These additions help you tailor device configurations to your organization.\n\nDeclarative Device Management > Account > Account Settings (macOS 27.2 and later):\n\nAllow EWS Retirement Alerts\n\nMicrosoft Edge:\n\nEnable clipboard suggestions in the address bar\n\nAllow browsing with Copilot\n\nAllow socket pool size randomization for proxies\n\nUse KDC policy to delegate credentials\n\nAllow Back/Forward Cache for WebSockets\n\nEnforce Edge guest mode\n\nBrowsing with Copilot allowed URLs\n\nBrowsing with Copilot blocked URLs\n\nConfigure Discover/Work feed tab visibility\n\nEnable Copilot address bar suggestions\n\nAllow Cowork to take actions on your behalf\n\nEnable the Copilot new tab page\n\nEnable opaque origins for data URLs in Web Workers\n\nSet default download directory\n\nEnable service-based extraction for Reading Mode\n\nAllow sites to make network requests to the local device\n\nForce foreground priority for specific URLs\n\nEnable saving passkeys to the password manager\n\nBackground automatic relaunch when all browser windows are closed\n\nEnable strict MIME type checking for worker scripts\n\nAllow Local Fonts permission on specified sites\n\nEnable extended lifetime for SharedWorkers\n\nBlock sites from making requests to local network endpoints\n\nShow a warning before quitting\n\nEnable editing profile in settings\n\nAllow specified sites to access file URLs in the PDF Viewer\n\nForce foreground priority for all tabs\n\nBlock Local Fonts permission on specified sites\n\nSet default Copilot new tab feed to Work or Discover\n\nOverride IP address space mappings\n\nDefault Local Fonts permission\n\nAllow idle detection on specified sites\n\nAllow sites to make requests to local network endpoints\n\nSet IPv6 route-probe address for PAC scripts\n\nControl Microsoft Edge Safe Hosting Extension\n\nMake storage quota APIs return static values\n\nEnable standardized browser zoom behavior\n\nSet IPv4 route-probe address for PAC scripts\n\nEnable user web app installation from the browser\n\nAllow M365 authentication popups in work profiles\n\nEnable Edge sign-in using non-Microsoft accounts\n\nDefault idle detection permission\n\nControl availability of XSLT\n\nAllow Local Network Access in subframes without explicit delegation\n\nBlock idle detection on specified sites\n\nBlock sites from making network requests to the local device\n\nMicrosoft Defender:\n\nAI Agent Network Inspection\n\nAI Agent Protection\n\nApplies to:\n\nmacOS"
   },
   {
    "id": "l28",
@@ -22281,7 +22337,8 @@
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
    "in_window": false,
-   "date_precision": "week"
+   "date_precision": "week",
+   "details": "Microsoft Intune now supports group exclusions and the built-in All Users and All Devices groups for PowerShell script assignments on Windows. You can target scripts broadly, then exclude selected groups to keep the assignment focused on the users or devices that need it. This brings script assignments in line with other Intune workloads and gives you more control over deployment scope.\n\nFor more information, see Use PowerShell scripts on Windows devices in Intune.\n\nApplies to:\n\nWindows"
   },
   {
    "id": "l29",
@@ -22304,7 +22361,8 @@
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
    "in_window": false,
-   "date_precision": "week"
+   "date_precision": "week",
+   "details": "Microsoft Intune supports requiring users to authenticate with a managed Google Account from your organization's Google Workspace domain on supported Android Enterprise devices. This gives users access to the Google apps and services assigned to their organizational account. The policy doesn't change the Microsoft Entra account associated with the Intune-managed device.\n\nThis capability was previously available for corporate-owned, fully managed devices and corporate-owned devices with a work profile. It now also supports personally owned devices with a work profile managed through the Android Management API.\n\nConfigure Require users to authenticate with a Google Workspace account in an Android Enterprise settings catalog policy and set it to True. You can assign the policy before enrollment or to devices that are already enrolled. Your organization must have a managed Google domain, a verified Google Workspace domain, and managed Google Accounts for the targeted users.\n\nFor more information, see Require Google Workspace authentication on Android Enterprise devices with Microsoft Intune.\n\nApplies to:\n\nAndroid Enterprise corporate-owned, fully managed devices\n\nAndroid Enterprise corporate-owned devices with a work profile\n\nAndroid Enterprise personally owned devices with a work profile managed through the Android Management API"
   },
   {
    "id": "l30",
@@ -22327,7 +22385,8 @@
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
    "in_window": false,
-   "date_precision": "week"
+   "date_precision": "week",
+   "details": "Microsoft Intune now increases check-in frequency for the Intune management agent on newly enrolled macOS devices. During onboarding, the agent checks every three minutes for 15 minutes and then every 15 minutes for two hours. This helps apps, scripts, and related assignments reach devices sooner without admin or user action.\n\nAfter enrollment, the regular Intune management agent check-in cadence changes from about eight hours to one hour. Service-controlled hourly check-ins help deliver newly assigned apps, scripts, and dynamic-group updates sooner, without admin or user action.\n\nFor more information, see Common questions, answers, and scenarios with policies and profiles in Microsoft Intune.\n\nApplies to:\n\nmacOS"
   },
   {
    "id": "l31",
@@ -22351,7 +22410,8 @@
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
    "in_window": false,
-   "date_precision": "week"
+   "date_precision": "week",
+   "details": "Microsoft Intune now supports maintenance windows for operating system and driver updates on Windows devices. You can choose which update operations run during a window and configure its start date, time, duration, and repeat schedule. To create a profile, go to Devices > Manage devices > Maintenance windows > Create profile. These controls help you schedule update activity during planned maintenance periods.\n\nFor more information, see Policy CSP - Update.\n\nApplies to:\n\nWindows"
   },
   {
    "id": "l32",
@@ -22374,7 +22434,8 @@
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
    "in_window": false,
-   "date_precision": "week"
+   "date_precision": "week",
+   "details": "Microsoft Intune now supports configurable evaluation intervals for custom compliance scripts on managed Windows and macOS devices. You can choose intervals of 15 minutes, 30 minutes, or one to eight hours to match your compliance and operational requirements. This flexibility helps you balance compliance responsiveness with device resource use.\n\nApplies to:\n\nWindows\n\nmacOS"
   },
   {
    "id": "l33",
@@ -22398,7 +22459,8 @@
    "section": "Week of November 16, 2026 (Service release 2611)",
    "status": null,
    "in_window": false,
-   "date_precision": "week"
+   "date_precision": "week",
+   "details": "Windows Autopatch now provides additional reporting data, remediation guidance, and guardrails for configuration issues. Administrators can use the expanded information to understand configurations that need attention and determine an appropriate next step.\n\nApplies to:\n\nWindows"
   },
   {
    "id": "l34",
@@ -22421,7 +22483,8 @@
    "section": "April 2026",
    "status": "Preview",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "Type: New feature\n\nExperience: Standalone / Embedded\n\nThe Security Analyst Agent in Security Copilot helps security analysts quickly identify, assess, and prioritize risks. The agent performs deep, multi-step investigations across Microsoft Defender and Microsoft Sentinel telemetry to surface high-impact risks and deliver prioritized insights. Each finding includes clear reasoning and supporting evidence, enabling analysts to quickly understand and act on the results.\n\nKey capabilities include:\n\nFlexible analysis: Perform ready-to-use or custom analyses on security data. Get actionable and prioritized insights, recommendations, and reports to uncover top vulnerabilities and risks.\n\nData integration: Analyze data from Microsoft Defender XDR, Sentinel Log Analytics, or Sentinel Data Lake, based on your instructions.\n\nInteractive exploration: Visualize data to spot anomalies and risks faster.\n\nConversation assistance: Chat with the agent, ask follow-up questions, and perform related analyses to deepen your understanding.\n\nThe agent can perform single or multi-step analysis on large volumes of data, iteratively reasoning to uncover hidden risks and prioritizing findings with a detailed evidence trail, without the need to write any code or queries.\n\nFor more information, see Security Analyst Agent."
   },
   {
    "id": "l35",
@@ -22444,7 +22507,8 @@
    "section": "October 2026",
    "status": "Preview",
    "in_window": false,
-   "date_precision": "month"
+   "date_precision": "month",
+   "details": "The MAI Cyber (Preview) scan configuration now uses MAI-Cyber-1.1-Flash instead of MAI-Cyber-1-Flash.\n\nIf your Foundry already uses MAI-Cyber-1-Flash, it’s automatically upgraded in Foundry to MAI-Cyber-1.1-Flash."
   },
   {
    "id": "r01",
@@ -22458,7 +22522,7 @@
    "url": "https://www.reddit.com/r/sysadmin/comments/1xw1mub/windows_0day_signdrop_published_this_makes_this/",
    "date": "2026-11-14T18:19:30+05:30",
    "summary": "Shares a published Windows zero-day, SignDrop, said to allow privilege escalation and switching off AV/EDR. Top comments note a registry precondition that few machines meet and ask about an out-of-band fix.",
-   "asset": null,
+   "asset": "research/2026-W46/assets/reddit-sysadmin-1xw1mub.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -22479,7 +22543,7 @@
    "url": "https://www.reddit.com/r/sysadmin/comments/1xsp3bk/patch_tuesday_megathread_november_10_2026/",
    "date": "2026-11-10T20:31:12+05:30",
    "summary": "Monthly Patch Tuesday megathread. Comments flag a PowerShell signature-validation change, a confirmed printing issue and jokes about patching before Friday the 13th.",
-   "asset": null,
+   "asset": "research/2026-W46/assets/reddit-sysadmin-1xsp3bk.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -22500,7 +22564,7 @@
    "url": "https://www.reddit.com/r/entra/comments/1xtr7er/now_its_time_my_new_tool/",
    "date": "2026-11-12T01:00:55+05:30",
    "summary": "Open-source PowerShell module that runs Global Secure Access client connectivity checks in one command; commenters welcome it for troubleshooting.",
-   "asset": null,
+   "asset": "research/2026-W46/assets/reddit-entra-1xtr7er.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -22521,7 +22585,7 @@
    "url": "https://www.reddit.com/r/entra/comments/1xrx9vz/how_to_make_passkey_registration_default_to/",
    "date": "2026-11-09T22:36:27+05:30",
    "summary": "Admin asks how to make passkey registration default to the Authenticator app; replies point to passkey profiles with attestation, while noting the Windows prompt itself cannot be changed.",
-   "asset": null,
+   "asset": "research/2026-W46/assets/reddit-entra-1xrx9vz.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
@@ -22542,7 +22606,7 @@
    "url": "https://www.reddit.com/r/entra/comments/1xth1u4/a_new_version_of_the_microsoft_entra_private/",
    "date": "2026-11-11T18:26:33+05:30",
    "summary": "Post on a new Entra private network connector release with stability, DNS and logging changes; replies note it auto-updates.",
-   "asset": null,
+   "asset": "research/2026-W46/assets/reddit-entra-1xth1u4.png",
    "severity": null,
    "cvss": null,
    "exploited": null,
