@@ -465,7 +465,7 @@
   function cveRecords(items) {
     let records = items.filter((item) => item.type === "cve");
     if (controls.focus.checked) {
-      records = records.filter((item) => item.exploited === true && item.severity === "Critical" && Number(item.cvss) >= 9);
+      records = records.filter((item) => item.exploited === true || item.severity === "Critical" || Number(item.cvss) >= 9);
     } else {
       if (controls.cvss7.checked) records = records.filter((item) => Number(item.cvss) >= 7);
       if (controls.exploited.checked) records = records.filter((item) => item.exploited === true);
@@ -517,7 +517,7 @@
       <td>${escapeHtml(item.title)}<p>${escapeHtml(item.summary)}</p></td>
       <td>${item.exploited ? '<span class="badge exploited">Exploited</span>' : ""}${item.disclosed ? '<span class="badge">Publicly disclosed</span>' : ""}${!item.exploited && !item.disclosed ? "—" : ""}</td>
     </tr>`).join("") || `<tr><td colspan="6">${controls.focus.checked
-      ? "No CVEs match the strict focus criteria. Use Show all CVEs to browse the full feed."
+      ? "No CVEs match the focus filters. Use Show all CVEs to browse the full feed."
       : "No CVEs match the current filters."}</td></tr>`;
     $("#cve-page").textContent = `Page ${state.page + 1} of ${pageCount} · ${count(pageItems)} rows`;
     $("#cve-prev").disabled = state.page === 0;
