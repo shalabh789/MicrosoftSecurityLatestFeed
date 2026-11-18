@@ -1,6 +1,6 @@
 # Microsoft security digest: 9-15 November 2026 (IST), 2026-W46
 
-Window: **2026-11-09 00:00 to 2026-11-15 23:59:59 IST (UTC+05:30)**. CVEs: the full November 2026 MSRC release (calendar month). Generated 2026-11-18T08:24:50+00:00.
+Window: **2026-11-09 00:00 to 2026-11-15 23:59:59 IST (UTC+05:30)**. CVEs: the full November 2026 MSRC release (calendar month). Generated 2026-11-18T10:49:21+00:00.
 
 ## Leadership summary
 
@@ -1778,31 +1778,31 @@ Screenshot: [png](assets/learn-azure-network-security-firewall-waf-ddos.png)
 
 Page: https://learn.microsoft.com/en-us/windows/security/whats-new  
 Latest heading: **November 2026 (Ignite 2026)** ([anchor](https://learn.microsoft.com/en-us/windows/security/whats-new#november-2026-ignite-2026))  
-Note: New page found this run: 'What's new in Windows security' (its latest heading is November 2026 (Ignite 2026)). Its entries are feature names that link to their docs, with no description, so each summary only restates the name and its group.  
+Note: New page found this run: 'What's new in Windows security' (its latest heading is November 2026 (Ignite 2026)). Its entries are bare feature names that link to their docs, with no text under them, so their summaries are left empty and details holds the name as written.  
 Screenshot: [png](assets/learn-windows-security.png)
 
 | id | title | date | status | change date | summary | in window | link |
 |---|---|---|---|---|---|---|---|
-| l46 | Administrator protection | 2026-11 (month) | - | - | Listed by Microsoft under New capabilities for Windows security at Ignite 2026: Administrator protection. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l47 | Agent governance | 2026-11 (month) | - | - | Listed by Microsoft under New capabilities for Windows security at Ignite 2026: Agent governance. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l48 | Agent identity | 2026-11 (month) | - | - | Listed by Microsoft under New capabilities for Windows security at Ignite 2026: Agent identity. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l49 | Declared configuration resource access | 2026-11 (month) | - | - | Listed by Microsoft under New capabilities for Windows security at Ignite 2026: Declared configuration resource access. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l50 | Driver Quality Initiative | 2026-11 (month) | - | - | Listed by Microsoft under New capabilities for Windows security at Ignite 2026: Driver Quality Initiative. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l51 | Malicious and vulnerable driver blocklists | 2026-11 (month) | - | - | Listed by Microsoft under New capabilities for Windows security at Ignite 2026: Malicious and vulnerable driver blocklists. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l52 | Microsoft Execution Containers (MXC) | 2026-11 (month) | - | - | Listed by Microsoft under New capabilities for Windows security at Ignite 2026: Microsoft Execution Containers (MXC). | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l53 | Remote lock | 2026-11 (month) | - | - | Listed by Microsoft under New capabilities for Windows security at Ignite 2026: Remote lock. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l54 | Windows baseline protection | 2026-11 (month) | - | - | Listed by Microsoft under New capabilities for Windows security at Ignite 2026: Windows baseline protection. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l55 | Windows endpoint security platform | 2026-11 (month) | - | - | Listed by Microsoft under New capabilities for Windows security at Ignite 2026: Windows endpoint security platform. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l56 | Windows Hello for Business | 2026-11 (month) | - | - | Listed by Microsoft under Expanded capabilities for Windows security at Ignite 2026: Windows Hello for Business. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l57 | Configure Windows Hello for Business | 2026-11 (month) | - | - | Listed by Microsoft under Expanded capabilities for Windows security at Ignite 2026: Configure Windows Hello for Business. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l58 | FIDO2 security keys | 2026-11 (month) | - | - | Listed by Microsoft under Expanded capabilities for Windows security at Ignite 2026: FIDO2 security keys. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l59 | Post-quantum cryptography | 2026-11 (month) | - | - | Listed by Microsoft under Expanded capabilities for Windows security at Ignite 2026: Post-quantum cryptography. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l60 | Reduced reliance on NTLM with new Kerberos functionality | 2026-11 (month) | - | - | Listed by Microsoft under Expanded capabilities for Windows security at Ignite 2026: Reduced reliance on NTLM with new Kerberos functionality. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l61 | VBS and HVCI on upgraded systems | 2026-11 (month) | - | - | Listed by Microsoft under Expanded capabilities for Windows security at Ignite 2026: VBS and HVCI on upgraded systems. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l62 | Web sign-in | 2026-11 (month) | - | - | Listed by Microsoft under Expanded capabilities for Windows security at Ignite 2026: Web sign-in. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l63 | Wi-Fi protection (WPA3, OWE, Wi-Fi 7) | 2026-11 (month) | - | - | Listed by Microsoft under Expanded capabilities for Windows security at Ignite 2026: Wi-Fi protection (WPA3, OWE, Wi-Fi 7). | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l64 | Windows Autopatch | 2026-11 (month) | - | - | Listed by Microsoft under Expanded capabilities for Windows security at Ignite 2026: Windows Autopatch. | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l65 | Windows Hello (PIN, face, fingerprint) | 2026-11 (month) | - | - | Listed by Microsoft under Expanded capabilities for Windows security at Ignite 2026: Windows Hello (PIN, face, fingerprint). | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l46 | Administrator protection | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l47 | Agent governance | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l48 | Agent identity | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l49 | Declared configuration resource access | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l50 | Driver Quality Initiative | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l51 | Malicious and vulnerable driver blocklists | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l52 | Microsoft Execution Containers (MXC) | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l53 | Remote lock | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l54 | Windows baseline protection | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l55 | Windows endpoint security platform | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l56 | Windows Hello for Business | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l57 | Configure Windows Hello for Business | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l58 | FIDO2 security keys | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l59 | Post-quantum cryptography | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l60 | Reduced reliance on NTLM with new Kerberos functionality | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l61 | VBS and HVCI on upgraded systems | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l62 | Web sign-in | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l63 | Wi-Fi protection (WPA3, OWE, Wi-Fi 7) | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l64 | Windows Autopatch | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l65 | Windows Hello (PIN, face, fingerprint) | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
 
 ### Perception
 
@@ -1973,3 +1973,4 @@ Community discussion only, not Microsoft. Source: public Reddit pages. Commenter
 - Reddit screenshots: old.reddit.com sends all 5 threads to its login page, so each thread was captured from the public embed (embed.reddit.com/r/<sub>/comments/<id>/, headless, not signed in) at 600px wide and at most 900px tall. The first request for r/sysadmin 1xw1mub returned 403 ('blocked by network security'), and a retry 20 seconds later succeeded. The embed shows the title, a shortened body with 'Read more', the original poster's name and the vote count, but no comments ('View N comments' only). So the top comments are not in any screenshot; the 'what it is about' text comes from the earlier read of the rendered thread pages.
 - Reddit: the many r/sysadmin threads on the 12-13 Nov M365 outage (several with 400-600 upvotes) were treated as availability discussion, not Microsoft security, and are not in the top 5.
 - Run: this is a one-off end-to-end re-run of W46 on 18 Nov 2026 with every source re-fetched. Counts that changed against the previous W46 run: CVEs 1,096 -> 1,098 (CVRF revised 17 Nov) and Learn 35 -> 66 (Windows security page +20, Azure Firewall preview page +4, new or changed headings on Defender XDR, Defender for Endpoint, Defender for Cloud Apps, Sentinel and Intune). Engagement numbers (views, likes, replies, upvotes) are as read on 18 Nov.
+- Learn rules (18 Nov decisions): Learn entries with no date on the page (the 4 Azure Firewall preview items) carry the capture day with date_precision 'captured' and in_window false; they stay under their product but never count as new this week. Learn entries that are bare feature names (the 20 Windows security entries; no other page has any) keep an empty summary instead of restating the title, and details holds the entry text exactly as it appears (the name), since the page has no text under it.
