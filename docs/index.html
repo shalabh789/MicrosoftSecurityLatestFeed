@@ -43,30 +43,6 @@
           <p class="eyebrow">Explore the feed</p>
           <h2 id="filters-heading">Filters</h2>
         </div>
-        <button id="clear-filters" class="button secondary" type="button">Clear filters</button>
-      </div>
-      <div class="filters">
-        <label>By product
-          <select id="by-product"><option value="">All products</option></select>
-        </label>
-        <label>Type
-          <select id="type-filter"><option value="">All types</option></select>
-        </label>
-        <label>Product family
-          <select id="family-filter"><option value="">All families</option></select>
-        </label>
-        <label>Country
-          <select id="country-filter"><option value="">All countries</option></select>
-        </label>
-        <label>Actor
-          <select id="actor-filter"><option value="">All actors</option></select>
-        </label>
-        <label>From date
-          <input id="date-from" type="date">
-        </label>
-        <label>To date
-          <input id="date-to" type="date">
-        </label>
       </div>
       <div id="type-chips" class="chips" aria-label="Filter by item type"></div>
       <p id="filter-summary" class="muted" aria-live="polite"></p>
@@ -96,7 +72,7 @@
       <div class="section-heading"><div><p class="eyebrow">Active campaigns and reporting</p><h2>Threat intelligence</h2></div><span id="threat-count" class="muted"></span></div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th scope="col">Date</th><th scope="col">Report</th><th scope="col">Actor</th><th scope="col">Sectors</th><th scope="col">Linked CVEs</th><th scope="col">Source</th></tr></thead>
+          <thead><tr><th scope="col">Date</th><th scope="col">Report</th><th scope="col">Linked CVEs</th><th scope="col">Source</th></tr></thead>
           <tbody id="threat-table"></tbody>
         </table>
       </div>
@@ -112,7 +88,27 @@
         <div><p class="eyebrow">Microsoft Learn</p><h2>By product</h2></div>
         <span id="learn-count" class="muted"></span>
       </div>
-      <p class="section-intro">Learn updates are grouped by product. Select a product above to focus its updates and related feed items.</p>
+      <p class="section-intro">Learn updates are grouped by product. Filters here apply only to these Learn panels.</p>
+      <div class="learn-filters" aria-label="Filter Learn updates">
+        <label>Product family
+          <select id="learn-family"><option value="">All families</option></select>
+        </label>
+        <label>Status
+          <select id="learn-status">
+            <option value="">All statuses</option>
+            <option>GA</option>
+            <option>Preview</option>
+            <option>Deprecation</option>
+            <option>Retirement</option>
+          </select>
+        </label>
+        <label>From date
+          <input id="learn-date-from" type="date">
+        </label>
+        <label>To date
+          <input id="learn-date-to" type="date">
+        </label>
+      </div>
       <div id="product-list" class="product-list"></div>
     </section>
 
