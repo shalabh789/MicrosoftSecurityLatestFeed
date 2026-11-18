@@ -2,7 +2,7 @@
  "week": "2026-W46",
  "start": "2026-11-09T00:00:00+05:30",
  "end": "2026-11-15T23:59:59+05:30",
- "generated": "2026-11-18T03:24:02+00:00",
+ "generated": "2026-11-18T03:31:06+00:00",
  "leadership_summary": [
   {
    "text": "Patch exposure: one November flaw is already exploited, an Outlook spoofing bug that can leak NTLM credentials, and 64 are rated Critical. Ask for Outlook patch coverage and an NTLM reduction plan.",
@@ -40,13 +40,12 @@
    ]
   },
   {
-   "text": "Planned changes: Purview Data Governance support ends 12 Nov 2027, moving customers to Fabric. Purview retention and DLP changes land by February; Intune is building Defender antivirus and AI-agent compliance controls. Assign owners.",
+   "text": "Planned changes: Purview Data Governance support ends 12 Nov 2027, Sentinel leaves the Azure portal after 31 Mar 2027, and Purview retention and DLP changes land by February. Assign owners and migration dates.",
    "item_ids": [
     "b07",
-    "rm07",
-    "rm08",
-    "rm66",
-    "rm69"
+    "ch03",
+    "rm02",
+    "rm03"
    ]
   }
  ],
@@ -65,6 +64,11 @@
    "date": "2026-12-08",
    "label": "Patch Tuesday",
    "url": "https://msrc.microsoft.com/update-guide/"
+  },
+  {
+   "date": "2026-12-14",
+   "label": "Defender for Cloud: Upcoming deprecation of the Machines should have a vulnerability assessment solution recommendation (deprecation)",
+   "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes#upcoming-deprecation-of-the-machines-should-have-a-vulnerability-assessment-solution-recommendation"
   },
   {
    "date": "2027-01-12",
@@ -22592,158 +22596,6 @@
    "product": [
     "Purview"
    ],
-   "title": "Microsoft Purview: Permissions audit log improvements",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=569363",
-   "date": "2026-11-12",
-   "summary": "Purview portal access checks are tightened and audit logs show clearer role and scoped-role access decisions.",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "569363",
-   "mc_id": null,
-   "status": "Launched",
-   "rollout": "September CY2026",
-   "added_date": "2026-08-17",
-   "last_modified": "2026-11-12",
-   "also_ids": [
-    {
-     "id": "573447",
-     "clouds": [
-      "GCC",
-      "GCC High",
-      "DoD"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "rm02",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview compliance portal: Data Loss Prevention – Restrict access action support for sematic models …",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=422501",
-   "date": "2026-11-11",
-   "summary": "DLP can restrict guest or all-user access to Fabric semantic models and lakehouses holding sensitive data.",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "422501",
-   "mc_id": null,
-   "status": "Launched",
-   "rollout": "October CY2026",
-   "added_date": "2024-11-19",
-   "last_modified": "2026-11-11",
-   "also_ids": []
-  },
-  {
-   "id": "rm03",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Data Lifecycle Management – Increase in expansion limit for auto expanding archive beyond …",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=560820",
-   "date": "2026-11-11",
-   "summary": "Auto-expanding archive mailboxes can grow past the old 1.5 TB ceiling instead of becoming unusable.",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "560820",
-   "mc_id": null,
-   "status": "Launched",
-   "rollout": "October CY2026",
-   "added_date": "2026-04-23",
-   "last_modified": "2026-11-11",
-   "also_ids": [
-    {
-     "id": "573702",
-     "clouds": [
-      "GCC",
-      "GCC High",
-      "DoD"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "rm04",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Data Loss Prevention – New Guided Experience to Diagnose and Resolve DLP Issues",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=561032",
-   "date": "2026-11-11",
-   "summary": "A guided diagnostic explains why a DLP action fired on a document and how to resolve unexpected behaviour.",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "561032",
-   "mc_id": null,
-   "status": "Launched",
-   "rollout": "October CY2026",
-   "added_date": "2026-04-24",
-   "last_modified": "2026-11-11",
-   "also_ids": []
-  },
-  {
-   "id": "rm05",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Information Protection-Auto-labeling per-policy coverage report ",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=568935",
-   "date": "2026-11-11",
-   "summary": "Each enforced auto-labeling policy gets a report comparing labeled and unlabeled files against its latest simulation.",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "568935",
-   "mc_id": null,
-   "status": "Launched",
-   "rollout": "October CY2026",
-   "added_date": "2026-08-07",
-   "last_modified": "2026-11-11",
-   "also_ids": [
-    {
-     "id": "572677",
-     "clouds": [
-      "GCC",
-      "GCC High",
-      "DoD"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "rm06",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
    "title": "Microsoft Purview: Purview Information Protection | Classifier Simulation Mode (Health Monitoring)",
    "url": "https://www.microsoft.com/microsoft-365/roadmap?id=523201",
    "date": "2026-07-14",
@@ -22763,7 +22615,7 @@
    "also_ids": []
   },
   {
-   "id": "rm07",
+   "id": "rm02",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -22797,7 +22649,7 @@
    ]
   },
   {
-   "id": "rm08",
+   "id": "rm03",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -22831,7 +22683,7 @@
    ]
   },
   {
-   "id": "rm09",
+   "id": "rm04",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -22865,7 +22717,7 @@
    ]
   },
   {
-   "id": "rm10",
+   "id": "rm05",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -22890,32 +22742,7 @@
    "also_ids": []
   },
   {
-   "id": "rm11",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Auto-labeling scalability, policy management, and reporting enhancements",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=570445",
-   "date": "2026-11-11",
-   "summary": "Auto-labeling gains larger SharePoint scopes, easier policy management and better reporting for enterprise-scale rollouts.",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "570445",
-   "mc_id": null,
-   "status": "Launched",
-   "rollout": "November CY2026",
-   "added_date": "2026-09-03",
-   "last_modified": "2026-11-11",
-   "also_ids": []
-  },
-  {
-   "id": "rm12",
+   "id": "rm06",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -22949,7 +22776,7 @@
    ]
   },
   {
-   "id": "rm13",
+   "id": "rm07",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -22974,7 +22801,7 @@
    "also_ids": []
   },
   {
-   "id": "rm14",
+   "id": "rm08",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23008,7 +22835,7 @@
    ]
   },
   {
-   "id": "rm15",
+   "id": "rm09",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23042,7 +22869,7 @@
    ]
   },
   {
-   "id": "rm16",
+   "id": "rm10",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23076,7 +22903,7 @@
    ]
   },
   {
-   "id": "rm17",
+   "id": "rm11",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23101,7 +22928,7 @@
    "also_ids": []
   },
   {
-   "id": "rm18",
+   "id": "rm12",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23126,7 +22953,7 @@
    "also_ids": []
   },
   {
-   "id": "rm19",
+   "id": "rm13",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23151,7 +22978,7 @@
    "also_ids": []
   },
   {
-   "id": "rm20",
+   "id": "rm14",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23176,7 +23003,7 @@
    "also_ids": []
   },
   {
-   "id": "rm21",
+   "id": "rm15",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23201,7 +23028,7 @@
    "also_ids": []
   },
   {
-   "id": "rm22",
+   "id": "rm16",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23235,7 +23062,7 @@
    ]
   },
   {
-   "id": "rm23",
+   "id": "rm17",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23260,7 +23087,7 @@
    "also_ids": []
   },
   {
-   "id": "rm24",
+   "id": "rm18",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23285,7 +23112,7 @@
    "also_ids": []
   },
   {
-   "id": "rm25",
+   "id": "rm19",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23310,7 +23137,7 @@
    "also_ids": []
   },
   {
-   "id": "rm26",
+   "id": "rm20",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23335,7 +23162,7 @@
    "also_ids": []
   },
   {
-   "id": "rm27",
+   "id": "rm21",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23369,7 +23196,7 @@
    ]
   },
   {
-   "id": "rm28",
+   "id": "rm22",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23403,7 +23230,7 @@
    ]
   },
   {
-   "id": "rm29",
+   "id": "rm23",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23437,7 +23264,7 @@
    ]
   },
   {
-   "id": "rm30",
+   "id": "rm24",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23462,7 +23289,7 @@
    "also_ids": []
   },
   {
-   "id": "rm31",
+   "id": "rm25",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23487,7 +23314,7 @@
    "also_ids": []
   },
   {
-   "id": "rm32",
+   "id": "rm26",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23512,7 +23339,7 @@
    "also_ids": []
   },
   {
-   "id": "rm33",
+   "id": "rm27",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23537,7 +23364,7 @@
    "also_ids": []
   },
   {
-   "id": "rm34",
+   "id": "rm28",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23562,7 +23389,7 @@
    "also_ids": []
   },
   {
-   "id": "rm35",
+   "id": "rm29",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23587,7 +23414,7 @@
    "also_ids": []
   },
   {
-   "id": "rm36",
+   "id": "rm30",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23612,7 +23439,7 @@
    "also_ids": []
   },
   {
-   "id": "rm37",
+   "id": "rm31",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23637,7 +23464,7 @@
    "also_ids": []
   },
   {
-   "id": "rm38",
+   "id": "rm32",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23662,7 +23489,7 @@
    "also_ids": []
   },
   {
-   "id": "rm39",
+   "id": "rm33",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23687,7 +23514,7 @@
    "also_ids": []
   },
   {
-   "id": "rm40",
+   "id": "rm34",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23712,7 +23539,7 @@
    "also_ids": []
   },
   {
-   "id": "rm41",
+   "id": "rm35",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23737,7 +23564,7 @@
    "also_ids": []
   },
   {
-   "id": "rm42",
+   "id": "rm36",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23762,7 +23589,7 @@
    "also_ids": []
   },
   {
-   "id": "rm43",
+   "id": "rm37",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23787,7 +23614,7 @@
    "also_ids": []
   },
   {
-   "id": "rm44",
+   "id": "rm38",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23812,7 +23639,7 @@
    "also_ids": []
   },
   {
-   "id": "rm45",
+   "id": "rm39",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23846,7 +23673,7 @@
    ]
   },
   {
-   "id": "rm46",
+   "id": "rm40",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23871,7 +23698,7 @@
    "also_ids": []
   },
   {
-   "id": "rm47",
+   "id": "rm41",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23905,7 +23732,7 @@
    ]
   },
   {
-   "id": "rm48",
+   "id": "rm42",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23930,7 +23757,7 @@
    "also_ids": []
   },
   {
-   "id": "rm49",
+   "id": "rm43",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23955,7 +23782,7 @@
    "also_ids": []
   },
   {
-   "id": "rm50",
+   "id": "rm44",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -23980,7 +23807,7 @@
    "also_ids": []
   },
   {
-   "id": "rm51",
+   "id": "rm45",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24005,7 +23832,7 @@
    "also_ids": []
   },
   {
-   "id": "rm52",
+   "id": "rm46",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24030,7 +23857,7 @@
    "also_ids": []
   },
   {
-   "id": "rm53",
+   "id": "rm47",
    "type": "roadmap",
    "source": "Microsoft 365 Roadmap",
    "product": [
@@ -24055,66 +23882,7 @@
    "also_ids": []
   },
   {
-   "id": "rm54",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: DSPM-Copilot Readiness and Data Explorer",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=571157",
-   "date": "2026-11-11",
-   "summary": "Purview DSPM adds a Copilot readiness view of exposed, overshared and unprotected data, plus a site-level explorer for investigating where sensitive content sits.",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "571157",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "March CY2027",
-   "added_date": "2026-09-15",
-   "last_modified": "2026-11-11",
-   "also_ids": []
-  },
-  {
-   "id": "rm55",
-   "type": "roadmap",
-   "source": "Microsoft 365 Roadmap",
-   "product": [
-    "Purview"
-   ],
-   "title": "Microsoft Purview: Endpoint Data Loss Prevention - Policy Sync & Device Health AI-Powered Investigation",
-   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=562016",
-   "date": "2026-11-11",
-   "summary": "An AI skill in Endpoint DLP will spot devices whose policy sync or configuration is unhealthy and raise an alert for the admin.",
-   "asset": null,
-   "severity": null,
-   "cvss": null,
-   "exploited": null,
-   "disclosed": null,
-   "engagement": null,
-   "roadmap_id": "562016",
-   "mc_id": null,
-   "status": "In development",
-   "rollout": "July CY2027",
-   "added_date": "2026-05-12",
-   "last_modified": "2026-11-11",
-   "also_ids": [
-    {
-     "id": "565374",
-     "clouds": [
-      "GCC",
-      "GCC High",
-      "DoD"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "rm56",
+   "id": "rm48",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24139,7 +23907,7 @@
    "also_ids": []
   },
   {
-   "id": "rm57",
+   "id": "rm49",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24164,7 +23932,7 @@
    "also_ids": []
   },
   {
-   "id": "rm58",
+   "id": "rm50",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24189,7 +23957,7 @@
    "also_ids": []
   },
   {
-   "id": "rm59",
+   "id": "rm51",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24214,7 +23982,7 @@
    "also_ids": []
   },
   {
-   "id": "rm60",
+   "id": "rm52",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24239,7 +24007,7 @@
    "also_ids": []
   },
   {
-   "id": "rm61",
+   "id": "rm53",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24264,7 +24032,7 @@
    "also_ids": []
   },
   {
-   "id": "rm62",
+   "id": "rm54",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24289,7 +24057,7 @@
    "also_ids": []
   },
   {
-   "id": "rm63",
+   "id": "rm55",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24314,7 +24082,7 @@
    "also_ids": []
   },
   {
-   "id": "rm64",
+   "id": "rm56",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24340,7 +24108,7 @@
    "also_ids": []
   },
   {
-   "id": "rm65",
+   "id": "rm57",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24366,7 +24134,7 @@
    "also_ids": []
   },
   {
-   "id": "rm66",
+   "id": "rm58",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24392,7 +24160,7 @@
    "also_ids": []
   },
   {
-   "id": "rm67",
+   "id": "rm59",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24418,7 +24186,7 @@
    "also_ids": []
   },
   {
-   "id": "rm68",
+   "id": "rm60",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24444,7 +24212,7 @@
    "also_ids": []
   },
   {
-   "id": "rm69",
+   "id": "rm61",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24469,7 +24237,7 @@
    "also_ids": []
   },
   {
-   "id": "rm70",
+   "id": "rm62",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24495,7 +24263,7 @@
    "also_ids": []
   },
   {
-   "id": "rm71",
+   "id": "rm63",
    "type": "roadmap",
    "source": "Microsoft Learn: In development for Microsoft Intune",
    "product": [
@@ -24518,6 +24286,314 @@
    "added_date": null,
    "last_modified": null,
    "also_ids": []
+  },
+  {
+   "id": "ch01",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "Plan for change - Switch from basic auth to workload identity based auth for SAP SuccessFactors provisioning integrations",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#plan-for-change---switch-from-basic-auth-to-workload-identity-based-auth-for-sap-successfactors-provisioning-integrations",
+   "date": null,
+   "summary": "SAP is ending basic auth for SuccessFactors APIs, so Entra provisioning to and from SuccessFactors must move to workload identity.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "Type: Plan for change Service category: Provisioning Product capability: Inbound to Entra ID\n\nMicrosoft Entra is introducing workload identity–based authentication for SAP SuccessFactors provisioning. This new capability allows the Microsoft Entra provisioning service to authenticate to SAP SuccessFactors using Entra workload identity and short‑lived tokens instead of static credentials (username and password).\n\nThis change helps customers transition to a more secure authentication model in preparation for SAP’s plan to deprecate basic authentication for SuccessFactors APIs by November 2026 .\n\nWhat's changing\n\nA new authentication option will be available starting May 2026 in the SAP SuccessFactors provisioning apps to use Entra workload identity-based authentication instead of basic authentication.\n\nCustomers can switch existing provisioning configurations from basic authentication to workload identity–based authentication directly through updated connectivity settings in the provisioning experience, without needing to recreate or restart their configuration.\n\nThis method removes the need to store long-lived credentials and uses a standards-based authentication method between Entra and SAP SuccessFactors through SAP Cloud Identity Services.\n\nThis capability applies to the following provisioning scenarios:\n\nSAP SuccessFactors to Active Directory user provisioning\n\nSAP SuccessFactors to Microsoft Entra ID user provisioning\n\nSAP SuccessFactors writeback (Entra to SuccessFactors)\n\nWhat this means for you\n\nIf you are currently using basic authentication for any of the above SAP SuccessFactors provisioning integrations, you must upgrade to workload identity-based authentication before November 2026 to ensure uninterrupted operation of the integrations.\n\nNo immediate action is required, but we recommend planning your migration early to avoid last-minute disruption.\n\nThe new method improves security by:\n\nEliminating stored passwords\n\nUsing short-lived, verifiable tokens\n\nAligning with SAP’s supported authentication model\n\nRecommended action\n\nEvaluate the new authentication option once available in your tenant\n\nPlan and test migration of existing provisioning jobs to workload identity-based authentication\n\nUpdate any internal documentation or operational processes that reference basic authentication\n\nAdditional information\n\nDetailed configuration guidance and step-by-step instructions will be published in Microsoft Learn documentation.",
+   "section": "April 2026",
+   "change_date": "2026-11",
+   "change_type": "deprecation"
+  },
+  {
+   "id": "ch02",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Defender"
+   ],
+   "title": "Upcoming deprecation of the Machines should have a vulnerability assessment solution recommendation",
+   "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes#upcoming-deprecation-of-the-machines-should-have-a-vulnerability-assessment-solution-recommendation",
+   "date": "2026-09-23",
+   "summary": "The single grouped vulnerability assessment recommendation for machines goes away; use the individual recommendations instead.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "September 23, 2026\n\nAs part of the transition to individual recommendations, the Machines should have a vulnerability assessment solution recommendation will be deprecated on December 14, 2026.\n\nCustomers should use individual recommendations in Microsoft Defender for Cloud to review and manage vulnerability assessment coverage.\n\nFor more information, see Transition from grouped to individual recommendations in Defender for Cloud .",
+   "section": "September 2026",
+   "change_date": "2026-12-14",
+   "change_type": "deprecation"
+  },
+  {
+   "id": "ch03",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Sentinel"
+   ],
+   "title": "Updated date: Microsoft Sentinel in the Azure portal to be retired March 2027",
+   "url": "https://learn.microsoft.com/en-us/azure/sentinel/whats-new#updated-date-microsoft-sentinel-in-the-azure-portal-to-be-retired-march-2027",
+   "date": null,
+   "summary": "Sentinel will only be supported in the Defender portal after the Azure portal experience is retired; plan the move now.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "Microsoft Sentinel is generally available in the Microsoft Defender portal , including for customers without Microsoft Defender XDR or an E5 license. This means that you can use Microsoft Sentinel in the Defender portal even if you aren't using other Microsoft Defender services.\n\nAfter March 31, 2027 , Microsoft Sentinel will no longer be supported in the Azure portal and will be available only in the Microsoft Defender portal.\n\nIf you're currently using Microsoft Sentinel in the Azure portal, we recommend that you start planning your transition to the Defender portal now to ensure a smooth transition and take full advantage of the unified security operations experience offered by Microsoft Defender .\n\nFor more information, see:\n\nMicrosoft Sentinel in the Microsoft Defender portal\n\nTransition your Microsoft Sentinel environment to the Defender portal\n\nPlanning your move to Microsoft Defender portal for all Microsoft Sentinel customers (blog)",
+   "section": "January 2026",
+   "change_date": "2027-03-31",
+   "change_type": "retirement"
+  },
+  {
+   "id": "ch04",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Defender"
+   ],
+   "title": "Classic Defender for SQL APIs retirement",
+   "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes#classic-defender-for-sql-apis-retirement",
+   "date": "2026-08-17",
+   "summary": "The classic SQL vulnerability assessment and threat protection APIs are being shut down; migrate integrations to the supported configuration.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "August 17, 2026\n\nThe classic Defender for SQL APIs for Vulnerability Assessment and Advanced Threat Protection will be retired on August 16, 2027 .\n\nIf you use these APIs, migrate to the supported configuration model and update any dependent scripts or automation before the retirement date.\n\nFor migration guidance, see Prepare for the retirement of classic Defender for SQL APIs .",
+   "section": "August 2026",
+   "change_date": "2027-08-16",
+   "change_type": "retirement"
+  },
+  {
+   "id": "ch05",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Intune"
+   ],
+   "title": "Plan for Change: Intune is moving to support iOS/iPadOS 18 and later",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#plan-for-change-intune-is-moving-to-support-iosipados-18-and-later",
+   "date": null,
+   "summary": "After Apple ships iOS/iPadOS 27, Intune, Company Portal and app protection stop supporting older iPhone and iPad versions; check device reports for stragglers.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "Later in calendar year 2026, we expect iOS 27 and iPadOS 27 to be released by Apple. Microsoft Intune, including the Intune Company Portal and Intune app protection policies (APP, also known as MAM), requires iOS 17/iPadOS 17 and higher shortly after the iOS/iPadOS 27 release.\n\nHow does this change affect you or your users?\n\nIf you're managing iOS/iPadOS devices, you might have devices that won't be able to upgrade to the minimum supported version (iOS 18/iPadOS 18).\n\nGiven that Microsoft 365 mobile apps are supported on iOS 18/iPadOS 18 and higher, this change might not affect you. You likely already upgraded your OS or devices.\n\nTo check which devices support iOS 18 or iPadOS 18 (if applicable), see the following Apple documentation:\n\nSupported iPhone models\n\nSupported iPad models\n\nNote Userless iOS and iPadOS devices enrolled through Automated Device Enrollment (ADE) have a slightly nuanced support statement due to their shared usage. The minimum supported OS version changes to iOS 18/iPadOS 18 while the allowed OS version changes to iOS 16/iPadOS 16 and later. For more information, see this statement about ADE Userless support .\n\nHow can you prepare?\n\nCheck your Intune reporting to see what devices or users might be affected. For devices with mobile device management (MDM), go to Devices > All devices and filter by OS. For devices with app protection policies, go to Apps > Monitor > App protection status and use the Platform and Platform version columns to filter.\n\nTo manage the supported OS version in your organization, you can use Microsoft Intune controls for both MDM and APP. For more information, see Manage operating system versions with Intune .",
+   "section": "Notices",
+   "change_date": null,
+   "change_type": "deprecation"
+  },
+  {
+   "id": "ch06",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Intune"
+   ],
+   "title": "Plan for change: Intune is moving to support macOS 15 and higher later this year",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#plan-for-change-intune-is-moving-to-support-macos-15-and-higher-later-this-year",
+   "date": null,
+   "summary": "Shortly after macOS 27 ships, new Macs on macOS 14 or older can no longer enroll; enrolled ones stay managed.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "Later in calendar year 2026, we expect macOS Golden Gate 27 to be released by Apple. Microsoft Intune, the Company Portal app, and the Intune mobile device management agent support macOS 15 and later. Since the Company Portal app for iOS and macOS are a unified app, this change will occur shortly after the release of macOS 27. This change doesn't affect existing enrolled devices.\n\nHow does this change affect you or your users?\n\nThis change only affects you if you currently manage, or plan to manage, macOS devices with Intune. If your users have likely already upgraded their macOS devices, then this change might not affect you. For a list of supported devices, refer to macOS Sequoia is compatible with these computers .\n\nNote Devices that are currently enrolled on macOS 14.x or below will continue to remain enrolled even when those versions are no longer supported. New devices are unable to enroll if they're running macOS 14.x or below.\n\nHow can you prepare?\n\nCheck your Intune reporting to see what devices or users might be affected. Go to Devices > All devices and filter by macOS. You can add more columns to help identify who in your organization has devices running macOS 14.x or earlier. Ask your users to upgrade their devices to a supported OS version.",
+   "section": "Notices",
+   "change_date": null,
+   "change_type": "deprecation"
+  },
+  {
+   "id": "ch07",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Intune"
+   ],
+   "title": "Plan for Change: New settings for Apple AI features; Genmojis, Writing tools, Screen capture",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#plan-for-change-new-settings-for-apple-ai-features-genmojis-writing-tools-screen-capture",
+   "date": null,
+   "summary": "App protection gets separate block switches for screen capture, Genmoji and Writing Tools; tenants that restrict data sharing start with all three blocked.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "Today, the Apple AI features for Genmojis, Writing tools, and screen capture are blocked when the app protection policy (APP) \"Send Org data to other apps\" setting is configured to a value other than \"All apps\". For more details on the current configuration, app requirements, and the list of current Apple AI controls review the blog: Microsoft Intune support for Apple Intelligence\n\nIn an upcoming release, Intune app protection policies have new standalone settings for blocking screen capture, Genmojis, and Writing tools. These standalone settings are supported by apps that have updated to version 19.7.12 or later for Xcode 15 and 20.4.0 or later for Xcode 16 of the Intune App SDK and App Wrapping Tool.\n\nHow does this change affect you or your users?\n\nIf you configured the APP \"Send Org data to other apps\" setting to a value other than \"All apps\", then the new \"Genmoji\", \"Writing Tools\" and \"Screen capture\" settings are set to Block in your app protection policy to prevent changes to your current user experience.\n\nNote If you configured an app configuration policy (ACP) to allow for screen capture, it overrides the APP setting. We recommend updating the new APP setting to Allow and removing the ACP setting. For more information about the screen capture control, review iOS/iPadOS app protection policy settings | Microsoft Learn .\n\nHow can you prepare?\n\nReview and update your app protection policies if you'd like more granular controls for blocking or allowing specific AI features. ( Apps > Protection > select a policy > Properties > Basics > Apps > Data protection )",
+   "section": "Notices",
+   "change_date": null,
+   "change_type": "enforcement"
+  },
+  {
+   "id": "ch08",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Intune"
+   ],
+   "title": "Plan for change: User alerts on iOS for when screen capture actions are blocked",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#plan-for-change-user-alerts-on-ios-for-when-screen-capture-actions-are-blocked",
+   "date": null,
+   "summary": "iOS SDK 20.3.0 will show users a message when a protected app blocks a screenshot, recording or mirroring attempt.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "In an upcoming version (20.3.0) of the Intune App SDK and Intune App Wrapping Tool for iOS, support is added to alert users when a screen capture action (including recording and mirroring) is detected in a managed app. The alert is only visible to users if you have configured an app protection policy (APP) to block screen capture.\n\nHow does this change affect you or your users?\n\nIf APP has been configured to block screen capturing, users see an alert indicating that screen capture actions are blocked by their organization when they attempt to screenshot, screen record, or screen mirror.\n\nFor apps that have updated to the latest Intune App SDK or Intune App Wrapping Tool versions, screen capture is blocked if you configured \"Send Org data to other apps\" to a value other than \"All apps\". To allow screen capture for your iOS/iPadOS devices, configure the Managed apps app configuration policy setting \"com.microsoft.intune.mam.screencapturecontrol\" to Disabled .\n\nHow can you prepare?\n\nUpdate your IT admin documentation and notify your helpdesk or users as needed. You can learn more about blocking screen capture in the blog: New block screen capture for iOS/iPadOS MAM protected apps",
+   "section": "Notices",
+   "change_date": null,
+   "change_type": "enforcement"
+  },
+  {
+   "id": "ch09",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Intune"
+   ],
+   "title": "Plan for Change: Blocking screen capture in the latest Intune App SDK for iOS and Intune App Wrapping Tool for iOS",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#plan-for-change-blocking-screen-capture-in-the-latest-intune-app-sdk-for-ios-and-intune-app-wrapping-tool-for-ios",
+   "date": null,
+   "summary": "Apps rebuilt with the newer iOS SDK or wrapper block screen capture whenever data sharing is restricted; an app config setting re-allows it.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "We recently released updated versions of the Intune App SDK and the Intune App Wrapping Tool. Included in these releases (v19.7.5+ for Xcode 15 and v20.2.0+ for Xcode 16) is the support for blocking screen capture, Genmojis, and writing tools in response to the new AI features in iOS/iPadOS 18.2.\n\nHow does this change affect you or your users?\n\nFor apps that have updated to the latest Intune App SDK or Intune App Wrapping Tool versions screen capture will be blocked if you configured \"Send Org data to other apps\" to a value other than \"All apps\". To allow screen capture for your iOS/iPadOS devices, configure the Managed apps app configuration policy setting \"com.microsoft.intune.mam.screencapturecontrol\" to Disabled .\n\nHow can you prepare?\n\nReview your app protection policies and if needed, create a Managed apps app configuration policy to allow screen capture by configuring the above setting (Apps > App configuration policies > Create > Managed apps > Step 3 'Settings' under General configuration) . For more information review, iOS app protection policy settings – Data protection and App configuration policies - Managed apps .",
+   "section": "Notices",
+   "change_date": null,
+   "change_type": "enforcement"
+  },
+  {
+   "id": "ch10",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Intune"
+   ],
+   "title": "Update to the latest Intune App SDK and Intune App Wrapper for Android 15 support",
+   "url": "https://learn.microsoft.com/en-us/intune/whats-new/in-development#update-to-the-latest-intune-app-sdk-and-intune-app-wrapper-for-android-15-support",
+   "date": null,
+   "summary": "Apps that target Android 15 (API 35) must move to Intune App SDK 11.0.0 or the matching wrapper build.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "We've recently released new versions of the Intune App SDK and Intune App Wrapping Tool for Android to support Android 15. We recommend upgrading your app to the latest SDK or wrapper versions to ensure applications stay secure and run smoothly.\n\nHow does this change affect you or your users?\n\nIf you have applications using the Intune App SDK or Intune App Wrapping Tool for Android, it's recommended that you update your app to the latest version to support Android 15.\n\nHow can you prepare?\n\nIf you choose to build apps targeting Android API 35, you need to adopt the new version of the Intune App SDK for Android (v11.0.0). If you wrapped your app and are targeting API 35, you need to use the new version of the App wrapper (v1.0.4549.6).\n\nNote As a reminder, while apps must update to the latest SDK if targeting Android 15, apps don't need to update the SDK to run on Android 15.\n\nYou should also plan to update your documentation or developer guidance if applicable to include this change in support for the SDK.\n\nHere are the public repositories:\n\nIntune App SDK for Android\n\nIntune App Wrapping Tool for Android",
+   "section": "Notices",
+   "change_date": null,
+   "change_type": "enforcement"
+  },
+  {
+   "id": "ch11",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "Upcoming change - Enhanced admin authorization for Microsoft Entra Connect Sync configuration changes",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#upcoming-change---enhanced-admin-authorization-for-microsoft-entra-connect-sync-configuration-changes",
+   "date": null,
+   "summary": "Changing Entra Connect Sync settings, via wizard or PowerShell, will need an interactive sign-in by an authorised cloud admin.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "Type: Changed feature Service category: Entra Connect Product capability: Entra Connect\n\nWe're enhancing the security posture of Microsoft Entra Connect Sync by introducing interactive admin authorization for configuration changes. With this update, an authorized administrator will need to sign in and explicitly approve changes to sync settings, ensuring that configuration updates are intentional and made by the right person.\n\nWhat’s changing\n\nInteractive admin authorization for sync configuration changes: Going forward, changes to sync configuration settings – such as enabling or disabling features – will require interactive authentication from an authorized cloud administrator. Whether you're using the Entra Connect wizard or PowerShell, a verified admin sign-in will be required to complete the action. This strengthens the authorization model for all sync-related configuration changes.\n\nGreater consistency in admin-driven configuration: We are aligning sync behavior so that configuration decisions made by cloud administrators are consistently respected. The cloud will serve as the source of truth for sync feature state, giving administrators greater confidence that their intended configuration is maintained.\n\nUpdated management paths: All management interfaces for Entra Connect will incorporate delegated admin authentication where needed. Specifically:\n\nEntra Connect wizard flows: The installation and configuration wizard will use delegated admin tokens for sync configuration changes, providing a more secure authorization flow.\n\nPowerShell cmdlets: PowerShell-based management of sync settings will now prompt for an interactive admin sign-in to complete configuration changes. Ensure you run these commands in a session where you can provide admin credentials.\n\nUninstall behavior: If you uninstall Entra Connect Sync and choose to make cloud-side changes such as converting the tenant to cloud-only synchronization, the uninstall process will require admin authentication before modifying settings in the cloud tenant.\n\nWhat’s not changing\n\nSync functionality and the end-user experience remain unchanged. Everything continues to work as expected when features are enabled or disabled.\n\nThere is no change to how administrators choose to enable or disable sync features; only that these actions now require interactive authentication.\n\nThe Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on Microsoft Entra admin center under Microsoft Entra Connect .\n\nCheck our version history page for more details on available versions.",
+   "section": "May 2026",
+   "change_date": null,
+   "change_type": "enforcement"
+  },
+  {
+   "id": "ch12",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "Upcoming Change - Migrate from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#upcoming-change---migrate-from-microsoft-entra-connect-sync-to-microsoft-entra-cloud-sync",
+   "date": null,
+   "summary": "Microsoft will move tenants from Entra Connect Sync to Cloud Sync in phases, contacting each one with its own transition window.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "Type: Plan for change Service category: Entra Connect Product capability: Entra Connect\n\nAs organizations look to strengthen identity security and advance their Zero Trust strategies, many are looking for simpler, more reliable ways to manage hybrid identity. To support these needs, we’re beginning the transition from Microsoft Entra Connect Sync to the cloud‑native Microsoft Entra Cloud Sync - helping reduce on‑premises complexity while improving security, reliability, and day‑to‑day manageability.\n\nThis shift is a key step toward a cloud-managed identity future that will provide a more secure, resilient, and easier-to-operate synchronization experience. As part of ongoing modernization efforts, Microsoft’s strategy remains to deliver stronger security, improved reliability, and simpler identity operations.\n\nWhat's next\n\nBeginning in July 2026, we will begin notifying customers through the M365 Message Center, Entra Connect Health, and targeted emails about their individual transition timelines. The transition will be rolled out in phases, and we will reach out directly to each organization when their assigned transition window begins. This phased approach ensures that we can provide tailored guidance and support to all our customers.\n\nInitial phases: In the first waves, we will focus on tenants for whom Entra Cloud Sync already meets all their identity synchronization needs. If your organization relies on advanced features or has a large directory, you will not be among the initial targeted groups. We will prioritize early transitions for customers with straightforward configurations that are fully supported by Entra Cloud Sync’s current capabilities.\n\nSubsequent phases: As Entra Cloud Sync’s capabilities expand, we will progressively notify the later groups and ensure they can transition successfully once equivalent support is available in Entra Cloud Sync\n\nWe are committed to supporting you by providing tooling and documentation for the transition to Entra Cloud Sync.\n\nWhat's changing\n\nOnce your organization is notified of its assigned transition window, you will receive detailed guidance and resources to help you begin the move to Entra Cloud Sync. During this period:\n\nYou will have review your current configuration, assess readiness, and familiarize yourself with Cloud Sync’s capabilities.\n\nYou will gain access to the transition tool and step-by-step documentation to support a smooth transition.\n\nYou will move and test your synchronization environment in Entra Cloud Sync before any permanent changes are made.\n\nOnce your transition to Entra Cloud Sync is successfully completed:\n\nEntra Cloud Sync will be the primary mechanism for identity synchronization capabilities between Active Directory and Entra ID, replacing the identity sync functionality in Entra Connect tool.\n\nWhat's not changing\n\nOnce you migrate to Cloud Sync, your hybrid authentication features that enable on‑premises credentials to be used for accessing cloud resources will continue to be available after migration on the Connect Sync config wizard.\n\nStart preparing today\n\nWe recommend that you take steps to begin your migration. You can begin familiarizing yourself with Entra Cloud Sync and review our dedicated resources to ensure a smooth transition:\n\nCloud Sync deep dive – how it works\n\nStep-by-step migration guidance\n\nMigration scenarios:\n\nMigrate to Microsoft Entra Cloud Sync for a synced Active Directory forest\n\nMigrate Microsoft Entra Connect Sync Group Writeback v2 to Microsoft Entra Cloud Sync\n\nMicrosoft Entra Cloud Sync vs. Microsoft Entra Connect Sync feature comparison\n\nMicrosoft Entra supports Source of Authority (SOA) capabilities that allow you to shift user and group management to the cloud while continuing to operate existing Connect Sync deployments. These capabilities can help simplify environments, reduce long‑term dependency on on‑prem infrastructure, and improve readiness for future transitions. If this aligns with your identity strategy, the following resources may be helpful:\n\nIT Architect Guidance for SOA planning: https://aka.ms/SOAITArchitectsGuidance\n\nUser SOA : Manage users directly in Entra ID while maintaining hybrid coexistence\n\nGroup SOA : Cloud‑managed groups with on‑premises impact where required\n\nThis is not a prerequisite to move to Cloud Sync, but provides an opportunity to prepare at your own pace.\n\nStay tuned to this page for further updates.",
+   "section": "April 2026",
+   "change_date": null,
+   "change_type": "enforcement"
+  },
+  {
+   "id": "ch13",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "Plan for change - Update SCIM provisioning applications to use modern authentication",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#plan-for-change---update-scim-provisioning-applications-to-use-modern-authentication",
+   "date": null,
+   "summary": "SCIM provisioning apps on the OAuth authorization code grant must switch to client credentials or workload identity; some gallery apps may go.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "Type: Plan for change Service category: Provisioning Product capability: Outbound to SaaS Applications\n\nWhat is changing\n\nSCIM provisioning applications that use the OAuth 2.0 Authorization Code grant will be updated to support modern authentication methods, such as OAuth 2.0 Client Credentials and workload identity federation.\n\nExisting provisioning jobs will not switch automatically. Customers will need to update job configuration after the new method is available.\n\nA small number of applications that cannot support a modern method may be retired from the Microsoft Entra app gallery.\n\nWhen this is changing\n\nThis change will roll out over the coming months, and timing will vary by application. We will share impacted applications, customer deadlines, and supporting documentation through monthly What’s new articles and the Microsoft 365 Message Center.\n\nWhy this is changing\n\nThis update strengthens the security of Microsoft Entra provisioning integrations by moving away from older authentication patterns. Modern methods are better suited for service-to-service scenarios and can reduce credential management overhead, including the need to rotate shared secrets.\n\nAction required from customers\n\nIdentify existing provisioning jobs that use the OAuth 2.0 Authorization Code grant.\n\nWatch for announcements about affected applications and availability of updated authentication methods.\n\nUpdate and test provisioning job configuration when your application supports a modern authentication method.\n\nIf an application is retired, plan to migrate to a supported alternative.\n\nStay informed\n\nPlease monitor monthly What’s new articles and the Microsoft 365 Message Center for future announcements, migration guidance, deadlines, and documentation.",
+   "section": "April 2026",
+   "change_date": null,
+   "change_type": "enforcement"
+  },
+  {
+   "id": "ch14",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Defender"
+   ],
+   "title": "Breaking change: Unused actions no longer included in AWS and GCP overprovisioned identity assessments",
+   "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes#breaking-change-unused-actions-no-longer-included-in-aws-and-gcp-overprovisioned-identity-assessments",
+   "date": "2026-08-06",
+   "summary": "CIEM stops listing unused actions in AWS and GCP overprovisioned identity findings; check permission use with each cloud provider's IAM tools instead.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "August 6, 2026\n\nTo improve the performance and scalability of overprovisioned identity recommendation generation, Microsoft Defender for Cloud will no longer use the unused actions when computing overprovisioned identity assessments for AWS and GCP environments.\n\nAs a result of this change:\n\nThe Unused actions list will no longer be displayed as part of overprovisioned identity recommendations for AWS and GCP identities.\n\nAny workflows or processes that rely on the Unused actions list within Defender for Cloud CIEM will no longer be available for AWS and GCP recommendations.\n\nRecommended action:\n\nIf you need to validate whether permissions have been used or remain unused, use the native tools and documentation provided by your cloud provider:\n\nAWS : Review IAM access activity and last accessed information in AWS Identity and Access Management (IAM).\n\nGoogle Cloud : Review IAM usage and access insights through Google Cloud IAM tools and Cloud Asset Inventory.\n\nThese permission usage signals are owned and maintained by the respective cloud providers. Defender for Cloud no longer retrieves or presents this information as part of AWS and GCP overprovisioned identity assessments.\n\nFor more information, see Enable cloud infrastructure entitlement management (CIEM)",
+   "section": "August 2026",
+   "change_date": null,
+   "change_type": "deprecation"
   },
   {
    "id": "r01",
