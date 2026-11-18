@@ -28,6 +28,15 @@
     return Number.isNaN(date.getTime()) ? String(value || "Date unavailable") :
       new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeZone: "UTC" }).format(date);
   };
+  const generatedDateValue = (value) => {
+    const date = new Date(value);
+    if (value == null || value === "" || Number.isNaN(date.getTime())) return "";
+    const parts = Object.fromEntries(new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Kolkata", year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23"
+    }).formatToParts(date).map(({ type, value: part }) => [type, part]));
+    return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}:${parts.second}`;
+  };
   const dateKey = (value) => {
     const date = new Date(value);
     return Number.isNaN(date.getTime()) ? "" : date.toISOString().slice(0, 10);
@@ -177,14 +186,16 @@
   }
 
   function renderTiles(items) {
-    const newItems = items.filter((item) => item.type !== "cve" && item.in_window !== false);
+    const newItems = items.filter((item) =>
+      ["video", "x", "threat", "blog", "learn", "reddit"].includes(item.type) && item.in_window !== false
+    );
     const nonCvesInWindow = newItems.length;
     const countType = (type) => newItems.filter((item) => item.type === type).length;
     const cves = items.filter((item) => item.type === "cve");
     const critical = cves.filter((item) => item.severity === "Critical").length;
     const exploited = cves.filter((item) => item.exploited === true).length;
     $("#summary-tiles").innerHTML = [
-      ["New additions this week", count(nonCvesInWindow), `${count(countType("video"))} videos · ${count(countType("x"))} X · ${count(countType("threat"))} threats · ${count(countType("blog"))} blogs · ${count(countType("learn"))} Learn · ${count(countType("reddit"))} community · ${count(countType("change"))} changes · ${count(countType("roadmap"))} roadmap`],
+      ["New additions this week", count(nonCvesInWindow), `${count(countType("video"))} videos · ${count(countType("x"))} X · ${count(countType("threat"))} threats · ${count(countType("blog"))} blogs · ${count(countType("learn"))} Learn · ${count(countType("reddit"))} community`],
       ["Blogs", count(countType("blog")), "Microsoft security reporting"],
       ["Videos", count(countType("video")), "Microsoft security videos"],
       ["CVEs this month", count(cves.length), `${count(exploited)} exploited · ${count(critical)} Critical`]
@@ -590,6 +601,8 @@
       state.data = data;
     }
     populateOptions(state.data);
+    const generated = generatedDateValue(state.data.generated);
+    $("#generated-stamp").textContent = generated ? `generated ${generated} IST` : "";
     renderFooter();
   }
 
