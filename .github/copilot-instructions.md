@@ -9,6 +9,7 @@ A weekly, data-driven security intelligence dashboard for Microsoft security new
 - Never modify anything under research/ or data/. If data is malformed, open an issue labelled fix describing the problem instead.
 - Keep the PR small and self-contained; include a short CHANGELOG entry in docs/CHANGELOG.md.
 - Accessibility: keyboard-navigable slicers, visible focus, colour contrast AA, alt text on every screenshot.
+- - Finish within 30 minutes. Commit early. Do not install or run browsers, Playwright or Lighthouse; check your work by reading the code and the JSON. The Auditor bot verifies the live page after merge.
 
 ## Dashboard spec
 Top bar: title, "Week" selector (defaults to newest week), last-updated date from the JSON.
