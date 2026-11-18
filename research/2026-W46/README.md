@@ -1,6 +1,6 @@
 # Microsoft security digest: 9-15 November 2026 (IST), 2026-W46
 
-Window: **2026-11-09 00:00 to 2026-11-15 23:59:59 IST (UTC+05:30)**. CVEs: the full November 2026 MSRC release (calendar month). Generated 2026-11-18T03:39:58+00:00.
+Window: **2026-11-09 00:00 to 2026-11-15 23:59:59 IST (UTC+05:30)**. CVEs: the full November 2026 MSRC release (calendar month). Generated 2026-11-18T10:49:21+00:00.
 
 ## Leadership summary
 
@@ -25,42 +25,42 @@ Next 60 days (16 Nov 2026 to 14 Jan 2027).
 - **Securing AI agents moves to the front.** Most official output this week was about governing AI agents: Entra Agent ID, egress limits and traces in Foundry, Purview labels enforced on agents at runtime, Defender blocking malicious agent tool calls, MCP server governance, and a 19-part Zero Trust AI pillar video series, all ahead of Ignite (17-20 Nov).
 - **Active campaigns: ScreenConnect/SCKit, GSocket, Storm-3350, outage-themed phishing.** Microsoft Threat Intelligence covered four live threats: SCKit spreading through ScreenConnect at MSPs, GSocket backdoors that keep access to Linux servers after patching, the Brazil-focused Storm-3350 cluster abusing password reset, and phishing that reused the 12 Nov M365 outage incident number.
 - **AI model supply chain and AI-found vulnerabilities.** Microsoft research showed that models can be backdoored through a few neuron edits or poisoned fine-tuning, and that its own agentic tools (MDASH/Hyenas) found Rust standard-library and Linux kernel bugs, with 33 kernel CVEs assigned.
-- **November Patch Tuesday: one exploited Outlook bug, 64 Critical.** The November release has 1,096 Microsoft-assigned CVEs. One is exploited (an Outlook spoofing flaw that leaks NTLM hashes), and the Critical RCEs in LDAP, Windows Search, Exchange and AD DS stand out. On Reddit, practitioners discussed the release and a separately published Windows zero-day, SignDrop.
+- **November Patch Tuesday: one exploited Outlook bug, 64 Critical.** The November release has 1,098 Microsoft-assigned CVEs. One is exploited (an Outlook spoofing flaw that leaks NTLM hashes), and the Critical RCEs in LDAP, Windows Search, Exchange and AD DS stand out. On Reddit, practitioners discussed the release and a separately published Windows zero-day, SignDrop.
 - **Identity, data and endpoint hardening (Entra, Purview, Intune, Azure Backup).** Day-to-day controls also got attention: Entra Private Access and Internet Access in place of VPNs, tenant configuration snapshots, Connect Sync anchor migration, Purview classification and DSPM, Intune compliance with Autopatch, Edge extension control, and Azure Backup cyber recovery. Community threads covered passkey rollout and GSA tooling.
 
 ## Videos
 
 | id | date (IST) | channel | title | views | summary | asset |
 |---|---|---|---|---|---|---|
-| v01 | 2026-11-09 21:35 | Microsoft Mechanics | [New Microsoft Copilot Harness \| More power, token efficiency & control for agents in Foundry](https://www.youtube.com/watch?v=4vCbQMUVV-I) | 28478 | Mechanics demo of the Copilot harness in Foundry, with per-agent Entra Agent ID, egress limits and traces. | [thumbnail](assets/yt-new-microsoft-copilot-harness-more-power-toke-4vcbqmuvv-i.jpg) |
-| v02 | 2026-11-09 23:43 | Microsoft Security | [AI Pillar Deep Dive - Gain AI Visibility Swimlane Overview](https://www.youtube.com/watch?v=nflmD2D9T4k) | 364 | Zero Trust Workshop AI pillar walkthrough: how to gain visibility into AI usage. | [thumbnail](assets/yt-ai-pillar-deep-dive-gain-ai-visibility-swimla-nflmd2d9t4k.jpg) |
-| v03 | 2026-11-09 23:45 | Microsoft Security | [AI Pillar Deep Dive - Registry Readiness Swimlane Overview](https://www.youtube.com/watch?v=B_Ecumz451U) | 797 | Zero Trust Workshop AI pillar walkthrough: preparing an agent registry. | [thumbnail](assets/yt-ai-pillar-deep-dive-registry-readiness-swimla-b_ecumz451u.jpg) |
-| v04 | 2026-11-09 23:50 | Microsoft Security | [AI Pillar Deep Dive - Agent Registry Operations Swimlane Overview](https://www.youtube.com/watch?v=RkTaet71ZaU) | 402 | Zero Trust Workshop AI pillar walkthrough: running agent registry operations. | [thumbnail](assets/yt-ai-pillar-deep-dive-agent-registry-operations-rktaet71zau.jpg) |
-| v05 | 2026-11-09 23:51 | Microsoft Security | [AI Pillar Deep Dive - Workload ID Migration to Agent ID Swimlane Overview](https://www.youtube.com/watch?v=P34pqLKWH88) | 415 | Zero Trust Workshop AI pillar walkthrough: moving workload identities to Entra Agent ID. | [thumbnail](assets/yt-ai-pillar-deep-dive-workload-id-migration-to-p34pqlkwh88.jpg) |
-| v06 | 2026-11-09 23:52 | Microsoft Security | [AI Pillar Deep Dive - Access Swimlane Overview](https://www.youtube.com/watch?v=_Ja51-0LVy0) | 148 | Zero Trust Workshop AI pillar walkthrough: access controls for AI. | [thumbnail](assets/yt-ai-pillar-deep-dive-access-swimlane-overview-_ja51-0lvy0.jpg) |
-| v07 | 2026-11-09 23:59 | Microsoft Security | [AI Pillar Deep Dive - Identity Governance Swimlane Overview](https://www.youtube.com/watch?v=oUBW4DYVnvA) | 248 | Zero Trust Workshop AI pillar walkthrough: identity governance for agents. | [thumbnail](assets/yt-ai-pillar-deep-dive-identity-governance-swiml-oubw4dyvnva.jpg) |
-| v08 | 2026-11-10 00:01 | Microsoft Security | [AI Pillar Deep Dive - Network Security Readiness Swimlane Overview](https://www.youtube.com/watch?v=TrskCxNNgiE) | 460 | Zero Trust Workshop AI pillar walkthrough: network security readiness. | [thumbnail](assets/yt-ai-pillar-deep-dive-network-security-readines-trskcxnngie.jpg) |
-| v09 | 2026-11-10 00:04 | Microsoft Security | [AI Pillar Deep Dive - Web & Destination Control Swimlane Overview](https://www.youtube.com/watch?v=TAO6uk2ksMU) | 388 | Zero Trust Workshop AI pillar walkthrough: controlling web destinations reached by AI. | [thumbnail](assets/yt-ai-pillar-deep-dive-web-destination-control-s-tao6uk2ksmu.jpg) |
-| v10 | 2026-11-10 00:09 | Microsoft Security | [AI Pillar Deep Dive - Prompt & Content Protection Swimlane Overview](https://www.youtube.com/watch?v=9ZhoV8dzZBc) | 444 | Zero Trust Workshop AI pillar walkthrough: prompt and content protection. | [thumbnail](assets/yt-ai-pillar-deep-dive-prompt-content-protection-9zhov8dzzbc.jpg) |
-| v11 | 2026-11-10 00:09 | Microsoft Security | [AI Pillar Deep Dive - Data Access Readiness Swimlane Overview](https://www.youtube.com/watch?v=tCgBYrQqI-8) | 200 | Zero Trust Workshop AI pillar walkthrough: readiness of data access for AI. | [thumbnail](assets/yt-ai-pillar-deep-dive-data-access-readiness-swi-tcgbyrqqi-8.jpg) |
-| v12 | 2026-11-10 00:10 | Microsoft Security | [AI Pillar Deep Dive - AI Data Usage Monitoring Swimlane Overview](https://www.youtube.com/watch?v=6fKLT6O4NLE) | 209 | Zero Trust Workshop AI pillar walkthrough: monitoring how AI uses data. | [thumbnail](assets/yt-ai-pillar-deep-dive-ai-data-usage-monitoring-6fklt6o4nle.jpg) |
-| v13 | 2026-11-10 00:14 | Microsoft Security | [AI Pillar Deep Dive - Data Loss Prevention Swimlane Overview](https://www.youtube.com/watch?v=CghlABVbgRY) | 153 | Zero Trust Workshop AI pillar walkthrough: data loss prevention for AI. | [thumbnail](assets/yt-ai-pillar-deep-dive-data-loss-prevention-swim-cghlabvbgry.jpg) |
-| v14 | 2026-11-10 00:17 | Microsoft Security | [AI Pillar Deep Dive - Insider Risk Management Swimlane Overview](https://www.youtube.com/watch?v=g0aKWuu_ktY) | 628 | Zero Trust Workshop AI pillar walkthrough: insider risk management. | [thumbnail](assets/yt-ai-pillar-deep-dive-insider-risk-management-s-g0akwuu_kty.jpg) |
-| v15 | 2026-11-10 00:24 | Microsoft Security | [AI Pillar Deep Dive - Agent Development Readiness Swimlane Overview](https://www.youtube.com/watch?v=8i4C3zs_a6Y) | 254 | Zero Trust Workshop AI pillar walkthrough: readiness for building agents. | [thumbnail](assets/yt-ai-pillar-deep-dive-agent-development-readine-8i4c3zs_a6y.jpg) |
-| v16 | 2026-11-10 00:27 | Microsoft Security | [AI Pillar Deep Dive - MCP Server Governance Swimlane Overview](https://www.youtube.com/watch?v=JbYr5ijo9Hc) | 294 | Zero Trust Workshop AI pillar walkthrough: governing MCP servers. | [thumbnail](assets/yt-ai-pillar-deep-dive-mcp-server-governance-swi-jbyr5ijo9hc.jpg) |
-| v17 | 2026-11-10 00:34 | Microsoft Security | [AI Pillar Deep Dive - Assess AI Risk Swimlane Overview](https://www.youtube.com/watch?v=wTVTWFVBV48) | 363 | Zero Trust Workshop AI pillar walkthrough: assessing AI risk. | [thumbnail](assets/yt-ai-pillar-deep-dive-assess-ai-risk-swimlane-o-wtvtwfvbv48.jpg) |
-| v18 | 2026-11-10 00:35 | Microsoft Security | [AI Pillar Deep Dive - AI Threat Detection & Response Swimlane Overview](https://www.youtube.com/watch?v=E149ztL7OwY) | 580 | Zero Trust Workshop AI pillar walkthrough: detecting and responding to AI threats. | [thumbnail](assets/yt-ai-pillar-deep-dive-ai-threat-detection-respo-e149ztl7owy.jpg) |
-| v19 | 2026-11-10 00:40 | Microsoft Security | [AI Pillar Deep Dive - Security Validation Swimlane Overview](https://www.youtube.com/watch?v=pZzzoluFlt0) | 901 | Zero Trust Workshop AI pillar walkthrough: validating security controls. | [thumbnail](assets/yt-ai-pillar-deep-dive-security-validation-swiml-pzzzoluflt0.jpg) |
-| v20 | 2026-11-10 00:58 | Microsoft Security | [AI Pillar Deep Dive - Agent Platform Controls Swimlane Overview](https://www.youtube.com/watch?v=dJ_2CdPKxiA) | 465 | Zero Trust Workshop AI pillar walkthrough: controls on agent platforms. | [thumbnail](assets/yt-ai-pillar-deep-dive-agent-platform-controls-s-dj_2cdpkxia.jpg) |
-| v21 | 2026-11-10 03:14 | Microsoft Security Community | [AI is changing how we think about access, and Ignite 2026 is where it all …](https://www.youtube.com/watch?v=dbPNIxHXYLU) | 281 | Short: Microsoft Security marketing VP previews Entra news planned for Ignite 2026. | [thumbnail](assets/yt-ai-is-changing-how-we-think-about-access-and-dbpnixhxylu.jpg) |
-| v22 | 2026-11-11 03:50 | Microsoft Security Community | [⏱️ 3 sessions. 15 seconds each. Go!](https://www.youtube.com/watch?v=awUDlAhm7tM) | 378 | Short: Entra team previews three Ignite sessions on access for people and AI agents. | [thumbnail](assets/yt-3-sessions-15-seconds-each-go-awudlahm7tm.jpg) |
-| v23 | 2026-11-11 22:00 | Microsoft Security | [English Security Update Release Summary November 2026](https://www.youtube.com/watch?v=mYwsmmb4MAI) | 1933 | MSRC monthly briefing on the November release, covering four CVEs including the exploited Outlook spoofing bug. | [thumbnail](assets/yt-english-security-update-release-summary-novem-mywsmmb4mai.jpg) |
-| v24 | 2026-11-12 03:06 | Microsoft Security Community | [⏱️ Can you pitch an Ignite session in 15 seconds? We asked 3 experts.](https://www.youtube.com/watch?v=YQ2J5K5kljI) | 164 | Short: Entra team pitches more Ignite sessions, including finding and securing local agents. | [thumbnail](assets/yt-can-you-pitch-an-ignite-session-in-15-seconds-yq2j5k5klji.jpg) |
-| v25 | 2026-11-12 23:30 | Microsoft Azure | [Bulk Restore using Azure Backup](https://www.youtube.com/watch?v=caW13LqRrQw) | 1084 | Demo of Azure Backup bulk restore, recovering many VMs in one job after an attack or disaster. | [thumbnail](assets/yt-bulk-restore-using-azure-backup-caw13lqrrqw.jpg) |
-| v26 | 2026-11-13 01:30 | Microsoft Azure | [From backups to cyber recovery readiness with Azure Backup](https://www.youtube.com/watch?v=cKqeTw5mBfM) | 1861 | Demo of cyber recovery readiness with Azure Backup: air-gapped vaults, immutability and cross-tenant restore. | [thumbnail](assets/yt-from-backups-to-cyber-recovery-readiness-with-ckqetw5mbfm.jpg) |
-| v27 | 2026-11-13 08:50 | Microsoft Security | [Security at Scale: How ABT Readied Its Clients for AI](https://www.youtube.com/watch?v=4Z1yruxmXVE) | 349 | Customer story: an Australian MSP put guardrails in place before its SMB clients adopted AI. | [thumbnail](assets/yt-security-at-scale-how-abt-readied-its-clients-4z1yruxmxve.jpg) |
-| v28 | 2026-11-13 08:50 | Microsoft Security | [Securing Data Before Scaling AI: RWW Group](https://www.youtube.com/watch?v=vkEXYb2gdq4) | 388 | Customer story: a uniform supplier classified and protected its data ahead of an AI rollout. | [thumbnail](assets/yt-securing-data-before-scaling-ai-rww-group-vkexyb2gdq4.jpg) |
-| v29 | 2026-11-13 08:50 | Microsoft Security | [Secure First, Then AI: RWW Group’s Growth Story with Alliance Business Technologies](https://www.youtube.com/watch?v=xvzmzbE58F4) | 463 | Customer story: RWW Group and its partner hardened identity, data and threat protection before using AI. | [thumbnail](assets/yt-secure-first-then-ai-rww-groups-growth-story-xvzmzbe58f4.jpg) |
+| v01 | 2026-11-09 21:35 | Microsoft Mechanics | [New Microsoft Copilot Harness \| More power, token efficiency & control for agents in Foundry](https://www.youtube.com/watch?v=4vCbQMUVV-I) | 31732 | Mechanics demo of the Copilot harness in Foundry, with per-agent Entra Agent ID, egress limits and traces. | [thumbnail](assets/yt-new-microsoft-copilot-harness-more-power-toke-4vcbqmuvv-i.jpg) |
+| v02 | 2026-11-09 23:43 | Microsoft Security | [AI Pillar Deep Dive - Gain AI Visibility Swimlane Overview](https://www.youtube.com/watch?v=nflmD2D9T4k) | 381 | Zero Trust Workshop AI pillar walkthrough: how to gain visibility into AI usage. | [thumbnail](assets/yt-ai-pillar-deep-dive-gain-ai-visibility-swimla-nflmd2d9t4k.jpg) |
+| v03 | 2026-11-09 23:45 | Microsoft Security | [AI Pillar Deep Dive - Registry Readiness Swimlane Overview](https://www.youtube.com/watch?v=B_Ecumz451U) | 793 | Zero Trust Workshop AI pillar walkthrough: preparing an agent registry. | [thumbnail](assets/yt-ai-pillar-deep-dive-registry-readiness-swimla-b_ecumz451u.jpg) |
+| v04 | 2026-11-09 23:50 | Microsoft Security | [AI Pillar Deep Dive - Agent Registry Operations Swimlane Overview](https://www.youtube.com/watch?v=RkTaet71ZaU) | 405 | Zero Trust Workshop AI pillar walkthrough: running agent registry operations. | [thumbnail](assets/yt-ai-pillar-deep-dive-agent-registry-operations-rktaet71zau.jpg) |
+| v05 | 2026-11-09 23:51 | Microsoft Security | [AI Pillar Deep Dive - Workload ID Migration to Agent ID Swimlane Overview](https://www.youtube.com/watch?v=P34pqLKWH88) | 416 | Zero Trust Workshop AI pillar walkthrough: moving workload identities to Entra Agent ID. | [thumbnail](assets/yt-ai-pillar-deep-dive-workload-id-migration-to-p34pqlkwh88.jpg) |
+| v06 | 2026-11-09 23:52 | Microsoft Security | [AI Pillar Deep Dive - Access Swimlane Overview](https://www.youtube.com/watch?v=_Ja51-0LVy0) | 156 | Zero Trust Workshop AI pillar walkthrough: access controls for AI. | [thumbnail](assets/yt-ai-pillar-deep-dive-access-swimlane-overview-_ja51-0lvy0.jpg) |
+| v07 | 2026-11-09 23:59 | Microsoft Security | [AI Pillar Deep Dive - Identity Governance Swimlane Overview](https://www.youtube.com/watch?v=oUBW4DYVnvA) | 251 | Zero Trust Workshop AI pillar walkthrough: identity governance for agents. | [thumbnail](assets/yt-ai-pillar-deep-dive-identity-governance-swiml-oubw4dyvnva.jpg) |
+| v08 | 2026-11-10 00:01 | Microsoft Security | [AI Pillar Deep Dive - Network Security Readiness Swimlane Overview](https://www.youtube.com/watch?v=TrskCxNNgiE) | 466 | Zero Trust Workshop AI pillar walkthrough: network security readiness. | [thumbnail](assets/yt-ai-pillar-deep-dive-network-security-readines-trskcxnngie.jpg) |
+| v09 | 2026-11-10 00:04 | Microsoft Security | [AI Pillar Deep Dive - Web & Destination Control Swimlane Overview](https://www.youtube.com/watch?v=TAO6uk2ksMU) | 392 | Zero Trust Workshop AI pillar walkthrough: controlling web destinations reached by AI. | [thumbnail](assets/yt-ai-pillar-deep-dive-web-destination-control-s-tao6uk2ksmu.jpg) |
+| v10 | 2026-11-10 00:09 | Microsoft Security | [AI Pillar Deep Dive - Prompt & Content Protection Swimlane Overview](https://www.youtube.com/watch?v=9ZhoV8dzZBc) | 453 | Zero Trust Workshop AI pillar walkthrough: prompt and content protection. | [thumbnail](assets/yt-ai-pillar-deep-dive-prompt-content-protection-9zhov8dzzbc.jpg) |
+| v11 | 2026-11-10 00:09 | Microsoft Security | [AI Pillar Deep Dive - Data Access Readiness Swimlane Overview](https://www.youtube.com/watch?v=tCgBYrQqI-8) | 202 | Zero Trust Workshop AI pillar walkthrough: readiness of data access for AI. | [thumbnail](assets/yt-ai-pillar-deep-dive-data-access-readiness-swi-tcgbyrqqi-8.jpg) |
+| v12 | 2026-11-10 00:10 | Microsoft Security | [AI Pillar Deep Dive - AI Data Usage Monitoring Swimlane Overview](https://www.youtube.com/watch?v=6fKLT6O4NLE) | 221 | Zero Trust Workshop AI pillar walkthrough: monitoring how AI uses data. | [thumbnail](assets/yt-ai-pillar-deep-dive-ai-data-usage-monitoring-6fklt6o4nle.jpg) |
+| v13 | 2026-11-10 00:14 | Microsoft Security | [AI Pillar Deep Dive - Data Loss Prevention Swimlane Overview](https://www.youtube.com/watch?v=CghlABVbgRY) | 160 | Zero Trust Workshop AI pillar walkthrough: data loss prevention for AI. | [thumbnail](assets/yt-ai-pillar-deep-dive-data-loss-prevention-swim-cghlabvbgry.jpg) |
+| v14 | 2026-11-10 00:17 | Microsoft Security | [AI Pillar Deep Dive - Insider Risk Management Swimlane Overview](https://www.youtube.com/watch?v=g0aKWuu_ktY) | 629 | Zero Trust Workshop AI pillar walkthrough: insider risk management. | [thumbnail](assets/yt-ai-pillar-deep-dive-insider-risk-management-s-g0akwuu_kty.jpg) |
+| v15 | 2026-11-10 00:24 | Microsoft Security | [AI Pillar Deep Dive - Agent Development Readiness Swimlane Overview](https://www.youtube.com/watch?v=8i4C3zs_a6Y) | 262 | Zero Trust Workshop AI pillar walkthrough: readiness for building agents. | [thumbnail](assets/yt-ai-pillar-deep-dive-agent-development-readine-8i4c3zs_a6y.jpg) |
+| v16 | 2026-11-10 00:27 | Microsoft Security | [AI Pillar Deep Dive - MCP Server Governance Swimlane Overview](https://www.youtube.com/watch?v=JbYr5ijo9Hc) | 310 | Zero Trust Workshop AI pillar walkthrough: governing MCP servers. | [thumbnail](assets/yt-ai-pillar-deep-dive-mcp-server-governance-swi-jbyr5ijo9hc.jpg) |
+| v17 | 2026-11-10 00:34 | Microsoft Security | [AI Pillar Deep Dive - Assess AI Risk Swimlane Overview](https://www.youtube.com/watch?v=wTVTWFVBV48) | 367 | Zero Trust Workshop AI pillar walkthrough: assessing AI risk. | [thumbnail](assets/yt-ai-pillar-deep-dive-assess-ai-risk-swimlane-o-wtvtwfvbv48.jpg) |
+| v18 | 2026-11-10 00:35 | Microsoft Security | [AI Pillar Deep Dive - AI Threat Detection & Response Swimlane Overview](https://www.youtube.com/watch?v=E149ztL7OwY) | 589 | Zero Trust Workshop AI pillar walkthrough: detecting and responding to AI threats. | [thumbnail](assets/yt-ai-pillar-deep-dive-ai-threat-detection-respo-e149ztl7owy.jpg) |
+| v19 | 2026-11-10 00:40 | Microsoft Security | [AI Pillar Deep Dive - Security Validation Swimlane Overview](https://www.youtube.com/watch?v=pZzzoluFlt0) | 911 | Zero Trust Workshop AI pillar walkthrough: validating security controls. | [thumbnail](assets/yt-ai-pillar-deep-dive-security-validation-swiml-pzzzoluflt0.jpg) |
+| v20 | 2026-11-10 00:58 | Microsoft Security | [AI Pillar Deep Dive - Agent Platform Controls Swimlane Overview](https://www.youtube.com/watch?v=dJ_2CdPKxiA) | 480 | Zero Trust Workshop AI pillar walkthrough: controls on agent platforms. | [thumbnail](assets/yt-ai-pillar-deep-dive-agent-platform-controls-s-dj_2cdpkxia.jpg) |
+| v21 | 2026-11-10 03:14 | Microsoft Security Community | [AI is changing how we think about access, and Ignite 2026 is where it all …](https://www.youtube.com/watch?v=dbPNIxHXYLU) | 323 | Short: Microsoft Security marketing VP previews Entra news planned for Ignite 2026. | [thumbnail](assets/yt-ai-is-changing-how-we-think-about-access-and-dbpnixhxylu.jpg) |
+| v22 | 2026-11-11 03:50 | Microsoft Security Community | [⏱️ 3 sessions. 15 seconds each. Go!](https://www.youtube.com/watch?v=awUDlAhm7tM) | 402 | Short: Entra team previews three Ignite sessions on access for people and AI agents. | [thumbnail](assets/yt-3-sessions-15-seconds-each-go-awudlahm7tm.jpg) |
+| v23 | 2026-11-11 22:00 | Microsoft Security | [English Security Update Release Summary November 2026](https://www.youtube.com/watch?v=mYwsmmb4MAI) | 2009 | MSRC monthly briefing on the November release, covering four CVEs including the exploited Outlook spoofing bug. | [thumbnail](assets/yt-english-security-update-release-summary-novem-mywsmmb4mai.jpg) |
+| v24 | 2026-11-12 03:06 | Microsoft Security Community | [⏱️ Can you pitch an Ignite session in 15 seconds? We asked 3 experts.](https://www.youtube.com/watch?v=YQ2J5K5kljI) | 187 | Short: Entra team pitches more Ignite sessions, including finding and securing local agents. | [thumbnail](assets/yt-can-you-pitch-an-ignite-session-in-15-seconds-yq2j5k5klji.jpg) |
+| v25 | 2026-11-12 23:30 | Microsoft Azure | [Bulk Restore using Azure Backup](https://www.youtube.com/watch?v=caW13LqRrQw) | 1166 | Demo of Azure Backup bulk restore, recovering many VMs in one job after an attack or disaster. | [thumbnail](assets/yt-bulk-restore-using-azure-backup-caw13lqrrqw.jpg) |
+| v26 | 2026-11-13 01:30 | Microsoft Azure | [From backups to cyber recovery readiness with Azure Backup](https://www.youtube.com/watch?v=cKqeTw5mBfM) | 1993 | Demo of cyber recovery readiness with Azure Backup: air-gapped vaults, immutability and cross-tenant restore. | [thumbnail](assets/yt-from-backups-to-cyber-recovery-readiness-with-ckqetw5mbfm.jpg) |
+| v27 | 2026-11-13 08:50 | Microsoft Security | [Security at Scale: How ABT Readied Its Clients for AI](https://www.youtube.com/watch?v=4Z1yruxmXVE) | 377 | Customer story: an Australian MSP put guardrails in place before its SMB clients adopted AI. | [thumbnail](assets/yt-security-at-scale-how-abt-readied-its-clients-4z1yruxmxve.jpg) |
+| v28 | 2026-11-13 08:50 | Microsoft Security | [Securing Data Before Scaling AI: RWW Group](https://www.youtube.com/watch?v=vkEXYb2gdq4) | 407 | Customer story: a uniform supplier classified and protected its data ahead of an AI rollout. | [thumbnail](assets/yt-securing-data-before-scaling-ai-rww-group-vkexyb2gdq4.jpg) |
+| v29 | 2026-11-13 08:50 | Microsoft Security | [Secure First, Then AI: RWW Group’s Growth Story with Alliance Business Technologies](https://www.youtube.com/watch?v=xvzmzbE58F4) | 499 | Customer story: RWW Group and its partner hardened identity, data and threat protection before using AI. | [thumbnail](assets/yt-secure-first-then-ai-rww-groups-growth-story-xvzmzbe58f4.jpg) |
 
 Top 5 videos by views:
 
@@ -92,7 +92,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2119510111542538498
 - Summary: Treat the MCP catalog like a supply chain: deny unapproved tools and scope servers per agent via API Management.
-- Engagement: 52 likes, 13 replies, 11 reposts, 1 quotes, 5477 views
+- Engagement: 50 likes, 13 replies, 11 reposts, 1 quotes, 5483 views
 - What replies say: Replies suggest an audit-mode week before deny-by-default, pinning MCP server versions and named owners per agent.
 - Asset: [png](assets/x-msftmechanics-2119510111542538498.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -100,7 +100,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2119811910598087016
 - Summary: Entra Internet Access Secure Web and AI Gateway stops sensitive file uploads to AI apps.
-- Engagement: 3 likes, 0 replies, 2 reposts, 0 quotes, 1183 views
+- Engagement: 3 likes, 0 replies, 2 reposts, 0 quotes, 1187 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2119811910598087016.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -108,7 +108,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2119827846906437909
 - Summary: Foundry agents now run on the Copilot harness, with Entra Agent ID, egress rules and traces as guardrails.
-- Engagement: 5 likes, 0 replies, 2 reposts, 0 quotes, 2146 views
+- Engagement: 5 likes, 0 replies, 2 reposts, 0 quotes, 2152 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2119827846906437909.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -116,7 +116,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2119871294875296067
 - Summary: Entra policies can automatically block uploads of risky file types to ChatGPT and similar tools.
-- Engagement: 10 likes, 0 replies, 0 reposts, 0 quotes, 2145 views
+- Engagement: 10 likes, 0 replies, 0 reposts, 0 quotes, 2150 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2119871294875296067.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -124,15 +124,16 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MsftSecIntel/status/2119890522466578648
 - Summary: FORGE Lab found memory-safety bugs in Rust core and std, including undefined behaviour reachable from safe code.
-- Engagement: 125 likes, 5 replies, 25 reposts, 3 quotes, 13416 views
+- Engagement: 126 likes, 5 replies, 25 reposts, 3 quotes, 13550 views
 - What replies say: Replies discuss a bug fixed on one code path but missed on another and suggest checking pinned toolchains once fixes ship.
+- Related: b01 (same research)
 - Asset: [png](assets/x-msftsecintel-2119890522466578648.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x06: @MSFTMechanics, 2026-11-10 02:02 IST
 
 - Link: https://x.com/MSFTMechanics/status/2119890883390656765
 - Summary: Agent 365 CLI and SDK can give an unmanaged agent an Entra Agent ID with lifecycle controls.
-- Engagement: 7 likes, 2 replies, 1 reposts, 1 quotes, 1438 views
+- Engagement: 6 likes, 2 replies, 1 reposts, 1 quotes, 1444 views
 - What replies say: One reply says an identity without an owner still leaves an orphaned agent.
 - Asset: [png](assets/x-msftmechanics-2119890883390656765.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -140,7 +141,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2120150561169326576
 - Summary: Extends Conditional Access and MFA to on-premises resources through Entra.
-- Engagement: 3 likes, 0 replies, 2 reposts, 0 quotes, 1059 views
+- Engagement: 3 likes, 0 replies, 2 reposts, 0 quotes, 1067 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2120150561169326576.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -148,7 +149,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2120174021295620514
 - Summary: Foundry agents each get an Entra Agent ID, egress rules and action traces, enforced at infrastructure level.
-- Engagement: 9 likes, 2 replies, 0 reposts, 0 quotes, 1301 views
+- Engagement: 9 likes, 2 replies, 0 reposts, 0 quotes, 1309 views
 - What replies say: Replies suggest assigning a human sponsor to each agent identity and warn that sub-agents may present a shared service account.
 - Asset: [png](assets/x-msftmechanics-2120174021295620514.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -156,7 +157,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2120174308794192101
 - Summary: Recommends unified data classification in Purview for consistent sensitive-data definitions.
-- Engagement: 3 likes, 0 replies, 2 reposts, 0 quotes, 1045 views
+- Engagement: 3 likes, 0 replies, 2 reposts, 0 quotes, 1053 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2120174308794192101.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -164,7 +165,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/msftsecresponse/status/2120220395018318285
 - Summary: MSRC announces the November 2026 Patch Tuesday release and links the Security Update Guide.
-- Engagement: 185 likes, 3 replies, 40 reposts, 8 quotes, 26731 views
+- Engagement: 184 likes, 3 replies, 40 reposts, 8 quotes, 27175 views
 - What replies say: Three replies with no substantive content.
 - Asset: [png](assets/x-msftsecresponse-2120220395018318285.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -172,7 +173,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MsftSecIntel/status/2120230988621992403
 - Summary: Notes that the November 2026 security updates are out, with a link to the release.
-- Engagement: 80 likes, 2 replies, 16 reposts, 0 quotes, 9623 views
+- Engagement: 80 likes, 2 replies, 16 reposts, 0 quotes, 9745 views
 - What replies say: Only two replies: one reminder to restart machines, one spam.
 - Asset: [png](assets/x-msftsecintel-2120230988621992403.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -180,7 +181,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2120233636473471144
 - Summary: Encourages labelling critical files so protection follows them into workflows and AI use.
-- Engagement: 5 likes, 2 replies, 3 reposts, 0 quotes, 1571 views
+- Engagement: 5 likes, 2 replies, 3 reposts, 0 quotes, 1578 views
 - What replies say: One reply notes agent pipelines could still open labelled files they could not inspect.
 - Asset: [png](assets/x-msftmechanics-2120233636473471144.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -188,7 +189,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2120253272686522585
 - Summary: Purview DSPM shows which agents are active, what data they touch and where policy gaps are.
-- Engagement: 5 likes, 0 replies, 1 reposts, 0 quotes, 1389 views
+- Engagement: 5 likes, 0 replies, 1 reposts, 0 quotes, 1398 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2120253272686522585.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -196,15 +197,16 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MsftSecIntel/status/2120299667443396688
 - Summary: Microsoft Research showed that editing under ten neurons can make an agent model a hidden sleeper that passes evaluations.
-- Engagement: 72 likes, 7 replies, 22 reposts, 5 quotes, 11346 views
+- Engagement: 72 likes, 7 replies, 22 reposts, 5 quotes, 11538 views
 - What replies say: Repliers recommend hashing model weights, restricting write access to checkpoints and treating third-party weights as untrusted.
+- Related: b02 (same research)
 - Asset: [png](assets/x-msftsecintel-2120299667443396688.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x15: @MSFTMechanics, 2026-11-11 19:14 IST
 
 - Link: https://x.com/MSFTMechanics/status/2120513022783344816
 - Summary: Shows how to set up Entra Private Access as identity-aware remote access without a VPN.
-- Engagement: 8 likes, 0 replies, 4 reposts, 0 quotes, 1910 views
+- Engagement: 7 likes, 0 replies, 4 reposts, 0 quotes, 1927 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2120513022783344816.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -212,7 +214,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2120536711096615334
 - Summary: Introduces Purview Information Protection for finding and labelling sensitive data.
-- Engagement: 2 likes, 0 replies, 1 reposts, 0 quotes, 999 views
+- Engagement: 1 likes, 0 replies, 1 reposts, 0 quotes, 1006 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2120536711096615334.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -220,15 +222,16 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MsftSecIntel/status/2120562349236965430
 - Summary: FORGE Lab's MDASH scanning of Linux kernel code produced 59 upstream reports and 33 CVEs, with root exploits for eight.
-- Engagement: 57 likes, 5 replies, 17 reposts, 5 quotes, 13753 views
+- Engagement: 57 likes, 5 replies, 17 reposts, 5 quotes, 14051 views
 - What replies say: Replies highlight the old average age of the bugs and suggest mapping the CVEs to running kernel versions and rebooting after fixes.
+- Related: b03 (same research)
 - Asset: [png](assets/x-msftsecintel-2120562349236965430.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x18: @MSFTMechanics, 2026-11-12 00:44 IST
 
 - Link: https://x.com/MSFTMechanics/status/2120596035261075725
 - Summary: Suggests layering Purview classification and labelling on top of existing DLP.
-- Engagement: 3 likes, 0 replies, 2 reposts, 0 quotes, 1157 views
+- Engagement: 3 likes, 0 replies, 2 reposts, 0 quotes, 1164 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2120596035261075725.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -236,7 +239,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2120615625135394986
 - Summary: Purview sensitivity labels stop an agent at runtime when it reaches a labelled file.
-- Engagement: 4 likes, 3 replies, 2 reposts, 0 quotes, 1362 views
+- Engagement: 4 likes, 4 replies, 2 reposts, 0 quotes, 1378 views
 - What replies say: Replies ask whether protection follows content the agent creates; one cites docs saying new output does not inherit the label.
 - Asset: [png](assets/x-msftmechanics-2120615625135394986.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -244,7 +247,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2120875396430278759
 - Summary: Pitches Entra identity-based access as a VPN replacement.
-- Engagement: 2 likes, 0 replies, 1 reposts, 0 quotes, 957 views
+- Engagement: 1 likes, 0 replies, 1 reposts, 0 quotes, 967 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2120875396430278759.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -252,7 +255,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2120899056721416380
 - Summary: Edge for Business lets admins block extensions by permission type and handle exceptions in the M365 admin center.
-- Engagement: 6 likes, 2 replies, 3 reposts, 0 quotes, 1092 views
+- Engagement: 4 likes, 2 replies, 3 reposts, 0 quotes, 1109 views
 - What replies say: Replies call browser extensions an overlooked attack surface and favour allow-listing.
 - Asset: [png](assets/x-msftmechanics-2120899056721416380.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -260,7 +263,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2120899960073859189
 - Summary: Project Perception agents are pitched as finding, proving and fixing vulnerabilities with a human in control.
-- Engagement: 1 likes, 0 replies, 1 reposts, 0 quotes, 1326 views
+- Engagement: 1 likes, 0 replies, 1 reposts, 0 quotes, 1341 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2120899960073859189.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -268,7 +271,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/msftsecurity/status/2120924712427499805
 - Summary: Promotes a CISO interview on how E.ON approaches securing agents with Microsoft Security.
-- Engagement: 10 likes, 4 replies, 2 reposts, 1 quotes, 5733 views
+- Engagement: 10 likes, 5 replies, 2 reposts, 1 quotes, 6040 views
 - What replies say: Few replies; one says Microsoft should fix its own outage first, others are unrelated.
 - Asset: [png](assets/x-msftsecurity-2120924712427499805.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -276,15 +279,16 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MsftSecIntel/status/2120927480588484989
 - Summary: Explains that a backdoored model can stay dormant until triggered and then drive an agent's tools, generalising past exact triggers.
-- Engagement: 80 likes, 7 replies, 25 reposts, 4 quotes, 16817 views
+- Engagement: 80 likes, 7 replies, 25 reposts, 4 quotes, 17284 views
 - What replies say: Repliers argue controls must sit outside the model: log and gate every tool call, track model and dataset provenance and hashes.
+- Related: b08 (same research)
 - Asset: [png](assets/x-msftsecintel-2120927480588484989.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x25: @MSFTMechanics, 2026-11-13 02:02 IST
 
 - Link: https://x.com/MSFTMechanics/status/2120978124678570166
 - Summary: Defender watches Copilot Studio agents in real time, blocks malicious tool calls and alerts on jailbreak attempts.
-- Engagement: 10 likes, 2 replies, 3 reposts, 1 quotes, 1847 views
+- Engagement: 5 likes, 2 replies, 3 reposts, 1 quotes, 1872 views
 - What replies say: Replies agree the tool call is the right enforcement point and ask who receives the alert.
 - Asset: [png](assets/x-msftmechanics-2120978124678570166.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -292,7 +296,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2121065110898610541
 - Summary: Foundry ties each agent to an Entra Agent ID, egress rules and logged traces that stop unapproved web calls.
-- Engagement: 33 likes, 4 replies, 4 reposts, 0 quotes, 2227 views
+- Engagement: 17 likes, 4 replies, 4 reposts, 0 quotes, 2239 views
 - What replies say: Replies mostly approve; one asks whether agents fail closed if Entra is unreachable.
 - Asset: [png](assets/x-msftmechanics-2121065110898610541.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -300,7 +304,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2121237741862101481
 - Summary: Windows 365 output protection blocks screenshots and screen scraping on policy-protected Cloud PCs.
-- Engagement: 35 likes, 1 replies, 3 reposts, 0 quotes, 2196 views
+- Engagement: 21 likes, 1 replies, 3 reposts, 0 quotes, 2218 views
 - What replies say: One reply asks what an automated agent sees when it hits a protected window.
 - Asset: [png](assets/x-msftmechanics-2121237741862101481.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -308,7 +312,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2121261204937089459
 - Summary: Hosted agents in Foundry can run any harness under the same Entra Agent ID, telemetry and guardrails.
-- Engagement: 28 likes, 1 replies, 2 reposts, 0 quotes, 1855 views
+- Engagement: 10 likes, 1 replies, 2 reposts, 0 quotes, 1871 views
 - What replies say: One reply says built-in identity and guardrails would have saved time spent managing agent permissions.
 - Asset: [png](assets/x-msftmechanics-2121261204937089459.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -316,7 +320,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2121261399552712889
 - Summary: Windows Autopatch report in Intune shows which devices are current, missing updates or at risk.
-- Engagement: 7 likes, 0 replies, 3 reposts, 0 quotes, 1916 views
+- Engagement: 5 likes, 0 replies, 3 reposts, 0 quotes, 1949 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2121261399552712889.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -324,7 +328,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2121320766264295729
 - Summary: Intune Conditional Access limits internal access to compliant devices, paired with Windows Autopatch.
-- Engagement: 0 likes, 0 replies, 0 reposts, 0 quotes, 1074 views
+- Engagement: 0 likes, 0 replies, 0 reposts, 0 quotes, 1110 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2121320766264295729.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -332,7 +336,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2121340430075793874
 - Summary: Admins can block a risky agent from the Agent Registry in the M365 admin center until it is resubmitted.
-- Engagement: 9 likes, 3 replies, 0 reposts, 0 quotes, 1439 views
+- Engagement: 7 likes, 3 replies, 0 reposts, 0 quotes, 1473 views
 - What replies say: Replies back an admin-held kill switch and ask whether makers are told why and how the incident trail shows prior actions.
 - Asset: [png](assets/x-msftmechanics-2121340430075793874.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -340,15 +344,15 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2121600175986585964
 - Summary: Configuration Snapshots in Entra Tenant Governance baseline settings across 200+ resource types to catch drift.
-- Engagement: 9 likes, 0 replies, 2 reposts, 0 quotes, 1666 views
-- What replies say: No replies.
+- Engagement: 8 likes, 1 replies, 3 reposts, 0 quotes, 1750 views
+- What replies say: One reply asks whether the monitor keeps intermediate policy changes between scans or only compares against the baseline.
 - Asset: [png](assets/x-msftmechanics-2121600175986585964.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x33: @MSFTMechanics, 2026-11-15 00:49 IST
 
 - Link: https://x.com/MSFTMechanics/status/2121684426455134224
 - Summary: Purview Communication Compliance can flag agent behaviour; Agent 365 can block agent access to labelled files.
-- Engagement: 7 likes, 2 replies, 2 reposts, 0 quotes, 1768 views
+- Engagement: 7 likes, 2 replies, 2 reposts, 0 quotes, 1865 views
 - What replies say: Two replies say runtime blocking matters more than flagging after the fact.
 - Asset: [png](assets/x-msftmechanics-2121684426455134224.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
@@ -356,21 +360,21 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 
 - Link: https://x.com/MSFTMechanics/status/2121816060680626292
 - Summary: Defender for Cloud can open a GitHub issue for a container CVE fix and sync the resolution back.
-- Engagement: 8 likes, 0 replies, 2 reposts, 0 quotes, 2318 views
-- What replies say: No replies.
+- Engagement: 9 likes, 1 replies, 4 reposts, 0 quotes, 2589 views
+- What replies say: One reply describes a tool that turns the Take Action flow into a repeatable test of the fix.
 - Asset: [png](assets/x-msftmechanics-2121816060680626292.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x35: @MSFTMechanics, 2026-11-15 19:14 IST
 
 - Link: https://x.com/MSFTMechanics/status/2121962580998602892
 - Summary: Defender for Cloud groups 19 container alerts from one multi-stage attack into a single incident timeline.
-- Engagement: 6 likes, 0 replies, 2 reposts, 0 quotes, 1280 views
+- Engagement: 8 likes, 0 replies, 2 reposts, 0 quotes, 2212 views
 - What replies say: No replies.
 - Asset: [png](assets/x-msftmechanics-2121962580998602892.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ## CVEs this month
 
-Source: MSRC CVRF `2026-Nov` (https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Nov), released 2026-11-10. Listed: 1096 CVEs assigned by Microsoft as CNA (64 Critical, 1 exploited, 0 publicly disclosed). The same document also carries 548 third-party CVEs (Chromium/Edge 291, Azure Linux/Mariner and other open-source CNAs 257), which are not listed here (see Gaps). Sorted by CVSS, highest first. A CVSS of null means MSRC published no score.
+Source: MSRC CVRF `2026-Nov` (https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Nov), released 2026-11-10. Listed: 1098 CVEs assigned by Microsoft as CNA (64 Critical, 1 exploited, 0 publicly disclosed). The same document also carries 668 third-party CVEs (Chrome 291; other open-source and vendor CNAs 377, led by VulnCheck 86, PostgreSQL 55, GitHub 50, Linux 48 and Red Hat 33), which are not listed here (see Gaps). The document was last revised 2026-11-17, which added two SharePoint CVEs dated 16 Nov. Sorted by CVSS, highest first. A CVSS of null means MSRC published no score.
 
 
 | CVE | title | product | CVSS | severity | exploited | disclosed | link |
@@ -613,6 +617,7 @@ Source: MSRC CVRF `2026-Nov` (https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026
 | CVE-2026-124174 | Microsoft Office Excel Remote Code Execution Vulnerability | Microsoft Office Excel | 8.8 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124174) |
 | CVE-2026-124176 | Microsoft Office Excel Remote Code Execution Vulnerability | Microsoft Office Excel | 8.8 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124176) |
 | CVE-2026-124187 | Microsoft Office Excel Remote Code Execution Vulnerability | Microsoft Office Excel | 8.8 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124187) |
+| CVE-2026-124223 | Microsoft Office SharePoint Remote Code Execution Vulnerability | Microsoft Office SharePoint | 8.8 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124223) |
 | CVE-2026-124226 | Microsoft PowerShell Security Feature Bypass Vulnerability | Windows PowerShell | 8.8 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124226) |
 | CVE-2026-124228 | Microsoft Office Outlook Remote Code Execution Vulnerability | Microsoft Office Outlook | 8.8 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124228) |
 | CVE-2026-125136 | Windows Network Connected Devices Auto-Setup Service Remote Code Execution Vulnerability | Windows Network Connected Devices Auto-Setup Service | 8.8 | Critical | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-125136) |
@@ -886,7 +891,7 @@ Source: MSRC CVRF `2026-Nov` (https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026
 | CVE-2026-97013 | Windows Shell Elevation of Privilege Vulnerability | Windows Shell | 7.8 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-97013) |
 | CVE-2026-105512 | Microsoft QUIC Denial of Service Vulnerability | Microsoft QUIC | 7.5 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105512) |
 | CVE-2026-105515 | Windows Message Queuing Denial of Service Vulnerability | Windows Message Queuing | 7.5 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105515) |
-| CVE-2026-105544 | .NET Elevation of Privilege Vulnerability | .NET | 7.5 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105544) |
+| CVE-2026-105544 | .NET VSTest Elevation of Privilege Vulnerability | .NET | 7.5 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105544) |
 | CVE-2026-105551 | Windows NetBIOS Elevation of Privilege Vulnerability | Windows NetBIOS | 7.5 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105551) |
 | CVE-2026-105558 | Windows Deployment Services Remote Code Execution Vulnerability | Windows Deployment Services | 7.5 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105558) |
 | CVE-2026-105561 | Windows Secure Socket Tunneling Protocol (SSTP) Denial of Service Vulnerability | Windows Secure Socket Tunneling Protocol (SSTP) | 7.5 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105561) |
@@ -1291,6 +1296,7 @@ Source: MSRC CVRF `2026-Nov` (https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026
 | CVE-2026-124183 | Microsoft Office Excel Information Disclosure Vulnerability | Microsoft Office Excel | 6.5 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124183) |
 | CVE-2026-124194 | Microsoft Outlook Spoofing Vulnerability | Microsoft Office Outlook | 6.5 | Moderate | yes | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124194) |
 | CVE-2026-124210 | Microsoft Office SharePoint Information Disclosure Vulnerability | Microsoft Office SharePoint | 6.5 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124210) |
+| CVE-2026-124222 | Microsoft Office SharePoint Elevation of Privilege Vulnerability | Microsoft Office SharePoint | 6.5 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124222) |
 | CVE-2026-124233 | Microsoft Office Word Information Disclosure Vulnerability | Microsoft Office Word | 6.5 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124233) |
 | CVE-2026-67382 | Microsoft SQL Server Information Disclosure Vulnerability | SQL Server | 6.5 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-67382) |
 | CVE-2026-68783 | Microsoft SQL Server Information Disclosure Vulnerability | SQL Server | 6.5 | Important | no | no | [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-68783) |
@@ -1493,12 +1499,12 @@ Sources checked for 9-15 Nov: Microsoft Threat Intelligence posts on the Securit
 
 Details:
 
-- t01: 2026-11-11 04:29 IST, @MsftSecIntel; screenshot: [png](assets/x-msftsecintel-2120290394869006572.png) (public embed, post only); what replies say: Replies focus on the self-service password reset and SMS step, recommending callback checks at the help desk and dropping SMS for recovery.; engagement: 52 likes, 4 replies, 7639 views
-- t02: 2026-11-12 01:19 IST, Microsoft Security Blog (Microsoft Threat Intelligence); screenshot: [png](assets/blog-gsocket.png)
-- t03: 2026-11-12 01:36 IST, @MsftSecIntel; screenshot: [png](assets/x-msftsecintel-2120609029001032115.png) (public embed, post only); what replies say: Practitioners say patching the entry bug is not remediation; hunt for new services and outbound connections, since the shared relay leaves no IP to block. Some replies are off-topic outage jokes.; engagement: 291 likes, 17 replies, 223712 views
-- t04: 2026-11-14 03:01 IST, Microsoft Security Blog (Microsoft Threat Intelligence); screenshot: [png](assets/blog-sckit.png)
-- t05: 2026-11-14 03:08 IST, @MsftSecIntel; screenshot: [png](assets/x-msftsecintel-2121357112009732242.png) (public embed, post only); what replies say: Replies stress that removing the rogue client is not enough, urge updating technician clients, inventorying all remote-support clients and not reconnecting to suspect hosts with the same tool.; engagement: 139 likes, 8 replies, 15074 views
-- t06: 2026-11-14 12:02 IST, @MsftSecIntel; screenshot: [png](assets/x-msftsecintel-2121491564161581148.png) (public embed, post only); what replies say: Repliers advise checking the admin centre or status page directly rather than clicking mail links, call the 24-hour deletion threat the giveaway, and some vent about the outage. Quote posts (mostly reposts in Japanese) relay the warning.; engagement: 3270 likes, 143 replies, 402752 views
+- t01: 2026-11-11 04:29 IST, @MsftSecIntel; screenshot: [png](assets/x-msftsecintel-2120290394869006572.png) (public embed, post only); what replies say: Replies focus on the self-service password reset and SMS step, recommending callback checks at the help desk and dropping SMS for recovery.; engagement: 52 likes, 4 replies, 7822 views
+- t02: 2026-11-12 01:19 IST, Microsoft Security Blog (Microsoft Threat Intelligence); screenshot: [png](assets/blog-gsocket.png); related: t03
+- t03: 2026-11-12 01:36 IST, @MsftSecIntel; screenshot: [png](assets/x-msftsecintel-2120609029001032115.png) (public embed, post only); what replies say: Practitioners say patching the entry bug is not remediation; hunt for new services and outbound connections, since the shared relay leaves no IP to block. Some replies are off-topic outage jokes.; related: t02; engagement: 291 likes, 17 replies, 224309 views
+- t04: 2026-11-14 03:01 IST, Microsoft Security Blog (Microsoft Threat Intelligence); screenshot: [png](assets/blog-sckit.png); related: t05
+- t05: 2026-11-14 03:08 IST, @MsftSecIntel; screenshot: [png](assets/x-msftsecintel-2121357112009732242.png) (public embed, post only); what replies say: Replies stress that removing the rogue client is not enough, urge updating technician clients, inventorying all remote-support clients and not reconnecting to suspect hosts with the same tool.; related: t04; engagement: 141 likes, 8 replies, 16378 views
+- t06: 2026-11-14 12:02 IST, @MsftSecIntel; screenshot: [png](assets/x-msftsecintel-2121491564161581148.png) (public embed, post only); what replies say: Repliers advise checking the admin centre or status page directly rather than clicking mail links, call the 24-hour deletion threat the giveaway, and some vent about the outage. Quote posts (mostly reposts in Japanese) relay the warning.; engagement: 3292 likes, 145 replies, 431810 views
 
 ## Blogs
 
@@ -1515,6 +1521,8 @@ Details:
 | b09 | 2026-11-12 23:37 | Microsoft Security Community Blog | [Plan your Ignite agenda: Join sessions that help you secure agentic insiders at scale.](https://techcommunity.microsoft.com/t5/microsoft-security-community/plan-your-ignite-agenda-join-sessions-that-help-you-secure/ba-p/4569987) | Events | Ignite sessions on treating agents as a new class of insider and the expanded Project Perception. | [png](assets/blog-plan-your-ignite-agenda-join-sessions.png) |
 | b10 | 2026-11-14 03:43 | Microsoft Security Community Blog | [Secure Data at Microsoft Ignite 2026: Plan Your Experience](https://techcommunity.microsoft.com/t5/microsoft-security-community/secure-data-at-microsoft-ignite-2026-plan-your-experience/ba-p/4573071) | Events | Guide to Purview data-security sessions and activities at Ignite 2026. | [png](assets/blog-secure-data-at-microsoft-ignite-2026.png) |
 | b11 | 2026-11-14 19:47 | Core Infrastructure and Security Blog | [Migrating an Entra Connect Sync custom source anchor](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/migrating-an-entra-connect-sync-custom-source-anchor/ba-p/4573237) | Identity | Field guidance on changing a poorly chosen Entra Connect Sync source anchor without breaking identities. | [png](assets/blog-migrating-an-entra-connect-sync-custom.png) |
+
+Related X posts (same research, kept as separate items): b01 ↔ x05; b02 ↔ x14; b03 ↔ x17; b08 ↔ x24.
 
 Blog screenshots (top of each post, 1200x630):
 
@@ -1573,17 +1581,17 @@ Latest heading: **June 2026** ([anchor](https://learn.microsoft.com/en-us/entra/
 Note: Shared Entra releases page; entries tagged Identity Governance or Network Access are listed under Entra ID Governance and Global Secure Access instead.  
 Screenshot: [png](assets/learn-microsoft-entra-id.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l01 | General availability - Microsoft Entra Kerberos key rotation improved reliability for incoming trust referral flows | 2026-06 (month) | GA | Entra Kerberos now tries both the primary and secondary key on incoming trust referral tickets, so key rollover causes fewer sign-in failures. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---microsoft-entra-kerberos-key-rotation-improved-reliability-for-incoming-trust-referral-flows) |
-| l02 | Generally available - Jailbreak/Root Detection in Authenticator App | 2026-06 (month) | GA | Authenticator now refuses work or school accounts on jailbroken or rooted phones by default, with nothing for admins to configure. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#generally-available---jailbreakroot-detection-in-authenticator-app) |
-| l03 | Public Preview - Extended Conditional Access protections for Agent's user accounts | 2026-06 (month) | Preview | Conditional Access gains finer controls for agents that hold user accounts: per-agent targeting, agent-risk conditions and compliant-device requirements. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---extended-conditional-access-protections-for-agents-user-accounts) |
-| l04 | General Availability - Domainless SAML IdP federation for workforce tenants | 2026-06 (month) | GA | Guests can federate through a SAML identity provider even when their email domain does not match a domain configured for that IdP. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---domainless-saml-idp-federation-for-workforce-tenants) |
-| l05 | General Availability - SCIM 2.0 APIs for Microsoft Entra ID in US Gov cloud | 2026-06 (month) | GA | The SCIM 2.0 APIs for provisioning Entra users and groups reach general availability in the US Government cloud. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---scim-20-apis-for-microsoft-entra-id-in-us-gov-cloud) |
-| l06 | General Availability - Microsoft Entra Backup and Recovery is now available | 2026-06 (month) | GA | Always-on Entra Backup and Recovery keeps daily snapshots of key directory objects so admins can compare changes and roll objects back. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---microsoft-entra-backup-and-recovery-is-now-available) |
-| l07 | Upcoming change - Improved restore experience for device-bound Authenticator app passkeys on iOS | 2026-06 (month) | - | From August 2026, moving Authenticator to a new iPhone restores device-bound passkeys more smoothly when iCloud Keychain backup is on; no action needed. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#upcoming-change---improved-restore-experience-for-device-bound-authenticator-app-passkeys-on-ios) |
-| l08 | Public Preview - New built-in Entra role for SOC identity response in Microsoft Defender | 2026-06 (month) | Preview | A new SOC Identity Responder role lets analysts disable accounts, revoke sessions and reset passwords from Defender without broad directory rights. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---new-built-in-entra-role-for-soc-identity-response-in-microsoft-defender) |
-| l09 | Public Preview - Prevent unauthorized changes to AD groups with AD group enforcement | 2026-06 (month) | Preview | Cloud Sync can lock selected on-premises AD groups so only the Entra provisioning service may change them, preventing drift. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---prevent-unauthorized-changes-to-ad-groups-with-ad-group-enforcement) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l01 | General availability - Microsoft Entra Kerberos key rotation improved reliability for incoming trust referral flows | 2026-06 (month) | GA | - | Entra Kerberos now tries both the primary and secondary key on incoming trust referral tickets, so key rollover causes fewer sign-in failures. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---microsoft-entra-kerberos-key-rotation-improved-reliability-for-incoming-trust-referral-flows) |
+| l02 | Generally available - Jailbreak/Root Detection in Authenticator App | 2026-06 (month) | GA | - | Authenticator now refuses work or school accounts on jailbroken or rooted phones by default, with nothing for admins to configure. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#generally-available---jailbreakroot-detection-in-authenticator-app) |
+| l03 | Public Preview - Extended Conditional Access protections for Agent's user accounts | 2026-06 (month) | Preview | - | Conditional Access gains finer controls for agents that hold user accounts: per-agent targeting, agent-risk conditions and compliant-device requirements. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---extended-conditional-access-protections-for-agents-user-accounts) |
+| l04 | General Availability - Domainless SAML IdP federation for workforce tenants | 2026-06 (month) | GA | - | Guests can federate through a SAML identity provider even when their email domain does not match a domain configured for that IdP. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---domainless-saml-idp-federation-for-workforce-tenants) |
+| l05 | General Availability - SCIM 2.0 APIs for Microsoft Entra ID in US Gov cloud | 2026-06 (month) | GA | - | The SCIM 2.0 APIs for provisioning Entra users and groups reach general availability in the US Government cloud. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---scim-20-apis-for-microsoft-entra-id-in-us-gov-cloud) |
+| l06 | General Availability - Microsoft Entra Backup and Recovery is now available | 2026-06 (month) | GA | - | Always-on Entra Backup and Recovery keeps daily snapshots of key directory objects so admins can compare changes and roll objects back. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---microsoft-entra-backup-and-recovery-is-now-available) |
+| l07 | Upcoming change - Improved restore experience for device-bound Authenticator app passkeys on iOS | 2026-06 (month) | - | 2026-08 (enforcement) | From August 2026, moving Authenticator to a new iPhone restores device-bound passkeys more smoothly when iCloud Keychain backup is on; no action needed. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#upcoming-change---improved-restore-experience-for-device-bound-authenticator-app-passkeys-on-ios) |
+| l08 | Public Preview - New built-in Entra role for SOC identity response in Microsoft Defender | 2026-06 (month) | Preview | - | A new SOC Identity Responder role lets analysts disable accounts, revoke sessions and reset passwords from Defender without broad directory rights. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---new-built-in-entra-role-for-soc-identity-response-in-microsoft-defender) |
+| l09 | Public Preview - Prevent unauthorized changes to AD groups with AD group enforcement | 2026-06 (month) | Preview | - | Cloud Sync can lock selected on-premises AD groups so only the Entra provisioning service may change them, preventing drift. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---prevent-unauthorized-changes-to-ad-groups-with-ad-group-enforcement) |
 
 ### Entra ID Governance
 
@@ -1592,9 +1600,9 @@ Latest heading: **June 2026** ([anchor](https://learn.microsoft.com/en-us/entra/
 Note: No separate Entra ID Governance What's new page exists; Microsoft lists governance changes on the shared Entra releases page and tags them 'Product capability: Identity Governance'. Only entries with that tag are listed here.  
 Screenshot: [png](assets/learn-entra-id-governance.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l10 | General Availability - External users can be directly assigned to Access Packages | 2026-06 (month) | GA | Entitlement management admins can assign people outside the directory to an access package by email; they join as guests and stay governed. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---external-users-can-be-directly-assigned-to-access-packages) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l10 | General Availability - External users can be directly assigned to Access Packages | 2026-06 (month) | GA | - | Entitlement management admins can assign people outside the directory to an access package by email; they join as guests and stay governed. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---external-users-can-be-directly-assigned-to-access-packages) |
 
 ### Global Secure Access
 
@@ -1603,20 +1611,20 @@ Latest heading: **June 2026** ([anchor](https://learn.microsoft.com/en-us/entra/
 Note: No separate Global Secure Access What's new page exists; changes appear on the shared Entra releases page tagged 'Product capability: Network Access', and only those entries are listed here. The GSA docs also have client and sensor version-history pages, which are not covered.  
 Screenshot: [png](assets/learn-global-secure-access.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l11 | General Availability - BYOD support for Windows client using Entra registration | 2026-06 (month) | GA | Private app traffic can now come from personal, Entra-registered Windows devices, removing the need for those PCs to be domain-joined. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---byod-support-for-windows-client-using-entra-registration) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l11 | General Availability - BYOD support for Windows client using Entra registration | 2026-06 (month) | GA | - | Private app traffic can now come from personal, Entra-registered Windows devices, removing the need for those PCs to be domain-joined. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---byod-support-for-windows-client-using-entra-registration) |
 
 ### Defender XDR
 
 Page: https://learn.microsoft.com/en-us/defender-xdr/whats-new  
-Latest heading: **September 2026** ([anchor](https://learn.microsoft.com/en-us/defender-xdr/whats-new#september-2026))  
+Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026))  
 Screenshot: [png](assets/learn-defender-xdr.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l12 | Integrated Security Operations Center (ISOC) in Microsoft Defender | 2026-09 (month) | Preview | ISOC puts XDR, SIEM, threat intel, automation and AI in one Defender portal experience; from 23 Sep 2026 eligible E5/E7 tenants without Sentinel can use it. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#september-2026) |
-| l13 | Identity Security dashboard and Coverage & Maturity | 2026-09 (month) | GA | A single dashboard for identity risk and posture, plus a coverage view that shows protection gaps across on-prem, cloud, SaaS and partner identity sources. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#september-2026) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l12 | Protect AI assets from trusted-identity attacks | 2026-11 (month) | Preview | - | Defender XDR adds detection and disruption for device code phishing aimed at GitHub Copilot CLI, best with an Enterprise-level GitHub connector. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026) |
+| l13 | New navigation | 2026-11 (month) | Preview | - | The Defender portal navigation is reorganized so Sentinel pages sit where they are used; ISOC tenants get new paths, others keep the old ones. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026) |
 
 ### Defender for Endpoint
 
@@ -1624,9 +1632,11 @@ Page: https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft
 Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint#november-2026))  
 Screenshot: [png](assets/learn-defender-for-endpoint.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l14 | Build 101.26092.0012 | 2026-11 (month) | GA | Defender for Endpoint on macOS build 101.26092.0012 (version 20.126092.12.0) is out; its changes are on the releases page. | no | [link](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint#november-2026) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l14 | Preview features page | 2026-11 (month) | Preview | - | Admins can switch individual Defender for Endpoint public preview features on or off instead of all at once. | no | [link](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint#november-2026) |
+| l15 | Embedded offboarding with the Defender deployment tool for Windows | 2026-11 (month) | Preview | - | The Windows deployment tool can now build keyed, expiring offboarding packages (.exe or .zip), tracked on the Deployment packages page. | no | [link](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint#november-2026) |
+| l16 | Build 101.26092.0012 | 2026-11 (month) | GA | - | Defender for Endpoint on macOS build 101.26092.0012 (version 20.126092.12.0) is out; its changes are on the releases page. | no | [link](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint#november-2026) |
 
 ### Defender for Office 365
 
@@ -1634,9 +1644,9 @@ Page: https://learn.microsoft.com/en-us/defender-office-365/defender-for-office-
 Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/defender-office-365/defender-for-office-365-whats-new#november-2026))  
 Screenshot: [png](assets/learn-defender-for-office-365.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l15 | Hunt for synthetic media (deepfake) detection events | 2026-11 (month) | - | A new advanced hunting table, SyntheticMediaDetectionEvents, logs deepfakes detected in Teams to support impersonation and fraud investigations. | no | [link](https://learn.microsoft.com/en-us/defender-office-365/defender-for-office-365-whats-new#november-2026) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l17 | Hunt for synthetic media (deepfake) detection events | 2026-11 (month) | - | - | A new advanced hunting table, SyntheticMediaDetectionEvents, logs deepfakes detected in Teams to support impersonation and fraud investigations. | no | [link](https://learn.microsoft.com/en-us/defender-office-365/defender-for-office-365-whats-new#november-2026) |
 
 ### Defender for Identity
 
@@ -1644,22 +1654,22 @@ Page: https://learn.microsoft.com/en-us/defender-for-identity/whats-new
 Latest heading: **October 2026** ([anchor](https://learn.microsoft.com/en-us/defender-for-identity/whats-new#october-2026))  
 Screenshot: [png](assets/learn-defender-for-identity.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l16 | Automatic sensor v3.x activation and Windows auditing for existing customers | 2026-10 (month) | - | Eligible tenants see a 30-day banner, after which v3.x sensor activation and Windows auditing switch on automatically unless they opt out. | no | [link](https://learn.microsoft.com/en-us/defender-for-identity/whats-new#automatic-sensor-v3x-activation-and-windows-auditing-for-existing-customers) |
-| l17 | New Defender for Identity security alerts | 2026-10 (month) | - | New detections cover Entra ID MFA-method and device registration abuse plus AD attacks such as diamond tickets, AD CS ESC8/ESC11 abuse and DNS exfiltration. | no | [link](https://learn.microsoft.com/en-us/defender-for-identity/whats-new#new-defender-for-identity-security-alerts) |
-| l18 | General availability of sensor v3.x activation without Defender for Endpoint | 2026-10 (month) | GA | The v3.x sensor can be activated on DCs, AD FS, AD CS and Entra Connect servers (Windows Server 2019+) without deploying Defender for Endpoint. | no | [link](https://learn.microsoft.com/en-us/defender-for-identity/whats-new#general-availability-of-sensor-v3x-activation-without-defender-for-endpoint) |
-| l19 | Known limitation: Sensor v3.x activation without Defender for Endpoint isn't supported in government clouds | 2026-10 (month) | - | Government cloud tenants cannot yet activate the v3.x sensor on servers that lack Defender for Endpoint. | no | [link](https://learn.microsoft.com/en-us/defender-for-identity/whats-new#known-limitation-sensor-v3x-activation-without-defender-for-endpoint-isnt-supported-in-government-clouds) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l18 | Automatic sensor v3.x activation and Windows auditing for existing customers | 2026-10 (month) | - | - | Eligible tenants see a 30-day banner, after which v3.x sensor activation and Windows auditing switch on automatically unless they opt out. | no | [link](https://learn.microsoft.com/en-us/defender-for-identity/whats-new#automatic-sensor-v3x-activation-and-windows-auditing-for-existing-customers) |
+| l19 | New Defender for Identity security alerts | 2026-10 (month) | - | - | New detections cover Entra ID MFA-method and device registration abuse plus AD attacks such as diamond tickets, AD CS ESC8/ESC11 abuse and DNS exfiltration. | no | [link](https://learn.microsoft.com/en-us/defender-for-identity/whats-new#new-defender-for-identity-security-alerts) |
+| l20 | General availability of sensor v3.x activation without Defender for Endpoint | 2026-10 (month) | GA | - | The v3.x sensor can be activated on DCs, AD FS, AD CS and Entra Connect servers (Windows Server 2019+) without deploying Defender for Endpoint. | no | [link](https://learn.microsoft.com/en-us/defender-for-identity/whats-new#general-availability-of-sensor-v3x-activation-without-defender-for-endpoint) |
+| l21 | Known limitation: Sensor v3.x activation without Defender for Endpoint isn't supported in government clouds | 2026-10 (month) | - | - | Government cloud tenants cannot yet activate the v3.x sensor on servers that lack Defender for Endpoint. | no | [link](https://learn.microsoft.com/en-us/defender-for-identity/whats-new#known-limitation-sensor-v3x-activation-without-defender-for-endpoint-isnt-supported-in-government-clouds) |
 
 ### Defender for Cloud Apps
 
 Page: https://learn.microsoft.com/en-us/defender-cloud-apps/release-notes  
-Latest heading: **October 2026** ([anchor](https://learn.microsoft.com/en-us/defender-cloud-apps/release-notes#october-2026))  
+Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/defender-cloud-apps/release-notes#november-2026))  
 Screenshot: [png](assets/learn-defender-for-cloud-apps.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l20 | Automatic enablement of SaaS accounts integration with Identity inventory | 2026-10 (month) | - | From 15 Oct 2026 the link between Cloud Apps SaaS accounts and Identity inventory turns on by default for eligible tenants instead of being opt-in. | no | [link](https://learn.microsoft.com/en-us/defender-cloud-apps/release-notes#automatic-enablement-of-saas-accounts-integration-with-identity-inventory) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l22 | GitHub connector enhancements (Preview) | 2026-11 (month) | Preview | - | The GitHub connector can now connect at Enterprise level as well as per organization, covering every org in one step and helping catch Copilot CLI phishing. | no | [link](https://learn.microsoft.com/en-us/defender-cloud-apps/release-notes#github-connector-enhancements-preview) |
 
 ### Defender for Cloud
 
@@ -1667,15 +1677,15 @@ Page: https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes
 Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes#november-2026))  
 Screenshot: [png](assets/learn-defender-for-cloud.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l21 | Arc proxy support for Defender for SQL Servers on Machines | 2026-11-04 (day) | - | Defender for SQL on machines now covers Arc-enabled SQL Servers that send traffic via Arc proxy, starting with extension 2.0.3585.403 (manual update for now). | no | [link](https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes#arc-proxy-support-for-defender-for-sql-servers-on-machines) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l23 | Arc proxy support for Defender for SQL Servers on Machines | 2026-11-04 (day) | - | - | Defender for SQL on machines now covers Arc-enabled SQL Servers that send traffic via Arc proxy, starting with extension 2.0.3585.403 (manual update for now). | no | [link](https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes#arc-proxy-support-for-defender-for-sql-servers-on-machines) |
 
 ### Defender Vulnerability Management
 
 Page: https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint  
 Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint#november-2026))  
-Note: The MDVM docs link their 'What's new' entry to the Defender for Endpoint page. Nothing under its latest heading (November 2026) is about MDVM; the one entry there is listed under Defender for Endpoint.  
+Note: Shares the Defender for Endpoint page: the MDVM docs link their 'What's new' entry there. None of the three entries under its latest heading (November 2026) mentions Defender Vulnerability Management, so none is listed here; they appear under Defender for Endpoint.  
 Screenshot: [png](assets/learn-defender-vulnerability-management.png)
 
 No entries for this product under the latest heading.
@@ -1691,19 +1701,19 @@ Latest heading: **October 2026** ([anchor](https://learn.microsoft.com/en-us/sec
 Note: Entries labelled 'Codename MDASH' are listed under MDASH.  
 Screenshot: [png](assets/learn-security-exposure-management.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l22 | Posture policies and recommendation exemptions available for Azure environments | 2026-10-28 (day) | Preview | Azure resources can be assessed against custom posture policies, with accepted-risk exemptions managed and tracked centrally. | no | [link](https://learn.microsoft.com/en-us/security-exposure-management/whats-new#posture-policies-and-recommendation-exemptions-available-for-azure-environments) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l24 | Posture policies and recommendation exemptions available for Azure environments | 2026-10-28 (day) | Preview | - | Azure resources can be assessed against custom posture policies, with accepted-risk exemptions managed and tracked centrally. | no | [link](https://learn.microsoft.com/en-us/security-exposure-management/whats-new#posture-policies-and-recommendation-exemptions-available-for-azure-environments) |
 
 ### Sentinel
 
 Page: https://learn.microsoft.com/en-us/azure/sentinel/whats-new  
-Latest heading: **October 2026** ([anchor](https://learn.microsoft.com/en-us/azure/sentinel/whats-new#october-2026))  
+Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/azure/sentinel/whats-new#november-2026))  
 Screenshot: [png](assets/learn-sentinel.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l23 | Detect use of vulnerable SAP BTP custom apps (Preview) | 2026-10 (month) | Preview | A new SAP BTP analytics rule flags logins to custom apps that still have open high or critical findings in the SAP vulnerability report. | no | [link](https://learn.microsoft.com/en-us/azure/sentinel/whats-new#detect-use-of-vulnerable-sap-btp-custom-apps-preview) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l25 | SAP solution pricing for ISOC customers | 2026-11 (month) | - | - | For ISOC customers, the Sentinel SAP solution now costs nothing extra for active SAP production SIDs, covering dev, test and QA systems too. | no | [link](https://learn.microsoft.com/en-us/azure/sentinel/whats-new#sap-solution-pricing-for-isoc-customers) |
 
 ### Purview
 
@@ -1712,9 +1722,9 @@ Latest heading: **October 2026** ([anchor](https://learn.microsoft.com/en-us/pur
 Note: The page opens with a 'What's planned for Microsoft Purview' section that has no release period; the latest dated heading is used.  
 Screenshot: [png](assets/learn-purview.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l24 | Data Loss Prevention | 2026-10 (month) | GA | Endpoint DLP can now watch sensitive files sent over FTP or SFTP and restrict those transfers according to policy. | no | [link](https://learn.microsoft.com/en-us/purview/whats-new#data-loss-prevention) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l26 | Data Loss Prevention | 2026-10 (month) | GA | - | Endpoint DLP can now watch sensitive files sent over FTP or SFTP and restrict those transfers according to policy. | no | [link](https://learn.microsoft.com/en-us/purview/whats-new#data-loss-prevention) |
 
 ### Intune
 
@@ -1723,17 +1733,22 @@ Latest heading: **Week of November 16, 2026 (Service release 2611)** ([anchor](h
 Note: The latest heading is the week of 16 Nov, the week after the window; no entry carries its own date.  
 Screenshot: [png](assets/learn-intune.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l25 | Newly available protected apps for Intune | 2026-11-16 (week) | - | Ten more partner apps, among them Everbridge 360, Ramp and Zoho Mail, can now be managed as Intune protected apps. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#newly-available-protected-apps-for-intune) |
-| l26 | Automate tasks with local actions on Android Enterprise devices | 2026-11-16 (week) | - | Fully managed and dedicated Android Enterprise devices can run up to five automated local actions per trigger such as restart, sign-in or a schedule. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#automate-tasks-with-local-actions-on-android-enterprise-devices) |
-| l27 | New settings for macOS in the settings catalog | 2026-11-16 (week) | - | The macOS settings catalog adds options for EWS retirement alerts, Edge and Copilot behaviour, and Defender runtime protection for AI agents. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#new-settings-for-macos-in-the-settings-catalog) |
-| l28 | Group exclusions and built-in group targeting for PowerShell scripts on Windows | 2026-11-16 (week) | - | PowerShell script assignments on Windows now accept group exclusions and the built-in All Users and All Devices groups. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#group-exclusions-and-built-in-group-targeting-for-powershell-scripts-on-windows) |
-| l29 | Require Google Workspace authentication on Android Enterprise devices | 2026-11-16 (week) | - | Admins can make users sign in with a managed Google Workspace account on supported Android Enterprise devices. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#require-google-workspace-authentication-on-android-enterprise-devices) |
-| l30 | Increase Intune management agent check-ins on macOS | 2026-11-16 (week) | - | Newly enrolled Macs check in much more often during onboarding, and the regular agent check-in interval drops from about eight hours to one. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#increase-intune-management-agent-check-ins-on-macos) |
-| l31 | Maintenance windows for operating system and driver updates on Windows | 2026-11-16 (week) | - | Maintenance windows let admins decide when Windows OS and driver update operations are allowed to run. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#maintenance-windows-for-operating-system-and-driver-updates-on-windows) |
-| l32 | Configure evaluation frequency for custom compliance scripts on Windows and macOS | 2026-11-16 (week) | - | Custom compliance scripts on Windows and macOS can be re-evaluated every 15 or 30 minutes, or every one to eight hours. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#configure-evaluation-frequency-for-custom-compliance-scripts-on-windows-and-macos) |
-| l33 | Get more remediation guidance in Windows Autopatch reports | 2026-11-16 (week) | - | Windows Autopatch reports add extra data, fix guidance and guardrails for configuration problems. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#get-more-remediation-guidance-in-windows-autopatch-reports) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l27 | Share device diagnostics during Remote Help sessions on Windows | 2026-11-16 (week) | - | - | In attended Windows Remote Help sessions, users can consent to share device diagnostics with the helpdesk and stop sharing at any time. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#share-device-diagnostics-during-remote-help-sessions-on-windows) |
+| l28 | Keep work files in OneDrive for Business with Edge for Business on Windows | 2026-11-16 (week) | - | - | A Windows app protection setting can send Edge for Business work-profile downloads to OneDrive for Business instead of the local disk (Edge 158+). | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#keep-work-files-in-onedrive-for-business-with-edge-for-business-on-windows) |
+| l29 | Newly available protected apps for Intune | 2026-11-16 (week) | - | - | Ten more partner apps, among them Everbridge 360, Ramp and Zoho Mail, can now be managed as Intune protected apps. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#newly-available-protected-apps-for-intune) |
+| l30 | New and updated settings for Windows in the settings catalog | 2026-11-16 (week) | - | - | The Windows settings catalog gains refreshed Edge and Chrome templates plus two Cloud PC device reset settings. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#new-and-updated-settings-for-windows-in-the-settings-catalog) |
+| l31 | Automate tasks with local actions on Android Enterprise devices | 2026-11-16 (week) | - | - | Fully managed and dedicated Android Enterprise devices can run up to five automated local actions per trigger such as restart, sign-in or a schedule. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#automate-tasks-with-local-actions-on-android-enterprise-devices) |
+| l32 | New settings for macOS in the settings catalog | 2026-11-16 (week) | - | - | The macOS settings catalog adds options for EWS retirement alerts, Edge and Copilot behaviour, and Defender runtime protection for AI agents. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#new-settings-for-macos-in-the-settings-catalog) |
+| l33 | Group exclusions and built-in group targeting for PowerShell scripts on Windows | 2026-11-16 (week) | - | - | PowerShell script assignments on Windows now accept group exclusions and the built-in All Users and All Devices groups. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#group-exclusions-and-built-in-group-targeting-for-powershell-scripts-on-windows) |
+| l34 | Require Google Workspace authentication on Android Enterprise devices | 2026-11-16 (week) | - | - | Admins can make users sign in with a managed Google Workspace account on supported Android Enterprise devices. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#require-google-workspace-authentication-on-android-enterprise-devices) |
+| l35 | Increase Intune management agent check-ins on macOS | 2026-11-16 (week) | - | - | Newly enrolled Macs check in much more often during onboarding, and the regular agent check-in interval drops from about eight hours to one. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#increase-intune-management-agent-check-ins-on-macos) |
+| l36 | Maintenance windows for operating system and driver updates on Windows | 2026-11-16 (week) | - | - | Maintenance windows let admins decide when Windows OS and driver update operations are allowed to run. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#maintenance-windows-for-operating-system-and-driver-updates-on-windows) |
+| l37 | Configure evaluation frequency for custom compliance scripts on Windows and macOS | 2026-11-16 (week) | - | - | Custom compliance scripts on Windows and macOS can be re-evaluated every 15 or 30 minutes, or every one to eight hours. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#configure-evaluation-frequency-for-custom-compliance-scripts-on-windows-and-macos) |
+| l38 | Manage Windows Server devices with Microsoft Intune (Insider preview) | 2026-11-16 (week) | Preview | - | Intune can enroll and manage Windows Server Insider preview builds for nonproduction testing only; production server management is not supported. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#manage-windows-server-devices-with-microsoft-intune-insider-preview) |
+| l39 | CIS benchmark auditing for Windows 11 devices (public preview) | 2026-11-16 (week) | Preview | - | Windows 11 devices can be audited against the CIS Intune benchmark, with per-setting results and export; it reports only and needs Advanced Analytics. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#cis-benchmark-auditing-for-windows-11-devices-public-preview) |
+| l40 | Get more remediation guidance in Windows Autopatch reports | 2026-11-16 (week) | - | - | Windows Autopatch reports add extra data, fix guidance and guardrails for configuration problems. | no | [link](https://learn.microsoft.com/en-us/intune/whats-new/#get-more-remediation-guidance-in-windows-autopatch-reports) |
 
 ### Security Copilot
 
@@ -1741,17 +1756,53 @@ Page: https://learn.microsoft.com/en-us/copilot/security/whats-new-copilot-secur
 Latest heading: **April 2026** ([anchor](https://learn.microsoft.com/en-us/copilot/security/whats-new-copilot-security#april-2026))  
 Screenshot: [png](assets/learn-security-copilot.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l34 | Security Analyst Agent - Public preview | 2026-04 (month) | Preview | The Security Analyst Agent runs multi-step investigations over Defender and Sentinel data and returns ranked risk findings with supporting evidence. | no | [link](https://learn.microsoft.com/en-us/copilot/security/whats-new-copilot-security#security-analyst-agent---public-preview) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l41 | Security Analyst Agent - Public preview | 2026-04 (month) | Preview | - | The Security Analyst Agent runs multi-step investigations over Defender and Sentinel data and returns ranked risk findings with supporting evidence. | no | [link](https://learn.microsoft.com/en-us/copilot/security/whats-new-copilot-security#security-analyst-agent---public-preview) |
 
 ### Azure network security (Firewall, WAF, DDoS)
 
-Gap: no What's new page on Learn for any of the three. Azure Firewall: /azure/firewall/whats-new and /firewall-whats-new are 404, and its toc.json has no what's-new entry. The 'Azure Firewall preview features' page (/azure/firewall/firewall-preview) exists but has no dated release headings, so it is not used. WAF: /azure/web-application-firewall/whats-new and /waf-whats-new are 404; nothing in its toc.json. DDoS Protection: /azure/ddos-protection/ddos-protection-whats-new and /whats-new are 404; nothing in its toc.json. Learn search for 'what's new' on each product found none.
+Page: https://learn.microsoft.com/en-us/azure/firewall/firewall-preview  
+Latest heading: **Preview features** ([anchor](https://learn.microsoft.com/en-us/azure/firewall/firewall-preview#preview-features))  
+Note: Azure Firewall's 'Preview features' page is used as its release notes. It lists current previews with no release dates, so each entry is dated on the day it was captured (2026-11-18, precision captured) and is never in the window. Web Application Firewall and DDoS Protection have no What's new or preview page on Learn (/azure/web-application-firewall/whats-new, /waf-whats-new, /azure/ddos-protection/ddos-protection-whats-new and /whats-new are all 404).  
+Screenshot: [png](assets/learn-azure-network-security-firewall-waf-ddos.png)
+
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l42 | Dual-stack support (preview) | 2026-11-18 (captured) | Preview | - | Azure Firewall and Firewall Policy can run in dual-stack mode, filtering IPv6 network rules and proxying DNS alongside IPv4. | no | [link](https://learn.microsoft.com/en-us/azure/firewall/firewall-preview#dual-stack-support-preview) |
+| l43 | AI Security add-on (preview) | 2026-11-18 (captured) | Preview | - | An optional AI Security add-on for Firewall Premium adds prompt and malware threat protection, network DLP with Purview, and Policy Advisor. | no | [link](https://learn.microsoft.com/en-us/azure/firewall/firewall-preview#ai-security-add-on-preview) |
+| l44 | Change tracking (preview) | 2026-11-18 (captured) | Preview | - | Change tracking uses Azure Resource Graph to show what changed in Firewall rule collection groups, for audit and troubleshooting. | no | [link](https://learn.microsoft.com/en-us/azure/firewall/firewall-preview#change-tracking-preview) |
+| l45 | Customer provided public IP address support in secured hubs (preview) | 2026-11-18 (captured) | Preview | - | New Secured Hub firewalls in Virtual WAN can use public IP addresses from the customer tenant; existing hubs need a redeploy. | no | [link](https://learn.microsoft.com/en-us/azure/firewall/firewall-preview#customer-provided-public-ip-address-support-in-secured-hubs-preview) |
 
 ### Windows security
 
-Gap: no Windows-security What's new page found. /windows/security/whats-new is 404, and the /windows/security toc.json has no what's-new entry. Learn has only the general 'What's new in Windows' version pages (/windows/whats-new/, e.g. Windows 11 26H2), which are not security release notes, so they are not used.
+Page: https://learn.microsoft.com/en-us/windows/security/whats-new  
+Latest heading: **November 2026 (Ignite 2026)** ([anchor](https://learn.microsoft.com/en-us/windows/security/whats-new#november-2026-ignite-2026))  
+Note: New page found this run: 'What's new in Windows security' (its latest heading is November 2026 (Ignite 2026)). Its entries are bare feature names that link to their docs, with no text under them, so their summaries are left empty and details holds the name as written.  
+Screenshot: [png](assets/learn-windows-security.png)
+
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l46 | Administrator protection | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l47 | Agent governance | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l48 | Agent identity | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l49 | Declared configuration resource access | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l50 | Driver Quality Initiative | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l51 | Malicious and vulnerable driver blocklists | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l52 | Microsoft Execution Containers (MXC) | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l53 | Remote lock | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l54 | Windows baseline protection | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l55 | Windows endpoint security platform | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
+| l56 | Windows Hello for Business | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l57 | Configure Windows Hello for Business | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l58 | FIDO2 security keys | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l59 | Post-quantum cryptography | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l60 | Reduced reliance on NTLM with new Kerberos functionality | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l61 | VBS and HVCI on upgraded systems | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l62 | Web sign-in | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l63 | Wi-Fi protection (WPA3, OWE, Wi-Fi 7) | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l64 | Windows Autopatch | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
+| l65 | Windows Hello (PIN, face, fingerprint) | 2026-11 (month) | - | - |  | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
 
 ### Perception
 
@@ -1764,9 +1815,9 @@ Latest heading: **October 2026** ([anchor](https://learn.microsoft.com/en-us/sec
 Note: MDASH (Codename MDASH) has no What's new page of its own. Its docs sit inside Security Exposure Management, and that page labels MDASH changes 'Codename MDASH'. Only those entries are listed here.  
 Screenshot: [png](assets/learn-mdash.png)
 
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l35 | Codename MDASH - MAI Cyber configuration now uses MAI-Cyber-1.1-Flash | 2026-10 (month) | Preview | The MAI Cyber scan configuration in MDASH switches to the MAI-Cyber-1.1-Flash model, and existing Foundry setups are upgraded automatically. | no | [link](https://learn.microsoft.com/en-us/security-exposure-management/whats-new#codename-mdash---mai-cyber-configuration-now-uses-mai-cyber-11-flash) |
+| id | title | date | status | change date | summary | in window | link |
+|---|---|---|---|---|---|---|---|
+| l66 | Codename MDASH - MAI Cyber configuration now uses MAI-Cyber-1.1-Flash | 2026-10 (month) | Preview | - | The MAI Cyber scan configuration in MDASH switches to the MAI-Cyber-1.1-Flash model, and existing Foundry setups are upgraded automatically. | no | [link](https://learn.microsoft.com/en-us/security-exposure-management/whats-new#codename-mdash---mai-cyber-configuration-now-uses-mai-cyber-11-flash) |
 
 
 ## Coming soon
@@ -1866,11 +1917,11 @@ Community discussion only, not Microsoft. Source: public Reddit pages. Commenter
 
 | id | subreddit | title | upvotes | comments | date (IST) | what it is about | asset |
 |---|---|---|---|---|---|---|---|
-| r01 | r/sysadmin | [Windows 0-day "SignDrop" published, "this makes this vulnerability unique as it can be used to …](https://www.reddit.com/r/sysadmin/comments/1xw1mub/windows_0day_signdrop_published_this_makes_this/) | 714 | 85 | 2026-11-14 18:19 | Shares a published Windows zero-day, SignDrop, said to allow privilege escalation and switching off AV/EDR. Top comments note a registry precondition that few machines meet and ask about an out-of-band fix. | [png](assets/reddit-sysadmin-1xw1mub.png) |
-| r02 | r/sysadmin | [Patch Tuesday Megathread - (November 10, 2026)](https://www.reddit.com/r/sysadmin/comments/1xsp3bk/patch_tuesday_megathread_november_10_2026/) | 120 | 330 | 2026-11-10 20:31 | Monthly Patch Tuesday megathread. Comments flag a PowerShell signature-validation change, a confirmed printing issue and jokes about patching before Friday the 13th. | [png](assets/reddit-sysadmin-1xsp3bk.png) |
-| r03 | r/entra | [Now its time - my new tool 'GSAClientDiagnosticsToolkit' is out!](https://www.reddit.com/r/entra/comments/1xtr7er/now_its_time_my_new_tool/) | 46 | 12 | 2026-11-12 01:00 | Open-source PowerShell module that runs Global Secure Access client connectivity checks in one command; commenters welcome it for troubleshooting. | [png](assets/reddit-entra-1xtr7er.png) |
+| r01 | r/sysadmin | [Windows 0-day "SignDrop" published, "this makes this vulnerability unique as it can be used to …](https://www.reddit.com/r/sysadmin/comments/1xw1mub/windows_0day_signdrop_published_this_makes_this/) | 763 | 86 | 2026-11-14 18:19 | Shares a published Windows zero-day, SignDrop, said to allow privilege escalation and switching off AV/EDR. Top comments note a registry precondition that few machines meet and ask about an out-of-band fix. | [png](assets/reddit-sysadmin-1xw1mub.png) |
+| r02 | r/sysadmin | [Patch Tuesday Megathread - (November 10, 2026)](https://www.reddit.com/r/sysadmin/comments/1xsp3bk/patch_tuesday_megathread_november_10_2026/) | 128 | 350 | 2026-11-10 20:31 | Monthly Patch Tuesday megathread. Comments flag a PowerShell signature-validation change, a confirmed printing issue and jokes about patching before Friday the 13th. | [png](assets/reddit-sysadmin-1xsp3bk.png) |
+| r03 | r/entra | [Now its time - my new tool 'GSAClientDiagnosticsToolkit' is out!](https://www.reddit.com/r/entra/comments/1xtr7er/now_its_time_my_new_tool/) | 52 | 12 | 2026-11-12 01:00 | Open-source PowerShell module that runs Global Secure Access client connectivity checks in one command; commenters welcome it for troubleshooting. | [png](assets/reddit-entra-1xtr7er.png) |
 | r04 | r/entra | [How to make Passkey Registration default to Authenticator App Passkey](https://www.reddit.com/r/entra/comments/1xrx9vz/how_to_make_passkey_registration_default_to/) | 33 | 16 | 2026-11-09 22:36 | Admin asks how to make passkey registration default to the Authenticator app; replies point to passkey profiles with attestation, while noting the Windows prompt itself cannot be changed. | [png](assets/reddit-entra-1xrx9vz.png) |
-| r05 | r/entra | [A new version of the Microsoft Entra private network connector is out! (1.5.5130.0)](https://www.reddit.com/r/entra/comments/1xth1u4/a_new_version_of_the_microsoft_entra_private/) | 32 | 6 | 2026-11-11 18:26 | Post on a new Entra private network connector release with stability, DNS and logging changes; replies note it auto-updates. | [png](assets/reddit-entra-1xth1u4.png) |
+| r05 | r/entra | [A new version of the Microsoft Entra private network connector is out! (1.5.5130.0)](https://www.reddit.com/r/entra/comments/1xth1u4/a_new_version_of_the_microsoft_entra_private/) | 33 | 6 | 2026-11-11 18:26 | Post on a new Entra private network connector release with stability, DNS and logging changes; replies note it auto-updates. | [png](assets/reddit-entra-1xth1u4.png) |
 
 ## Themes
 
@@ -1880,7 +1931,7 @@ Community discussion only, not Microsoft. Source: public Reddit pages. Commenter
    Items: t01, t02, t03, t04, t05, t06
 3. **AI model supply chain and AI-found vulnerabilities**: Microsoft research showed that models can be backdoored through a few neuron edits or poisoned fine-tuning, and that its own agentic tools (MDASH/Hyenas) found Rust standard-library and Linux kernel bugs, with 33 kernel CVEs assigned.
    Items: b02, b08, b01, b03, x24, x14, x17, x05
-4. **November Patch Tuesday: one exploited Outlook bug, 64 Critical**: The November release has 1,096 Microsoft-assigned CVEs. One is exploited (an Outlook spoofing flaw that leaks NTLM hashes), and the Critical RCEs in LDAP, Windows Search, Exchange and AD DS stand out. On Reddit, practitioners discussed the release and a separately published Windows zero-day, SignDrop.
+4. **November Patch Tuesday: one exploited Outlook bug, 64 Critical**: The November release has 1,098 Microsoft-assigned CVEs. One is exploited (an Outlook spoofing flaw that leaks NTLM hashes), and the Critical RCEs in LDAP, Windows Search, Exchange and AD DS stand out. On Reddit, practitioners discussed the release and a separately published Windows zero-day, SignDrop.
    Items: CVE-2026-124194, CVE-2026-119958, CVE-2026-116928, CVE-2026-118207, CVE-2026-118146, CVE-2026-109469, x10, x11, v23, r02, r01
 5. **Identity, data and endpoint hardening (Entra, Purview, Intune, Azure Backup)**: Day-to-day controls also got attention: Entra Private Access and Internet Access in place of VPNs, tenant configuration snapshots, Connect Sync anchor migration, Purview classification and DSPM, Intune compliance with Autopatch, Edge extension control, and Azure Backup cyber recovery. Community threads covered passkey rollout and GSA tooling.
    Items: x32, x20, x15, x07, x04, x02, x18, x16, x12, x09, x30, x29, x21, x35, x34, b11, b07, b04, b05, b06, b10, v25, v26, v28, v29, v22, v24, v21, r03, r04, r05
@@ -1890,35 +1941,36 @@ Community discussion only, not Microsoft. Source: public Reddit pages. Commenter
 - X: @MicrosoftEntra does not exist on X (lookup returned not found), so no Entra-branded X posts were collected.
 - X: the practitioner search (Defender/Sentinel/Entra/Purview/Security Copilot with min_faves:100, also tried as min_likes:100) returned unfiltered results because the connector ignored the like-count operator. None of 50 sampled posts had 100 or more likes, so no practitioner posts are listed.
 - X screenshots: on 18 Nov I retried the direct x.com/<handle>/status/<id> URL for all 39 posts (35 X items and 4 threat items) in headless Chromium, not signed in. Every one returned HTTP 403. Each post was then captured from the public embed (platform.twitter.com/embed/Tweet.html?id=<id>), cropped to 600px wide and at most 900px tall. The embed shows only the post with a 'Read N replies' link, so no screenshot shows replies; seeing them needs a signed-in session, which I don't use. 23 of the 39 posts are taller than 900px in the embed, so their screenshots are cut at 900px, usually just above or through the like/reply bar. The 'what replies say' text still comes from X connector data.
-- X replies: only the first page of replies (up to 25 per query) was read. Replies to the six MSFTMechanics posts per batched query may be incomplete.
-- Threat intelligence: no in-window items from Security Insider (latest is the 1 Oct 2026 Digital Defense Report piece; the threat-actor-profiles URL returned 404), the Microsoft Threat Intelligence podcast (latest episode 5 Nov 2026, 'PHP2Shell'), or MSRC advisories (the Advisories view lists 0 rows since 1 Oct 2026). The November CVRF has no ADV entries. The Security Blog posts on ARTEX abuse (6 Nov) and agentic-AI secret abuse (5 Nov) fall before the window.
+- X replies: replies were re-read on 18 Nov with one query per conversation (replacing the earlier batched MSFTMechanics queries), first page only (up to 25 replies per post). Self-replies from the posting account are excluded. Replies posted after the read are not counted.
+- Threat intelligence: no in-window items from Security Insider (latest is the 1 Oct 2026 Digital Defense Report piece), the Microsoft Threat Intelligence podcast (latest episode 5 Nov 2026, 'PHP2Shell') or the MSRC blog. The MSRC Advisories page (msrc.microsoft.com/update-guide/advisory) returned 'The request is blocked' to the headless browser on 18 Nov, so it could not be re-read; the November CVRF (revised 17 Nov) has no ADV entries. The Security Blog posts on ARTEX abuse (6 Nov) and agentic-AI secret abuse (5 Nov) fall before the window.
 - Threat fields: as instructed, threat items now carry only cves beyond the common fields (actor, aliases, sectors, geo/region and ATT&CK techniques have been removed). SCKit (t04) and GSocket (t02) cite one CVE each; the four X-sourced threat items cite none.
 - X: non-security posts from @Microsoft were excluded (Ignite promotion, F1, community grants, a customer story), as were its two posts on the 12-13 Nov M365 outage (an availability incident, not a security item). The outage is covered here only through the @MsftSecIntel phishing post.
-- YouTube: the RSS feeds (feeds/videos.xml) returned HTTP 404/500 for all channels. Videos were enumerated from each channel's videos/shorts/live tabs with yt-dlp, and the date, views and description were read from each watch page.
+- YouTube: the RSS feeds (feeds/videos.xml) worked on 18 Nov but list only each channel's latest 15 uploads, which does not reach back to 9 Nov for the busier channels, and the Microsoft 365 feed is empty. Videos were therefore enumerated from each channel's videos/shorts/live tabs with yt-dlp, with date, views and description read from each watch page; the RSS lists were used as a cross-check (every in-window RSS video was found).
 - YouTube: the 'Microsoft 365' channel (@Microsoft365, UCFRTnnjxixyjrGPe2OpdSHw) has no videos and its description sends viewers to @Microsoft.Copilot. It was not substituted.
-- YouTube: for 'Zero Trust: From Strategy to Reality | Security in the Loop Ep. 1' (dVa9K3n3MFc, Microsoft Security Community), metadata could not be read after retries. Its position in the channel list (between 3 Nov and 6 Oct uploads) suggests it is outside the window, but this is unconfirmed.
+- YouTube: the watch page of one Microsoft Azure live stream (uydwDk91Y9Y) could not be read after five attempts. It sits among July-September uploads in the live tab, so it is very likely outside the window, but this is unconfirmed. Ten other unreadable videos were dated from RSS (all outside the window except pZzzoluFlt0, which was read on retry).
 - YouTube: non-security videos from Microsoft, Microsoft Developer and Microsoft Mechanics were excluded, including Foundry and agent-building tutorials, a Mechanics Foundry short and an Elevate customer story.
 - YouTube descriptions: the 'description' field holds the first prose paragraph of each video's YouTube description exactly as written, skipping paragraphs that are only hashtags, links, chapter timestamps or short list headers. Two paragraphs were longer than 60 words and are cut after the 60th word with nothing added: 'Build agents you can trust...' (4vCbQMUVV-I) and the Azure Backup Bulk Restore video (caW13LqRrQw).
-- GIFs: none produced. YouTube playback in headless Chromium on the box returns 'Video unavailable', and yt-dlp downloads are blocked by YouTube's bot check, so the top 3 videos (by views: Copilot harness, November release summary, Azure Backup cyber recovery) have no GIF.
-- YouTube thumbnails: video assets are now the official i.ytimg.com thumbnails, and the old watch-page screenshots were deleted. maxresdefault.jpg returned HTTP 404 for 23 of 29 videos, so hqdefault.jpg (480x360) is used for them: nflmD2D9T4k, B_Ecumz451U, RkTaet71ZaU, P34pqLKWH88, _Ja51-0LVy0, oUBW4DYVnvA, TrskCxNNgiE, TAO6uk2ksMU, 9ZhoV8dzZBc, tCgBYrQqI-8, 6fKLT6O4NLE, CghlABVbgRY, g0aKWuu_ktY, 8i4C3zs_a6Y, JbYr5ijo9Hc, wTVTWFVBV48, E149ztL7OwY, pZzzoluFlt0, 4Z1yruxmXVE, vkEXYb2gdq4, xvzmzbE58F4, caW13LqRrQw, cKqeTw5mBfM. The other 6 use maxresdefault (1280x720).
+- GIFs: none produced. Retried on 18 Nov for the top video (Copilot harness): in headless Chromium the YouTube embed player stays paused at 0 seconds (readyState 0), so the recording has no video frames; yt-dlp downloads remain blocked by YouTube's bot check. The top 3 videos by views (Copilot harness, November release summary, Azure Backup cyber recovery) have no GIF.
+- YouTube thumbnails: video assets are the official i.ytimg.com thumbnails, re-downloaded on 18 Nov. maxresdefault.jpg returned HTTP 404 for 23 of 29 videos, so hqdefault.jpg (480x360) is used for them: nflmD2D9T4k, B_Ecumz451U, RkTaet71ZaU, P34pqLKWH88, _Ja51-0LVy0, oUBW4DYVnvA, TrskCxNNgiE, TAO6uk2ksMU, 9ZhoV8dzZBc, tCgBYrQqI-8, 6fKLT6O4NLE, CghlABVbgRY, g0aKWuu_ktY, 8i4C3zs_a6Y, JbYr5ijo9Hc, wTVTWFVBV48, E149ztL7OwY, pZzzoluFlt0, 4Z1yruxmXVE, vkEXYb2gdq4, xvzmzbE58F4, caW13LqRrQw, cKqeTw5mBfM. The other 6 use maxresdefault (1280x720).
 - MSRC blog (microsoft.com/en-us/msrc/blog): the latest post is from October 2026 ('Using risk cohorts to prioritize security updates'), so nothing falls in the window.
-- CVEs: only the 1,096 CVEs with Microsoft as CNA are listed. The 548 third-party CVEs in the same CVRF document (Chrome 291; Azure Linux/Mariner and other open-source CNAs such as PostgreSQL, Linux, Red Hat, VulnCheck and GitHub) are omitted. CVSS is null for 9 CVEs with no published score.
+- CVEs: only the 1,098 CVEs with Microsoft as CNA are listed. The 668 third-party CVEs in the same CVRF document (Chrome 291; VulnCheck 86, PostgreSQL 55, GitHub 50, Linux 48, Red Hat 33 and 26 other CNAs; 2 carry no CNA note) are omitted. CVSS is null for 9 CVEs with no published score. The CVRF was revised on 17 Nov, adding two SharePoint CVEs dated 16 Nov (CVE-2026-124222, CVE-2026-124223); they are listed because the CVE section covers the whole calendar month.
 - Blogs: Tech Community RSS returns only the latest 20 items per board. The Defender for Endpoint board (MicrosoftDefenderATPBlog) and the old Security Copilot board id returned empty feeds; the active Security Copilot board (securitycopilotblog) had no posts in the window.
 - Blogs: two Tech Community posts showed in-window RSS dates but were published earlier and only updated in the window, so they were excluded: 'Microsoft Purview Referential Architecture Diagrams' (published 13 Apr 2026) and 'AI is changing access: Catch Microsoft Entra at Ignite 2026' (published 5 Nov 2026). 'Capping tempdb in SQL Server 2025' (Core Infrastructure and Security) was excluded as not security-related.
 - Learn (Defender Threat Intelligence): no Learn What's new page found. Tried learn.microsoft.com/en-us/defender/threat-intelligence/whats-new and /whats-new-in-microsoft-defender-threat-intelligence (both 404), a Learn search for 'what's new Microsoft Defender Threat Intelligence' and 'Defender Threat Intelligence documentation' (no MDTI docs among results), and the toc.json for /defender/threat-intelligence and /defender-threat-intelligence (none exists).
-- Learn (Azure network security (Firewall, WAF, DDoS)): no What's new page on Learn for any of the three. Azure Firewall: /azure/firewall/whats-new and /firewall-whats-new are 404, and its toc.json has no what's-new entry. The 'Azure Firewall preview features' page (/azure/firewall/firewall-preview) exists but has no dated release headings, so it is not used. WAF: /azure/web-application-firewall/whats-new and /waf-whats-new are 404; nothing in its toc.json. DDoS Protection: /azure/ddos-protection/ddos-protection-whats-new and /whats-new are 404; nothing in its toc.json. Learn search for 'what's new' on each product found none.
-- Learn (Windows security): no Windows-security What's new page found. /windows/security/whats-new is 404, and the /windows/security toc.json has no what's-new entry. Learn has only the general 'What's new in Windows' version pages (/windows/whats-new/, e.g. Windows 11 26H2), which are not security release notes, so they are not used.
+- Learn (Azure network security (Firewall, WAF, DDoS)): Azure Firewall's 'Preview features' page is now used as its release notes (4 entries). The page lists current previews with no release dates, so these 4 items carry the capture day 2026-11-18 with date_precision 'captured' and in_window false. Web Application Firewall and DDoS Protection have no What's new or preview page on Learn (/azure/web-application-firewall/whats-new, /waf-whats-new, /azure/ddos-protection/ddos-protection-whats-new and /whats-new all return 404).
 - Learn (Perception): Perception docs exist (learn.microsoft.com/en-us/security/agentic-security/, 'What is Perception?'), but their toc.json has no What's new or release-notes page. /security/agentic-security/whats-new and /release-notes are 404.
-- Coming soon (Roadmap): mrcwall.com's public feed (8,756 entries, fetched 18 Nov) was used only to discover items; it was not used for any status or date. Every Roadmap item is confirmed against the official Microsoft 365 Roadmap API (microsoft.com/releasecommunications/api/v1/m365, 2,374 entries, fetched 18 Nov), and title, status, rollout, added_date (API 'created') and last_modified (API 'modified') are copied from it. Inclusion is rollout-only: 47 Roadmap items have a published rollout month from Nov 2026 to Feb 2027 and are not Launched. added_date/last_modified are informational. Dropped under this rule: 7 items that qualified only through an edit date in 9-15 Nov (571157, 569363, 568935, 562016, 561032, 560820, 422501) and 1 Launched item with a November 2026 rollout (570445). One cancelled item stays out.
+- Coming soon (Roadmap): mrcwall.com's public feed (8,773 entries, re-fetched 18 Nov; the 17 entries new since the earlier fetch are Dynamics, Azure infrastructure and Message Center items, none security) was used only to discover items; it was not used for any status or date. Every Roadmap item is confirmed against the official Microsoft 365 Roadmap API (microsoft.com/releasecommunications/api/v1/m365, 2,374 entries, re-fetched 18 Nov; the selection matched the earlier run), and title, status, rollout, added_date (API 'created') and last_modified (API 'modified') are copied from it. Inclusion is rollout-only: 47 Roadmap items have a published rollout month from Nov 2026 to Feb 2027 and are not Launched. added_date/last_modified are informational. Dropped under this rule: 7 items that qualified only through an edit date in 9-15 Nov (571157, 569363, 568935, 562016, 561032, 560820, 422501) and 1 Launched item with a November 2026 rollout (570445). One cancelled item stays out.
 - Coming soon (US Government IDs): US Government Roadmap IDs are merged into their worldwide twin (worldwide ID is roadmap_id and url; the government ID and its cloud labels go in also_ids). Twins were matched on the normalised title, on an identical description (566324 -> 392839), or by hand where only the title prefix differs (562345 -> 561208). 13 of the 47 listed items carry one also_id each. Dropped: 6 qualifying items that exist only for US Government clouds (560075, 558859, 528978, 401127, 336046, 410247), and US Government IDs whose worldwide version has already shipped, since this feed is for worldwide commercial customers (572676, 575283, 573701, 571309, 567010, 561036, 386901, plus the government twins of the dropped edit-only items).
 - Coming soon (coverage re-check): the Roadmap API was searched by product tag (Microsoft Defender, Microsoft 365 Defender, Microsoft Defender for Office 365, Microsoft Entra, Microsoft Intune, Microsoft Purview, Exchange) and by title prefix (Microsoft Defender, Defender for, Defender XDR, Microsoft Sentinel, Security Copilot, Copilot for Security, Microsoft Intune, Microsoft Entra, Exchange Online Protection/EOP). The Roadmap has no Sentinel or Security Copilot tag or titled entry, no Exchange Online Protection entry, 15 Defender entries (14 tagged Defender for Office 365, 1 Defender for Identity) and 23 Intune entries, but none has a rollout from Nov 2026 to Feb 2027 or an official date in the window (latest Defender rollout is Sep 2026; Intune rollouts run from Oct 2025 to Aug 2026). Entra has 2 qualifying entries. Description-only mentions (e.g. Copilot or Teams items that mention Purview or Defender) were not counted. So the Roadmap side stays Purview-heavy: 45 Purview, 2 Entra.
 - Coming soon (Learn in development): Microsoft Learn's 'In development for Microsoft Intune' page (learn.microsoft.com/en-us/intune/whats-new/in-development; the intune-service/fundamentals URL redirects there) gives 16 feature entries, all added with source 'Microsoft Learn: In development for Microsoft Intune', status 'In development' and url = page + anchor. The page gives no Roadmap ID, MC ID or per-entry added/modified date, so those are null. Only 2 entries state a release ('Beginning with the November 2026 release'; 'with the 2611 release'), copied as rollout; the other 14 state no month and are included because the page itself says they are in development and not yet released. The page's 'Notices' section (plan-for-change and support notices, several from 2024) was not treated as in-development features. No equivalent page was found for Defender, Entra, Purview or Sentinel: Defender for Cloud's upcoming-changes URL redirects to its release notes; Defender XDR, Defender for Office 365, Entra and Sentinel guesses return 404; Learn search found none; Purview's 'What's planned' section only links to the M365 Roadmap and a PDF.
 - Retiring and changing soon (sources): 45 notices were captured: the Notices section of 'In development for Microsoft Intune' (14; the same 14 appear word for word under Notices on Intune's What's new page, so only the In development anchors are used), Entra releases entries titled 'Plan for change' or 'Upcoming change' (8), Defender for Cloud release-note entries for upcoming billing, deprecation, retirement or breaking changes (4), Sentinel retirement and call-to-action notices (3), and one Security Exposure Management deprecation (1). Defender XDR, Defender for Endpoint, Office 365, Identity, Cloud Apps, Purview and Security Copilot What's new pages have no plan-for-change or upcoming-change notice (searched headings and body text for plan for change, upcoming change, deprecation, retire, breaking change, end of support). Defender for Cloud's old 'upcoming changes' page now redirects to its release notes. Learn pages are the copies fetched on 17 Nov (Intune In development on 18 Nov). One Intune What's new release entry ('Setup Assistant legacy deprecation', week of 26 Oct, support already ended) was not treated as a notice.
 - Retiring and changing soon (still-current rule): a notice is kept unless its stated change date is before the window start (9 Nov 2026; a month date counts as the whole month). 16 were dropped: Intune iOS SDK warnings (late June 2026), Company Portal/SDK update (2026-01-19), new network endpoints (2025-12-02), Windows 10 support (2025-10-14), Play strong integrity (2026-10-31), old Autopilot connector (June 2025), SCEP/PKCS strong mapping (2025-02-11), Android 10 (October 2024); Entra iOS passkey restore (August 2026), Agent Registry (2026-05-01), hard-match block (2026-06-01), Authenticator jailbreak detection (February 2026); Defender for Servers billing (2026-11-01); Sentinel repositories APIs (2026-06-01) and the superseded July 2026 Azure-portal retirement; Exposure Management AzureADConnectServer role (December 2025). 14 are kept, 10 of them with no stated change date. change_type: deprecation or retirement where the notice says so or where support or a feature is removed; 'default change' was not used because no kept notice says a default is changing; other mandatory behaviour changes (new blocks, sign-in requirements, forced migrations, required SDK updates) are tagged enforcement. date is the notice's own date where it states one (Defender for Cloud entries), else null.
 - Dates on roadmap and change items: every item now has a date and a date_precision (day, week, month or captured). Change items use the first day of the Learn section month they sit under (month); Intune notices sit under 'Notices', which has no month, so they use the stated change_date if any, else the capture day. Defender for Cloud notices also follow the section-month rule, even where the notice states its own day. Roadmap items use Microsoft's published added_date (day); Learn in-development items have none, so they use the first day of a stated rollout month ('November 2026 release' -> 2026-11-01, month), else the capture day. 'captured' dates (2026-11-18) are the day this run captured the page, not dates Microsoft published. Video, X, threat, blog, Reddit and CVE items carry date_precision 'day'.
-- Change dates: change_date/change_type are set only where Microsoft writes the date. b07: Purview Data Governance support ends 'Nov. 12, 2027' (retirement). l20: SaaS accounts integration becomes automatic 'Starting October 15, 2026' (default change). l07: the iOS passkey restore flow changes 'Starting August 2026'; re-read on 18 Nov, the Learn text does not say a default is changing ('users will see an improved restore experience'), so it is tagged enforcement (month precision). No Learn entry under a latest heading has status Deprecation or Retirement, no Roadmap description in scope states an end or enforcement date, and the Intune in-development entries name only releases ('2611', 'November 2026 release', 'after Apple releases macOS 27'), not dates.
+- Change dates: change_date/change_type are set only where Microsoft writes the date. b07: Purview Data Governance support ends 'Nov. 12, 2027' (retirement). l07: the iOS passkey restore flow changes 'Starting August 2026'; the Learn text does not say a default is changing ('users will see an improved restore experience'), so it is tagged enforcement (month precision). The Defender for Cloud Apps SaaS-accounts entry (15 Oct 2026, default change) is no longer under that page's latest heading, which is now November 2026, so it dropped out. No Learn entry under a latest heading has status Deprecation or Retirement, no Roadmap description in scope states an end or enforcement date, and the Intune in-development entries name only releases ('2611', 'November 2026 release', 'after Apple releases macOS 27'), not dates. Every other item carries change_date and change_type as null.
 - Key dates: covers 16 Nov 2026 to 14 Jan 2027. It lists two Patch Tuesdays (8 Dec 2026 and 12 Jan 2027, computed as the second Tuesday) and the two dated events stated in this week's items: Security Pre-Day on 16 Nov and Ignite 17-20 Nov. The Purview Data Governance end date (12 Nov 2027) is outside the 60 days. Added: 14 Dec 2026, deprecation of the Defender for Cloud 'Machines should have a vulnerability assessment solution' recommendation (ch02). SAP SuccessFactors basic auth ends 'by November 2026' (month only), so it is not listed as a key date.
-- Learn: no entry under any latest heading has a date inside 9-15 Nov 2026. Only two entries give their own day (Defender for Cloud 4 Nov, Security Exposure Management 28 Oct), both before the window. Every other Learn item is dated to the first day of its section heading (date_precision month, or week for Intune's 'Week of November 16, 2026', i.e. 16-22 Nov). Rule: in_window is true only for a day-precision date in 9-15 Nov 2026 IST, or a week whose Monday-Sunday is exactly 9-15 Nov; month-precision items are always false. Several latest headings are months old (Entra June 2026, Security Copilot April 2026, Defender XDR September 2026).
-- Reddit: the public .json endpoints and Reddit search returned HTTP 403 from the box. Top-of-week lists and thread details were read from rendered public subreddit pages instead. r/AzureSentinel showed no posts on its top-of-week page.
+- Learn: no entry under any latest heading has a date inside 9-15 Nov 2026. Only two entries give their own day (Defender for Cloud 4 Nov, Security Exposure Management 28 Oct), both before the window. Every other Learn item is dated to the first day of its section heading (date_precision month, or week for Intune's 'Week of November 16, 2026', i.e. 16-22 Nov), except the 4 Azure Firewall preview items (captured). Rule: in_window is true only for a day-precision date in 9-15 Nov 2026 IST, or a week whose Monday-Sunday is exactly 9-15 Nov; month-precision and captured items are always false. Since the previous run, Defender XDR, Defender for Cloud Apps and Sentinel moved to new November 2026 headings, Defender for Endpoint and Intune added entries, and a Windows security What's new page appeared (November 2026 (Ignite 2026), 20 entries). Several latest headings are still months old (Entra June 2026, Security Copilot April 2026).
+- Reddit: the public .json endpoints and Reddit search returned HTTP 403 from the box. On 18 Nov the top-of-week pages cover 11-18 Nov, so in-window candidates were read from the rendered top-of-week and top-of-month pages (each loads at most about 50 posts), and the five chosen threads were re-read one by one for current upvotes and comments. r/AzureSentinel showed no posts on either page. The same five threads lead.
 - Reddit screenshots: old.reddit.com sends all 5 threads to its login page, so each thread was captured from the public embed (embed.reddit.com/r/<sub>/comments/<id>/, headless, not signed in) at 600px wide and at most 900px tall. The first request for r/sysadmin 1xw1mub returned 403 ('blocked by network security'), and a retry 20 seconds later succeeded. The embed shows the title, a shortened body with 'Read more', the original poster's name and the vote count, but no comments ('View N comments' only). So the top comments are not in any screenshot; the 'what it is about' text comes from the earlier read of the rendered thread pages.
 - Reddit: the many r/sysadmin threads on the 12-13 Nov M365 outage (several with 400-600 upvotes) were treated as availability discussion, not Microsoft security, and are not in the top 5.
+- Run: this is a one-off end-to-end re-run of W46 on 18 Nov 2026 with every source re-fetched. Counts that changed against the previous W46 run: CVEs 1,096 -> 1,098 (CVRF revised 17 Nov) and Learn 35 -> 66 (Windows security page +20, Azure Firewall preview page +4, new or changed headings on Defender XDR, Defender for Endpoint, Defender for Cloud Apps, Sentinel and Intune). Engagement numbers (views, likes, replies, upvotes) are as read on 18 Nov.
+- Learn rules (18 Nov decisions): Learn entries with no date on the page (the 4 Azure Firewall preview items) carry the capture day with date_precision 'captured' and in_window false; they stay under their product but never count as new this week. Learn entries that are bare feature names (the 20 Windows security entries; no other page has any) keep an empty summary instead of restating the title, and details holds the entry text exactly as it appears (the name), since the page has no text under it.
