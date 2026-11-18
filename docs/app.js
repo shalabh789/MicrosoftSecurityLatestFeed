@@ -721,6 +721,11 @@
         renderRoadmap(state.filtered);
         target = document.getElementById(id);
       }
+      if (!target && (item?.type === "video" || item?.type === "x")) {
+        state.expandedMedia[item.type] = true;
+        render();
+        target = document.getElementById(id);
+      }
       if (!target && item?.type === "learn") {
         state.learnProduct = "";
         controls.learnFamily.value = "";
