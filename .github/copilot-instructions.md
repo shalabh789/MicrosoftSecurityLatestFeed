@@ -38,5 +38,4 @@ Light, bright, editorial. Ground #F6F7F9, white cards with 1px #D5DBE3 border an
 - Every slicer changes what is shown; clearing slicers restores all items.
 - All links open the item URL; all screenshots render from research/<week>/assets/.
 - CVE table counts match the JSON.
-- Lighthouse accessibility score >= 90.
 - PR description lists what changed and how you verified it.
