@@ -1,6 +1,6 @@
 # Microsoft security digest: 9-15 November 2026 (IST), 2026-W46
 
-Window: **2026-11-09 00:00 to 2026-11-15 23:59:59 IST (UTC+05:30)**. CVEs: the full November 2026 MSRC release (calendar month). Generated 2026-11-17T05:42:31+00:00.
+Window: **2026-11-09 00:00 to 2026-11-15 23:59:59 IST (UTC+05:30)**. CVEs: the full November 2026 MSRC release (calendar month). Generated 2026-11-18T01:57:17+00:00.
 
 ## TL;DR
 
@@ -76,7 +76,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Treat the MCP catalog like a supply chain: deny unapproved tools and scope servers per agent via API Management.
 - Engagement: 52 likes, 13 replies, 11 reposts, 1 quotes, 5477 views
 - What replies say: Replies suggest an audit-mode week before deny-by-default, pinning MCP server versions and named owners per agent.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2119510111542538498.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x02: @MSFTMechanics, 2026-11-09 20:48 IST
 
@@ -84,7 +84,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Entra Internet Access Secure Web and AI Gateway stops sensitive file uploads to AI apps.
 - Engagement: 3 likes, 0 replies, 2 reposts, 0 quotes, 1183 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2119811910598087016.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x03: @MSFTMechanics, 2026-11-09 21:51 IST
 
@@ -92,7 +92,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Foundry agents now run on the Copilot harness, with Entra Agent ID, egress rules and traces as guardrails.
 - Engagement: 5 likes, 0 replies, 2 reposts, 0 quotes, 2146 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2119827846906437909.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x04: @MSFTMechanics, 2026-11-10 00:44 IST
 
@@ -100,7 +100,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Entra policies can automatically block uploads of risky file types to ChatGPT and similar tools.
 - Engagement: 10 likes, 0 replies, 0 reposts, 0 quotes, 2145 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2119871294875296067.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x05: @MsftSecIntel, 2026-11-10 02:01 IST
 
@@ -108,7 +108,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: FORGE Lab found memory-safety bugs in Rust core and std, including undefined behaviour reachable from safe code.
 - Engagement: 125 likes, 5 replies, 25 reposts, 3 quotes, 13416 views
 - What replies say: Replies discuss a bug fixed on one code path but missed on another and suggest checking pinned toolchains once fixes ship.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftsecintel-2119890522466578648.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x06: @MSFTMechanics, 2026-11-10 02:02 IST
 
@@ -116,7 +116,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Agent 365 CLI and SDK can give an unmanaged agent an Entra Agent ID with lifecycle controls.
 - Engagement: 7 likes, 2 replies, 1 reposts, 1 quotes, 1438 views
 - What replies say: One reply says an identity without an owner still leaves an orphaned agent.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2119890883390656765.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x07: @MSFTMechanics, 2026-11-10 19:14 IST
 
@@ -124,7 +124,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Extends Conditional Access and MFA to on-premises resources through Entra.
 - Engagement: 3 likes, 0 replies, 2 reposts, 0 quotes, 1059 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2120150561169326576.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x08: @MSFTMechanics, 2026-11-10 20:47 IST
 
@@ -132,7 +132,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Foundry agents each get an Entra Agent ID, egress rules and action traces, enforced at infrastructure level.
 - Engagement: 9 likes, 2 replies, 0 reposts, 0 quotes, 1301 views
 - What replies say: Replies suggest assigning a human sponsor to each agent identity and warn that sub-agents may present a shared service account.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2120174021295620514.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x09: @MSFTMechanics, 2026-11-10 20:48 IST
 
@@ -140,7 +140,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Recommends unified data classification in Purview for consistent sensitive-data definitions.
 - Engagement: 3 likes, 0 replies, 2 reposts, 0 quotes, 1045 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2120174308794192101.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x10: @msftsecresponse, 2026-11-10 23:51 IST
 
@@ -148,7 +148,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: MSRC announces the November 2026 Patch Tuesday release and links the Security Update Guide.
 - Engagement: 185 likes, 3 replies, 40 reposts, 8 quotes, 26731 views
 - What replies say: Three replies with no substantive content.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftsecresponse-2120220395018318285.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x11: @MsftSecIntel, 2026-11-11 00:33 IST
 
@@ -156,7 +156,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Notes that the November 2026 security updates are out, with a link to the release.
 - Engagement: 80 likes, 2 replies, 16 reposts, 0 quotes, 9623 views
 - What replies say: Only two replies: one reminder to restart machines, one spam.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftsecintel-2120230988621992403.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x12: @MSFTMechanics, 2026-11-11 00:44 IST
 
@@ -164,7 +164,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Encourages labelling critical files so protection follows them into workflows and AI use.
 - Engagement: 5 likes, 2 replies, 3 reposts, 0 quotes, 1571 views
 - What replies say: One reply notes agent pipelines could still open labelled files they could not inspect.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2120233636473471144.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x13: @MSFTMechanics, 2026-11-11 02:02 IST
 
@@ -172,7 +172,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Purview DSPM shows which agents are active, what data they touch and where policy gaps are.
 - Engagement: 5 likes, 0 replies, 1 reposts, 0 quotes, 1389 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2120253272686522585.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x14: @MsftSecIntel, 2026-11-11 05:06 IST
 
@@ -180,7 +180,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Microsoft Research showed that editing under ten neurons can make an agent model a hidden sleeper that passes evaluations.
 - Engagement: 72 likes, 7 replies, 22 reposts, 5 quotes, 11346 views
 - What replies say: Repliers recommend hashing model weights, restricting write access to checkpoints and treating third-party weights as untrusted.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftsecintel-2120299667443396688.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x15: @MSFTMechanics, 2026-11-11 19:14 IST
 
@@ -188,7 +188,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Shows how to set up Entra Private Access as identity-aware remote access without a VPN.
 - Engagement: 8 likes, 0 replies, 4 reposts, 0 quotes, 1910 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2120513022783344816.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x16: @MSFTMechanics, 2026-11-11 20:48 IST
 
@@ -196,7 +196,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Introduces Purview Information Protection for finding and labelling sensitive data.
 - Engagement: 2 likes, 0 replies, 1 reposts, 0 quotes, 999 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2120536711096615334.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x17: @MsftSecIntel, 2026-11-11 22:30 IST
 
@@ -204,7 +204,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: FORGE Lab's MDASH scanning of Linux kernel code produced 59 upstream reports and 33 CVEs, with root exploits for eight.
 - Engagement: 57 likes, 5 replies, 17 reposts, 5 quotes, 13753 views
 - What replies say: Replies highlight the old average age of the bugs and suggest mapping the CVEs to running kernel versions and rebooting after fixes.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftsecintel-2120562349236965430.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x18: @MSFTMechanics, 2026-11-12 00:44 IST
 
@@ -212,7 +212,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Suggests layering Purview classification and labelling on top of existing DLP.
 - Engagement: 3 likes, 0 replies, 2 reposts, 0 quotes, 1157 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2120596035261075725.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x19: @MSFTMechanics, 2026-11-12 02:02 IST
 
@@ -220,7 +220,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Purview sensitivity labels stop an agent at runtime when it reaches a labelled file.
 - Engagement: 4 likes, 3 replies, 2 reposts, 0 quotes, 1362 views
 - What replies say: Replies ask whether protection follows content the agent creates; one cites docs saying new output does not inherit the label.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2120615625135394986.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x20: @MSFTMechanics, 2026-11-12 19:14 IST
 
@@ -228,7 +228,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Pitches Entra identity-based access as a VPN replacement.
 - Engagement: 2 likes, 0 replies, 1 reposts, 0 quotes, 957 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2120875396430278759.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x21: @MSFTMechanics, 2026-11-12 20:48 IST
 
@@ -236,7 +236,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Edge for Business lets admins block extensions by permission type and handle exceptions in the M365 admin center.
 - Engagement: 6 likes, 2 replies, 3 reposts, 0 quotes, 1092 views
 - What replies say: Replies call browser extensions an overlooked attack surface and favour allow-listing.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2120899056721416380.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x22: @MSFTMechanics, 2026-11-12 20:52 IST
 
@@ -244,7 +244,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Project Perception agents are pitched as finding, proving and fixing vulnerabilities with a human in control.
 - Engagement: 1 likes, 0 replies, 1 reposts, 0 quotes, 1326 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2120899960073859189.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x23: @msftsecurity, 2026-11-12 22:30 IST
 
@@ -252,7 +252,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Promotes a CISO interview on how E.ON approaches securing agents with Microsoft Security.
 - Engagement: 10 likes, 4 replies, 2 reposts, 1 quotes, 5733 views
 - What replies say: Few replies; one says Microsoft should fix its own outage first, others are unrelated.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftsecurity-2120924712427499805.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x24: @MsftSecIntel, 2026-11-12 22:41 IST
 
@@ -260,7 +260,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Explains that a backdoored model can stay dormant until triggered and then drive an agent's tools, generalising past exact triggers.
 - Engagement: 80 likes, 7 replies, 25 reposts, 4 quotes, 16817 views
 - What replies say: Repliers argue controls must sit outside the model: log and gate every tool call, track model and dataset provenance and hashes.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftsecintel-2120927480588484989.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x25: @MSFTMechanics, 2026-11-13 02:02 IST
 
@@ -268,7 +268,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Defender watches Copilot Studio agents in real time, blocks malicious tool calls and alerts on jailbreak attempts.
 - Engagement: 10 likes, 2 replies, 3 reposts, 1 quotes, 1847 views
 - What replies say: Replies agree the tool call is the right enforcement point and ask who receives the alert.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2120978124678570166.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x26: @MSFTMechanics, 2026-11-13 07:48 IST
 
@@ -276,7 +276,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Foundry ties each agent to an Entra Agent ID, egress rules and logged traces that stop unapproved web calls.
 - Engagement: 33 likes, 4 replies, 4 reposts, 0 quotes, 2227 views
 - What replies say: Replies mostly approve; one asks whether agents fail closed if Entra is unreachable.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2121065110898610541.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x27: @MSFTMechanics, 2026-11-13 19:14 IST
 
@@ -284,7 +284,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Windows 365 output protection blocks screenshots and screen scraping on policy-protected Cloud PCs.
 - Engagement: 35 likes, 1 replies, 3 reposts, 0 quotes, 2196 views
 - What replies say: One reply asks what an automated agent sees when it hits a protected window.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2121237741862101481.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x28: @MSFTMechanics, 2026-11-13 20:47 IST
 
@@ -292,7 +292,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Hosted agents in Foundry can run any harness under the same Entra Agent ID, telemetry and guardrails.
 - Engagement: 28 likes, 1 replies, 2 reposts, 0 quotes, 1855 views
 - What replies say: One reply says built-in identity and guardrails would have saved time spent managing agent permissions.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2121261204937089459.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x29: @MSFTMechanics, 2026-11-13 20:48 IST
 
@@ -300,7 +300,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Windows Autopatch report in Intune shows which devices are current, missing updates or at risk.
 - Engagement: 7 likes, 0 replies, 3 reposts, 0 quotes, 1916 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2121261399552712889.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x30: @MSFTMechanics, 2026-11-14 00:44 IST
 
@@ -308,7 +308,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Intune Conditional Access limits internal access to compliant devices, paired with Windows Autopatch.
 - Engagement: 0 likes, 0 replies, 0 reposts, 0 quotes, 1074 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2121320766264295729.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x31: @MSFTMechanics, 2026-11-14 02:02 IST
 
@@ -316,7 +316,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Admins can block a risky agent from the Agent Registry in the M365 admin center until it is resubmitted.
 - Engagement: 9 likes, 3 replies, 0 reposts, 0 quotes, 1439 views
 - What replies say: Replies back an admin-held kill switch and ask whether makers are told why and how the incident trail shows prior actions.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2121340430075793874.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x32: @MSFTMechanics, 2026-11-14 19:14 IST
 
@@ -324,7 +324,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Configuration Snapshots in Entra Tenant Governance baseline settings across 200+ resource types to catch drift.
 - Engagement: 9 likes, 0 replies, 2 reposts, 0 quotes, 1666 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2121600175986585964.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x33: @MSFTMechanics, 2026-11-15 00:49 IST
 
@@ -332,7 +332,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Purview Communication Compliance can flag agent behaviour; Agent 365 can block agent access to labelled files.
 - Engagement: 7 likes, 2 replies, 2 reposts, 0 quotes, 1768 views
 - What replies say: Two replies say runtime blocking matters more than flagging after the fact.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2121684426455134224.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x34: @MSFTMechanics, 2026-11-15 09:32 IST
 
@@ -340,7 +340,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Defender for Cloud can open a GitHub issue for a container CVE fix and sync the resolution back.
 - Engagement: 8 likes, 0 replies, 2 reposts, 0 quotes, 2318 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2121816060680626292.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ### x35: @MSFTMechanics, 2026-11-15 19:14 IST
 
@@ -348,7 +348,7 @@ Official handles checked: @msftsecurity, @MsftSecIntel, @msftsecresponse, @Micro
 - Summary: Defender for Cloud groups 19 container alerts from one multi-stage attack into a single incident timeline.
 - Engagement: 6 likes, 0 replies, 2 reposts, 0 quotes, 1280 views
 - What replies say: No replies.
-- Asset: null (x.com blocks headless capture of the direct post URL; see Gaps)
+- Asset: [png](assets/x-msftmechanics-2121962580998602892.png) (public embed, post only; replies could not be captured without signing in, see Gaps)
 
 ## CVEs this month
 
@@ -1464,23 +1464,23 @@ Key CVEs:
 
 Sources checked for 9-15 Nov: Microsoft Threat Intelligence posts on the Security Blog, @MsftSecIntel and @msftsecresponse on X, Security Insider, the Microsoft Threat Intelligence podcast, and MSRC advisories.
 
-| id | actor | sectors | summary | link |
-|---|---|---|---|---|
-| t01 | Storm-3350 | financial services, payments, banking, digital assets, healthcare, transportation, logistics | Storm-3350 takes over cloud identities via vishing and self-service password reset, adds its own Authenticator method, then harvests Graph, M365 and Azure data. | [link](https://x.com/MsftSecIntel/status/2120290394869006572) |
-| t02 | unattributed | education and research, technology and telecommunications | Multiple unattributed actors exploit web apps and drop GSocket for relay-based C2 that outlives patching; includes detections, hunting queries and IOCs. | [link](https://www.microsoft.com/en-us/security/blog/2026/11/11/global-socket-how-threat-actors-weaponizing-gsocket-stealthy-c2/) |
-| t03 | unattributed | - | Thread pointing to the GSocket research: Linux web servers kept under attacker control via a public relay after the entry flaw is fixed. | [link](https://x.com/MsftSecIntel/status/2120609029001032115) |
-| t04 | unattributed | managed service providers | Unnamed actor abuses MSP ScreenConnect instances to push rogue clients and the SCKit worm, whose RelayTrap part targets connecting technicians. | [link](https://www.microsoft.com/en-us/security/blog/2026/11/13/sckit-abuses-screenconnect-deploy-remote-access-target-technician-sessions/) |
-| t05 | unattributed | managed service providers | Thread summarising the SCKit campaign against MSPs and pointing to IOCs, Defender XDR hunting and remediation steps. | [link](https://x.com/MsftSecIntel/status/2121357112009732242) |
-| t06 | unattributed | - | Credential-phishing lures exploit the 12 Nov M365 outage, citing the real incident ID; sent via three sender domains and SendGrid redirects. | [link](https://x.com/MsftSecIntel/status/2121491564161581148) |
+| id | cves | summary | link |
+|---|---|---|---|
+| t01 | - | Storm-3350 takes over cloud identities via vishing and self-service password reset, adds its own Authenticator method, then harvests Graph, M365 and Azure data. | [link](https://x.com/MsftSecIntel/status/2120290394869006572) |
+| t02 | CVE-2026-43284 | Multiple unattributed actors exploit web apps and drop GSocket for relay-based C2 that outlives patching; includes detections, hunting queries and IOCs. | [link](https://www.microsoft.com/en-us/security/blog/2026/11/11/global-socket-how-threat-actors-weaponizing-gsocket-stealthy-c2/) |
+| t03 | - | Thread pointing to the GSocket research: Linux web servers kept under attacker control via a public relay after the entry flaw is fixed. | [link](https://x.com/MsftSecIntel/status/2120609029001032115) |
+| t04 | CVE-2026-84869 | Unnamed actor abuses MSP ScreenConnect instances to push rogue clients and the SCKit worm, whose RelayTrap part targets connecting technicians. | [link](https://www.microsoft.com/en-us/security/blog/2026/11/13/sckit-abuses-screenconnect-deploy-remote-access-target-technician-sessions/) |
+| t05 | - | Thread summarising the SCKit campaign against MSPs and pointing to IOCs, Defender XDR hunting and remediation steps. | [link](https://x.com/MsftSecIntel/status/2121357112009732242) |
+| t06 | - | Credential-phishing lures exploit the 12 Nov M365 outage, citing the real incident ID; sent via three sender domains and SendGrid redirects. | [link](https://x.com/MsftSecIntel/status/2121491564161581148) |
 
 Details:
 
-- t01: 2026-11-11 04:29 IST, @MsftSecIntel; screenshot: null (see Gaps); what replies say: Replies focus on the self-service password reset and SMS step, recommending callback checks at the help desk and dropping SMS for recovery.; engagement: 52 likes, 4 replies, 7639 views
-- t02: 2026-11-12 01:19 IST, Microsoft Security Blog (Microsoft Threat Intelligence); CVEs referenced: CVE-2026-43284; screenshot: [png](assets/blog-gsocket.png)
-- t03: 2026-11-12 01:36 IST, @MsftSecIntel; screenshot: null (see Gaps); what replies say: Practitioners say patching the entry bug is not remediation; hunt for new services and outbound connections, since the shared relay leaves no IP to block. Some replies are off-topic outage jokes.; engagement: 291 likes, 17 replies, 223712 views
-- t04: 2026-11-14 03:01 IST, Microsoft Security Blog (Microsoft Threat Intelligence); CVEs referenced: CVE-2026-84869; screenshot: [png](assets/blog-sckit.png)
-- t05: 2026-11-14 03:08 IST, @MsftSecIntel; screenshot: null (see Gaps); what replies say: Replies stress that removing the rogue client is not enough, urge updating technician clients, inventorying all remote-support clients and not reconnecting to suspect hosts with the same tool.; engagement: 139 likes, 8 replies, 15074 views
-- t06: 2026-11-14 12:02 IST, @MsftSecIntel; screenshot: null (see Gaps); what replies say: Repliers advise checking the admin centre or status page directly rather than clicking mail links, call the 24-hour deletion threat the giveaway, and some vent about the outage. Quote posts (mostly reposts in Japanese) relay the warning.; engagement: 3270 likes, 143 replies, 402752 views
+- t01: 2026-11-11 04:29 IST, @MsftSecIntel; screenshot: [png](assets/x-msftsecintel-2120290394869006572.png) (public embed, post only); what replies say: Replies focus on the self-service password reset and SMS step, recommending callback checks at the help desk and dropping SMS for recovery.; engagement: 52 likes, 4 replies, 7639 views
+- t02: 2026-11-12 01:19 IST, Microsoft Security Blog (Microsoft Threat Intelligence); screenshot: [png](assets/blog-gsocket.png)
+- t03: 2026-11-12 01:36 IST, @MsftSecIntel; screenshot: [png](assets/x-msftsecintel-2120609029001032115.png) (public embed, post only); what replies say: Practitioners say patching the entry bug is not remediation; hunt for new services and outbound connections, since the shared relay leaves no IP to block. Some replies are off-topic outage jokes.; engagement: 291 likes, 17 replies, 223712 views
+- t04: 2026-11-14 03:01 IST, Microsoft Security Blog (Microsoft Threat Intelligence); screenshot: [png](assets/blog-sckit.png)
+- t05: 2026-11-14 03:08 IST, @MsftSecIntel; screenshot: [png](assets/x-msftsecintel-2121357112009732242.png) (public embed, post only); what replies say: Replies stress that removing the rogue client is not enough, urge updating technician clients, inventorying all remote-support clients and not reconnecting to suspect hosts with the same tool.; engagement: 139 likes, 8 replies, 15074 views
+- t06: 2026-11-14 12:02 IST, @MsftSecIntel; screenshot: [png](assets/x-msftsecintel-2121491564161581148.png) (public embed, post only); what replies say: Repliers advise checking the admin centre or status page directly rather than clicking mail links, call the 24-hour deletion threat the giveaway, and some vent about the outage. Quote posts (mostly reposts in Japanese) relay the warning.; engagement: 3270 likes, 143 replies, 402752 views
 
 ## Blogs
 
@@ -1490,15 +1490,15 @@ Details:
 | b02 | 2026-11-11 04:30 | Microsoft Security Blog | [Detecting sleeper agents hiding in AI model neurons](https://www.microsoft.com/en-us/security/blog/2026/11/10/detecting-sleeper-agents-hiding-in-ai-model-neurons/) | AI security | A handful of neuron edits can hide a payload in an agent model; frontier agents can spot the anomalous weights. | [png](assets/blog-sleeper-agents-neurons.png) |
 | b03 | 2026-11-11 22:25 | Microsoft Security Blog | [Lessons from 59 Linux Kernel Bug Reports](https://www.microsoft.com/en-us/security/blog/2026/11/11/lessons-from-59-linux-kernel-bug-reports/) | Research | MDASH-driven kernel research: 59 reports, 33 CVEs, 38 merged fixes and lessons on validating AI findings. | [png](assets/blog-linux-kernel-59-reports.png) |
 | b04 | 2026-11-11 22:30 | Microsoft Sentinel Blog | [Microsoft Ignite 2026: New Sentinel Connectors Announcement](https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/microsoft-ignite-2026-new-sentinel-connectors-announcement/ba-p/4565258) | SecOps | New Sentinel connectors announced for Ignite, feeding Microsoft and third-party signals into the integrated SOC. | [png](assets/blog-sentinel-connectors-ignite.png) |
-| b05 | 2026-11-12 03:52 | Microsoft Defender Blog | [Catch Microsoft Defender and Sentinel at Ignite 2026](https://techcommunity.microsoft.com/t5/microsoft-defender-blog/catch-microsoft-defender-and-sentinel-at-ignite-2026/ba-p/4572639) | Events | Role-based guide to Defender and Sentinel sessions at Ignite, led by the agentic SOC keynote. | - |
-| b06 | 2026-11-12 03:54 | Microsoft Sentinel Blog | [Microsoft Sentinel at Ignite 2026: what to see and where to start](https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/microsoft-sentinel-at-ignite-2026-what-to-see-and-where-to-start/ba-p/4572656) | Events | Where Sentinel fits in the integrated SOC and which Ignite sessions and demos to attend. | - |
-| b07 | 2026-11-12 22:30 | Microsoft Security Community Blog | [A next step in the evolution of the Microsoft Data Governance strategy](https://techcommunity.microsoft.com/t5/microsoft-security-community/a-next-step-in-the-evolution-of-the-microsoft-data-governance/ba-p/4572227) | Data governance | Data governance strategy shifts into Microsoft Fabric, with the OneLake catalog as the governing layer. | - |
+| b05 | 2026-11-12 03:52 | Microsoft Defender Blog | [Catch Microsoft Defender and Sentinel at Ignite 2026](https://techcommunity.microsoft.com/t5/microsoft-defender-blog/catch-microsoft-defender-and-sentinel-at-ignite-2026/ba-p/4572639) | Events | Role-based guide to Defender and Sentinel sessions at Ignite, led by the agentic SOC keynote. | [png](assets/blog-catch-microsoft-defender-and-sentinel-at.png) |
+| b06 | 2026-11-12 03:54 | Microsoft Sentinel Blog | [Microsoft Sentinel at Ignite 2026: what to see and where to start](https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/microsoft-sentinel-at-ignite-2026-what-to-see-and-where-to-start/ba-p/4572656) | Events | Where Sentinel fits in the integrated SOC and which Ignite sessions and demos to attend. | [png](assets/blog-microsoft-sentinel-at-ignite-2026-what.png) |
+| b07 | 2026-11-12 22:30 | Microsoft Security Community Blog | [A next step in the evolution of the Microsoft Data Governance strategy](https://techcommunity.microsoft.com/t5/microsoft-security-community/a-next-step-in-the-evolution-of-the-microsoft-data-governance/ba-p/4572227) | Data governance | Data governance strategy shifts into Microsoft Fabric, with the OneLake catalog as the governing layer. | [png](assets/blog-a-next-step-in-the-evolution.png) |
 | b08 | 2026-11-12 22:30 | Microsoft Security Blog | [Trained to betray: How post-training supply chain attacks hijack coding agents](https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/) | AI security | Poisoned fine-tuning data or checkpoints can make coding agents run attacker code; research from Defender and the AI Red Team. | [png](assets/blog-trained-to-betray.png) |
-| b09 | 2026-11-12 23:37 | Microsoft Security Community Blog | [Plan your Ignite agenda: Join sessions that help you secure agentic insiders at scale.](https://techcommunity.microsoft.com/t5/microsoft-security-community/plan-your-ignite-agenda-join-sessions-that-help-you-secure/ba-p/4569987) | Events | Ignite sessions on treating agents as a new class of insider and the expanded Project Perception. | - |
-| b10 | 2026-11-14 03:43 | Microsoft Security Community Blog | [Secure Data at Microsoft Ignite 2026: Plan Your Experience](https://techcommunity.microsoft.com/t5/microsoft-security-community/secure-data-at-microsoft-ignite-2026-plan-your-experience/ba-p/4573071) | Events | Guide to Purview data-security sessions and activities at Ignite 2026. | - |
-| b11 | 2026-11-14 19:47 | Core Infrastructure and Security Blog | [Migrating an Entra Connect Sync custom source anchor](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/migrating-an-entra-connect-sync-custom-source-anchor/ba-p/4573237) | Identity | Field guidance on changing a poorly chosen Entra Connect Sync source anchor without breaking identities. | - |
+| b09 | 2026-11-12 23:37 | Microsoft Security Community Blog | [Plan your Ignite agenda: Join sessions that help you secure agentic insiders at scale.](https://techcommunity.microsoft.com/t5/microsoft-security-community/plan-your-ignite-agenda-join-sessions-that-help-you-secure/ba-p/4569987) | Events | Ignite sessions on treating agents as a new class of insider and the expanded Project Perception. | [png](assets/blog-plan-your-ignite-agenda-join-sessions.png) |
+| b10 | 2026-11-14 03:43 | Microsoft Security Community Blog | [Secure Data at Microsoft Ignite 2026: Plan Your Experience](https://techcommunity.microsoft.com/t5/microsoft-security-community/secure-data-at-microsoft-ignite-2026-plan-your-experience/ba-p/4573071) | Events | Guide to Purview data-security sessions and activities at Ignite 2026. | [png](assets/blog-secure-data-at-microsoft-ignite-2026.png) |
+| b11 | 2026-11-14 19:47 | Core Infrastructure and Security Blog | [Migrating an Entra Connect Sync custom source anchor](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/migrating-an-entra-connect-sync-custom-source-anchor/ba-p/4573237) | Identity | Field guidance on changing a poorly chosen Entra Connect Sync source anchor without breaking identities. | [png](assets/blog-migrating-an-entra-connect-sync-custom.png) |
 
-Blog screenshots (top 5):
+Blog screenshots (top of each post, 1200x630):
 
 **b01: FORGE Lab uses agentic tools to identify memory safety issues in Rust**
 
@@ -1516,9 +1516,33 @@ Blog screenshots (top 5):
 
 ![b04](assets/blog-sentinel-connectors-ignite.png)
 
+**b05: Catch Microsoft Defender and Sentinel at Ignite 2026**
+
+![b05](assets/blog-catch-microsoft-defender-and-sentinel-at.png)
+
+**b06: Microsoft Sentinel at Ignite 2026: what to see and where to start**
+
+![b06](assets/blog-microsoft-sentinel-at-ignite-2026-what.png)
+
+**b07: A next step in the evolution of the Microsoft Data Governance strategy**
+
+![b07](assets/blog-a-next-step-in-the-evolution.png)
+
 **b08: Trained to betray: How post-training supply chain attacks hijack coding agents**
 
 ![b08](assets/blog-trained-to-betray.png)
+
+**b09: Plan your Ignite agenda: Join sessions that help you secure agentic insiders at scale.**
+
+![b09](assets/blog-plan-your-ignite-agenda-join-sessions.png)
+
+**b10: Secure Data at Microsoft Ignite 2026: Plan Your Experience**
+
+![b10](assets/blog-secure-data-at-microsoft-ignite-2026.png)
+
+**b11: Migrating an Entra Connect Sync custom source anchor**
+
+![b11](assets/blog-migrating-an-entra-connect-sync-custom.png)
 
 ## What's new on Learn
 
@@ -1731,13 +1755,13 @@ Screenshot: [png](assets/learn-mdash.png)
 
 Community discussion only, not Microsoft. Source: public Reddit pages. Commenters are not named.
 
-| id | subreddit | title | upvotes | comments | date (IST) | what it is about |
-|---|---|---|---|---|---|---|
-| r01 | r/sysadmin | [Windows 0-day "SignDrop" published, "this makes this vulnerability unique as it can be used to …](https://www.reddit.com/r/sysadmin/comments/1xw1mub/windows_0day_signdrop_published_this_makes_this/) | 714 | 85 | 2026-11-14 18:19 | Shares a published Windows zero-day, SignDrop, said to allow privilege escalation and switching off AV/EDR. Top comments note a registry precondition that few machines meet and ask about an out-of-band fix. |
-| r02 | r/sysadmin | [Patch Tuesday Megathread - (November 10, 2026)](https://www.reddit.com/r/sysadmin/comments/1xsp3bk/patch_tuesday_megathread_november_10_2026/) | 120 | 330 | 2026-11-10 20:31 | Monthly Patch Tuesday megathread. Comments flag a PowerShell signature-validation change, a confirmed printing issue and jokes about patching before Friday the 13th. |
-| r03 | r/entra | [Now its time - my new tool 'GSAClientDiagnosticsToolkit' is out!](https://www.reddit.com/r/entra/comments/1xtr7er/now_its_time_my_new_tool/) | 46 | 12 | 2026-11-12 01:00 | Open-source PowerShell module that runs Global Secure Access client connectivity checks in one command; commenters welcome it for troubleshooting. |
-| r04 | r/entra | [How to make Passkey Registration default to Authenticator App Passkey](https://www.reddit.com/r/entra/comments/1xrx9vz/how_to_make_passkey_registration_default_to/) | 33 | 16 | 2026-11-09 22:36 | Admin asks how to make passkey registration default to the Authenticator app; replies point to passkey profiles with attestation, while noting the Windows prompt itself cannot be changed. |
-| r05 | r/entra | [A new version of the Microsoft Entra private network connector is out! (1.5.5130.0)](https://www.reddit.com/r/entra/comments/1xth1u4/a_new_version_of_the_microsoft_entra_private/) | 32 | 6 | 2026-11-11 18:26 | Post on a new Entra private network connector release with stability, DNS and logging changes; replies note it auto-updates. |
+| id | subreddit | title | upvotes | comments | date (IST) | what it is about | asset |
+|---|---|---|---|---|---|---|---|
+| r01 | r/sysadmin | [Windows 0-day "SignDrop" published, "this makes this vulnerability unique as it can be used to …](https://www.reddit.com/r/sysadmin/comments/1xw1mub/windows_0day_signdrop_published_this_makes_this/) | 714 | 85 | 2026-11-14 18:19 | Shares a published Windows zero-day, SignDrop, said to allow privilege escalation and switching off AV/EDR. Top comments note a registry precondition that few machines meet and ask about an out-of-band fix. | null (old.reddit.com login wall, see Gaps) |
+| r02 | r/sysadmin | [Patch Tuesday Megathread - (November 10, 2026)](https://www.reddit.com/r/sysadmin/comments/1xsp3bk/patch_tuesday_megathread_november_10_2026/) | 120 | 330 | 2026-11-10 20:31 | Monthly Patch Tuesday megathread. Comments flag a PowerShell signature-validation change, a confirmed printing issue and jokes about patching before Friday the 13th. | null (old.reddit.com login wall, see Gaps) |
+| r03 | r/entra | [Now its time - my new tool 'GSAClientDiagnosticsToolkit' is out!](https://www.reddit.com/r/entra/comments/1xtr7er/now_its_time_my_new_tool/) | 46 | 12 | 2026-11-12 01:00 | Open-source PowerShell module that runs Global Secure Access client connectivity checks in one command; commenters welcome it for troubleshooting. | null (old.reddit.com login wall, see Gaps) |
+| r04 | r/entra | [How to make Passkey Registration default to Authenticator App Passkey](https://www.reddit.com/r/entra/comments/1xrx9vz/how_to_make_passkey_registration_default_to/) | 33 | 16 | 2026-11-09 22:36 | Admin asks how to make passkey registration default to the Authenticator app; replies point to passkey profiles with attestation, while noting the Windows prompt itself cannot be changed. | null (old.reddit.com login wall, see Gaps) |
+| r05 | r/entra | [A new version of the Microsoft Entra private network connector is out! (1.5.5130.0)](https://www.reddit.com/r/entra/comments/1xth1u4/a_new_version_of_the_microsoft_entra_private/) | 32 | 6 | 2026-11-11 18:26 | Post on a new Entra private network connector release with stability, DNS and logging changes; replies note it auto-updates. | null (old.reddit.com login wall, see Gaps) |
 
 ## Themes
 
@@ -1756,10 +1780,10 @@ Community discussion only, not Microsoft. Source: public Reddit pages. Commenter
 
 - X: @MicrosoftEntra does not exist on X (lookup returned not found), so no Entra-branded X posts were collected.
 - X: the practitioner search (Defender/Sentinel/Entra/Purview/Security Copilot with min_faves:100, also tried as min_likes:100) returned unfiltered results because the connector ignored the like-count operator. None of 50 sampled posts had 100 or more likes, so no practitioner posts are listed.
-- X screenshots: under the standing rule (direct post URL only, never signed in, no embed fallback), I retried all 39 direct x.com/<handle>/status/<id> URLs in headless Playwright on 16 Nov. 38 returned HTTP 403 and 1 returned 503. All X assets are therefore null, and the embed-based PNGs from the first run were deleted. This covers the 35 posts in the X section and the 4 @MsftSecIntel threat posts. Reply paraphrases come from X connector data.
+- X screenshots: on 18 Nov I retried the direct x.com/<handle>/status/<id> URL for all 39 posts (35 X items and 4 threat items) in headless Chromium, not signed in. Every one returned HTTP 403. Each post was then captured from the public embed (platform.twitter.com/embed/Tweet.html?id=<id>), cropped to 600px wide and at most 900px tall. The embed shows only the post with a 'Read N replies' link, so no screenshot shows replies; seeing them needs a signed-in session, which I don't use. 23 of the 39 posts are taller than 900px in the embed, so their screenshots are cut at 900px, usually just above or through the like/reply bar. The 'what replies say' text still comes from X connector data.
 - X replies: only the first page of replies (up to 25 per query) was read. Replies to the six MSFTMechanics posts per batched query may be incomplete.
 - Threat intelligence: no in-window items from Security Insider (latest is the 1 Oct 2026 Digital Defense Report piece; the threat-actor-profiles URL returned 404), the Microsoft Threat Intelligence podcast (latest episode 5 Nov 2026, 'PHP2Shell'), or MSRC advisories (the Advisories view lists 0 rows since 1 Oct 2026). The November CVRF has no ADV entries. The Security Blog posts on ARTEX abuse (6 Nov) and agentic-AI secret abuse (5 Nov) fall before the window.
-- Threat sectors: Microsoft names no actor for SCKit, so actor is null. For GSocket the actors are unattributed; the education and telecom sectors reflect the share of affected organizations, which Microsoft attributes to exposure rather than deliberate targeting. The outage-phishing post mentions 'multiple US sectors' without naming any, so sectors is []. As instructed, geo/region and ATT&CK fields are no longer collected.
+- Threat fields: as instructed, threat items now carry only cves beyond the common fields (actor, aliases, sectors, geo/region and ATT&CK techniques have been removed). SCKit (t04) and GSocket (t02) cite one CVE each; the four X-sourced threat items cite none.
 - X: non-security posts from @Microsoft were excluded (Ignite promotion, F1, community grants, a customer story), as were its two posts on the 12-13 Nov M365 outage (an availability incident, not a security item). The outage is covered here only through the @MsftSecIntel phishing post.
 - YouTube: the RSS feeds (feeds/videos.xml) returned HTTP 404/500 for all channels. Videos were enumerated from each channel's videos/shorts/live tabs with yt-dlp, and the date, views and description were read from each watch page.
 - YouTube: the 'Microsoft 365' channel (@Microsoft365, UCFRTnnjxixyjrGPe2OpdSHw) has no videos and its description sends viewers to @Microsoft.Copilot. It was not substituted.
@@ -1777,4 +1801,5 @@ Community discussion only, not Microsoft. Source: public Reddit pages. Commenter
 - Learn (Perception): Perception docs exist (learn.microsoft.com/en-us/security/agentic-security/, 'What is Perception?'), but their toc.json has no What's new or release-notes page. /security/agentic-security/whats-new and /release-notes are 404.
 - Learn: no entry under any latest heading has a date inside 9-15 Nov 2026. Only two entries give their own day (Defender for Cloud 4 Nov, Security Exposure Management 28 Oct), both before the window. Every other Learn item is dated to the first day of its section heading (date_precision month, or week for Intune's 'Week of November 16, 2026', i.e. 16-22 Nov). Rule: in_window is true only for a day-precision date in 9-15 Nov 2026 IST, or a week whose Monday-Sunday is exactly 9-15 Nov; month-precision items are always false. Several latest headings are months old (Entra June 2026, Security Copilot April 2026, Defender XDR September 2026).
 - Reddit: the public .json endpoints and Reddit search returned HTTP 403 from the box. Top-of-week lists and thread details were read from rendered public subreddit pages instead. r/AzureSentinel showed no posts on its top-of-week page.
+- Reddit screenshots: all 5 thread URLs on old.reddit.com (18 Nov, headless, not signed in) redirected to the Reddit login page (login/?reason=lor2), so no thread could be captured and every Reddit asset is null. No screenshot from another Reddit front end was substituted.
 - Reddit: the many r/sysadmin threads on the 12-13 Nov M365 outage (several with 400-600 upvotes) were treated as availability discussion, not Microsoft security, and are not in the top 5.
