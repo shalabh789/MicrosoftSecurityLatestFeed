@@ -16,5 +16,23 @@
    "change": 14,
    "reddit": 5
   }
+ },
+ {
+  "week": "2026-W47",
+  "start": "2026-11-16T00:00:00+05:30",
+  "end": "2026-11-22T23:59:59+05:30",
+  "readme": "research/2026-W47/README.md",
+  "data": "data/2026-W47.json",
+  "counts": {
+   "video": 11,
+   "x": 28,
+   "cve": 1114,
+   "threat": 4,
+   "blog": 22,
+   "learn": 65,
+   "roadmap": 61,
+   "change": 14,
+   "reddit": 5
+  }
  }
 ]
