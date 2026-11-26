@@ -1,11 +1,11 @@
 # Microsoft security digest: 16-22 November 2026 (IST), 2026-W47
 
-Window: **2026-11-16 00:00 to 2026-11-22 23:59:59 IST (UTC+05:30)**. CVEs: the full November 2026 MSRC release (calendar month). Generated 2026-11-24T00:37:10+00:00.
+Window: **2026-11-16 00:00 to 2026-11-22 23:59:59 IST (UTC+05:30)**. CVEs: the full November 2026 MSRC release (calendar month). Generated 2026-11-26T10:13:34+00:00.
 
 ## Leadership summary
 
 - Ignite put Perception, Microsoft's agentic security offering, centre stage, with vulnerability shielding to cover the gap before a patch. Decide who evaluates both and where they fit in your operations. (v04, b04, r01)
-- November brings 1,114 Microsoft CVEs, 79 Critical, one exploited (Outlook spoofing, CVSS 6.5). Three cloud flaws score 10.0: Entra, App Service for Linux and Event Grid. Confirm Outlook patching and check those services. (CVE-2026-124194, CVE-2026-109469, CVE-2026-109484, CVE-2026-62841)
+- Patch the exploited Outlook spoofing flaw (CVE-2026-124194) first, then Critical Windows code-execution bugs in Xbox Live networking, Search, LDAP and AD DS. Three 10.0 cloud CVEs are already fixed by Microsoft; no action needed. (CVE-2026-124194, CVE-2026-112967, CVE-2026-116928, CVE-2026-119958, CVE-2026-118146, CVE-2026-109469, CVE-2026-109484, CVE-2026-62841)
 - Admins report the KB5132043 hotpatch breaking printing and 32-bit msiexec, including Citrix Workspace. Hold wider rollout until your pilot ring confirms these are not hitting you. (r02, r05)
 - Attackers used fake Microsoft 365 outage notices as phishing lures, and research shows device code phishing can target AI coding agents. Brief staff to use status pages directly and review device code flow. (t01, t02, t03, t04)
 - Defender for Cloud's grouped vulnerability recommendation retires 14 December 2026, and Sentinel in the Azure portal ends after 31 March 2027. Assign owners and migration dates. (ch02, ch03)
@@ -20,11 +20,11 @@ Next 60 days (24 Nov 2026 to 23 Jan 2027).
 
 ## TL;DR
 
-- **Perception and agentic security.** Ignite week centred on Perception, Microsoft's agentic security offering, with launch and walkthrough videos, a blog post, Defender vulnerability shielding and a new MDASH entry on Learn.
-- **Securing AI agents and identity.** Entra content centred on AI agents as identities: Conditional Access for agents, access-governance posts, an Agent ID video and Purview and Defender coverage for AI use.
-- **Outage-lure and device-code phishing.** Microsoft Threat Intelligence described a large phishing run using fake Microsoft 365 outage notices and showed device code phishing used against AI coding agents; Defender added matching coverage.
-- **Patch exposure and November Patch Tuesday.** November has 1,114 Microsoft CVEs, 79 of them Critical and one exploited. Admin reports of a hotpatch breaking printing and 32-bit msiexec sit alongside the shielding pitch.
-- **Data protection for AI and planned changes.** The Roadmap is full of Purview DLP, retention and eDiscovery items through February, while Sentinel, Defender for Cloud and Intune have retirements and support changes to plan for.
+- **Perception and agentic security.** Microsoft used Ignite week to make Perception generally available, presenting it as the layer that coordinates red, blue and green security agents over Defender data. Launch and walkthrough videos, a Security Blog post and posts on X showed triage and investigation agents, reviewable playbooks and a web pen test flow fed by MDASH code scanning. Vulnerability shielding, which protects a flaw until a patch is installed, got its own video and drew admin discussion on Reddit. For security leaders this marks a shift from single assistants to orchestrated agents, so any evaluation should cover licensing, human approval points and how results reach existing SOC tools.
+- **Securing AI agents and identity.** Treating AI agents as identities ran through the week's Entra and Agent 365 material. Videos and Entra blog posts covered Conditional Access for agents, access governance and Agent ID. The Agent 365 Ignite update gave discovered local agents such as Claude Code their own Entra identity and let Conditional Access re-check policy at the moment an agent acts. Microsoft also tied Purview and Defender coverage to AI use in its Zero Trust for AI guidance. Teams that let staff run coding or SaaS agents should list them, give each an owner and decide which access rules apply to agents rather than people.
+- **Outage-lure and device-code phishing.** Microsoft Threat Intelligence described a high-volume phishing campaign that dressed its lures up as Microsoft 365 outage and service notices to steer people to credential theft pages. A second write-up showed how device code phishing can be aimed at AI coding agents, abusing a legitimate sign-in flow to obtain tokens. Defender XDR added preview coverage that detects and disrupts device code phishing against GitHub Copilot CLI. The practical response is to remind staff to check service health directly rather than through emailed links, and to review where device code sign-in is still allowed.
+- **Patch exposure and November Patch Tuesday.** Microsoft's November release lists 1,114 CVEs, 79 of them rated Critical, and one Outlook spoofing flaw is marked as exploited. Three cloud flaws, in Entra device registration, App Service for Linux and Event Grid, carry the maximum 10.0 score, although Microsoft says it has already mitigated them in the service. On Reddit, admins reported that the KB5132043 hotpatch broke printing and 32-bit msiexec installs, including Citrix Workspace. Patch teams should push the Outlook fix quickly while keeping pilot rings for hotpatch, and Microsoft pitched vulnerability shielding as cover for the gap before patches land.
+- **Data protection for AI and planned changes.** The Microsoft 365 Roadmap carries a run of Purview items due between November and February, mostly data loss prevention. They include admin unit support for Copilot and Cowork policies, inline protection for unmanaged apps in Edge for Business, and Compliance Manager mapping AI regulations for Foundry agents. A Security Blog post on securing the data behind AI, and the Agent 365 update extending Purview DLP to local agents, point the same way. Dated retirements follow: a Defender for Cloud vulnerability recommendation on 14 December 2026 and Sentinel in the Azure portal after 31 March 2027, so each needs an owner and a date.
 
 ## Videos
 
@@ -66,9 +66,7 @@ Top 5 videos by views:
 
 Short GIFs for the top 3 by views:
 
-**v10**
-
-![v10 clip](assets/gif-f5XVyW_Bjmo.gif)
+**v10**: no GIF (see Gaps).
 
 **v11**
 
@@ -1433,6 +1431,123 @@ Key CVEs:
 - The highest scores (10.0) are elevation-of-privilege flaws in cloud services: Entra Device Registration (CVE-2026-109469), Azure App Service for Linux (CVE-2026-109484) and Azure Event Grid (CVE-2026-62841); the last two were added on 19 November.
 - Among Critical remote-code-execution bugs, patch Windows LDAP (CVE-2026-119958, 9.8) and Windows Search (CVE-2026-116928, 9.8) first; SharePoint also has Critical RCE (CVE-2026-70193, 9.9).
 
+## CVE spotlight
+
+Five November 2026 Microsoft CVEs. Ranked from MSRC CVRF data for November 2026 Microsoft-CNA CVEs: exploited first; then CVEs where MSRC marks Customer Action Required = Yes (a patch, update or configuration change), ahead of those MSRC says are fixed in the service with no customer action; then MSRC severity, Critical before Important (a CVE rated differently per product counts at its highest severity); then highest CVSS base score. MSRC's own severity rating leads CVSS because this feed follows Microsoft's assessment. Ties are broken by MSRC exploitability assessment (Exploitation Detected, then More Likely, then Less Likely, then none), then having a downloadable security update, then the lower CVE number. All facts (CVSS, vector, severity, exploited, disclosed, exploitability, impact, products, fixes) are from the MSRC CVRF; what to do comes only from Microsoft's update and FAQ text.
+
+### 1. CVE-2026-124194: Exploited Outlook flaw leaks Windows sign-in hashes
+
+Microsoft Outlook Spoofing Vulnerability. CVSS 6.5 (`CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N/E:H/RL:O/RC:C`), severity Moderate, impact Spoofing, customer action required yes, exploited yes, publicly disclosed no, MSRC exploitability: Exploitation Detected.
+
+This is a spoofing bug in Outlook, the only November CVE that Microsoft marks as exploited in the wild. An attacker with no account sends a booby-trapped message file and talks the user into opening it. Outlook then reaches out to a server the attacker controls without showing its usual warning about external content. That connection hands over the user's NTLMv2 hash, which the attacker can reuse to sign in as that person.
+
+Why it matters:
+- Microsoft has detected exploitation, so real attackers are already using it.
+- A leaked NTLMv2 hash lets the attacker act as the victim, not just read one message.
+- It affects Microsoft 365 Apps for Enterprise and Office LTSC 2021 and 2024, widely deployed Office builds.
+
+What to do (Microsoft guidance):
+- Install the November security update for Microsoft 365 Apps for Enterprise, Office LTSC 2021 and Office LTSC 2024; MSRC marks customer action as required.
+- Use the Microsoft 365 Apps security updates release notes linked from the update guide to find the fixed builds for each channel.
+- Per the MSRC FAQ, the Preview Pane is not an attack vector: exploitation needs a user to open the attacker's file.
+
+Affected products: Microsoft Office LTSC 2021 for 64-bit editions; Microsoft Office LTSC 2021 for 32-bit editions; Microsoft Office LTSC 2024 for 64-bit editions; Microsoft Office LTSC 2024 for 32-bit editions; Microsoft 365 Apps for Enterprise for 64-bit Systems; Microsoft 365 Apps for Enterprise for 32-bit Systems
+
+Fix: [Release notes: Microsoft 365 Apps security updates](https://learn.microsoft.com/en-us/officeupdates/microsoft365-apps-security-updates)
+
+Sources: [MSRC Security Update Guide: CVE-2026-124194](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-124194)
+
+Items: CVE-2026-124194
+
+### 2. CVE-2026-112967: Windows Xbox Live networking bug allows remote takeover
+
+Windows Xbox Live Networking Service Remote Code Execution Vulnerability. CVSS 9.8 (`CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`), severity Critical, impact Remote Code Execution, customer action required yes, exploited no, publicly disclosed no, MSRC exploitability: Exploitation Less Likely.
+
+A heap buffer overflow in the Windows Xbox Live Networking Service can let an attacker run code on a PC over the network. No sign-in or user action is needed. MSRC's FAQ says an attacker on the same network could trigger it by calling arbitrary endpoints. It affects supported Windows 10 and Windows 11 releases.
+
+Why it matters:
+- Critical, CVSS 9.8, with no credentials or clicks required.
+- The service ships on Windows 10 and 11 client builds, so most desktops are in scope.
+
+What to do (Microsoft guidance):
+- Install the November 2026 Windows security update for each affected Windows version; the KB numbers per version are linked under Fix and most need a restart.
+- Hotpatch-enrolled Windows 11 24H2, 25H2 and 26H2 devices can use hotpatch KB5132043 instead; MSRC lists no restart for it.
+
+Affected products: Windows 10 Version 1809 for 32-bit Systems; Windows 10 Version 1809 for x64-based Systems; Windows 10 Version 21H2 for 32-bit Systems; Windows 10 Version 21H2 for ARM64-based Systems; Windows 10 Version 21H2 for x64-based Systems; Windows 10 Version 22H2 for 32-bit Systems; Windows 10 Version 22H2 for ARM64-based Systems; Windows 10 Version 22H2 for x64-based Systems; Windows 11 Version 23H2 for ARM64-based Systems; Windows 11 Version 23H2 for x64-based Systems; Windows 11 Version 24H2 for ARM64-based Systems; Windows 11 Version 24H2 for x64-based Systems; Windows 11 Version 25H2 for ARM64-based Systems; Windows 11 Version 25H2 for x64-based Systems; Windows 11 Version 26H2 for ARM64-based Systems; Windows 11 Version 26H2 for x64-based Systems; Windows 11 Version 26H1 for ARM64-based Systems; Windows 11 version 26H1 for x64-based Systems
+
+Fix: [Security update KB5131085 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131085), [KB5131085 support article](https://support.microsoft.com/help/5131085), [Security update KB5131096 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131096), [KB5131096 support article](https://support.microsoft.com/help/5131096), [Security update KB5131087 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131087), [KB5131087 support article](https://support.microsoft.com/help/5131087), [Security update KB5132061 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132061), [KB5132061 support article](https://support.microsoft.com/help/5132061), [KB5132043 support article](https://support.microsoft.com/help/5132043), [Security update KB5132059 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132059), [KB5132059 support article](https://support.microsoft.com/help/5132059)
+
+Sources: [MSRC Security Update Guide: CVE-2026-112967](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-112967)
+
+Items: CVE-2026-112967
+
+### 3. CVE-2026-116928: Windows Search flaw lets crafted email run code
+
+Windows Search Remote Code Execution Vulnerability. CVSS 9.8 (`CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`), severity Critical, impact Remote Code Execution, customer action required yes, exploited no, publicly disclosed no, MSRC exploitability: Exploitation Less Likely.
+
+An out-of-bounds write in the Windows Search component can let an unauthenticated attacker run code remotely. MSRC's FAQ describes Exchange Server indexing an emailed attachment through Windows Search, so the recipient never has to open anything. The attacker's code would run with the rights of the service doing the processing. Supported Windows client and Windows Server releases from 2016 onwards are affected.
+
+Why it matters:
+- Critical, CVSS 9.8, and on Exchange servers no user interaction is needed at all.
+- It spans Windows 10, Windows 11 and Windows Server 2016 to 2025.
+
+What to do (Microsoft guidance):
+- Install the November 2026 Windows security update for each affected Windows and Windows Server version; KB numbers are linked under Fix and most require a restart.
+- Hotpatch-enrolled devices can use the hotpatch instead: KB5132043 for Windows 11 24H2, 25H2 and 26H2, and KB5131077 for Windows Server 2025; MSRC lists no restart for these.
+
+Affected products: Windows 11 Version 26H2 for ARM64-based Systems; Windows 11 Version 26H2 for x64-based Systems; Windows 10 Version 1809 for 32-bit Systems; Windows 10 Version 1809 for x64-based Systems; Windows Server 2019; Windows Server 2019 (Server Core installation); Windows Server 2022; Windows Server 2022 (Server Core installation); Windows 10 Version 21H2 for 32-bit Systems; Windows 10 Version 21H2 for ARM64-based Systems; Windows 10 Version 21H2 for x64-based Systems; Windows 10 Version 22H2 for x64-based Systems; Windows 10 Version 22H2 for ARM64-based Systems; Windows 10 Version 22H2 for 32-bit Systems; Windows Server 2025 (Server Core installation); Windows 11 Version 25H2 for ARM64-based Systems; Windows 11 Version 25H2 for x64-based Systems; Windows 11 Version 23H2 for ARM64-based Systems; Windows 11 Version 23H2 for x64-based Systems; Windows 11 Version 24H2 for ARM64-based Systems; Windows 11 Version 24H2 for x64-based Systems; Windows Server 2025; Windows 11 version 26H1 for x64-based Systems; Windows 11 Version 26H1 for ARM64-based Systems; Windows 10 Version 1607 for 32-bit Systems; Windows 10 Version 1607 for x64-based Systems; Windows Server 2016; Windows Server 2016 (Server Core installation)
+
+Fix: [Security update KB5132061 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132061), [KB5132061 support article](https://support.microsoft.com/help/5132061), [KB5132043 support article](https://support.microsoft.com/help/5132043), [Security update KB5131085 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131085), [KB5131085 support article](https://support.microsoft.com/help/5131085), [Security update KB5131090 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131090), [KB5131090 support article](https://support.microsoft.com/help/5131090), [Security update KB5131096 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131096), [KB5131096 support article](https://support.microsoft.com/help/5131096), [Security update KB5131080 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131080), [KB5131080 support article](https://support.microsoft.com/help/5131080), [KB5131077 support article](https://support.microsoft.com/help/5131077), [Security update KB5131087 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131087), [KB5131087 support article](https://support.microsoft.com/help/5131087), [Security update KB5132059 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132059), [KB5132059 support article](https://support.microsoft.com/help/5132059), [Security update KB5131291 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131291), [KB5131291 support article](https://support.microsoft.com/help/5131291)
+
+Sources: [MSRC Security Update Guide: CVE-2026-116928](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-116928)
+
+Items: CVE-2026-116928
+
+### 4. CVE-2026-119958: Windows LDAP bug lets attackers run code remotely
+
+Windows LDAP - Lightweight Directory Access Protocol Remote Code Execution Vulnerability. CVSS 9.8 (`CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`), severity Critical, impact Remote Code Execution, customer action required yes, exploited no, publicly disclosed no, MSRC exploitability: Exploitation Less Likely.
+
+An out-of-bounds write in the Windows LDAP component can be triggered by an attacker who has no credentials. MSRC's FAQ says a crafted series of LDAP calls could run the attacker's code inside the LDAP service. No user has to do anything. Supported Windows 10, Windows 11 and Windows Server releases from 2016 onwards are listed as affected.
+
+Why it matters:
+- Critical, CVSS 9.8, reachable over the network without signing in.
+- LDAP runs on domain controllers and many servers, so a single unpatched host can be an entry point.
+
+What to do (Microsoft guidance):
+- Install the November 2026 Windows security update for each affected Windows and Windows Server version; KB numbers are linked under Fix and most require a restart.
+- Hotpatch-enrolled devices can use the hotpatch instead: KB5132043 for Windows 11 24H2, 25H2 and 26H2, and KB5131077 for Windows Server 2025; MSRC lists no restart for these.
+
+Affected products: Windows 10 Version 1607 for 32-bit Systems; Windows 10 Version 1607 for x64-based Systems; Windows Server 2016; Windows Server 2016 (Server Core installation); Windows 10 Version 1809 for 32-bit Systems; Windows 10 Version 1809 for x64-based Systems; Windows Server 2019; Windows Server 2019 (Server Core installation); Windows 10 Version 21H2 for 32-bit Systems; Windows 10 Version 21H2 for ARM64-based Systems; Windows 10 Version 21H2 for x64-based Systems; Windows 10 Version 22H2 for 32-bit Systems; Windows 10 Version 22H2 for ARM64-based Systems; Windows 10 Version 22H2 for x64-based Systems; Windows Server 2022; Windows Server 2022 (Server Core installation); Windows 11 Version 23H2 for ARM64-based Systems; Windows 11 Version 23H2 for x64-based Systems; Windows 11 Version 24H2 for ARM64-based Systems; Windows 11 Version 24H2 for x64-based Systems; Windows 11 Version 25H2 for ARM64-based Systems; Windows 11 Version 25H2 for x64-based Systems; Windows 11 Version 26H2 for ARM64-based Systems; Windows 11 Version 26H2 for x64-based Systems; Windows Server 2025; Windows Server 2025 (Server Core installation); Windows 11 Version 26H1 for ARM64-based Systems; Windows 11 version 26H1 for x64-based Systems
+
+Fix: [Security update KB5131291 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131291), [KB5131291 support article](https://support.microsoft.com/help/5131291), [Security update KB5131085 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131085), [KB5131085 support article](https://support.microsoft.com/help/5131085), [Security update KB5131096 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131096), [KB5131096 support article](https://support.microsoft.com/help/5131096), [Security update KB5131090 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131090), [KB5131090 support article](https://support.microsoft.com/help/5131090), [Security update KB5131087 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131087), [KB5131087 support article](https://support.microsoft.com/help/5131087), [Security update KB5132061 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132061), [KB5132061 support article](https://support.microsoft.com/help/5132061), [KB5132043 support article](https://support.microsoft.com/help/5132043), [Security update KB5131080 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131080), [KB5131080 support article](https://support.microsoft.com/help/5131080), [KB5131077 support article](https://support.microsoft.com/help/5131077), [Security update KB5132059 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132059), [KB5132059 support article](https://support.microsoft.com/help/5132059)
+
+Sources: [MSRC Security Update Guide: CVE-2026-119958](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-119958)
+
+Items: CVE-2026-119958
+
+### 5. CVE-2026-118146: Active Directory flaw lets low-privileged users run code
+
+Windows Active Directory Domain Services Remote Code Execution Vulnerability. CVSS 8.8 (`CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`), severity Critical, impact Remote Code Execution, customer action required yes, exploited no, publicly disclosed no, MSRC exploitability: Exploitation More Likely.
+
+Active Directory Domain Services has an authorisation flaw that lets an attacker with a low-privileged account run code on an affected server. MSRC's FAQ says one crafted request is enough and no user interaction is needed. Microsoft rates it Critical with a CVSS score of 8.8. MSRC's assessment is that exploitation is more likely.
+
+Why it matters:
+- Microsoft expects exploitation is more likely, and any domain account could be the starting point.
+- Code execution on a domain controller can hand an attacker control of the whole directory.
+
+What to do (Microsoft guidance):
+- Install the November 2026 Windows security update on every affected Windows Server and Windows version; KB numbers are linked under Fix and most require a restart.
+- Hotpatch-enrolled devices can use the hotpatch instead: KB5132043 for Windows 11 24H2, 25H2 and 26H2, and KB5131077 for Windows Server 2025; MSRC lists no restart for these.
+
+Affected products: Windows 10 Version 1607 for x64-based Systems; Windows Server 2016; Windows Server 2016 (Server Core installation); Windows 10 Version 1607 for 32-bit Systems; Windows 10 Version 1809 for x64-based Systems; Windows Server 2019; Windows Server 2019 (Server Core installation); Windows 10 Version 1809 for 32-bit Systems; Windows 10 Version 21H2 for x64-based Systems; Windows 10 Version 21H2 for 32-bit Systems; Windows 10 Version 21H2 for ARM64-based Systems; Windows 10 Version 22H2 for x64-based Systems; Windows 10 Version 22H2 for 32-bit Systems; Windows 10 Version 22H2 for ARM64-based Systems; Windows Server 2022; Windows Server 2022 (Server Core installation); Windows 11 Version 23H2 for x64-based Systems; Windows 11 Version 23H2 for ARM64-based Systems; Windows 11 Version 24H2 for x64-based Systems; Windows 11 Version 24H2 for ARM64-based Systems; Windows 11 Version 25H2 for x64-based Systems; Windows 11 Version 25H2 for ARM64-based Systems; Windows 11 Version 26H2 for x64-based Systems; Windows 11 Version 26H2 for ARM64-based Systems; Windows Server 2025; Windows Server 2025 (Server Core installation); Windows 11 version 26H1 for x64-based Systems; Windows 11 Version 26H1 for ARM64-based Systems
+
+Fix: [Security update KB5131291 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131291), [KB5131291 support article](https://support.microsoft.com/help/5131291), [Security update KB5131085 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131085), [KB5131085 support article](https://support.microsoft.com/help/5131085), [Security update KB5131096 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131096), [KB5131096 support article](https://support.microsoft.com/help/5131096), [Security update KB5131090 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131090), [KB5131090 support article](https://support.microsoft.com/help/5131090), [Security update KB5131087 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131087), [KB5131087 support article](https://support.microsoft.com/help/5131087), [Security update KB5132061 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132061), [KB5132061 support article](https://support.microsoft.com/help/5132061), [KB5132043 support article](https://support.microsoft.com/help/5132043), [Security update KB5131080 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131080), [KB5131080 support article](https://support.microsoft.com/help/5131080), [KB5131077 support article](https://support.microsoft.com/help/5131077), [Security update KB5132059 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132059), [KB5132059 support article](https://support.microsoft.com/help/5132059)
+
+Sources: [MSRC Security Update Guide: CVE-2026-118146](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118146)
+
+Items: CVE-2026-118146
+
+
 ## Threat intelligence
 
 Sources checked for 16-22 Nov: Microsoft Threat Intelligence posts on the Security Blog, @MsftSecIntel and @msftsecresponse on X, Security Insider, the Microsoft Threat Intelligence podcast, and MSRC advisories.
@@ -1570,246 +1685,181 @@ Blog screenshots (top of each post, 1200x630):
 
 ## What's new on Learn
 
-Latest heading on each product's Learn What's new / release-notes page, with every entry under it, whether or not it falls in the window. Dates: an entry with its own day keeps it (precision day); otherwise the first day of its section heading's period (month, shown as YYYY-MM, or week, shown as the week's start date); pages with no dates use the capture day (captured). In-window is yes only for a day inside 16-22 Nov 2026 IST, or a week whose Monday-Sunday is exactly 16-22 Nov.
+Latest heading on each product's What's new / release-notes source, with every entry under it, whether or not it falls in the window. Three products have no Learn page and use an official Tech Community blog post instead (stated per product). Dates: an entry with its own day keeps it (precision day); blog-sourced entries use the post's publish date (day); otherwise the first day of the heading's period (month, shown as YYYY-MM, or week, shown as the week's start date); undated entries use the capture day (captured, never in window). In-window is yes only for a day inside 16-22 Nov 2026 IST, or a week whose Monday-Sunday is exactly 16-22 Nov. An empty summary means the entry is a bare feature name.
 
-### Microsoft Entra ID
+### Microsoft Sentinel
 
-Page: https://learn.microsoft.com/en-us/entra/fundamentals/whats-new  
-Latest heading: **June 2026** ([anchor](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#june-2026))  
-Note: Shared Entra releases page; entries tagged Identity Governance or Network Access are listed under Entra ID Governance and Global Secure Access instead. The latest heading is still June 2026.  
-Screenshot: [png](assets/learn-microsoft-entra-id.png)
-
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l01 | General availability - Microsoft Entra Kerberos key rotation improved reliability for incoming trust referral flows | 2026-06 (month) | GA | Entra Kerberos now tries both the primary and secondary key, so key rotation no longer breaks referral sign-ins across trusts. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---microsoft-entra-kerberos-key-rotation-improved-reliability-for-incoming-trust-referral-flows) |
-| l02 | Generally available - Jailbreak/Root Detection in Authenticator App | 2026-06 (month) | GA | Authenticator now refuses work or school accounts on rooted or jailbroken phones, pushing users to compliant devices. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#generally-available---jailbreakroot-detection-in-authenticator-app) |
-| l03 | Public Preview - Extended Conditional Access protections for Agent's user accounts | 2026-06 (month) | Preview | Conditional Access can target individual AI agents that hold user accounts, react to agent risk and require compliant devices or networks. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---extended-conditional-access-protections-for-agents-user-accounts) |
-| l04 | General Availability - Domainless SAML IdP federation for workforce tenants | 2026-06 (month) | GA | Guests can sign in through a SAML identity provider even when their email domain is not one configured for that provider. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---domainless-saml-idp-federation-for-workforce-tenants) |
-| l05 | General Availability - SCIM 2.0 APIs for Microsoft Entra ID in US Gov cloud | 2026-06 (month) | GA | The SCIM 2.0 provisioning APIs for Entra reach general availability in the US Government cloud. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---scim-20-apis-for-microsoft-entra-id-in-us-gov-cloud) |
-| l06 | General Availability - Microsoft Entra Backup and Recovery is now available | 2026-06 (month) | GA | Entra Backup and Recovery is on by default, snapshots key directory objects daily and lets admins diff and restore them. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---microsoft-entra-backup-and-recovery-is-now-available) |
-| l07 | Upcoming change - Improved restore experience for device-bound Authenticator app passkeys on iOS | 2026-06 (month) | - | From August 2026 iOS users get a smoother restore of device-bound Authenticator passkeys when iCloud Keychain backup is on; nobody needs to act. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#upcoming-change---improved-restore-experience-for-device-bound-authenticator-app-passkeys-on-ios) |
-| l08 | Public Preview - New built-in Entra role for SOC identity response in Microsoft Defender | 2026-06 (month) | Preview | A new SOC Identity Responder role lets analysts disable users, revoke sessions and reset passwords from Defender without broad directory rights. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---new-built-in-entra-role-for-soc-identity-response-in-microsoft-defender) |
-| l09 | Public Preview - Prevent unauthorized changes to AD groups with AD group enforcement | 2026-06 (month) | Preview | Cloud Sync can lock chosen on-premises AD groups so only the Entra provisioning service may change them, preventing drift. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---prevent-unauthorized-changes-to-ad-groups-with-ad-group-enforcement) |
-
-### Entra ID Governance
-
-Page: https://learn.microsoft.com/en-us/entra/fundamentals/whats-new  
-Latest heading: **June 2026** ([anchor](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#june-2026))  
-Note: Shared Entra releases page; only entries tagged Identity Governance are listed here, other entries are under Microsoft Entra ID and Global Secure Access.  
-Screenshot: [png](assets/learn-entra-id-governance.png)
+Source used: Microsoft Sentinel Blog on Tech Community: the newest post that lists new features, "Ignite 2026: What's new in Microsoft Sentinel" (17 Nov 2026). The latest post titled by month is "What's new in Microsoft Sentinel: October 2026" (30 Oct 2026); the Ignite post is newer and covers November, so it was used.  
+Page: https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/ignite-2026-what-s-new-in-microsoft-sentinel/ba-p/4571174  
+Latest heading: **Ignite 2026: What's new in Microsoft Sentinel (published November 17, 2026)**  
+Note: Blog post, not a Learn page: each entry is a feature heading in the post, with its group heading as the category. Dated with the post's publish date (day). The closing "See what's next" and "Additional resources" sections are not features and are left out.  
+Screenshot: [png](assets/learn-microsoft-sentinel.png)
 
 | id | title | date | status | summary | in window | link |
 |---|---|---|---|---|---|---|
-| l10 | General Availability - External users can be directly assigned to Access Packages | 2026-06 (month) | GA | Entitlement management admins can give an outside person an access package by email; they join as a guest and stay governed. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---external-users-can-be-directly-assigned-to-access-packages) |
-
-### Global Secure Access
-
-Page: https://learn.microsoft.com/en-us/entra/fundamentals/whats-new  
-Latest heading: **June 2026** ([anchor](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#june-2026))  
-Note: Shared Entra releases page; only entries tagged Network Access are listed here.  
-Screenshot: [png](assets/learn-global-secure-access.png)
-
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l11 | General Availability - BYOD support for Windows client using Entra registration | 2026-06 (month) | GA | Private Access traffic profiles can now be given to users on Entra-registered Windows devices, so those PCs need not be domain-joined. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---byod-support-for-windows-client-using-entra-registration) |
-
-### Defender XDR
-
-Page: https://learn.microsoft.com/en-us/defender-xdr/whats-new  
-Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026))  
-Screenshot: [png](assets/learn-defender-xdr.png)
-
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l12 | Expanded identity activity visibility in advanced hunting | 2026-11 (month) | - | Advanced hunting adds more Active Directory events to the identity tables, covering directory replication, GPO updates, LDAP searches and Kerberos binds. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026) |
-| l13 | Alert grouping for custom detection rules | 2026-11 (month) | Preview | From 17 November, custom detection rules can merge related alerts from one rule into a single incident using a time frame and matching criteria. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026) |
-| l14 | Protect AI assets from trusted-identity attacks | 2026-11 (month) | Preview | New coverage detects and disrupts device code phishing aimed at GitHub Copilot CLI; best results need the GitHub connector at Enterprise level. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026) |
-| l15 | New navigation | 2026-11 (month) | Preview | The Defender portal menu is reorganised so Sentinel pages sit where they are used; ISOC tenants get new paths and others keep the old ones. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026) |
-| l16 | Entity mapping enhancements for custom detection rules | 2026-11 (month) | Preview | From 17 November, custom detections can map up to four identifiers per entity and repeat an entity type, with more identifiers supported. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026) |
-
-### Defender for Endpoint
-
-Page: https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint  
-Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint#november-2026))  
-Screenshot: [png](assets/learn-defender-for-endpoint.png)
-
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l17 | Preview features page | 2026-11 (month) | Preview | Admins can switch individual Defender for Endpoint public preview features on or off, rather than opting in to all of them. | no | [link](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint#november-2026) |
-| l18 | Embedded offboarding with the Defender deployment tool for Windows | 2026-11 (month) | Preview | The deployment tool can now offboard Windows devices with a key, a package expiry and a tracked package, mirroring embedded onboarding. | no | [link](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint#november-2026) |
-| l19 | Release - macOS: Build 101.26092.0012 | 2026-11 (month) | GA | A new macOS sensor build, version 20.126092.12.0, is released with its own list of enhancements. | no | [link](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint#november-2026) |
-
-### Defender for Office 365
-
-Page: https://learn.microsoft.com/en-us/defender-office-365/defender-for-office-365-whats-new  
-Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/defender-office-365/defender-for-office-365-whats-new#november-2026))  
-Screenshot: [png](assets/learn-defender-for-office-365.png)
-
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l20 | Hunt for synthetic media (deepfake) detection events | 2026-11 (month) | - | A new advanced hunting table records deepfake media detected in Teams, helping investigate impersonation and fraud. | no | [link](https://learn.microsoft.com/en-us/defender-office-365/defender-for-office-365-whats-new#november-2026) |
-
-### Defender for Identity
-
-Page: https://learn.microsoft.com/en-us/defender-for-identity/whats-new  
-Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/defender-for-identity/whats-new#november-2026))  
-Screenshot: [png](assets/learn-defender-for-identity.png)
-
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l21 | Sensor v3.x activation without Defender for Endpoint is now supported in government clouds | 2026-11 (month) | - | The earlier limit on activating the v3 sensor without Defender for Endpoint is now fixed for government clouds. | no | [link](https://learn.microsoft.com/en-us/defender-for-identity/whats-new#sensor-v3x-activation-without-defender-for-endpoint-is-now-supported-in-government-clouds) |
-
-### Defender for Cloud Apps
-
-Page: https://learn.microsoft.com/en-us/defender-cloud-apps/release-notes  
-Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/defender-cloud-apps/release-notes#november-2026))  
-Screenshot: [png](assets/learn-defender-for-cloud-apps.png)
-
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l22 | GitHub connector enhancements (Preview) | 2026-11 (month) | Preview | The GitHub connector can connect at Enterprise level as well as per organization; one enterprise connection covers every organization in it. | no | [link](https://learn.microsoft.com/en-us/defender-cloud-apps/release-notes#github-connector-enhancements-preview) |
-
-### Defender for Cloud
-
-Page: https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes  
-Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes#november-2026))  
-Screenshot: [png](assets/learn-defender-for-cloud.png)
-
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l23 | Arc proxy support for Defender for SQL Servers on Machines | 2026-11-04 (day) | - | Defender for SQL Servers on Machines now works for Arc-enabled SQL Server behind an Arc proxy, starting from extension 2.0.3585.403. | no | [link](https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes#arc-proxy-support-for-defender-for-sql-servers-on-machines) |
-
-### Defender Vulnerability Management
-
-Page: https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint  
-Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint#november-2026))  
-Note: Shares the Defender for Endpoint page. None of the three entries under its latest heading (November 2026) names Defender Vulnerability Management, so none is listed here (zero entries is not a gap).  
-
-No entries for this product under the latest heading.
-
-### Defender Threat Intelligence
-
-Gap: No Learn What's new page found. /defender/threat-intelligence/whats-new and /whats-new-in-microsoft-defender-threat-intelligence return 404, and /defender/threat-intelligence/ returns 404.
-
-### Security Exposure Management
-
-Page: https://learn.microsoft.com/en-us/security-exposure-management/whats-new  
-Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/security-exposure-management/whats-new#november-2026))  
-Note: The only entry under its latest heading (November 2026) is labelled Codename MDASH, so it is listed under MDASH.  
-
-No entries for this product under the latest heading.
-
-### Sentinel
-
-Page: https://learn.microsoft.com/en-us/azure/sentinel/whats-new  
-Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/azure/sentinel/whats-new#november-2026))  
-Screenshot: [png](assets/learn-sentinel.png)
-
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l24 | SAP solution pricing for ISOC customers | 2026-11 (month) | - | ISOC customers get the Sentinel solution for SAP at no extra cost for active production SAP systems, including dev, test and QA. | no | [link](https://learn.microsoft.com/en-us/azure/sentinel/whats-new#sap-solution-pricing-for-isoc-customers) |
-
-### Purview
-
-Page: https://learn.microsoft.com/en-us/purview/whats-new  
-Latest heading: **October 2026** ([anchor](https://learn.microsoft.com/en-us/purview/whats-new#october-2026))  
-Screenshot: [png](assets/learn-purview.png)
-
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l25 | Endpoint data loss prevention (DLP) can now monitor sensitive data transferred over FTP and SFTP | 2026-10 (month) | GA | Endpoint DLP can watch FTP and SFTP transfers and apply restrictive actions once those activities are added to a policy. | no | [link](https://learn.microsoft.com/en-us/purview/whats-new#data-loss-prevention) |
+| l01 | Integrated Security Operations Center (ISOC) expands to Microsoft Sentinel customers | 2026-11-17 (day) | - | Sentinel customers on M365 E5, E7 or Defender Suite can opt in to ISOC in Defender from 17 November, gaining 90-day retention and cheaper ingestion. | yes | [link](https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/ignite-2026-what-s-new-in-microsoft-sentinel/ba-p/4571174#community-4571174-toc-hId--1546787465) |
+| l02 | More visibility into automation | 2026-11-17 (day) | Preview | Defender portal audit logs now record who created, edited, switched on or off, or deleted automation rules and generated playbooks. | yes | [link](https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/ignite-2026-what-s-new-in-microsoft-sentinel/ba-p/4571174#community-4571174-toc-hId-940725368) |
+| l03 | Expand security visibility for stronger protection | 2026-11-17 (day) | - | The connector catalogue passes 500, adding sources such as Edge for Business, CrowdStrike, Wiz and OpenAI audit logs, with multi-instance support. | yes | [link](https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/ignite-2026-what-s-new-in-microsoft-sentinel/ba-p/4571174#community-4571174-toc-hId-1620783738) |
+| l04 | Analyze security data together with ingest-time data normalization | 2026-11-17 (day) | - | Microsoft-managed parsers will normalise selected logs into standard schemas as they arrive; public preview is planned for December 2026. | yes | [link](https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/ignite-2026-what-s-new-in-microsoft-sentinel/ba-p/4571174#community-4571174-toc-hId--186670725) |
+| l05 | Build Microsoft Sentinel connectors faster with AI in VS code | 2026-11-17 (day) | - | An AI agent in VS Code that drafts, checks and deploys Sentinel connectors is due to reach general availability by the end of November. | yes | [link](https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/ignite-2026-what-s-new-in-microsoft-sentinel/ba-p/4571174#community-4571174-toc-hId-493387645) |
+| l06 | Monitor connector health and data ingestion | 2026-11-17 (day) | Preview | A Data & Connectors Overview tab in Defender shows connector health, ingestion volume and latency across the analytics and data lake tiers. | yes | [link](https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/ignite-2026-what-s-new-in-microsoft-sentinel/ba-p/4571174#community-4571174-toc-hId--1314066818) |
 
 ### Intune
 
+Source used: https://learn.microsoft.com/en-us/intune/whats-new/ (as given).  
 Page: https://learn.microsoft.com/en-us/intune/whats-new/  
 Latest heading: **Week of November 16, 2026 (Service release 2611)** ([anchor](https://learn.microsoft.com/en-us/intune/whats-new/#week-of-november-16-2026-service-release-2611))  
 Screenshot: [png](assets/learn-intune.png)
 
 | id | title | date | status | summary | in window | link |
 |---|---|---|---|---|---|---|
-| l26 | Share device diagnostics during Remote Help sessions on Windows | 2026-11-16 (week) | - | Remote Help sessions on Windows can share device diagnostics with the helpdesk after the end user consents, and they can stop sharing at any time. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#share-device-diagnostics-during-remote-help-sessions-on-windows) |
-| l27 | Keep work files in OneDrive for Business with Edge for Business on Windows | 2026-11-16 (week) | - | Windows app protection policy can send Edge for Business downloads to OneDrive for Business instead of the local disk (Edge 158 or later). | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#keep-work-files-in-onedrive-for-business-with-edge-for-business-on-windows) |
-| l28 | Newly available protected apps for Intune | 2026-11-16 (week) | - | Ten more apps join the Intune protected apps list, on iOS, Android or both. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#newly-available-protected-apps-for-intune) |
-| l29 | New and updated settings for Windows in the settings catalog | 2026-11-16 (week) | - | The Windows settings catalog adds refreshed Edge and Chrome templates plus new Cloud PC device reset settings. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#new-and-updated-settings-for-windows-in-the-settings-catalog) |
-| l30 | Automate tasks with local actions on Android Enterprise devices | 2026-11-16 (week) | - | Android Enterprise fully managed and dedicated devices can run local actions on events such as restarts, sign-in and power changes. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#automate-tasks-with-local-actions-on-android-enterprise-devices) |
-| l31 | New settings for macOS in the settings catalog | 2026-11-16 (week) | - | The macOS settings catalog gains controls for EWS retirement alerts, Edge and Copilot browsing, and AI agent runtime protection with Defender for Endpoint. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#new-settings-for-macos-in-the-settings-catalog) |
-| l32 | Group exclusions and built-in group targeting for PowerShell scripts on Windows | 2026-11-16 (week) | - | Windows PowerShell script assignments now accept group exclusions and the built-in All Users and All Devices groups. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#group-exclusions-and-built-in-group-targeting-for-powershell-scripts-on-windows) |
-| l33 | Require Google Workspace authentication on Android Enterprise devices | 2026-11-16 (week) | - | Admins can require sign-in with a managed Google Workspace account on supported Android Enterprise devices. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#require-google-workspace-authentication-on-android-enterprise-devices) |
-| l34 | Increase Intune management agent check-ins on macOS | 2026-11-16 (week) | - | Newly enrolled Macs check in with the Intune agent more often at first, so apps and scripts arrive sooner. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#increase-intune-management-agent-check-ins-on-macos) |
-| l35 | Maintenance windows for operating system and driver updates on Windows | 2026-11-16 (week) | - | Maintenance windows let admins pick when Windows OS and driver update operations run, with schedule and duration settings. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#maintenance-windows-for-operating-system-and-driver-updates-on-windows) |
-| l36 | Configure evaluation frequency for custom compliance scripts on Windows and macOS | 2026-11-16 (week) | - | Custom compliance scripts on Windows and macOS can be evaluated every 15 minutes up to every eight hours. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#configure-evaluation-frequency-for-custom-compliance-scripts-on-windows-and-macos) |
-| l37 | Manage Windows Server devices with Microsoft Intune (Insider preview) | 2026-11-16 (week) | Preview | Intune can manage eligible Windows Server Insider builds, for nonproduction testing only. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#manage-windows-server-devices-with-microsoft-intune-insider-preview) |
-| l38 | CIS benchmark auditing for Windows 11 devices (public preview) | 2026-11-16 (week) | Preview | Windows 11 devices can be audited against the CIS Intune benchmark in an audit-only profile, with per-setting results to export. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#cis-benchmark-auditing-for-windows-11-devices-public-preview) |
-| l39 | Get more remediation guidance in Windows Autopatch reports | 2026-11-16 (week) | - | Windows Autopatch reports add data, remediation guidance and guardrails for configuration problems that block updates. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#get-more-remediation-guidance-in-windows-autopatch-reports) |
+| l07 | Share device diagnostics during Remote Help sessions on Windows | 2026-11-16 (week) | - | Remote Help sessions on Windows can share device diagnostics with the helpdesk after the end user consents, and they can stop sharing at any time. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#share-device-diagnostics-during-remote-help-sessions-on-windows) |
+| l08 | Keep work files in OneDrive for Business with Edge for Business on Windows | 2026-11-16 (week) | - | Windows app protection policy can send Edge for Business downloads to OneDrive for Business instead of the local disk (Edge 158 or later). | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#keep-work-files-in-onedrive-for-business-with-edge-for-business-on-windows) |
+| l09 | Newly available protected apps for Intune | 2026-11-16 (week) | - | Ten more apps join the Intune protected apps list, on iOS, Android or both. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#newly-available-protected-apps-for-intune) |
+| l10 | New and updated settings for Windows in the settings catalog | 2026-11-16 (week) | - | The Windows settings catalog adds refreshed Edge and Chrome templates plus new Cloud PC device reset settings. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#new-and-updated-settings-for-windows-in-the-settings-catalog) |
+| l11 | Automate tasks with local actions on Android Enterprise devices | 2026-11-16 (week) | - | Android Enterprise fully managed and dedicated devices can run local actions on events such as restarts, sign-in and power changes. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#automate-tasks-with-local-actions-on-android-enterprise-devices) |
+| l12 | New settings for macOS in the settings catalog | 2026-11-16 (week) | - | The macOS settings catalog gains controls for EWS retirement alerts, Edge and Copilot browsing, and AI agent runtime protection with Defender for Endpoint. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#new-settings-for-macos-in-the-settings-catalog) |
+| l13 | Group exclusions and built-in group targeting for PowerShell scripts on Windows | 2026-11-16 (week) | - | Windows PowerShell script assignments now accept group exclusions and the built-in All Users and All Devices groups. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#group-exclusions-and-built-in-group-targeting-for-powershell-scripts-on-windows) |
+| l14 | Require Google Workspace authentication on Android Enterprise devices | 2026-11-16 (week) | - | Admins can require sign-in with a managed Google Workspace account on supported Android Enterprise devices. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#require-google-workspace-authentication-on-android-enterprise-devices) |
+| l15 | Increase Intune management agent check-ins on macOS | 2026-11-16 (week) | - | Newly enrolled Macs check in with the Intune agent more often at first, so apps and scripts arrive sooner. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#increase-intune-management-agent-check-ins-on-macos) |
+| l16 | Maintenance windows for operating system and driver updates on Windows | 2026-11-16 (week) | - | Maintenance windows let admins pick when Windows OS and driver update operations run, with schedule and duration settings. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#maintenance-windows-for-operating-system-and-driver-updates-on-windows) |
+| l17 | Configure evaluation frequency for custom compliance scripts on Windows and macOS | 2026-11-16 (week) | - | Custom compliance scripts on Windows and macOS can be evaluated every 15 minutes up to every eight hours. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#configure-evaluation-frequency-for-custom-compliance-scripts-on-windows-and-macos) |
+| l18 | Manage Windows Server devices with Microsoft Intune (Insider preview) | 2026-11-16 (week) | Preview | Intune can manage eligible Windows Server Insider builds, for nonproduction testing only. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#manage-windows-server-devices-with-microsoft-intune-insider-preview) |
+| l19 | CIS benchmark auditing for Windows 11 devices (public preview) | 2026-11-16 (week) | Preview | Windows 11 devices can be audited against the CIS Intune benchmark in an audit-only profile, with per-setting results to export. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#cis-benchmark-auditing-for-windows-11-devices-public-preview) |
+| l20 | Get more remediation guidance in Windows Autopatch reports | 2026-11-16 (week) | - | Windows Autopatch reports add data, remediation guidance and guardrails for configuration problems that block updates. | yes | [link](https://learn.microsoft.com/en-us/intune/whats-new/#get-more-remediation-guidance-in-windows-autopatch-reports) |
+
+### Defender XDR
+
+Source used: https://learn.microsoft.com/en-us/defender-xdr/whats-new (as given).  
+Page: https://learn.microsoft.com/en-us/defender-xdr/whats-new  
+Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026))  
+Screenshot: [png](assets/learn-defender-xdr.png)
+
+| id | title | date | status | summary | in window | link |
+|---|---|---|---|---|---|---|
+| l21 | Domain filter in device inventory portal | 2026-11 (month) | - | Device inventory gains an Active Directory domain filter, so investigators can narrow the list to one domain's machines. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026) |
+| l22 | Expanded identity activity visibility in advanced hunting | 2026-11 (month) | - | Advanced hunting adds more Active Directory events to the identity tables, covering directory replication, GPO updates, LDAP searches and Kerberos binds. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026) |
+| l23 | Alert grouping for custom detection rules | 2026-11 (month) | Preview | From 17 November, custom detection rules can merge related alerts from one rule into a single incident using a time frame and matching criteria. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026) |
+| l24 | Protect AI assets from trusted-identity attacks | 2026-11 (month) | Preview | New coverage detects and disrupts device code phishing aimed at GitHub Copilot CLI; best results need the GitHub connector at Enterprise level. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026) |
+| l25 | New navigation | 2026-11 (month) | Preview | The Defender portal menu is reorganised so Sentinel pages sit where they are used; ISOC tenants get new paths and others keep the old ones. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026) |
+| l26 | Entity mapping enhancements for custom detection rules | 2026-11 (month) | Preview | From 17 November, custom detections can map up to four identifiers per entity and repeat an entity type, with more identifiers supported. | no | [link](https://learn.microsoft.com/en-us/defender-xdr/whats-new#november-2026) |
+
+### Purview
+
+Source used: https://learn.microsoft.com/en-us/purview/whats-new (as given); the first heading, "What's planned for Microsoft Purview", is a forward-looking list, so the latest dated heading was used.  
+Page: https://learn.microsoft.com/en-us/purview/whats-new  
+Latest heading: **October 2026** ([anchor](https://learn.microsoft.com/en-us/purview/whats-new#october-2026))  
+Screenshot: [png](assets/learn-purview.png)
+
+| id | title | date | status | summary | in window | link |
+|---|---|---|---|---|---|---|
+| l27 | Endpoint data loss prevention (DLP) can now monitor sensitive data transferred over FTP and SFTP | 2026-10 (month) | GA | Endpoint DLP can watch FTP and SFTP transfers and apply restrictive actions once those activities are added to a policy. | no | [link](https://learn.microsoft.com/en-us/purview/whats-new#data-loss-prevention) |
+
+### Microsoft Entra
+
+Source used: https://learn.microsoft.com/en-us/entra/fundamentals/whats-new (dated release notes; switched from /whats-new-overview, which has no dated entries, per Shalabh's t18u decision).  
+Page: https://learn.microsoft.com/en-us/entra/fundamentals/whats-new  
+Latest heading: **June 2026** ([anchor](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#june-2026))  
+Note: All entries under the latest heading on the Entra releases page, including those previously listed separately as Entra ID Governance and Global Secure Access. The page's newest heading is June 2026 (page date 26 June 2026), so none is in the window.  
+Screenshot: [png](assets/learn-entra.png)
+
+| id | title | date | status | summary | in window | link |
+|---|---|---|---|---|---|---|
+| l28 | General Availability - External users can be directly assigned to Access Packages | 2026-06 (month) | GA | Entitlement management admins can give an outside person an access package by email; they join as a guest and stay governed. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---external-users-can-be-directly-assigned-to-access-packages) |
+| l29 | General availability - Microsoft Entra Kerberos key rotation improved reliability for incoming trust referral flows | 2026-06 (month) | GA | Entra Kerberos now tries both the primary and secondary key, so key rotation no longer breaks referral sign-ins across trusts. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---microsoft-entra-kerberos-key-rotation-improved-reliability-for-incoming-trust-referral-flows) |
+| l30 | General Availability - BYOD support for Windows client using Entra registration | 2026-06 (month) | GA | Private Access traffic profiles can now be given to users on Entra-registered Windows devices, so those PCs need not be domain-joined. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---byod-support-for-windows-client-using-entra-registration) |
+| l31 | Generally available - Jailbreak/Root Detection in Authenticator App | 2026-06 (month) | GA | Authenticator now refuses work or school accounts on rooted or jailbroken phones, pushing users to compliant devices. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#generally-available---jailbreakroot-detection-in-authenticator-app) |
+| l32 | Public Preview - Extended Conditional Access protections for Agent's user accounts | 2026-06 (month) | Preview | Conditional Access can target individual AI agents that hold user accounts, react to agent risk and require compliant devices or networks. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---extended-conditional-access-protections-for-agents-user-accounts) |
+| l33 | General Availability - Domainless SAML IdP federation for workforce tenants | 2026-06 (month) | GA | Guests can sign in through a SAML identity provider even when their email domain is not one configured for that provider. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---domainless-saml-idp-federation-for-workforce-tenants) |
+| l34 | General Availability - SCIM 2.0 APIs for Microsoft Entra ID in US Gov cloud | 2026-06 (month) | GA | The SCIM 2.0 provisioning APIs for Entra reach general availability in the US Government cloud. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---scim-20-apis-for-microsoft-entra-id-in-us-gov-cloud) |
+| l35 | General Availability - Microsoft Entra Backup and Recovery is now available | 2026-06 (month) | GA | Entra Backup and Recovery is on by default, snapshots key directory objects daily and lets admins diff and restore them. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---microsoft-entra-backup-and-recovery-is-now-available) |
+| l36 | Upcoming change - Improved restore experience for device-bound Authenticator app passkeys on iOS | 2026-06 (month) | - | From August 2026 iOS users get a smoother restore of device-bound Authenticator passkeys when iCloud Keychain backup is on; nobody needs to act. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#upcoming-change---improved-restore-experience-for-device-bound-authenticator-app-passkeys-on-ios) |
+| l37 | Public Preview - New built-in Entra role for SOC identity response in Microsoft Defender | 2026-06 (month) | Preview | A new SOC Identity Responder role lets analysts disable users, revoke sessions and reset passwords from Defender without broad directory rights. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---new-built-in-entra-role-for-soc-identity-response-in-microsoft-defender) |
+| l38 | Public Preview - Prevent unauthorized changes to AD groups with AD group enforcement | 2026-06 (month) | Preview | Cloud Sync can lock chosen on-premises AD groups so only the Entra provisioning service may change them, preventing drift. | no | [link](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---prevent-unauthorized-changes-to-ad-groups-with-ad-group-enforcement) |
+
+### Defender for Cloud
+
+Source used: https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes (as given).  
+Page: https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes  
+Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes#november-2026))  
+Screenshot: [png](assets/learn-defender-for-cloud.png)
+
+| id | title | date | status | summary | in window | link |
+|---|---|---|---|---|---|---|
+| l39 | Arc proxy support for Defender for SQL Servers on Machines | 2026-11-04 (day) | - | Defender for SQL Servers on Machines now works for Arc-enabled SQL Server behind an Arc proxy, starting from extension 2.0.3585.403. | no | [link](https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes#arc-proxy-support-for-defender-for-sql-servers-on-machines) |
+
+### Microsoft Perception
+
+Source used: No What's new or release-notes page on Learn (/security/agentic-security/whats-new and /release-notes return 404; the Perception docs table of contents has no such page). Used the official Microsoft Perception Blog on Tech Community: "What's new with Microsoft Perception at Ignite 2026" (17 Nov 2026).  
+Page: https://techcommunity.microsoft.com/t5/microsoft-perception-blog/what-s-new-with-microsoft-perception-at-ignite-2026/ba-p/4571834  
+Latest heading: **What's new with Microsoft Perception at Ignite 2026 (published November 17, 2026)**  
+Note: Blog post, not a Learn page: each top-level section of the post is an entry. Dated with the post's publish date (day). The closing Ignite sessions section is left out.  
+Screenshot: [png](assets/learn-microsoft-perception.png)
+
+| id | title | date | status | summary | in window | link |
+|---|---|---|---|---|---|---|
+| l40 | A cyber stack built for agentic security | 2026-11-17 (day) | - | Microsoft frames Perception as the orchestration layer of a three-part cyber stack, feeding signals and context to specialised models and agent teams. | yes | [link](https://techcommunity.microsoft.com/t5/microsoft-perception-blog/what-s-new-with-microsoft-perception-at-ignite-2026/ba-p/4571834#community-4571834-toc-hId--1130952451) |
+| l41 | Microsoft Perception is now generally available | 2026-11-17 (day) | GA | Project Perception is now generally available as Microsoft Perception, with red, blue and green agent teams run through reviewable playbooks. | yes | [link](https://techcommunity.microsoft.com/t5/microsoft-perception-blog/what-s-new-with-microsoft-perception-at-ignite-2026/ba-p/4571834#community-4571834-toc-hId-1356560382) |
+| l42 | Stop threats at machine speed | 2026-11-17 (day) | - | The Triage Agent handles roughly 80% of a typical Defender alert queue, and the Attack Investigation Agent rebuilds timelines for confirmed threats. | yes | [link](https://techcommunity.microsoft.com/t5/microsoft-perception-blog/what-s-new-with-microsoft-perception-at-ignite-2026/ba-p/4571834#community-4571834-toc-hId--450894081) |
+| l43 | Think like an attacker with advanced code scanning | 2026-11-17 (day) | - | A web pen test playbook lets an agent probe authorised apps, with MDASH code-scanning findings validated and newer MAI-Cyber models supported. | yes | [link](https://techcommunity.microsoft.com/t5/microsoft-perception-blog/what-s-new-with-microsoft-perception-at-ignite-2026/ba-p/4571834#community-4571834-toc-hId--1578290174) |
+| l44 | Shrink your attack surface | 2026-11-17 (day) | - | AI Readiness Initiatives group exposure fixes into programmes, and a Risk Reduction Agent can patch through Intune or shield a flaw until patching. | yes | [link](https://techcommunity.microsoft.com/t5/microsoft-perception-blog/what-s-new-with-microsoft-perception-at-ignite-2026/ba-p/4571834#community-4571834-toc-hId-909222659) |
+| l45 | Secure your AI and agents | 2026-11-17 (day) | - | With Microsoft 365 E7, Perception gives one view of AI agents' access and behaviour, and playbooks drive remediation of risky agents. | yes | [link](https://techcommunity.microsoft.com/t5/microsoft-perception-blog/what-s-new-with-microsoft-perception-at-ignite-2026/ba-p/4571834#community-4571834-toc-hId--898231804) |
+| l46 | Put agentic security to work, and stay in control | 2026-11-17 (day) | - | APIs and MCP let ITSM, SIEM or SOAR tools start Perception playbooks, and new usage dashboards and a cost calculator track agent spend. | yes | [link](https://techcommunity.microsoft.com/t5/microsoft-perception-blog/what-s-new-with-microsoft-perception-at-ignite-2026/ba-p/4571834#community-4571834-toc-hId-1589281029) |
 
 ### Security Copilot
 
+Source used: Learn page found: https://learn.microsoft.com/en-us/copilot/security/whats-new-copilot-security.  
 Page: https://learn.microsoft.com/en-us/copilot/security/whats-new-copilot-security  
 Latest heading: **April 2026** ([anchor](https://learn.microsoft.com/en-us/copilot/security/whats-new-copilot-security#april-2026))  
 Screenshot: [png](assets/learn-security-copilot.png)
 
 | id | title | date | status | summary | in window | link |
 |---|---|---|---|---|---|---|
-| l40 | Security Analyst Agent - Public preview | 2026-04 (month) | Preview | The Security Analyst Agent runs multi-step investigations across Defender and Sentinel data and returns prioritised risks with reasoning and evidence. | no | [link](https://learn.microsoft.com/en-us/copilot/security/whats-new-copilot-security#security-analyst-agent---public-preview) |
+| l47 | Security Analyst Agent - Public preview | 2026-04 (month) | Preview | The Security Analyst Agent runs multi-step investigations across Defender and Sentinel data and returns prioritised risks with reasoning and evidence. | no | [link](https://learn.microsoft.com/en-us/copilot/security/whats-new-copilot-security#security-analyst-agent---public-preview) |
 
-### Azure network security (Firewall, WAF, DDoS)
+### Agent 365
 
-Page: https://learn.microsoft.com/en-us/azure/firewall/firewall-preview  
-Latest heading: **Preview features** ([anchor](https://learn.microsoft.com/en-us/azure/firewall/firewall-preview#preview-features))  
-Note: Azure Firewall's 'Preview features' page serves as its release notes. It gives no dates, so each entry is dated on the capture day (precision captured) and is never in the window. WAF and DDoS have no What's new page on Learn (several candidate URLs return 404).  
-Screenshot: [png](assets/learn-azure-network-security-firewall-waf-ddos.png)
-
-| id | title | date | status | summary | in window | link |
-|---|---|---|---|---|---|---|
-| l41 | Dual-stack support (preview) | 2026-11-24 (captured) | Preview | Azure Firewall previews IPv6 with dual-stack policy, native IPv6 network rules and DNS proxy support. | no | [link](https://learn.microsoft.com/en-us/azure/firewall/firewall-preview#dual-stack-support-preview) |
-| l42 | AI Security add-on (preview) | 2026-11-24 (captured) | Preview | An optional add-on for Firewall Premium adds prompt and malware threat protection, Purview network DLP and a policy advisor. | no | [link](https://learn.microsoft.com/en-us/azure/firewall/firewall-preview#ai-security-add-on-preview) |
-| l43 | Change tracking (preview) | 2026-11-24 (captured) | Preview | Change tracking uses Azure Resource Graph to show what changed in firewall rule collection groups. | no | [link](https://learn.microsoft.com/en-us/azure/firewall/firewall-preview#change-tracking-preview) |
-| l44 | Customer provided public IP address support in secured hubs (preview) | 2026-11-24 (captured) | Preview | Secured Virtual WAN hubs can use public IPs from the customer tenant; existing hubs must redeploy their firewall. | no | [link](https://learn.microsoft.com/en-us/azure/firewall/firewall-preview#customer-provided-public-ip-address-support-in-secured-hubs-preview) |
-
-### Windows security
-
-Page: https://learn.microsoft.com/en-us/windows/security/whats-new  
-Latest heading: **November 2026 (Ignite 2026)** ([anchor](https://learn.microsoft.com/en-us/windows/security/whats-new#november-2026-ignite-2026))  
-Note: Entries are bare feature names with no text beneath them, so summaries are left empty and details holds the name as written.  
-Screenshot: [png](assets/learn-windows-security.png)
+Source used: No What's new or release-notes page on Learn (/microsoft-agent-365/whats-new returns 404; the Agent 365 docs table of contents has no such page). Used the official Agent 365 Blog on Tech Community: "What's new in Microsoft Agent 365: Ignite 2026" (17 Nov 2026).  
+Page: https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753  
+Latest heading: **What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)**  
+Note: Blog post, not a Learn page: each feature heading is an entry, with its section heading as the category. Dated with the post's publish date (day). The closing Get started, Ignite sessions and Learn more sections are left out.  
+Screenshot: [png](assets/learn-agent-365.png)
 
 | id | title | date | status | summary | in window | link |
 |---|---|---|---|---|---|---|
-| l45 | Administrator protection | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l46 | Agent governance | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l47 | Agent identity | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l48 | Declared configuration resource access | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l49 | Driver Quality Initiative | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l50 | Malicious and vulnerable driver blocklists | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l51 | Microsoft Execution Containers (MXC) | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l52 | Remote lock | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l53 | Windows baseline protection | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l54 | Windows endpoint security platform | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#new-capabilities) |
-| l55 | Windows Hello for Business | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l56 | Configure Windows Hello for Business | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l57 | FIDO2 security keys | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l58 | Post-quantum cryptography | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l59 | Reduced reliance on NTLM with new Kerberos functionality | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l60 | VBS and HVCI on upgraded systems | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l61 | Web sign-in | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l62 | Wi-Fi protection (WPA3, OWE, Wi-Fi 7) | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l63 | Windows Autopatch | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-| l64 | Windows Hello (PIN, face, fingerprint) | 2026-11 (month) | - | - | no | [link](https://learn.microsoft.com/en-us/windows/security/whats-new#expanded-capabilities) |
-
-### Perception
-
-Gap: Perception docs exist (learn.microsoft.com/en-us/security/agentic-security/) but there is no What's new or release-notes page (/security/agentic-security/whats-new returns 404).
+| l48 | Connect your agent estate across platforms | 2026-11-17 (day) | - | Connected platforms bring agents built in tools such as Agentforce, Databricks Genie or Bedrock into one Agent 365 view for IT and security. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId-2057624060) |
+| l49 | Local and shadow agent discovery | 2026-11-17 (day) | - | Defender (now GA) and Global Secure Access (preview) find over 60 local agents, like Claude Code and Copilot CLI, plus their MCP servers. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId-250169597) |
+| l50 | Secure local agents with Entra Agent ID | 2026-11-17 (day) | Preview | Entra Agent ID gives discovered local agents, starting with GitHub Copilot CLI and Claude Code, their own identity so access rules can target them. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId--1557284866) |
+| l51 | Extend Entra Agent ID to Microsoft Autopilot | 2026-11-17 (day) | Preview | Entra Agent ID support extends to agents in Microsoft Autopilot, alongside Copilot Studio and Foundry agents. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId-930227967) |
+| l52 | Export Agent Activity | 2026-11-17 (day) | - | Admins can stream agent traces from Agent 365 into their own Azure Monitor and Application Insights, choosing which prompts and responses go along. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId--877226496) |
+| l53 | Tools Registry | 2026-11-17 (day) | - | A tools registry (GA) lists the tools and connections agents use and flags risky ones; linking outside catalogues enters private preview in December. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId-1610286337) |
+| l54 | Agent Map Use Cases | 2026-11-17 (day) | Preview | Agent map use cases sort agent sessions by type of work, helping admins spot duplicate agents and adoption patterns. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId--197168126) |
+| l55 | Manage agents across multiple tenants at scale | 2026-11-17 (day) | Preview | Partners and multi-tenant organisations get one Agent 365 view of agents across the tenants they manage, in the Microsoft 365 admin center. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId--2004622589) |
+| l56 | Expand usage insights for Microsoft agents to Agent 365 core users | 2026-11-17 (day) | GA | Users with qualifying Microsoft 365 subscriptions gain Agent 365 usage and activity insights for Microsoft-built and Microsoft-platform agents. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId-482890244) |
+| l57 | Plugins, skills, and MCP server governance | 2026-11-17 (day) | - | Plugin and skill governance for Copilot and Copilot Cowork is GA; MCP servers from Azure AI Gateway and LiteLLM join in preview. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId-467785135) |
+| l58 | Local and shadow agent governance | 2026-11-17 (day) | Preview | Admins can review discovered local agents and block unapproved ones with Intune, Defender and Global Secure Access controls. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId--1339669328) |
+| l59 | Copilot Cowork with Agent 365 plugin | 2026-11-17 (day) | Preview | An Agent 365 plugin for Copilot Cowork lets admins inspect and govern their AI estate by describing the outcome they want in plain language. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId-1147843505) |
+| l60 | Action center | 2026-11-17 (day) | - | Action center collects governance tasks, starting with inactive agents and agents that have no owner. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId--659610958) |
+| l61 | Dynamic agent risk | 2026-11-17 (day) | Preview | Each agent gets one risk level built from runtime signals and exposure, updated as it acts, shown across Agent 365, Defender and other consoles. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId-20447412) |
+| l62 | Identity and access controls that adapt to risk | 2026-11-17 (day) | - | Conditional Access can now re-check policy at the moment an agent acts and set separate rules for agents acting on a user's behalf. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId--1787007051) |
+| l63 | Data security for Microsoft and local agents | 2026-11-17 (day) | Preview | Purview DLP can stop sensitive data reaching Microsoft agents and local agents such as Claude Code and GitHub Copilot tools. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId-700505782) |
+| l64 | Runtime protection for local agents | 2026-11-17 (day) | GA | Defender runtime protection for local agents on Windows is now GA, blocking malicious instructions mid-loop for agents like Claude Code and OpenClaw. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId--1106948681) |
+| l65 | Security posture for third-party agents and tools | 2026-11-17 (day) | Preview | Defender posture assessment now covers agents on Amazon Bedrock, Google Gemini and Vertex AI, and Anthropic Claude, in the shared AI agent inventory. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId-2078726093) |
+| l66 | Endpoint and network controls for local agents | 2026-11-17 (day) | Preview | Intune policies set file and network limits that Microsoft Execution Containers enforce on Windows, outside the agent's own control. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId-271271630) |
+| l67 | Agent 365 Business Analytics | 2026-11-17 (day) | - | Business Analytics puts AI spend, usage and value across Microsoft and other providers in one place for business leaders. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId-951330000) |
+| l68 | Agent 365 Cost Management | 2026-11-17 (day) | - | Cost Management tracks AI consumption by user, service, agent and model, with spending limits and alerts at several levels. | yes | [link](https://techcommunity.microsoft.com/t5/agent-365-blog/what-s-new-in-microsoft-agent-365-ignite-2026/ba-p/4571753#community-4571753-toc-hId--856124463) |
 
 ### MDASH
 
+Source used: No separate MDASH page on Learn (/security-exposure-management/mdash/whats-new returns 404). MDASH updates are published on the Microsoft Security Exposure Management What's new page (https://learn.microsoft.com/en-us/security-exposure-management/whats-new); only entries under its latest heading that name Codename MDASH are listed.  
 Page: https://learn.microsoft.com/en-us/security-exposure-management/whats-new  
 Latest heading: **November 2026** ([anchor](https://learn.microsoft.com/en-us/security-exposure-management/whats-new#november-2026))  
-Note: MDASH has no What's new page of its own; entries labelled 'Codename MDASH' on the Security Exposure Management page are listed here.  
+Note: Shares the Security Exposure Management page; only the entry under the latest heading (November 2026) that names Codename MDASH is listed.  
 Screenshot: [png](assets/learn-mdash.png)
 
 | id | title | date | status | summary | in window | link |
 |---|---|---|---|---|---|---|
-| l65 | Codename MDASH - Finding validation and scan improvements | 2026-11-20 (day) | - | MDASH code-scanning findings can feed a Perception web pen test playbook, with cheaper scans, fewer duplicate findings and a lower model requirement. | yes | [link](https://learn.microsoft.com/en-us/security-exposure-management/whats-new#codename-mdash---finding-validation-and-scan-improvements) |
+| l69 | Codename MDASH - Finding validation and scan improvements | 2026-11-20 (day) | - | MDASH code-scanning findings can feed a Perception web pen test playbook, with cheaper scans, fewer duplicate findings and a lower model requirement. | yes | [link](https://learn.microsoft.com/en-us/security-exposure-management/whats-new#codename-mdash---finding-validation-and-scan-improvements) |
 
 
 ## Coming soon
@@ -1884,7 +1934,7 @@ Items per product: Microsoft Purview 43, Microsoft Intune 16, Microsoft Entra 2,
 
 ## Retiring and changing soon
 
-Plan-for-change and upcoming-change notices on the Step 5 products' Learn pages (Intune, Entra releases, Defender for Cloud release notes, Sentinel What's new). Only notices still current are listed: any whose stated change date is before 16 Nov 2026 was dropped. change_type follows the notice; change_date only where the notice states one. Full notice text is in the JSON details field (Microsoft Learn, CC BY 4.0).
+Plan-for-change and upcoming-change notices from the change-notice sources: Intune In development, the Entra releases page, Defender for Cloud release notes and Sentinel's What's new page. These pages feed this section only, not What's new on Learn. Only notices still current are listed: any whose stated change date is before 16 Nov 2026 was dropped. change_type follows the notice; change_date only where the notice states one. Full notice text is in the JSON details field (Microsoft Learn, CC BY 4.0).
 
 | id | product | title | change_type | change_date | summary |
 |---|---|---|---|---|---|
@@ -1917,16 +1967,16 @@ Community discussion only, not Microsoft. Source: public Reddit pages. Commenter
 
 ## Themes
 
-1. **Perception and agentic security**: Ignite week centred on Perception, Microsoft's agentic security offering, with launch and walkthrough videos, a blog post, Defender vulnerability shielding and a new MDASH entry on Learn.
-   Items: v04, v06, v08, b04, b06, v05, l65, r01, x03, x09, x12, x20
-2. **Securing AI agents and identity**: Entra content centred on AI agents as identities: Conditional Access for agents, access-governance posts, an Agent ID video and Purview and Defender coverage for AI use.
-   Items: v01, v07, v10, b16, b15, b11, l03, l08, x01, x03, x06, x09, x12
-3. **Outage-lure and device-code phishing**: Microsoft Threat Intelligence described a large phishing run using fake Microsoft 365 outage notices and showed device code phishing used against AI coding agents; Defender added matching coverage.
-   Items: t01, t02, t03, t04, l14
-4. **Patch exposure and November Patch Tuesday**: November has 1,114 Microsoft CVEs, 79 of them Critical and one exploited. Admin reports of a hotpatch breaking printing and 32-bit msiexec sit alongside the shielding pitch.
+1. **Perception and agentic security**: Microsoft used Ignite week to make Perception generally available, presenting it as the layer that coordinates red, blue and green security agents over Defender data. Launch and walkthrough videos, a Security Blog post and posts on X showed triage and investigation agents, reviewable playbooks and a web pen test flow fed by MDASH code scanning. Vulnerability shielding, which protects a flaw until a patch is installed, got its own video and drew admin discussion on Reddit. For security leaders this marks a shift from single assistants to orchestrated agents, so any evaluation should cover licensing, human approval points and how results reach existing SOC tools.
+   Items: v04, v06, v08, b04, b06, v05, l41, l42, l69, r01, x03, x09, x12, x20
+2. **Securing AI agents and identity**: Treating AI agents as identities ran through the week's Entra and Agent 365 material. Videos and Entra blog posts covered Conditional Access for agents, access governance and Agent ID. The Agent 365 Ignite update gave discovered local agents such as Claude Code their own Entra identity and let Conditional Access re-check policy at the moment an agent acts. Microsoft also tied Purview and Defender coverage to AI use in its Zero Trust for AI guidance. Teams that let staff run coding or SaaS agents should list them, give each an owner and decide which access rules apply to agents rather than people.
+   Items: v01, v07, v10, b16, b15, b11, l50, l32, l37, l62, l49, x01, x03, x06, x09, x12
+3. **Outage-lure and device-code phishing**: Microsoft Threat Intelligence described a high-volume phishing campaign that dressed its lures up as Microsoft 365 outage and service notices to steer people to credential theft pages. A second write-up showed how device code phishing can be aimed at AI coding agents, abusing a legitimate sign-in flow to obtain tokens. Defender XDR added preview coverage that detects and disrupts device code phishing against GitHub Copilot CLI. The practical response is to remind staff to check service health directly rather than through emailed links, and to review where device code sign-in is still allowed.
+   Items: t01, t02, t03, t04, l24
+4. **Patch exposure and November Patch Tuesday**: Microsoft's November release lists 1,114 CVEs, 79 of them rated Critical, and one Outlook spoofing flaw is marked as exploited. Three cloud flaws, in Entra device registration, App Service for Linux and Event Grid, carry the maximum 10.0 score, although Microsoft says it has already mitigated them in the service. On Reddit, admins reported that the KB5132043 hotpatch broke printing and 32-bit msiexec installs, including Citrix Workspace. Patch teams should push the Outlook fix quickly while keeping pilot rings for hotpatch, and Microsoft pitched vulnerability shielding as cover for the gap before patches land.
    Items: CVE-2026-124194, CVE-2026-109469, CVE-2026-109484, CVE-2026-62841, r02, r05, r01, v05
-5. **Data protection for AI and planned changes**: The Roadmap is full of Purview DLP, retention and eDiscovery items through February, while Sentinel, Defender for Cloud and Intune have retirements and support changes to plan for.
-   Items: rm07, rm23, rm45, rm27, rm43, ch02, ch03, ch04, b12
+5. **Data protection for AI and planned changes**: The Microsoft 365 Roadmap carries a run of Purview items due between November and February, mostly data loss prevention. They include admin unit support for Copilot and Cowork policies, inline protection for unmanaged apps in Edge for Business, and Compliance Manager mapping AI regulations for Foundry agents. A Security Blog post on securing the data behind AI, and the Agent 365 update extending Purview DLP to local agents, point the same way. Dated retirements follow: a Defender for Cloud vulnerability recommendation on 14 December 2026 and Sentinel in the Azure portal after 31 March 2027, so each needs an owner and a date.
+   Items: rm07, rm23, rm45, rm27, rm43, ch02, ch03, ch04, b12, l63
 
 ## Gaps
 
@@ -1939,12 +1989,21 @@ Community discussion only, not Microsoft. Source: public Reddit pages. Commenter
 - Video GIFs: made for the top 3 by views (v-ids below) by recording the YouTube watch page for a short clip. The recordings also show YouTube's signed-out sidebar of unrelated suggested videos, which is not part of the video.
 - Blogs: no in-window posts found from the Purview, Security Copilot, Core Infrastructure or Defender for Endpoint Tech Community hubs. The MSRC blog feed XML is malformed, so the HTML page was read instead: its latest post is October 2026. Security Insider (latest 1 Oct 2026) and the Microsoft Threat Intelligence podcast (latest 5 Nov 2026) had nothing in the window. The MSRC advisories page was not re-read.
 - Threat intelligence: no CVE identifiers appear in this week's threat research, so each threat item has cves []. The Java4Shell CVE-2026-114938 is an OpenJDK (third-party) CVE and is covered only by an Azure network security blog item.
-- Learn: no What's new page found for Defender Threat Intelligence, Perception (docs exist but no release page), Azure WAF and DDoS; the Global Secure Access and Entra ID Governance entries come from the shared Entra release page. Azure Firewall's Preview features page has no dates, so its entries use the capture day (captured, never in window). Defender Vulnerability Management (shares the Defender for Endpoint page) and Security Exposure Management have zero entries of their own under their latest heading.
-- Learn dates: Entra's latest heading is June 2026 and Purview's is October 2026, so their entries are not in the window. Windows security entries are bare feature names (summary empty).
+- Learn sources: ten products. Sentinel, Perception and Agent 365 come from official Tech Community blog posts, not Learn pages (see each product's source line under What's new on Learn and the Learn lines below). Sentinel uses the newest Microsoft Sentinel Blog post that lists new features: "Ignite 2026: What's new in Microsoft Sentinel" (17 Nov 2026), which is newer than the last monthly post ("What's new in Microsoft Sentinel: October 2026", 30 Oct). Blog-sourced entries carry the post's publish date (precision day), so the 17 Nov posts count as in window. Their details are written in our own words (at most 80 words, link to the section kept); only Learn entries keep verbatim details (CC BY 4.0).
+- Learn dates: Entra's latest heading is June 2026 (page date 26 June), Purview's is October 2026 and Security Copilot's is April 2026, so their entries are not in the window. No Learn entry this week is undated, so none uses the capture day. Old products no longer on the list (Defender for Endpoint, Office 365, Identity, Cloud Apps, Vulnerability Management, Threat Intelligence, Security Exposure Management as its own product, Azure network security, Windows security) were dropped with their screenshots; the Entra ID Governance and Global Secure Access entries are now under Microsoft Entra
 - Roadmap: mrcwall.com was used only for discovery; its updates file path changed and was found from the site's page. Only 45 official Roadmap items qualified (43 Purview-related, 2 Entra-related); the official API returned no Defender, Sentinel, Security Copilot, Exchange Online Protection or Intune items with a rollout month in Nov 2026 to Feb 2027. US-Government-only items, and items not tagged to a security product (for example Teams phishing detection and Outlook Purview DLP wait-on-send), were left out. The 16 Intune entries come from Learn's In development page, which gives no Roadmap ID or dates.
-- Change notices: 14 notices kept. 16 were dropped because their stated date was before the window or they were duplicates. Sentinel's Azure-portal retirement (2027-03-31) is beyond the 60-day key-dates range. Only change items carry change_date; no other item in this week's set announced an end or enforcement date.
+- Change notices: 14 notices kept, from change-notice sources only (these pages feed Retiring and changing soon, not What's new): 6 from Intune's In development page, 4 from the Entra releases page, 3 from Defender for Cloud release notes and 1 from Sentinel's What's new page (Microsoft Sentinel in the Azure portal, retiring after 31 March 2027). Notices dated before 16 Nov 2026 were dropped; change_date is set only where a notice states one. Only change items carry change_date; no other item in this week's set announced an end or enforcement date
+- CVE spotlight: ranked by the rule in that section: exploited, then customer action required, then MSRC severity, then CVSS, then the documented tiebreaks. Cloud CVEs Microsoft fixed in the service drop out (no customer action), and the Important 9.9 CVEs (SharePoint Server CVE-2026-120002, Azure DevOps CVE-2026-109467) fall below Critical ones. Ranks 2 to 4 (all 9.8, Critical, Exploitation Less Likely, downloadable update) are ordered by CVE number. CVE-2026-118146 beat CVE-2026-118148 (both 8.8, Critical, Exploitation More Likely, downloadable update) on the lower CVE number. No Microsoft blog, X post or video about any of the five was found (X search of Microsoft accounts and this week's blog feeds), so the sources are MSRC only. mention_ids holds the CVE's own item; no other item names these CVEs
 - Reddit: Reddit's JSON listing returned 403, so the top posts came from a signed-out scrape of www.reddit.com; r/AzureSentinel returned no posts. old.reddit.com shows a login wall (not signed in), so screenshots use embed.reddit.com, which shows the post only and not the comments. Thread text and comment themes come from the public thread pages. Commenters are not named.
 - Environment: the user's computer was offline, so all browsing and fetching ran over the box's own network.
-- GIFs: v10, v11, v04 (see above).
-- Learn, Defender Threat Intelligence: No Learn What's new page found. /defender/threat-intelligence/whats-new and /whats-new-in-microsoft-defender-threat-intelligence return 404, and /defender/threat-intelligence/ returns 404.
-- Learn, Perception: Perception docs exist (learn.microsoft.com/en-us/security/agentic-security/) but there is no What's new or release-notes page (/security/agentic-security/whats-new returns 404).
+- GIFs: v11, v04 (see above). v10 has no GIF: its recording was never made in the Tuesday run, and a retry on 26 Nov hit YouTube's signed-out bot check ("Sign in to confirm you're not a bot"), so no clip could be recorded without signing in.
+- Learn, Microsoft Sentinel: source used: Microsoft Sentinel Blog on Tech Community: the newest post that lists new features, "Ignite 2026: What's new in Microsoft Sentinel" (17 Nov 2026). The latest post titled by month is "What's new in Microsoft Sentinel: October 2026" (30 Oct 2026); the Ignite post is newer and covers November, so it was used.
+- Learn, Intune: source used: https://learn.microsoft.com/en-us/intune/whats-new/ (as given).
+- Learn, Defender XDR: source used: https://learn.microsoft.com/en-us/defender-xdr/whats-new (as given).
+- Learn, Purview: source used: https://learn.microsoft.com/en-us/purview/whats-new (as given); the first heading, "What's planned for Microsoft Purview", is a forward-looking list, so the latest dated heading was used.
+- Learn, Microsoft Entra: source used: https://learn.microsoft.com/en-us/entra/fundamentals/whats-new (dated release notes; switched from /whats-new-overview, which has no dated entries, per Shalabh's t18u decision).
+- Learn, Defender for Cloud: source used: https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes (as given).
+- Learn, Microsoft Perception: source used: No What's new or release-notes page on Learn (/security/agentic-security/whats-new and /release-notes return 404; the Perception docs table of contents has no such page). Used the official Microsoft Perception Blog on Tech Community: "What's new with Microsoft Perception at Ignite 2026" (17 Nov 2026).
+- Learn, Security Copilot: source used: Learn page found: https://learn.microsoft.com/en-us/copilot/security/whats-new-copilot-security.
+- Learn, Agent 365: source used: No What's new or release-notes page on Learn (/microsoft-agent-365/whats-new returns 404; the Agent 365 docs table of contents has no such page). Used the official Agent 365 Blog on Tech Community: "What's new in Microsoft Agent 365: Ignite 2026" (17 Nov 2026).
+- Learn, MDASH: source used: No separate MDASH page on Learn (/security-exposure-management/mdash/whats-new returns 404). MDASH updates are published on the Microsoft Security Exposure Management What's new page (https://learn.microsoft.com/en-us/security-exposure-management/whats-new); only entries under its latest heading that name Codename MDASH are listed.
