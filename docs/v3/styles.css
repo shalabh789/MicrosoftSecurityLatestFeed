@@ -99,7 +99,7 @@ td{padding:.85rem .6rem;border-bottom:1px dashed var(--rail);vertical-align:top;
 .chart-grid{display:grid;grid-template-columns:2fr 1fr;gap:1.5rem;margin:1.25rem 0}.chart-card h3{margin-bottom:1rem}
 .bar-row{display:grid;grid-template-columns:minmax(100px,170px) 1fr auto;gap:.75rem;align-items:center;margin:.5rem 0;font:400 .8125rem var(--mono)}
 .bar-track{height:10px;background:repeating-linear-gradient(90deg,var(--faint) 0 3px,transparent 3px 4px);border:0;border-radius:0;overflow:hidden}
-.bar-fill{height:100%;background:repeating-linear-gradient(90deg,var(--a) 0 3px,transparent 3px 4px)}
+.bar-fill{display:block;height:100%;background:repeating-linear-gradient(90deg,var(--a) 0 3px,transparent 3px 4px)}
 .severity-bars{display:flex;gap:.6rem;align-items:flex-end;min-height:108px}.severity-column{flex:1;text-align:center;font:400 .75rem/1.4 var(--mono);color:var(--muted)}
 .severity-column span{display:block;min-height:10px;margin-bottom:.4rem;border-radius:0;background:repeating-linear-gradient(45deg,var(--a2) 0 1px,color-mix(in oklab,var(--a2) 35%,transparent) 1px 3px)}
 .severity-column:first-child span{background:repeating-linear-gradient(45deg,var(--critical) 0 1px,color-mix(in oklab,var(--critical) 35%,transparent) 1px 3px)}
