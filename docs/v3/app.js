@@ -1,9 +1,6 @@
 (() => {
   "use strict";
 
-  const PRODUCT_FAMILIES = [
-    "Defender", "Entra", "Purview", "Intune", "Sentinel", "Security Copilot", "Azure", "Windows"
-  ];
   const TYPE_NAMES = {
     video: "Video", x: "X", threat: "Threat", cve: "CVE",
     blog: "Blog", learn: "Learn", reddit: "Reddit", change: "Change", roadmap: "Roadmap"
@@ -64,14 +61,9 @@
   const controls = {
     week: $("#week-select"),
     search: $("#feed-search"),
-    learnFamily: $("#learn-family"),
     learnStatus: $("#learn-status"),
     learnFrom: $("#learn-date-from"),
-    learnTo: $("#learn-date-to"),
-    focus: $("#cve-focus"),
-    cvss7: $("#cve-cvss7"),
-    exploited: $("#cve-exploited"),
-    disclosed: $("#cve-disclosed")
+    learnTo: $("#learn-date-to")
   };
   const state = {
     weeks: [],
@@ -84,6 +76,7 @@
     type: "",
     learnProduct: "",
     expandedMedia: { video: false, x: false },
+    expandedCves: false,
     expandedRoadmap: new Set(),
     syncing: false
   };
@@ -103,14 +96,9 @@
       type: state.type || "",
       q: controls.search.value.trim(),
       learnProduct: state.learnProduct,
-      learnFamily: controls.learnFamily.value,
       learnStatus: controls.learnStatus.value,
       learnFrom: controls.learnFrom.value,
-      learnTo: controls.learnTo.value,
-      focus: controls.focus.checked ? "1" : "0",
-      cvss7: controls.cvss7.checked ? "1" : "",
-      exploited: controls.exploited.checked ? "1" : "",
-      disclosed: controls.disclosed.checked ? "1" : ""
+      learnTo: controls.learnTo.value
     };
     if (activeSection) params.set("section", activeSection);
     Object.entries(values).forEach(([key, value]) => {
@@ -127,7 +115,6 @@
     state.learnProduct = params.learnProduct || "";
     controls.search.value = params.q || "";
     const fields = {
-      learnFamily: controls.learnFamily,
       learnStatus: controls.learnStatus,
       learnFrom: controls.learnFrom,
       learnTo: controls.learnTo
@@ -135,10 +122,6 @@
     Object.entries(fields).forEach(([key, field]) => {
       field.value = params[key] || "";
     });
-    controls.focus.checked = params.focus === undefined ? true : params.focus === "1";
-    controls.cvss7.checked = params.cvss7 === "1";
-    controls.exploited.checked = params.exploited === "1";
-    controls.disclosed.checked = params.disclosed === "1";
     state.syncing = false;
   }
 
@@ -161,8 +144,6 @@
   }
 
   function populateOptions(data) {
-    controls.learnFamily.innerHTML = '<option value="">All families</option>' +
-      PRODUCT_FAMILIES.map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("");
     const start = dateKey(data.start);
     const end = dateKey(data.end);
     controls.learnFrom.min = start;
@@ -231,7 +212,7 @@
       const index = themes.indexOf(theme);
       const available = (theme.item_ids || []).filter((id) => itemMap.has(id));
       const representative = available.map((id) => itemMap.get(id)).sort((a, b) => engagementScore(b) - engagementScore(a))[0];
-      return `<article class="theme-card"><p class="eyebrow">Theme ${index + 1}</p><h3>${escapeHtml(theme.name)}</h3><p>${escapeHtml(theme.summary)}</p>${representative ? linkedImageMarkup(representative, `${theme.name}: ${representative.title}`) : ""}<button class="button secondary" type="button" data-theme-index="${index}">Explore ${count(available)} items</button></article>`;
+      return `<article class="theme-card"><p class="eyebrow">Theme ${index + 1}</p><h3>${escapeHtml(theme.name)}</h3><p class="theme-summary">${escapeHtml(theme.summary)}</p>${representative ? linkedImageMarkup(representative, `${theme.name}: ${representative.title}`) : ""}<button class="button secondary" type="button" data-theme-index="${index}">Explore ${count(available)} items</button></article>`;
     }).join("") || '<p class="muted">No themes match the current filters.</p>';
     $("#theme-grid").querySelectorAll("[data-theme-index]").forEach((button) => {
       button.addEventListener("click", () => openTheme(Number(button.dataset.themeIndex), items));
@@ -267,11 +248,15 @@
   }
 
   function renderMedia(items, type, target, showEngagement = false) {
-    const records = items.filter((item) => item.type === type).sort((a, b) => showEngagement ? engagementScore(b) - engagementScore(a) : new Date(b.date) - new Date(a.date));
+    const records = items.filter((item) => item.type === type).sort((a, b) => {
+      if (type === "video") return Number(b.engagement?.views || 0) - Number(a.engagement?.views || 0);
+      return showEngagement ? engagementScore(b) - engagementScore(a) : new Date(b.date) - new Date(a.date);
+    });
     const element = $(target);
     const countElement = $(`#${type === "video" ? "video" : type}-count`);
     if (countElement) countElement.textContent = `${count(records)} items`;
-    const shown = state.expandedMedia[type] ? records : records.slice(0, 8);
+    const limit = type === "video" ? 5 : 8;
+    const shown = state.expandedMedia[type] ? records : records.slice(0, limit);
     element.innerHTML = shown.map((item) => {
       const source = item.source || "Microsoft";
       const caption = showEngagement ? `${source} · ${dateValue(item.date)} · ${engagementLabel(item)}` : `${source} · ${dateValue(item.date)}`;
@@ -282,11 +267,13 @@
       </article>`;
     }).join("") || '<p class="muted">No matching items.</p>';
     const toggle = $(`#${type}-toggle`);
-    toggle.hidden = records.length <= 8;
+    toggle.hidden = records.length <= limit;
     toggle.setAttribute("aria-expanded", String(state.expandedMedia[type]));
     toggle.textContent = state.expandedMedia[type]
       ? "Show fewer"
-      : `Show all ${count(records)} ${type === "video" ? "videos" : "posts"}`;
+      : type === "video"
+        ? `Explore more videos (${count(records.length - limit)})`
+        : `Show all ${count(records)} posts`;
   }
 
   function todayInIndia() {
@@ -387,12 +374,7 @@
     return item.learn_product || allText(item.product)[0] || "Other";
   }
 
-  function learnMatchesProduct(learnItem, selected) {
-    return productMatches(learnItem, selected);
-  }
-
   function learnMatchesFilters(item) {
-    if (controls.learnFamily.value && !learnMatchesProduct(item, controls.learnFamily.value)) return false;
     if (controls.learnStatus.value && item.status !== controls.learnStatus.value) return false;
     const date = dateKey(item.date);
     if ((controls.learnFrom.value || controls.learnTo.value) && !date) return false;
@@ -409,14 +391,8 @@
       groups.get(name).push(item);
     });
     $("#product-status-strip").innerHTML = [...groups.entries()].map(([name, group]) => {
-      const latest = group.slice().sort((a, b) => new Date(b.date) - new Date(a.date))[0];
-      const heading = latest?.section || "";
-      const current = group.filter((item) => item.section === heading && items.includes(item));
-      const ga = current.filter((item) => item.status === "GA").length;
-      const preview = current.filter((item) => item.status === "Preview").length;
-      return current.length
-        ? `<button class="chip product-status-chip" type="button" data-product-name="${escapeHtml(name)}" aria-pressed="${state.learnProduct === name}">${escapeHtml(name)} · ${count(ga)} GA · ${count(preview)} Preview</button>`
-        : "";
+      const visible = group.filter((item) => items.includes(item) && learnMatchesFilters(item));
+      return `<button class="chip product-status-chip" type="button" data-product-name="${escapeHtml(name)}" aria-pressed="${state.learnProduct === name}">${escapeHtml(name)} <span>${count(visible.length)}</span></button>`;
     }).join("");
   }
 
@@ -435,29 +411,34 @@
     ]).filter(([, visible]) => visible.length);
     const visibleLearnCount = visibleGroups.reduce((total, [, visible]) => total + visible.length, 0);
     $("#learn-count").textContent = `${count(visibleLearnCount)} updates`;
-    $("#product-list").innerHTML = visibleGroups.map(([name, group]) => {
-      const visible = group;
-      const newestSection = visible.slice().sort((a, b) => new Date(b.date) - new Date(a.date))[0]?.section || "No matching Learn updates";
-      const groupProduct = allText(visible[0]?.product).map((tag) => FAMILY_MAP[tag.toLowerCase()] || tag)[0] || "";
-      const related = items.filter((item) => (item.type === "cve" || item.type === "x" || item.type === "blog") &&
-        productMatches(item, groupProduct));
-      const cveTotal = related.filter((item) => item.type === "cve").length;
-      const xTotal = related.filter((item) => item.type === "x").length;
-      const blogTotal = related.filter((item) => item.type === "blog").length;
-      const latestItem = visible.slice().sort((a, b) => new Date(b.date) - new Date(a.date))[0];
-      const imageItem = visible.find((item) => assetUrl(item));
-      const row = `<article class="product-row">
-        <h3>${escapeHtml(name)}</h3>
-        <div class="product-summary"><p>Latest heading: ${escapeHtml(newestSection)} · ${count(visible.length)} of ${count(group.length)} Learn items match<br>${count(cveTotal)} CVEs · ${count(xTotal)} X posts · ${count(blogTotal)} blogs</p>
-        ${latestItem ? `<a href="${escapeHtml(itemUrl(latestItem))}" target="_blank" rel="noopener noreferrer">Latest Learn update</a>` : ""}</div>
-        <div class="product-image">${imageItem ? linkedImageMarkup(imageItem, `${name}: ${imageItem.title}`) : ""}</div>
+    $("#product-list").innerHTML = visibleGroups.map(([name, visible], index) => {
+      const group = groups.get(name);
+      const latestItem = group.slice().sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+      const newestSection = latestItem?.section || "What's new";
+      const current = group.filter((item) => item.section === newestSection);
+      const ga = current.filter((item) => item.status === "GA").length;
+      const preview = current.filter((item) => item.status === "Preview").length;
+      const other = current.filter((item) => !["GA", "Preview"].includes(item.status)).length;
+      let sourceUrl = latestItem ? itemUrl(latestItem) : "#";
+      try {
+        const url = new URL(sourceUrl);
+        url.hash = "";
+        sourceUrl = url.href;
+      } catch {}
+      return `<details class="product-block"${index === 0 ? " open" : ""}>
+        <summary class="product-block-summary">
+          <span><span class="eyebrow">Product</span><strong>${escapeHtml(name)}</strong></span>
+          <span><span class="eyebrow">Latest heading</span><strong>${escapeHtml(newestSection)}</strong></span>
+          <span><span class="eyebrow">Status</span><strong>${count(ga)} GA · ${count(preview)} Preview · ${count(other)} other</strong></span>
+        </summary>
+        <p class="product-source"><a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer">Source</a></p>
         <div class="learn-items">${visible.map((item) => `<article ${itemIdAttribute(item)} class="learn-item" data-item-id="${escapeHtml(item.id)}">
-          <div><h3><a href="${escapeHtml(itemUrl(item))}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a></h3>
-            <p>${escapeHtml(item.summary)}</p>${expandableMarkup(item.details, 4)}<p class="meta">${escapeHtml(item.section || "Learn")} · ${escapeHtml(dateValue(item.date))} · ${escapeHtml(item.status || "Update")} · ${escapeHtml(item.date_precision || "date")}</p>
+          <div><p class="learn-status"><span class="badge">${escapeHtml(item.status || "Update")}</span></p>
+            <h3><a href="${escapeHtml(itemUrl(item))}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a></h3>
+            <p>${escapeHtml(item.summary)}</p>${expandableMarkup(item.details, 4)}<p class="meta">${escapeHtml(item.section || "Learn")} · ${escapeHtml(dateValue(item.date))} · ${escapeHtml(item.date_precision || "date")}</p>
           </div>
         </article>`).join("")}</div>
-      </article>`;
-      return row;
+      </details>`;
     }).join("") || '<p class="muted">No matching Learn updates.</p>';
   }
 
@@ -474,15 +455,8 @@
   }
 
   function cveRecords(items) {
-    let records = items.filter((item) => item.type === "cve");
-    if (controls.focus.checked) {
-      records = records.filter((item) => item.exploited === true || item.severity === "Critical" || Number(item.cvss) >= 9);
-    } else {
-      if (controls.cvss7.checked) records = records.filter((item) => Number(item.cvss) >= 7);
-      if (controls.exploited.checked) records = records.filter((item) => item.exploited === true);
-      if (controls.disclosed.checked) records = records.filter((item) => item.disclosed === true);
-    }
-    return records.sort((a, b) => Number(b.exploited) - Number(a.exploited) || Number(b.cvss || 0) - Number(a.cvss || 0) || a.id.localeCompare(b.id));
+    return items.filter((item) => item.type === "cve")
+      .sort((a, b) => Number(b.exploited) - Number(a.exploited) || Number(b.cvss || 0) - Number(a.cvss || 0) || a.id.localeCompare(b.id));
   }
 
   function renderCveCharts(items) {
@@ -508,31 +482,115 @@
 
   function renderCves(items) {
     const allCves = items.filter((item) => item.type === "cve");
-    const filteredCves = cveRecords(items);
-    const pageCount = Math.max(1, Math.ceil(filteredCves.length / PAGE_SIZE));
+    const records = cveRecords(items);
+    const mentionIds = (entry) => Array.isArray(entry.mention_ids) && entry.mention_ids.length
+      ? entry.mention_ids
+      : [entry.cve_id || entry.id].filter(Boolean);
+    const textValues = (value) => value == null ? [] : Array.isArray(value) ? value.map(String) : [String(value)];
+    const suppliedSpotlights = Array.isArray(state.data.cve_spotlight) && state.data.cve_spotlight.length > 0;
+    const spotlightRows = suppliedSpotlights
+      ? state.data.cve_spotlight.slice().sort((a, b) => Number(a.rank || 0) - Number(b.rank || 0))
+        .filter((entry) => mentionIds(entry).some((id) => allCves.some((item) => item.id === id)))
+        .slice(0, 5)
+      : records.slice(0, 5).map((item, index) => ({
+        rank: index + 1, cve_id: item.id, headline: item.title, title: item.title,
+        product: item.product, cvss: item.cvss, severity: item.severity,
+        exploited: item.exploited, disclosed: item.disclosed, fallback: true
+      }));
+    const spotlightIds = new Set(spotlightRows.map((entry) => entry.cve_id || entry.id || mentionIds(entry)[0]).filter(Boolean));
+    const remaining = records.filter((item) => !spotlightIds.has(item.id));
+    const pageCount = Math.max(1, Math.ceil(remaining.length / PAGE_SIZE));
     state.page = Math.min(state.page, pageCount - 1);
-    const pageItems = filteredCves.slice(state.page * PAGE_SIZE, (state.page + 1) * PAGE_SIZE);
+    const pageItems = remaining.slice(state.page * PAGE_SIZE, (state.page + 1) * PAGE_SIZE);
     const critical = allCves.filter((item) => item.severity === "Critical").length;
     const exploited = allCves.filter((item) => item.exploited === true).length;
-    $("#cve-count").textContent = `${count(filteredCves)} shown of ${count(allCves)} CVEs`;
+    $("#cve-count").textContent = `${count(allCves)} CVEs`;
     $("#cve-tiles").innerHTML = [
       ["Total", allCves.length],
       ["Critical", critical],
       ["Exploited", exploited]
     ].map(([label, total]) => `<article class="tile"><span>${label}</span><strong>${count(total)}</strong></article>`).join("");
+    const cveMap = new Map(state.data.items.filter((item) => item.type === "cve").map((item) => [item.id, item]));
+    const renderBadge = (label, className = "") => `<span class="badge ${className}">${escapeHtml(label)}</span>`;
+    const renderLinks = (links) => (Array.isArray(links) ? links : links ? [links] : []).map((link) => {
+      const label = typeof link === "string" ? link : link.label || link.url;
+      const url = itemUrl(typeof link === "string" ? { url: link } : link);
+      return `<li><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a></li>`;
+    }).join("") || "<li>None listed.</li>";
+    $("#cve-spotlights").innerHTML = spotlightRows.map((entry, index) => {
+      const ids = mentionIds(entry);
+      const cveId = entry.cve_id || entry.id || ids[0];
+      const mentioned = ids.map((id) => cveMap.get(id))
+        .filter((item) => item && allCves.some((visible) => visible.id === item.id));
+      const related = mentioned.find((item) => allCves.some((visible) => visible.id === item.id));
+      const productValues = Array.isArray(entry.product) ? entry.product : entry.product ? [entry.product] : allText(related?.product);
+      const products = textValues(productValues).join(", ") ||
+        textValues(entry.affected_products).slice(0, 2).join(", ") || "Microsoft products";
+      const scoreValueRaw = entry.cvss ?? related?.cvss;
+      const score = scoreValueRaw == null || scoreValueRaw === "" ? Number.NaN : Number(scoreValueRaw);
+      const scoreValue = Number.isFinite(score) ? Math.min(10, Math.max(0, score)) : 0;
+      const severityName = entry.severity || related?.severity || "Unknown";
+      const status = `${entry.exploited ? renderBadge("EXPLOITED", "exploited") : ""}${entry.disclosed ? renderBadge("DISCLOSED") : ""}`;
+      const rank = String(entry.rank || index + 1).padStart(2, "0");
+      const sourceLink = `https://msrc.microsoft.com/update-guide/vulnerability/${encodeURIComponent(cveId)}`;
+      const title = entry.headline || entry.title || related?.title || cveId;
+      if (entry.fallback) {
+        return `<article class="cve-spotlight fallback">
+          <a class="cve-spotlight-link" href="${escapeHtml(sourceLink)}" target="_blank" rel="noopener noreferrer">
+            <span class="cve-rank">${escapeHtml(rank)}</span><span class="cve-spotlight-copy">
+              <strong>${escapeHtml(title)}</strong><span class="cve-subtitle">${escapeHtml(cveId)} · ${escapeHtml(products)}</span>
+              <span class="cve-spotlight-meta"><span class="cve-score">${Number.isFinite(score) ? score.toFixed(1) : "—"}/10</span><span class="bar-track"><span class="bar-fill" style="width:${scoreValue * 10}%"></span></span>${renderBadge(severityName, severityName === "Critical" ? "critical" : "")}${status}</span>
+            </span>
+          </a>
+        </article>`;
+      }
+      const why = textValues(entry.why_important).map((point) => `<li>${escapeHtml(point)}</li>`).join("") || "<li>Not provided.</li>";
+      const actions = textValues(entry.what_to_do).map((point) => `<li>${escapeHtml(point)}</li>`).join("") || "<li>Not provided.</li>";
+      const mentionedLinks = mentioned.map((item) =>
+        `<li><a href="#${escapeHtml(item.id)}" data-item-target="${escapeHtml(item.id)}">${escapeHtml(item.title || item.id)}</a></li>`
+      ).join("") || "<li>None listed.</li>";
+      const productsList = textValues(entry.affected_products || entry.product || related?.product)
+        .map((product) => `<li>${escapeHtml(product)}</li>`).join("") || "<li>Not provided.</li>";
+      return `<details class="cve-spotlight" name="cve-spotlight" data-mention-ids="${escapeHtml(ids.join(","))}">
+        <summary class="cve-spotlight-summary">
+          <span class="cve-rank">${escapeHtml(rank)}</span><span class="cve-spotlight-copy">
+            <strong>${escapeHtml(title)}</strong><span class="cve-subtitle">${escapeHtml(cveId)} · ${escapeHtml(products)}</span>
+            <span class="cve-spotlight-meta"><span class="cve-score">${Number.isFinite(score) ? score.toFixed(1) : "—"}/10</span><span class="bar-track" role="img" aria-label="CVSS ${Number.isFinite(score) ? score.toFixed(1) : "unknown"} out of 10"><span class="bar-fill" style="width:${scoreValue * 10}%"></span></span>${renderBadge(severityName, severityName === "Critical" ? "critical" : "")}${status}</span>
+          </span>
+        </summary>
+        <div class="cve-spotlight-detail">
+          <div class="cve-story"><p>${escapeHtml(entry.story || "No story provided.")}</p><h3>[ WHY IT IS IMPORTANT ]</h3><ul>${why}</ul><h3>[ WHAT TO DO ]</h3><ul>${actions}</ul></div>
+          <aside class="cve-side-panel">
+            <h3>Products</h3><ul>${productsList}</ul>
+            <h3>Impact</h3><p>${escapeHtml(entry.impact || "Not provided.")}</p>
+            <h3>CVSS</h3><p>${Number.isFinite(score) ? score.toFixed(1) : "—"} · ${escapeHtml(entry.cvss_vector || "Vector unavailable")}</p>
+            <h3>Exploitability</h3><p>${escapeHtml(entry.exploitability || "Not reported.")}</p>
+            <h3>Fix links</h3><ul>${renderLinks(entry.fix_links)}</ul>
+            <h3>Sources</h3><ul>${renderLinks(entry.sources)}</ul>
+            <h3>Mentioned this week</h3><ul>${mentionedLinks}</ul>
+          </aside>
+        </div>
+      </details>`;
+    }).join("") || '<p class="muted">No CVE spotlight entries match the current filters.</p>';
+    $("#cve-show-all").hidden = remaining.length === 0;
+    $("#cve-show-all").setAttribute("aria-expanded", String(state.expandedCves));
+    $("#cve-show-all").textContent = state.expandedCves
+      ? "Show fewer CVEs"
+      : `Explore more CVEs (${count(remaining.length)})`;
+    $("#cve-explore").hidden = !state.expandedCves || remaining.length === 0;
     $("#cve-table").innerHTML = pageItems.map((item) => `<tr ${itemIdAttribute(item)} data-item-id="${escapeHtml(item.id)}">
       <td><a href="${escapeHtml(itemUrl(item))}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.id)}</a><br><span class="muted">${escapeHtml(dateValue(item.date))}</span></td>
       <td><span class="badge ${item.severity === "Critical" ? "critical" : ""}">${escapeHtml(item.severity || "Unknown")}</span></td>
       <td>${Number.isFinite(Number(item.cvss)) ? Number(item.cvss).toFixed(1) : "—"}</td>
       <td>${escapeHtml(allText(item.product).join(", ") || "—")}</td>
-      <td>${escapeHtml(item.title)}<p>${escapeHtml(item.summary)}</p></td>
-      <td>${item.exploited ? '<span class="badge exploited">Exploited</span>' : ""}${item.disclosed ? '<span class="badge">Publicly disclosed</span>' : ""}${!item.exploited && !item.disclosed ? "—" : ""}</td>
-    </tr>`).join("") || `<tr><td colspan="6">${controls.focus.checked
-      ? "No CVEs match the focus filters. Use Show all CVEs to browse the full feed."
-      : "No CVEs match the current filters."}</td></tr>`;
+      <td>${escapeHtml(item.title)}</td>
+      <td>${item.exploited ? '<span class="badge exploited">EXPLOITED</span>' : ""}${item.disclosed ? '<span class="badge">DISCLOSED</span>' : ""}${!item.exploited && !item.disclosed ? "—" : ""}</td>
+    </tr>`).join("") || `<tr><td colspan="6">No other CVEs match the current filters.</td></tr>`;
     $("#cve-page").textContent = `Page ${state.page + 1} of ${pageCount} · ${count(pageItems)} rows`;
     $("#cve-prev").disabled = state.page === 0;
     $("#cve-next").disabled = state.page >= pageCount - 1;
+    $("#cve-prev").hidden = remaining.length <= PAGE_SIZE;
+    $("#cve-next").hidden = remaining.length <= PAGE_SIZE;
     renderCveCharts(items);
   }
 
@@ -641,9 +699,8 @@
     }
   }
 
-  [controls.learnFamily, controls.learnStatus, controls.learnFrom, controls.learnTo].forEach((control) => {
+  [controls.learnStatus, controls.learnFrom, controls.learnTo].forEach((control) => {
     control.addEventListener("change", () => {
-      if (control === controls.learnFamily) state.learnProduct = "";
       state.page = 0;
       render();
     });
@@ -658,13 +715,6 @@
     render();
     controls.search.focus();
   });
-  [controls.focus, controls.cvss7, controls.exploited, controls.disclosed].forEach((control) => {
-    control.addEventListener("change", () => {
-      if (control !== controls.focus && control.checked) controls.focus.checked = false;
-      state.page = 0;
-      render();
-    });
-  });
   controls.week.addEventListener("change", async () => {
     try {
       await loadWeek(controls.week.value);
@@ -676,13 +726,10 @@
     }
   });
   $("#cve-show-all").addEventListener("click", () => {
-    controls.focus.checked = false;
-    controls.cvss7.checked = false;
-    controls.exploited.checked = false;
-    controls.disclosed.checked = false;
+    state.expandedCves = !state.expandedCves;
     state.page = 0;
-    render();
-    $("#cves").scrollIntoView({ behavior: "smooth" });
+    renderCves(state.filtered);
+    if (state.expandedCves) $("#cve-explore").scrollIntoView({ behavior: "smooth" });
   });
   $("#cve-prev").addEventListener("click", () => { state.page -= 1; renderCves(state.filtered); });
   $("#cve-next").addEventListener("click", () => { state.page += 1; renderCves(state.filtered); });
@@ -698,7 +745,6 @@
     const button = event.target.closest("[data-product-name]");
     if (!button) return;
     state.learnProduct = state.learnProduct === button.dataset.productName ? "" : button.dataset.productName;
-    controls.learnFamily.value = "";
     render();
     $("#products").scrollIntoView({ behavior: "smooth" });
   });
@@ -729,15 +775,21 @@
       const id = itemLink.dataset.itemTarget;
       let target = document.getElementById(id);
       const item = state.filtered.find((record) => record.id === id);
-      if (!target && item?.type === "cve") {
-        controls.focus.checked = false;
-        controls.cvss7.checked = false;
-        controls.exploited.checked = false;
-        controls.disclosed.checked = false;
-        const index = cveRecords(state.filtered).findIndex((item) => item.id === id);
-        state.page = Math.floor(index / PAGE_SIZE);
-        renderCves(state.filtered);
-        target = document.getElementById(id);
+      if (item?.type === "cve") {
+        const spotlight = [...$("#cve-spotlights").querySelectorAll(".cve-spotlight[data-mention-ids]")]
+          .find((row) => row.dataset.mentionIds.split(",").includes(id));
+        if (spotlight) {
+          spotlight.open = true;
+          target = spotlight;
+        } else {
+          state.expandedCves = true;
+          const spotlightIds = new Set([...$("#cve-spotlights").querySelectorAll("[data-mention-ids]")]
+            .flatMap((row) => row.dataset.mentionIds.split(",")));
+          const index = cveRecords(state.filtered).filter((record) => !spotlightIds.has(record.id)).findIndex((record) => record.id === id);
+          state.page = Math.max(0, Math.floor(index / PAGE_SIZE));
+          renderCves(state.filtered);
+          target = document.getElementById(id);
+        }
       }
       if (!target && item?.type === "roadmap") {
         state.expandedRoadmap.add(allText(item.product)[0] || "Other");
@@ -751,7 +803,6 @@
       }
       if (!target && item?.type === "learn") {
         state.learnProduct = "";
-        controls.learnFamily.value = "";
         controls.learnStatus.value = "";
         controls.learnFrom.value = "";
         controls.learnTo.value = "";
