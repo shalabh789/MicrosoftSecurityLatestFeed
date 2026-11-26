@@ -529,6 +529,7 @@
       const scoreValueRaw = entry.cvss ?? related?.cvss;
       const score = scoreValueRaw == null || scoreValueRaw === "" ? Number.NaN : Number(scoreValueRaw);
       const scoreValue = Number.isFinite(score) ? Math.min(10, Math.max(0, score)) : 0;
+      const scoreClass = scoreValue >= 9 ? "sev-critical" : scoreValue >= 7 ? "sev-high" : "";
       const severityName = entry.severity || related?.severity || "Unknown";
       const status = `${entry.exploited ? renderBadge("EXPLOITED", "exploited") : ""}${entry.disclosed ? renderBadge("DISCLOSED") : ""}`;
       const rank = String(entry.rank || index + 1).padStart(2, "0");
@@ -539,7 +540,7 @@
           <a class="cve-spotlight-link" href="${escapeHtml(sourceLink)}" target="_blank" rel="noopener noreferrer">
             <span class="cve-rank">${escapeHtml(rank)}</span><span class="cve-spotlight-copy">
               <strong>${escapeHtml(title)}</strong><span class="cve-subtitle">${escapeHtml(cveId)} · ${escapeHtml(products)}</span>
-              <span class="cve-spotlight-meta"><span class="cve-score">${Number.isFinite(score) ? score.toFixed(1) : "—"}/10</span><span class="bar-track"><span class="bar-fill" style="width:${scoreValue * 10}%"></span></span>${renderBadge(severityName, severityName === "Critical" ? "critical" : "")}${status}</span>
+              <span class="cve-spotlight-meta"><span class="cve-score">${Number.isFinite(score) ? score.toFixed(1) : "—"}/10</span><span class="bar-track"><span class="bar-fill ${scoreClass}" style="width:${scoreValue * 10}%"></span></span>${renderBadge(severityName, severityName === "Critical" ? "critical" : "")}${status}</span>
             </span>
           </a>
         </article>`;
@@ -555,7 +556,7 @@
         <summary class="cve-spotlight-summary">
           <span class="cve-rank">${escapeHtml(rank)}</span><span class="cve-spotlight-copy">
             <strong>${escapeHtml(title)}</strong><span class="cve-subtitle">${escapeHtml(cveId)} · ${escapeHtml(products)}</span>
-            <span class="cve-spotlight-meta"><span class="cve-score">${Number.isFinite(score) ? score.toFixed(1) : "—"}/10</span><span class="bar-track" role="img" aria-label="CVSS ${Number.isFinite(score) ? score.toFixed(1) : "unknown"} out of 10"><span class="bar-fill" style="width:${scoreValue * 10}%"></span></span>${renderBadge(severityName, severityName === "Critical" ? "critical" : "")}${status}</span>
+            <span class="cve-spotlight-meta"><span class="cve-score">${Number.isFinite(score) ? score.toFixed(1) : "—"}/10</span><span class="bar-track" role="img" aria-label="CVSS ${Number.isFinite(score) ? score.toFixed(1) : "unknown"} out of 10"><span class="bar-fill ${scoreClass}" style="width:${scoreValue * 10}%"></span></span>${renderBadge(severityName, severityName === "Critical" ? "critical" : "")}${status}</span>
           </span>
         </summary>
         <div class="cve-spotlight-detail">
