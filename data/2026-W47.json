@@ -2,7 +2,7 @@
  "week": "2026-W47",
  "start": "2026-11-16T00:00:00+05:30",
  "end": "2026-11-22T23:59:59+05:30",
- "generated": "2026-11-26T10:10:16+00:00",
+ "generated": "2026-11-26T10:13:34+00:00",
  "leadership_summary": [
   {
    "text": "Ignite put Perception, Microsoft's agentic security offering, centre stage, with vulnerability shielding to cover the gap before a patch. Decide who evaluates both and where they fit in your operations.",
@@ -13,9 +13,13 @@
    ]
   },
   {
-   "text": "November brings 1,114 Microsoft CVEs, 79 Critical, one exploited (Outlook spoofing, CVSS 6.5). Three cloud flaws score 10.0: Entra, App Service for Linux and Event Grid. Confirm Outlook patching and check those services.",
+   "text": "Patch the exploited Outlook spoofing flaw (CVE-2026-124194) first, then Critical Windows code-execution bugs in Xbox Live networking, Search, LDAP and AD DS. Three 10.0 cloud CVEs are already fixed by Microsoft; no action needed.",
    "item_ids": [
     "CVE-2026-124194",
+    "CVE-2026-112967",
+    "CVE-2026-116928",
+    "CVE-2026-119958",
+    "CVE-2026-118146",
     "CVE-2026-109469",
     "CVE-2026-109484",
     "CVE-2026-62841"
@@ -199,100 +203,6 @@
   },
   {
    "rank": 2,
-   "cve_id": "CVE-2026-120002",
-   "title": "Microsoft SharePoint Server Elevation of Privilege Vulnerability",
-   "headline": "SharePoint Server flaw lets readers misuse shared credentials",
-   "story": "SharePoint Server Subscription Edition has an authorisation flaw rated 9.9. An attacker who can already read a site and belongs to the relevant Secure Store target application can send a crafted request to the server. SharePoint may then carry out unauthorised actions on a connected business service using the shared credentials stored for it. No one else has to click anything for the attack to work.",
-   "why_important": [
-    "CVSS 9.9: a low-privileged insider or compromised account can reach business systems connected through Secure Store.",
-    "It affects on-premises SharePoint Server, so it stays open until the update is installed.",
-    "MSRC marks customer action as required; its assessment is Exploitation Less Likely."
-   ],
-   "what_to_do": [
-    "Install security update KB5002945 for SharePoint Server Subscription Edition (download and KB article linked under Fix).",
-    "MSRC lists the fixed build for this update as 16.0.20326.20278."
-   ],
-   "affected_products": [
-    "Microsoft SharePoint Server Subscription Edition"
-   ],
-   "impact": "Elevation of Privilege",
-   "cvss": 9.9,
-   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
-   "severity": "Important",
-   "severity_by_product": null,
-   "exploited": false,
-   "disclosed": false,
-   "exploitability": "Exploitation Less Likely",
-   "customer_action_required": true,
-   "fix_links": [
-    {
-     "label": "Security update KB5002945 (download)",
-     "url": "https://www.microsoft.com/en-us/download/details.aspx?id=108898"
-    },
-    {
-     "label": "KB5002945 support article",
-     "url": "https://support.microsoft.com/help/5002945"
-    }
-   ],
-   "sources": [
-    {
-     "label": "MSRC Security Update Guide: CVE-2026-120002",
-     "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-120002"
-    }
-   ],
-   "mention_ids": [
-    "CVE-2026-120002"
-   ]
-  },
-  {
-   "rank": 3,
-   "cve_id": "CVE-2026-109467",
-   "title": "Azure DevOps Server Remote Code Execution Vulnerability",
-   "headline": "Azure DevOps reader access can run pipeline code",
-   "story": "Azure DevOps and Azure DevOps Server 2025 have an authentication flaw rated 9.9. Someone with only Project Reader rights can send a crafted request that starts a pipeline they should not be able to run. That lets them run their own code on the pipeline agents. No other user has to do anything.",
-   "why_important": [
-    "Reader access is common, and pipeline agents often hold deployment secrets and network access.",
-    "MSRC rates it 9.9 and marks customer action as required for Azure DevOps Server 2025."
-   ],
-   "what_to_do": [
-    "For Azure DevOps Server 2025, apply Patch 9 (aka.ms/devopsserverpatch9), as listed in the Azure DevOps Server release notes.",
-    "For the Azure DevOps cloud service, MSRC lists release notes as the remediation with no download and no restart required."
-   ],
-   "affected_products": [
-    "Azure DevOps",
-    "Azure DevOps Server 2025"
-   ],
-   "impact": "Remote Code Execution",
-   "cvss": 9.9,
-   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:L/E:U/RL:O/RC:C",
-   "severity": "Important",
-   "severity_by_product": null,
-   "exploited": false,
-   "disclosed": false,
-   "exploitability": null,
-   "customer_action_required": true,
-   "fix_links": [
-    {
-     "label": "Azure DevOps Server 2025 Patch 9",
-     "url": "https://aka.ms/devopsserverpatch9"
-    },
-    {
-     "label": "Release notes: Azure DevOps Server",
-     "url": "https://learn.microsoft.com/en-us/azure/devops/server/release-notes/azuredevopsserver?view=azure-devops-server"
-    }
-   ],
-   "sources": [
-    {
-     "label": "MSRC Security Update Guide: CVE-2026-109467",
-     "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-109467"
-    }
-   ],
-   "mention_ids": [
-    "CVE-2026-109467"
-   ]
-  },
-  {
-   "rank": 4,
    "cve_id": "CVE-2026-112967",
    "title": "Windows Xbox Live Networking Service Remote Code Execution Vulnerability",
    "headline": "Windows Xbox Live networking bug allows remote takeover",
@@ -391,7 +301,7 @@
    ]
   },
   {
-   "rank": 5,
+   "rank": 3,
    "cve_id": "CVE-2026-116928",
    "title": "Windows Search Remote Code Execution Vulnerability",
    "headline": "Windows Search flaw lets crafted email run code",
@@ -526,9 +436,283 @@
    "mention_ids": [
     "CVE-2026-116928"
    ]
+  },
+  {
+   "rank": 4,
+   "cve_id": "CVE-2026-119958",
+   "title": "Windows LDAP - Lightweight Directory Access Protocol Remote Code Execution Vulnerability",
+   "headline": "Windows LDAP bug lets attackers run code remotely",
+   "story": "An out-of-bounds write in the Windows LDAP component can be triggered by an attacker who has no credentials. MSRC's FAQ says a crafted series of LDAP calls could run the attacker's code inside the LDAP service. No user has to do anything. Supported Windows 10, Windows 11 and Windows Server releases from 2016 onwards are listed as affected.",
+   "why_important": [
+    "Critical, CVSS 9.8, reachable over the network without signing in.",
+    "LDAP runs on domain controllers and many servers, so a single unpatched host can be an entry point."
+   ],
+   "what_to_do": [
+    "Install the November 2026 Windows security update for each affected Windows and Windows Server version; KB numbers are linked under Fix and most require a restart.",
+    "Hotpatch-enrolled devices can use the hotpatch instead: KB5132043 for Windows 11 24H2, 25H2 and 26H2, and KB5131077 for Windows Server 2025; MSRC lists no restart for these."
+   ],
+   "affected_products": [
+    "Windows 10 Version 1607 for 32-bit Systems",
+    "Windows 10 Version 1607 for x64-based Systems",
+    "Windows Server 2016",
+    "Windows Server 2016 (Server Core installation)",
+    "Windows 10 Version 1809 for 32-bit Systems",
+    "Windows 10 Version 1809 for x64-based Systems",
+    "Windows Server 2019",
+    "Windows Server 2019 (Server Core installation)",
+    "Windows 10 Version 21H2 for 32-bit Systems",
+    "Windows 10 Version 21H2 for ARM64-based Systems",
+    "Windows 10 Version 21H2 for x64-based Systems",
+    "Windows 10 Version 22H2 for 32-bit Systems",
+    "Windows 10 Version 22H2 for ARM64-based Systems",
+    "Windows 10 Version 22H2 for x64-based Systems",
+    "Windows Server 2022",
+    "Windows Server 2022 (Server Core installation)",
+    "Windows 11 Version 23H2 for ARM64-based Systems",
+    "Windows 11 Version 23H2 for x64-based Systems",
+    "Windows 11 Version 24H2 for ARM64-based Systems",
+    "Windows 11 Version 24H2 for x64-based Systems",
+    "Windows 11 Version 25H2 for ARM64-based Systems",
+    "Windows 11 Version 25H2 for x64-based Systems",
+    "Windows 11 Version 26H2 for ARM64-based Systems",
+    "Windows 11 Version 26H2 for x64-based Systems",
+    "Windows Server 2025",
+    "Windows Server 2025 (Server Core installation)",
+    "Windows 11 Version 26H1 for ARM64-based Systems",
+    "Windows 11 version 26H1 for x64-based Systems"
+   ],
+   "impact": "Remote Code Execution",
+   "cvss": 9.8,
+   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "severity": "Critical",
+   "severity_by_product": null,
+   "exploited": false,
+   "disclosed": false,
+   "exploitability": "Exploitation Less Likely",
+   "customer_action_required": true,
+   "fix_links": [
+    {
+     "label": "Security update KB5131291 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131291"
+    },
+    {
+     "label": "KB5131291 support article",
+     "url": "https://support.microsoft.com/help/5131291"
+    },
+    {
+     "label": "Security update KB5131085 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131085"
+    },
+    {
+     "label": "KB5131085 support article",
+     "url": "https://support.microsoft.com/help/5131085"
+    },
+    {
+     "label": "Security update KB5131096 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131096"
+    },
+    {
+     "label": "KB5131096 support article",
+     "url": "https://support.microsoft.com/help/5131096"
+    },
+    {
+     "label": "Security update KB5131090 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131090"
+    },
+    {
+     "label": "KB5131090 support article",
+     "url": "https://support.microsoft.com/help/5131090"
+    },
+    {
+     "label": "Security update KB5131087 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131087"
+    },
+    {
+     "label": "KB5131087 support article",
+     "url": "https://support.microsoft.com/help/5131087"
+    },
+    {
+     "label": "Security update KB5132061 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132061"
+    },
+    {
+     "label": "KB5132061 support article",
+     "url": "https://support.microsoft.com/help/5132061"
+    },
+    {
+     "label": "KB5132043 support article",
+     "url": "https://support.microsoft.com/help/5132043"
+    },
+    {
+     "label": "Security update KB5131080 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131080"
+    },
+    {
+     "label": "KB5131080 support article",
+     "url": "https://support.microsoft.com/help/5131080"
+    },
+    {
+     "label": "KB5131077 support article",
+     "url": "https://support.microsoft.com/help/5131077"
+    },
+    {
+     "label": "Security update KB5132059 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132059"
+    },
+    {
+     "label": "KB5132059 support article",
+     "url": "https://support.microsoft.com/help/5132059"
+    }
+   ],
+   "sources": [
+    {
+     "label": "MSRC Security Update Guide: CVE-2026-119958",
+     "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-119958"
+    }
+   ],
+   "mention_ids": [
+    "CVE-2026-119958"
+   ]
+  },
+  {
+   "rank": 5,
+   "cve_id": "CVE-2026-118146",
+   "title": "Windows Active Directory Domain Services Remote Code Execution Vulnerability",
+   "headline": "Active Directory flaw lets low-privileged users run code",
+   "story": "Active Directory Domain Services has an authorisation flaw that lets an attacker with a low-privileged account run code on an affected server. MSRC's FAQ says one crafted request is enough and no user interaction is needed. Microsoft rates it Critical with a CVSS score of 8.8. MSRC's assessment is that exploitation is more likely.",
+   "why_important": [
+    "Microsoft expects exploitation is more likely, and any domain account could be the starting point.",
+    "Code execution on a domain controller can hand an attacker control of the whole directory."
+   ],
+   "what_to_do": [
+    "Install the November 2026 Windows security update on every affected Windows Server and Windows version; KB numbers are linked under Fix and most require a restart.",
+    "Hotpatch-enrolled devices can use the hotpatch instead: KB5132043 for Windows 11 24H2, 25H2 and 26H2, and KB5131077 for Windows Server 2025; MSRC lists no restart for these."
+   ],
+   "affected_products": [
+    "Windows 10 Version 1607 for x64-based Systems",
+    "Windows Server 2016",
+    "Windows Server 2016 (Server Core installation)",
+    "Windows 10 Version 1607 for 32-bit Systems",
+    "Windows 10 Version 1809 for x64-based Systems",
+    "Windows Server 2019",
+    "Windows Server 2019 (Server Core installation)",
+    "Windows 10 Version 1809 for 32-bit Systems",
+    "Windows 10 Version 21H2 for x64-based Systems",
+    "Windows 10 Version 21H2 for 32-bit Systems",
+    "Windows 10 Version 21H2 for ARM64-based Systems",
+    "Windows 10 Version 22H2 for x64-based Systems",
+    "Windows 10 Version 22H2 for 32-bit Systems",
+    "Windows 10 Version 22H2 for ARM64-based Systems",
+    "Windows Server 2022",
+    "Windows Server 2022 (Server Core installation)",
+    "Windows 11 Version 23H2 for x64-based Systems",
+    "Windows 11 Version 23H2 for ARM64-based Systems",
+    "Windows 11 Version 24H2 for x64-based Systems",
+    "Windows 11 Version 24H2 for ARM64-based Systems",
+    "Windows 11 Version 25H2 for x64-based Systems",
+    "Windows 11 Version 25H2 for ARM64-based Systems",
+    "Windows 11 Version 26H2 for x64-based Systems",
+    "Windows 11 Version 26H2 for ARM64-based Systems",
+    "Windows Server 2025",
+    "Windows Server 2025 (Server Core installation)",
+    "Windows 11 version 26H1 for x64-based Systems",
+    "Windows 11 Version 26H1 for ARM64-based Systems"
+   ],
+   "impact": "Remote Code Execution",
+   "cvss": 8.8,
+   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "severity": "Critical",
+   "severity_by_product": null,
+   "exploited": false,
+   "disclosed": false,
+   "exploitability": "Exploitation More Likely",
+   "customer_action_required": true,
+   "fix_links": [
+    {
+     "label": "Security update KB5131291 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131291"
+    },
+    {
+     "label": "KB5131291 support article",
+     "url": "https://support.microsoft.com/help/5131291"
+    },
+    {
+     "label": "Security update KB5131085 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131085"
+    },
+    {
+     "label": "KB5131085 support article",
+     "url": "https://support.microsoft.com/help/5131085"
+    },
+    {
+     "label": "Security update KB5131096 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131096"
+    },
+    {
+     "label": "KB5131096 support article",
+     "url": "https://support.microsoft.com/help/5131096"
+    },
+    {
+     "label": "Security update KB5131090 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131090"
+    },
+    {
+     "label": "KB5131090 support article",
+     "url": "https://support.microsoft.com/help/5131090"
+    },
+    {
+     "label": "Security update KB5131087 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131087"
+    },
+    {
+     "label": "KB5131087 support article",
+     "url": "https://support.microsoft.com/help/5131087"
+    },
+    {
+     "label": "Security update KB5132061 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132061"
+    },
+    {
+     "label": "KB5132061 support article",
+     "url": "https://support.microsoft.com/help/5132061"
+    },
+    {
+     "label": "KB5132043 support article",
+     "url": "https://support.microsoft.com/help/5132043"
+    },
+    {
+     "label": "Security update KB5131080 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131080"
+    },
+    {
+     "label": "KB5131080 support article",
+     "url": "https://support.microsoft.com/help/5131080"
+    },
+    {
+     "label": "KB5131077 support article",
+     "url": "https://support.microsoft.com/help/5131077"
+    },
+    {
+     "label": "Security update KB5132059 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132059"
+    },
+    {
+     "label": "KB5132059 support article",
+     "url": "https://support.microsoft.com/help/5132059"
+    }
+   ],
+   "sources": [
+    {
+     "label": "MSRC Security Update Guide: CVE-2026-118146",
+     "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118146"
+    }
+   ],
+   "mention_ids": [
+    "CVE-2026-118146"
+   ]
   }
  ],
- "cve_spotlight_ranking": "Ranked from MSRC CVRF data for November 2026 Microsoft-CNA CVEs: exploited first; then CVEs where MSRC marks Customer Action Required = Yes (a patch, update or configuration change), ahead of those MSRC says are fixed in the service with no customer action; then highest CVSS base score; then Critical before Important (a CVE rated differently per product counts at its highest severity). Ties are broken by MSRC exploitability assessment (Exploitation Detected, then More Likely, then Less Likely, then none), then having a downloadable security update, then the lower CVE number.",
+ "cve_spotlight_ranking": "Ranked from MSRC CVRF data for November 2026 Microsoft-CNA CVEs: exploited first; then CVEs where MSRC marks Customer Action Required = Yes (a patch, update or configuration change), ahead of those MSRC says are fixed in the service with no customer action; then MSRC severity, Critical before Important (a CVE rated differently per product counts at its highest severity); then highest CVSS base score. MSRC's own severity rating leads CVSS because this feed follows Microsoft's assessment. Ties are broken by MSRC exploitability assessment (Exploitation Detected, then More Likely, then Less Likely, then none), then having a downloadable security update, then the lower CVE number.",
  "items": [
   {
    "id": "v01",

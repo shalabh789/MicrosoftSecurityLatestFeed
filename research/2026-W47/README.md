@@ -1,11 +1,11 @@
 # Microsoft security digest: 16-22 November 2026 (IST), 2026-W47
 
-Window: **2026-11-16 00:00 to 2026-11-22 23:59:59 IST (UTC+05:30)**. CVEs: the full November 2026 MSRC release (calendar month). Generated 2026-11-26T10:10:16+00:00.
+Window: **2026-11-16 00:00 to 2026-11-22 23:59:59 IST (UTC+05:30)**. CVEs: the full November 2026 MSRC release (calendar month). Generated 2026-11-26T10:13:34+00:00.
 
 ## Leadership summary
 
 - Ignite put Perception, Microsoft's agentic security offering, centre stage, with vulnerability shielding to cover the gap before a patch. Decide who evaluates both and where they fit in your operations. (v04, b04, r01)
-- November brings 1,114 Microsoft CVEs, 79 Critical, one exploited (Outlook spoofing, CVSS 6.5). Three cloud flaws score 10.0: Entra, App Service for Linux and Event Grid. Confirm Outlook patching and check those services. (CVE-2026-124194, CVE-2026-109469, CVE-2026-109484, CVE-2026-62841)
+- Patch the exploited Outlook spoofing flaw (CVE-2026-124194) first, then Critical Windows code-execution bugs in Xbox Live networking, Search, LDAP and AD DS. Three 10.0 cloud CVEs are already fixed by Microsoft; no action needed. (CVE-2026-124194, CVE-2026-112967, CVE-2026-116928, CVE-2026-119958, CVE-2026-118146, CVE-2026-109469, CVE-2026-109484, CVE-2026-62841)
 - Admins report the KB5132043 hotpatch breaking printing and 32-bit msiexec, including Citrix Workspace. Hold wider rollout until your pilot ring confirms these are not hitting you. (r02, r05)
 - Attackers used fake Microsoft 365 outage notices as phishing lures, and research shows device code phishing can target AI coding agents. Brief staff to use status pages directly and review device code flow. (t01, t02, t03, t04)
 - Defender for Cloud's grouped vulnerability recommendation retires 14 December 2026, and Sentinel in the Azure portal ends after 31 March 2027. Assign owners and migration dates. (ch02, ch03)
@@ -1433,7 +1433,7 @@ Key CVEs:
 
 ## CVE spotlight
 
-Five November 2026 Microsoft CVEs. Ranked from MSRC CVRF data for November 2026 Microsoft-CNA CVEs: exploited first; then CVEs where MSRC marks Customer Action Required = Yes (a patch, update or configuration change), ahead of those MSRC says are fixed in the service with no customer action; then highest CVSS base score; then Critical before Important (a CVE rated differently per product counts at its highest severity). Ties are broken by MSRC exploitability assessment (Exploitation Detected, then More Likely, then Less Likely, then none), then having a downloadable security update, then the lower CVE number. All facts (CVSS, vector, severity, exploited, disclosed, exploitability, impact, products, fixes) are from the MSRC CVRF; what to do comes only from Microsoft's update and FAQ text.
+Five November 2026 Microsoft CVEs. Ranked from MSRC CVRF data for November 2026 Microsoft-CNA CVEs: exploited first; then CVEs where MSRC marks Customer Action Required = Yes (a patch, update or configuration change), ahead of those MSRC says are fixed in the service with no customer action; then MSRC severity, Critical before Important (a CVE rated differently per product counts at its highest severity); then highest CVSS base score. MSRC's own severity rating leads CVSS because this feed follows Microsoft's assessment. Ties are broken by MSRC exploitability assessment (Exploitation Detected, then More Likely, then Less Likely, then none), then having a downloadable security update, then the lower CVE number. All facts (CVSS, vector, severity, exploited, disclosed, exploitability, impact, products, fixes) are from the MSRC CVRF; what to do comes only from Microsoft's update and FAQ text.
 
 ### 1. CVE-2026-124194: Exploited Outlook flaw leaks Windows sign-in hashes
 
@@ -1459,52 +1459,7 @@ Sources: [MSRC Security Update Guide: CVE-2026-124194](https://msrc.microsoft.co
 
 Items: CVE-2026-124194
 
-### 2. CVE-2026-120002: SharePoint Server flaw lets readers misuse shared credentials
-
-Microsoft SharePoint Server Elevation of Privilege Vulnerability. CVSS 9.9 (`CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C`), severity Important, impact Elevation of Privilege, customer action required yes, exploited no, publicly disclosed no, MSRC exploitability: Exploitation Less Likely.
-
-SharePoint Server Subscription Edition has an authorisation flaw rated 9.9. An attacker who can already read a site and belongs to the relevant Secure Store target application can send a crafted request to the server. SharePoint may then carry out unauthorised actions on a connected business service using the shared credentials stored for it. No one else has to click anything for the attack to work.
-
-Why it matters:
-- CVSS 9.9: a low-privileged insider or compromised account can reach business systems connected through Secure Store.
-- It affects on-premises SharePoint Server, so it stays open until the update is installed.
-- MSRC marks customer action as required; its assessment is Exploitation Less Likely.
-
-What to do (Microsoft guidance):
-- Install security update KB5002945 for SharePoint Server Subscription Edition (download and KB article linked under Fix).
-- MSRC lists the fixed build for this update as 16.0.20326.20278.
-
-Affected products: Microsoft SharePoint Server Subscription Edition
-
-Fix: [Security update KB5002945 (download)](https://www.microsoft.com/en-us/download/details.aspx?id=108898), [KB5002945 support article](https://support.microsoft.com/help/5002945)
-
-Sources: [MSRC Security Update Guide: CVE-2026-120002](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-120002)
-
-Items: CVE-2026-120002
-
-### 3. CVE-2026-109467: Azure DevOps reader access can run pipeline code
-
-Azure DevOps Server Remote Code Execution Vulnerability. CVSS 9.9 (`CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:L/E:U/RL:O/RC:C`), severity Important, impact Remote Code Execution, customer action required yes, exploited no, publicly disclosed no, MSRC exploitability: null (none published).
-
-Azure DevOps and Azure DevOps Server 2025 have an authentication flaw rated 9.9. Someone with only Project Reader rights can send a crafted request that starts a pipeline they should not be able to run. That lets them run their own code on the pipeline agents. No other user has to do anything.
-
-Why it matters:
-- Reader access is common, and pipeline agents often hold deployment secrets and network access.
-- MSRC rates it 9.9 and marks customer action as required for Azure DevOps Server 2025.
-
-What to do (Microsoft guidance):
-- For Azure DevOps Server 2025, apply Patch 9 (aka.ms/devopsserverpatch9), as listed in the Azure DevOps Server release notes.
-- For the Azure DevOps cloud service, MSRC lists release notes as the remediation with no download and no restart required.
-
-Affected products: Azure DevOps; Azure DevOps Server 2025
-
-Fix: [Azure DevOps Server 2025 Patch 9](https://aka.ms/devopsserverpatch9), [Release notes: Azure DevOps Server](https://learn.microsoft.com/en-us/azure/devops/server/release-notes/azuredevopsserver?view=azure-devops-server)
-
-Sources: [MSRC Security Update Guide: CVE-2026-109467](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-109467)
-
-Items: CVE-2026-109467
-
-### 4. CVE-2026-112967: Windows Xbox Live networking bug allows remote takeover
+### 2. CVE-2026-112967: Windows Xbox Live networking bug allows remote takeover
 
 Windows Xbox Live Networking Service Remote Code Execution Vulnerability. CVSS 9.8 (`CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`), severity Critical, impact Remote Code Execution, customer action required yes, exploited no, publicly disclosed no, MSRC exploitability: Exploitation Less Likely.
 
@@ -1526,7 +1481,7 @@ Sources: [MSRC Security Update Guide: CVE-2026-112967](https://msrc.microsoft.co
 
 Items: CVE-2026-112967
 
-### 5. CVE-2026-116928: Windows Search flaw lets crafted email run code
+### 3. CVE-2026-116928: Windows Search flaw lets crafted email run code
 
 Windows Search Remote Code Execution Vulnerability. CVSS 9.8 (`CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`), severity Critical, impact Remote Code Execution, customer action required yes, exploited no, publicly disclosed no, MSRC exploitability: Exploitation Less Likely.
 
@@ -1547,6 +1502,50 @@ Fix: [Security update KB5132061 (Microsoft Update Catalog)](https://catalog.upda
 Sources: [MSRC Security Update Guide: CVE-2026-116928](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-116928)
 
 Items: CVE-2026-116928
+
+### 4. CVE-2026-119958: Windows LDAP bug lets attackers run code remotely
+
+Windows LDAP - Lightweight Directory Access Protocol Remote Code Execution Vulnerability. CVSS 9.8 (`CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`), severity Critical, impact Remote Code Execution, customer action required yes, exploited no, publicly disclosed no, MSRC exploitability: Exploitation Less Likely.
+
+An out-of-bounds write in the Windows LDAP component can be triggered by an attacker who has no credentials. MSRC's FAQ says a crafted series of LDAP calls could run the attacker's code inside the LDAP service. No user has to do anything. Supported Windows 10, Windows 11 and Windows Server releases from 2016 onwards are listed as affected.
+
+Why it matters:
+- Critical, CVSS 9.8, reachable over the network without signing in.
+- LDAP runs on domain controllers and many servers, so a single unpatched host can be an entry point.
+
+What to do (Microsoft guidance):
+- Install the November 2026 Windows security update for each affected Windows and Windows Server version; KB numbers are linked under Fix and most require a restart.
+- Hotpatch-enrolled devices can use the hotpatch instead: KB5132043 for Windows 11 24H2, 25H2 and 26H2, and KB5131077 for Windows Server 2025; MSRC lists no restart for these.
+
+Affected products: Windows 10 Version 1607 for 32-bit Systems; Windows 10 Version 1607 for x64-based Systems; Windows Server 2016; Windows Server 2016 (Server Core installation); Windows 10 Version 1809 for 32-bit Systems; Windows 10 Version 1809 for x64-based Systems; Windows Server 2019; Windows Server 2019 (Server Core installation); Windows 10 Version 21H2 for 32-bit Systems; Windows 10 Version 21H2 for ARM64-based Systems; Windows 10 Version 21H2 for x64-based Systems; Windows 10 Version 22H2 for 32-bit Systems; Windows 10 Version 22H2 for ARM64-based Systems; Windows 10 Version 22H2 for x64-based Systems; Windows Server 2022; Windows Server 2022 (Server Core installation); Windows 11 Version 23H2 for ARM64-based Systems; Windows 11 Version 23H2 for x64-based Systems; Windows 11 Version 24H2 for ARM64-based Systems; Windows 11 Version 24H2 for x64-based Systems; Windows 11 Version 25H2 for ARM64-based Systems; Windows 11 Version 25H2 for x64-based Systems; Windows 11 Version 26H2 for ARM64-based Systems; Windows 11 Version 26H2 for x64-based Systems; Windows Server 2025; Windows Server 2025 (Server Core installation); Windows 11 Version 26H1 for ARM64-based Systems; Windows 11 version 26H1 for x64-based Systems
+
+Fix: [Security update KB5131291 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131291), [KB5131291 support article](https://support.microsoft.com/help/5131291), [Security update KB5131085 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131085), [KB5131085 support article](https://support.microsoft.com/help/5131085), [Security update KB5131096 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131096), [KB5131096 support article](https://support.microsoft.com/help/5131096), [Security update KB5131090 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131090), [KB5131090 support article](https://support.microsoft.com/help/5131090), [Security update KB5131087 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131087), [KB5131087 support article](https://support.microsoft.com/help/5131087), [Security update KB5132061 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132061), [KB5132061 support article](https://support.microsoft.com/help/5132061), [KB5132043 support article](https://support.microsoft.com/help/5132043), [Security update KB5131080 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131080), [KB5131080 support article](https://support.microsoft.com/help/5131080), [KB5131077 support article](https://support.microsoft.com/help/5131077), [Security update KB5132059 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132059), [KB5132059 support article](https://support.microsoft.com/help/5132059)
+
+Sources: [MSRC Security Update Guide: CVE-2026-119958](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-119958)
+
+Items: CVE-2026-119958
+
+### 5. CVE-2026-118146: Active Directory flaw lets low-privileged users run code
+
+Windows Active Directory Domain Services Remote Code Execution Vulnerability. CVSS 8.8 (`CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`), severity Critical, impact Remote Code Execution, customer action required yes, exploited no, publicly disclosed no, MSRC exploitability: Exploitation More Likely.
+
+Active Directory Domain Services has an authorisation flaw that lets an attacker with a low-privileged account run code on an affected server. MSRC's FAQ says one crafted request is enough and no user interaction is needed. Microsoft rates it Critical with a CVSS score of 8.8. MSRC's assessment is that exploitation is more likely.
+
+Why it matters:
+- Microsoft expects exploitation is more likely, and any domain account could be the starting point.
+- Code execution on a domain controller can hand an attacker control of the whole directory.
+
+What to do (Microsoft guidance):
+- Install the November 2026 Windows security update on every affected Windows Server and Windows version; KB numbers are linked under Fix and most require a restart.
+- Hotpatch-enrolled devices can use the hotpatch instead: KB5132043 for Windows 11 24H2, 25H2 and 26H2, and KB5131077 for Windows Server 2025; MSRC lists no restart for these.
+
+Affected products: Windows 10 Version 1607 for x64-based Systems; Windows Server 2016; Windows Server 2016 (Server Core installation); Windows 10 Version 1607 for 32-bit Systems; Windows 10 Version 1809 for x64-based Systems; Windows Server 2019; Windows Server 2019 (Server Core installation); Windows 10 Version 1809 for 32-bit Systems; Windows 10 Version 21H2 for x64-based Systems; Windows 10 Version 21H2 for 32-bit Systems; Windows 10 Version 21H2 for ARM64-based Systems; Windows 10 Version 22H2 for x64-based Systems; Windows 10 Version 22H2 for 32-bit Systems; Windows 10 Version 22H2 for ARM64-based Systems; Windows Server 2022; Windows Server 2022 (Server Core installation); Windows 11 Version 23H2 for x64-based Systems; Windows 11 Version 23H2 for ARM64-based Systems; Windows 11 Version 24H2 for x64-based Systems; Windows 11 Version 24H2 for ARM64-based Systems; Windows 11 Version 25H2 for x64-based Systems; Windows 11 Version 25H2 for ARM64-based Systems; Windows 11 Version 26H2 for x64-based Systems; Windows 11 Version 26H2 for ARM64-based Systems; Windows Server 2025; Windows Server 2025 (Server Core installation); Windows 11 version 26H1 for x64-based Systems; Windows 11 Version 26H1 for ARM64-based Systems
+
+Fix: [Security update KB5131291 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131291), [KB5131291 support article](https://support.microsoft.com/help/5131291), [Security update KB5131085 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131085), [KB5131085 support article](https://support.microsoft.com/help/5131085), [Security update KB5131096 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131096), [KB5131096 support article](https://support.microsoft.com/help/5131096), [Security update KB5131090 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131090), [KB5131090 support article](https://support.microsoft.com/help/5131090), [Security update KB5131087 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131087), [KB5131087 support article](https://support.microsoft.com/help/5131087), [Security update KB5132061 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132061), [KB5132061 support article](https://support.microsoft.com/help/5132061), [KB5132043 support article](https://support.microsoft.com/help/5132043), [Security update KB5131080 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131080), [KB5131080 support article](https://support.microsoft.com/help/5131080), [KB5131077 support article](https://support.microsoft.com/help/5131077), [Security update KB5132059 (Microsoft Update Catalog)](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132059), [KB5132059 support article](https://support.microsoft.com/help/5132059)
+
+Sources: [MSRC Security Update Guide: CVE-2026-118146](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-118146)
+
+Items: CVE-2026-118146
 
 
 ## Threat intelligence
@@ -1994,7 +1993,7 @@ Community discussion only, not Microsoft. Source: public Reddit pages. Commenter
 - Learn dates: Entra's latest heading is June 2026 (page date 26 June), Purview's is October 2026 and Security Copilot's is April 2026, so their entries are not in the window. No Learn entry this week is undated, so none uses the capture day. Old products no longer on the list (Defender for Endpoint, Office 365, Identity, Cloud Apps, Vulnerability Management, Threat Intelligence, Security Exposure Management as its own product, Azure network security, Windows security) were dropped with their screenshots; the Entra ID Governance and Global Secure Access entries are now under Microsoft Entra
 - Roadmap: mrcwall.com was used only for discovery; its updates file path changed and was found from the site's page. Only 45 official Roadmap items qualified (43 Purview-related, 2 Entra-related); the official API returned no Defender, Sentinel, Security Copilot, Exchange Online Protection or Intune items with a rollout month in Nov 2026 to Feb 2027. US-Government-only items, and items not tagged to a security product (for example Teams phishing detection and Outlook Purview DLP wait-on-send), were left out. The 16 Intune entries come from Learn's In development page, which gives no Roadmap ID or dates.
 - Change notices: 14 notices kept, from change-notice sources only (these pages feed Retiring and changing soon, not What's new): 6 from Intune's In development page, 4 from the Entra releases page, 3 from Defender for Cloud release notes and 1 from Sentinel's What's new page (Microsoft Sentinel in the Azure portal, retiring after 31 March 2027). Notices dated before 16 Nov 2026 were dropped; change_date is set only where a notice states one. Only change items carry change_date; no other item in this week's set announced an end or enforcement date
-- CVE spotlight: ranked by the rule in that section: exploited, then customer action required, then CVSS, then severity, then the documented tiebreaks. Because customer action now comes before CVSS, the cloud CVEs Microsoft fixed in the service (for example the three 10.0 cloud CVEs) drop out. CVE-2026-112967 beat CVE-2026-116928 and CVE-2026-119958 (all 9.8, Critical, Exploitation Less Likely, downloadable update) on the lower CVE number. No Microsoft blog, X post or video about any of the five was found (X search of Microsoft accounts and this week's blog feeds), so the sources are MSRC only. mention_ids holds the CVE's own item; no other item names these CVEs
+- CVE spotlight: ranked by the rule in that section: exploited, then customer action required, then MSRC severity, then CVSS, then the documented tiebreaks. Cloud CVEs Microsoft fixed in the service drop out (no customer action), and the Important 9.9 CVEs (SharePoint Server CVE-2026-120002, Azure DevOps CVE-2026-109467) fall below Critical ones. Ranks 2 to 4 (all 9.8, Critical, Exploitation Less Likely, downloadable update) are ordered by CVE number. CVE-2026-118146 beat CVE-2026-118148 (both 8.8, Critical, Exploitation More Likely, downloadable update) on the lower CVE number. No Microsoft blog, X post or video about any of the five was found (X search of Microsoft accounts and this week's blog feeds), so the sources are MSRC only. mention_ids holds the CVE's own item; no other item names these CVEs
 - Reddit: Reddit's JSON listing returned 403, so the top posts came from a signed-out scrape of www.reddit.com; r/AzureSentinel returned no posts. old.reddit.com shows a login wall (not signed in), so screenshots use embed.reddit.com, which shows the post only and not the comments. Thread text and comment themes come from the public thread pages. Commenters are not named.
 - Environment: the user's computer was offline, so all browsing and fetching ran over the box's own network.
 - GIFs: v11, v04 (see above). v10 has no GIF: its recording was never made in the Tuesday run, and a retry on 26 Nov hit YouTube's signed-out bot check ("Sign in to confirm you're not a bot"), so no clip could be recorded without signing in.
