@@ -2,7 +2,7 @@
  "week": "2026-W47",
  "start": "2026-11-16T00:00:00+05:30",
  "end": "2026-11-22T23:59:59+05:30",
- "generated": "2026-11-26T10:03:57+00:00",
+ "generated": "2026-11-26T10:10:16+00:00",
  "leadership_summary": [
   {
    "text": "Ignite put Perception, Microsoft's agentic security offering, centre stage, with vulnerability shielding to cover the gap before a patch. Decide who evaluates both and where they fit in your operations.",
@@ -38,10 +38,10 @@
    ]
   },
   {
-   "text": "Defender for Cloud's grouped vulnerability recommendation retires 14 December 2026, and classic Defender for SQL APIs retire 16 August 2027. Assign owners and migration dates.",
+   "text": "Defender for Cloud's grouped vulnerability recommendation retires 14 December 2026, and Sentinel in the Azure portal ends after 31 March 2027. Assign owners and migration dates.",
    "item_ids": [
-    "ch01",
-    "ch02"
+    "ch02",
+    "ch03"
    ]
   }
  ],
@@ -73,9 +73,9 @@
     "b04",
     "b06",
     "v05",
-    "l30",
-    "l31",
-    "l58",
+    "l41",
+    "l42",
+    "l69",
     "r01",
     "x03",
     "x09",
@@ -93,9 +93,11 @@
     "b16",
     "b15",
     "b11",
-    "l39",
-    "l51",
-    "l38",
+    "l50",
+    "l32",
+    "l37",
+    "l62",
+    "l49",
     "x01",
     "x03",
     "x06",
@@ -130,17 +132,18 @@
   },
   {
    "name": "Data protection for AI and planned changes",
-   "summary": "The Microsoft 365 Roadmap carries a run of Purview items due between November and February, mostly data loss prevention. They include admin unit support for Copilot and Cowork policies, inline protection for unmanaged apps in Edge for Business, and Compliance Manager mapping AI regulations for Foundry agents. A Security Blog post on securing the data behind AI, and the Agent 365 update extending Purview DLP to local agents, point the same way. Defender for Cloud also has dated changes, starting with a grouped vulnerability recommendation that retires on 14 December 2026, so each retirement needs an owner and a date.",
+   "summary": "The Microsoft 365 Roadmap carries a run of Purview items due between November and February, mostly data loss prevention. They include admin unit support for Copilot and Cowork policies, inline protection for unmanaged apps in Edge for Business, and Compliance Manager mapping AI regulations for Foundry agents. A Security Blog post on securing the data behind AI, and the Agent 365 update extending Purview DLP to local agents, point the same way. Dated retirements follow: a Defender for Cloud vulnerability recommendation on 14 December 2026 and Sentinel in the Azure portal after 31 March 2027, so each needs an owner and a date.",
    "item_ids": [
     "rm07",
     "rm23",
     "rm45",
     "rm27",
     "rm43",
-    "ch01",
     "ch02",
+    "ch03",
+    "ch04",
     "b12",
-    "l52"
+    "l63"
    ]
   }
  ],
@@ -177,7 +180,7 @@
    "exploited": true,
    "disclosed": false,
    "exploitability": "Exploitation Detected",
-   "customer_action_required": "Yes",
+   "customer_action_required": true,
    "fix_links": [
     {
      "label": "Release notes: Microsoft 365 Apps security updates",
@@ -196,183 +199,336 @@
   },
   {
    "rank": 2,
-   "cve_id": "CVE-2026-109469",
-   "title": "Entra Device Registration Elevation of Privilege Vulnerability",
-   "headline": "Maximum-score privilege flaw in Entra device registration",
-   "story": "Entra Device Registration, the cloud service that enrols devices into Microsoft Entra, had an authorisation bypass. The service trusted a key the caller could control, so an attacker with no credentials could raise their privileges over the network. Microsoft scored it 10.0, the highest possible CVSS rating. It has already fixed the issue on the service side, and rates future exploitation as less likely.",
+   "cve_id": "CVE-2026-120002",
+   "title": "Microsoft SharePoint Server Elevation of Privilege Vulnerability",
+   "headline": "SharePoint Server flaw lets readers misuse shared credentials",
+   "story": "SharePoint Server Subscription Edition has an authorisation flaw rated 9.9. An attacker who can already read a site and belongs to the relevant Secure Store target application can send a crafted request to the server. SharePoint may then carry out unauthorised actions on a connected business service using the shared credentials stored for it. No one else has to click anything for the attack to work.",
    "why_important": [
-    "CVSS 10.0 with no sign-in or user action needed, rated Critical.",
-    "Microsoft's own assessment for this one is Exploitation Less Likely, and it is already fixed in the service."
+    "CVSS 9.9: a low-privileged insider or compromised account can reach business systems connected through Secure Store.",
+    "It affects on-premises SharePoint Server, so it stays open until the update is installed.",
+    "MSRC marks customer action as required; its assessment is Exploitation Less Likely."
    ],
    "what_to_do": [
-    "No customer action: MSRC's FAQ says Microsoft has already fully mitigated this vulnerability in the service and users have nothing to do.",
-    "MSRC publishes this CVE for transparency; its cloud CVE policy is explained in the MSRC post linked from the FAQ (aka.ms/MSRC-Cloud-CVEs)."
+    "Install security update KB5002945 for SharePoint Server Subscription Edition (download and KB article linked under Fix).",
+    "MSRC lists the fixed build for this update as 16.0.20326.20278."
    ],
    "affected_products": [
-    "Entra Device Registration"
+    "Microsoft SharePoint Server Subscription Edition"
    ],
    "impact": "Elevation of Privilege",
-   "cvss": 10.0,
-   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cvss": 9.9,
+   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "severity": "Important",
+   "severity_by_product": null,
+   "exploited": false,
+   "disclosed": false,
+   "exploitability": "Exploitation Less Likely",
+   "customer_action_required": true,
+   "fix_links": [
+    {
+     "label": "Security update KB5002945 (download)",
+     "url": "https://www.microsoft.com/en-us/download/details.aspx?id=108898"
+    },
+    {
+     "label": "KB5002945 support article",
+     "url": "https://support.microsoft.com/help/5002945"
+    }
+   ],
+   "sources": [
+    {
+     "label": "MSRC Security Update Guide: CVE-2026-120002",
+     "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-120002"
+    }
+   ],
+   "mention_ids": [
+    "CVE-2026-120002"
+   ]
+  },
+  {
+   "rank": 3,
+   "cve_id": "CVE-2026-109467",
+   "title": "Azure DevOps Server Remote Code Execution Vulnerability",
+   "headline": "Azure DevOps reader access can run pipeline code",
+   "story": "Azure DevOps and Azure DevOps Server 2025 have an authentication flaw rated 9.9. Someone with only Project Reader rights can send a crafted request that starts a pipeline they should not be able to run. That lets them run their own code on the pipeline agents. No other user has to do anything.",
+   "why_important": [
+    "Reader access is common, and pipeline agents often hold deployment secrets and network access.",
+    "MSRC rates it 9.9 and marks customer action as required for Azure DevOps Server 2025."
+   ],
+   "what_to_do": [
+    "For Azure DevOps Server 2025, apply Patch 9 (aka.ms/devopsserverpatch9), as listed in the Azure DevOps Server release notes.",
+    "For the Azure DevOps cloud service, MSRC lists release notes as the remediation with no download and no restart required."
+   ],
+   "affected_products": [
+    "Azure DevOps",
+    "Azure DevOps Server 2025"
+   ],
+   "impact": "Remote Code Execution",
+   "cvss": 9.9,
+   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:L/E:U/RL:O/RC:C",
+   "severity": "Important",
+   "severity_by_product": null,
+   "exploited": false,
+   "disclosed": false,
+   "exploitability": null,
+   "customer_action_required": true,
+   "fix_links": [
+    {
+     "label": "Azure DevOps Server 2025 Patch 9",
+     "url": "https://aka.ms/devopsserverpatch9"
+    },
+    {
+     "label": "Release notes: Azure DevOps Server",
+     "url": "https://learn.microsoft.com/en-us/azure/devops/server/release-notes/azuredevopsserver?view=azure-devops-server"
+    }
+   ],
+   "sources": [
+    {
+     "label": "MSRC Security Update Guide: CVE-2026-109467",
+     "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-109467"
+    }
+   ],
+   "mention_ids": [
+    "CVE-2026-109467"
+   ]
+  },
+  {
+   "rank": 4,
+   "cve_id": "CVE-2026-112967",
+   "title": "Windows Xbox Live Networking Service Remote Code Execution Vulnerability",
+   "headline": "Windows Xbox Live networking bug allows remote takeover",
+   "story": "A heap buffer overflow in the Windows Xbox Live Networking Service can let an attacker run code on a PC over the network. No sign-in or user action is needed. MSRC's FAQ says an attacker on the same network could trigger it by calling arbitrary endpoints. It affects supported Windows 10 and Windows 11 releases.",
+   "why_important": [
+    "Critical, CVSS 9.8, with no credentials or clicks required.",
+    "The service ships on Windows 10 and 11 client builds, so most desktops are in scope."
+   ],
+   "what_to_do": [
+    "Install the November 2026 Windows security update for each affected Windows version; the KB numbers per version are linked under Fix and most need a restart.",
+    "Hotpatch-enrolled Windows 11 24H2, 25H2 and 26H2 devices can use hotpatch KB5132043 instead; MSRC lists no restart for it."
+   ],
+   "affected_products": [
+    "Windows 10 Version 1809 for 32-bit Systems",
+    "Windows 10 Version 1809 for x64-based Systems",
+    "Windows 10 Version 21H2 for 32-bit Systems",
+    "Windows 10 Version 21H2 for ARM64-based Systems",
+    "Windows 10 Version 21H2 for x64-based Systems",
+    "Windows 10 Version 22H2 for 32-bit Systems",
+    "Windows 10 Version 22H2 for ARM64-based Systems",
+    "Windows 10 Version 22H2 for x64-based Systems",
+    "Windows 11 Version 23H2 for ARM64-based Systems",
+    "Windows 11 Version 23H2 for x64-based Systems",
+    "Windows 11 Version 24H2 for ARM64-based Systems",
+    "Windows 11 Version 24H2 for x64-based Systems",
+    "Windows 11 Version 25H2 for ARM64-based Systems",
+    "Windows 11 Version 25H2 for x64-based Systems",
+    "Windows 11 Version 26H2 for ARM64-based Systems",
+    "Windows 11 Version 26H2 for x64-based Systems",
+    "Windows 11 Version 26H1 for ARM64-based Systems",
+    "Windows 11 version 26H1 for x64-based Systems"
+   ],
+   "impact": "Remote Code Execution",
+   "cvss": 9.8,
+   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
    "severity": "Critical",
    "severity_by_product": null,
    "exploited": false,
    "disclosed": false,
    "exploitability": "Exploitation Less Likely",
-   "customer_action_required": "No",
-   "fix_links": [],
-   "sources": [
+   "customer_action_required": true,
+   "fix_links": [
     {
-     "label": "MSRC Security Update Guide: CVE-2026-109469",
-     "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-109469"
+     "label": "Security update KB5131085 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131085"
     },
     {
-     "label": "MSRC blog: Toward greater transparency: Unveiling Cloud Service CVEs (linked from the FAQ)",
-     "url": "https://aka.ms/MSRC-Cloud-CVEs"
+     "label": "KB5131085 support article",
+     "url": "https://support.microsoft.com/help/5131085"
+    },
+    {
+     "label": "Security update KB5131096 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131096"
+    },
+    {
+     "label": "KB5131096 support article",
+     "url": "https://support.microsoft.com/help/5131096"
+    },
+    {
+     "label": "Security update KB5131087 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131087"
+    },
+    {
+     "label": "KB5131087 support article",
+     "url": "https://support.microsoft.com/help/5131087"
+    },
+    {
+     "label": "Security update KB5132061 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132061"
+    },
+    {
+     "label": "KB5132061 support article",
+     "url": "https://support.microsoft.com/help/5132061"
+    },
+    {
+     "label": "KB5132043 support article",
+     "url": "https://support.microsoft.com/help/5132043"
+    },
+    {
+     "label": "Security update KB5132059 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132059"
+    },
+    {
+     "label": "KB5132059 support article",
+     "url": "https://support.microsoft.com/help/5132059"
+    }
+   ],
+   "sources": [
+    {
+     "label": "MSRC Security Update Guide: CVE-2026-112967",
+     "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-112967"
     }
    ],
    "mention_ids": [
-    "CVE-2026-109469"
-   ]
-  },
-  {
-   "rank": 3,
-   "cve_id": "CVE-2026-62841",
-   "title": "Azure Event Grid Elevation of Privilege Vulnerability",
-   "headline": "Azure Event Grid authentication flaw scored 10.0",
-   "story": "Azure Event Grid, the service that routes events between Azure resources and applications, had an authentication weakness. An unauthenticated attacker could use it to gain higher privileges across the network. Microsoft rated it Critical with a CVSS score of 10.0. The fix was made inside the service, so there is nothing for customers to install.",
-   "why_important": [
-    "Top CVSS score with no credentials needed, rated Critical.",
-    "Fixed by Microsoft in the service; listed for transparency, with no customer update."
-   ],
-   "what_to_do": [
-    "No customer action: MSRC's FAQ says Microsoft has already fully mitigated this vulnerability in the service and users have nothing to do.",
-    "MSRC publishes this CVE for transparency; its cloud CVE policy is explained in the MSRC post linked from the FAQ (aka.ms/MSRC-Cloud-CVEs)."
-   ],
-   "affected_products": [
-    "Azure Event Grid System"
-   ],
-   "impact": "Elevation of Privilege",
-   "cvss": 10.0,
-   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
-   "severity": "Critical",
-   "severity_by_product": null,
-   "exploited": false,
-   "disclosed": false,
-   "exploitability": null,
-   "customer_action_required": "No",
-   "fix_links": [],
-   "sources": [
-    {
-     "label": "MSRC Security Update Guide: CVE-2026-62841",
-     "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-62841"
-    },
-    {
-     "label": "MSRC blog: Toward greater transparency: Unveiling Cloud Service CVEs (linked from the FAQ)",
-     "url": "https://aka.ms/MSRC-Cloud-CVEs"
-    }
-   ],
-   "mention_ids": [
-    "CVE-2026-62841"
-   ]
-  },
-  {
-   "rank": 4,
-   "cve_id": "CVE-2026-109484",
-   "title": "Azure App Service for Linux Elevation of Privilege Vulnerability",
-   "headline": "App Service for Linux injection flaw scores 10.0",
-   "story": "Azure App Service for Linux, which hosts web apps on Linux, did not properly clean special characters passed between components. An attacker with no account could abuse this injection weakness to raise their privileges over the network. Microsoft gave it the maximum CVSS score of 10.0 and a Critical rating. The service has already been patched by Microsoft, so customers have no update to apply.",
-   "why_important": [
-    "Maximum CVSS score, Critical, reachable without credentials.",
-    "Fixed by Microsoft in the service; listed for transparency, with no customer update."
-   ],
-   "what_to_do": [
-    "No customer action: MSRC's FAQ says Microsoft has already fully mitigated this vulnerability in the service and users have nothing to do.",
-    "MSRC publishes this CVE for transparency; its cloud CVE policy is explained in the MSRC post linked from the FAQ (aka.ms/MSRC-Cloud-CVEs)."
-   ],
-   "affected_products": [
-    "Azure App Service for Linux"
-   ],
-   "impact": "Elevation of Privilege",
-   "cvss": 10.0,
-   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
-   "severity": "Critical",
-   "severity_by_product": null,
-   "exploited": false,
-   "disclosed": false,
-   "exploitability": null,
-   "customer_action_required": "No",
-   "fix_links": [],
-   "sources": [
-    {
-     "label": "MSRC Security Update Guide: CVE-2026-109484",
-     "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-109484"
-    },
-    {
-     "label": "MSRC blog: Toward greater transparency: Unveiling Cloud Service CVEs (linked from the FAQ)",
-     "url": "https://aka.ms/MSRC-Cloud-CVEs"
-    }
-   ],
-   "mention_ids": [
-    "CVE-2026-109484"
+    "CVE-2026-112967"
    ]
   },
   {
    "rank": 5,
-   "cve_id": "CVE-2026-70193",
-   "title": "Microsoft Office SharePoint Remote Code Execution Vulnerability",
-   "headline": "SharePoint path traversal allows remote code execution",
-   "story": "SharePoint had a path traversal bug, meaning it did not stop file paths from escaping the folders they should stay in. A signed-in attacker could use it to run code over the network. Microsoft rates it 9.9, Critical for SharePoint Online and Important for SharePoint Server Subscription Edition. SharePoint Online is already fixed, while on-premises servers need the November security update.",
+   "cve_id": "CVE-2026-116928",
+   "title": "Windows Search Remote Code Execution Vulnerability",
+   "headline": "Windows Search flaw lets crafted email run code",
+   "story": "An out-of-bounds write in the Windows Search component can let an unauthenticated attacker run code remotely. MSRC's FAQ describes Exchange Server indexing an emailed attachment through Windows Search, so the recipient never has to open anything. The attacker's code would run with the rights of the service doing the processing. Supported Windows client and Windows Server releases from 2016 onwards are affected.",
    "why_important": [
-    "Remote code execution with a 9.9 CVSS score, and any low-privileged user can trigger it.",
-    "On-premises SharePoint Server Subscription Edition stays exposed until KB5002927 is installed."
+    "Critical, CVSS 9.8, and on Exchange servers no user interaction is needed at all.",
+    "It spans Windows 10, Windows 11 and Windows Server 2016 to 2025."
    ],
    "what_to_do": [
-    "For SharePoint Server Subscription Edition, install security update KB5002927 (download and KB article linked below); MSRC lists a restart as required.",
-    "For SharePoint Online, MSRC's FAQ says Microsoft has already fully mitigated the vulnerability and users of the service have no action to take."
+    "Install the November 2026 Windows security update for each affected Windows and Windows Server version; KB numbers are linked under Fix and most require a restart.",
+    "Hotpatch-enrolled devices can use the hotpatch instead: KB5132043 for Windows 11 24H2, 25H2 and 26H2, and KB5131077 for Windows Server 2025; MSRC lists no restart for these."
    ],
    "affected_products": [
-    "Microsoft SharePoint Online",
-    "Microsoft SharePoint Server Subscription Edition"
+    "Windows 11 Version 26H2 for ARM64-based Systems",
+    "Windows 11 Version 26H2 for x64-based Systems",
+    "Windows 10 Version 1809 for 32-bit Systems",
+    "Windows 10 Version 1809 for x64-based Systems",
+    "Windows Server 2019",
+    "Windows Server 2019 (Server Core installation)",
+    "Windows Server 2022",
+    "Windows Server 2022 (Server Core installation)",
+    "Windows 10 Version 21H2 for 32-bit Systems",
+    "Windows 10 Version 21H2 for ARM64-based Systems",
+    "Windows 10 Version 21H2 for x64-based Systems",
+    "Windows 10 Version 22H2 for x64-based Systems",
+    "Windows 10 Version 22H2 for ARM64-based Systems",
+    "Windows 10 Version 22H2 for 32-bit Systems",
+    "Windows Server 2025 (Server Core installation)",
+    "Windows 11 Version 25H2 for ARM64-based Systems",
+    "Windows 11 Version 25H2 for x64-based Systems",
+    "Windows 11 Version 23H2 for ARM64-based Systems",
+    "Windows 11 Version 23H2 for x64-based Systems",
+    "Windows 11 Version 24H2 for ARM64-based Systems",
+    "Windows 11 Version 24H2 for x64-based Systems",
+    "Windows Server 2025",
+    "Windows 11 version 26H1 for x64-based Systems",
+    "Windows 11 Version 26H1 for ARM64-based Systems",
+    "Windows 10 Version 1607 for 32-bit Systems",
+    "Windows 10 Version 1607 for x64-based Systems",
+    "Windows Server 2016",
+    "Windows Server 2016 (Server Core installation)"
    ],
    "impact": "Remote Code Execution",
-   "cvss": 9.9,
-   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cvss": 9.8,
+   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
    "severity": "Critical",
-   "severity_by_product": [
-    "Critical",
-    "Important"
-   ],
+   "severity_by_product": null,
    "exploited": false,
    "disclosed": false,
-   "exploitability": null,
-   "customer_action_required": "No",
+   "exploitability": "Exploitation Less Likely",
+   "customer_action_required": true,
    "fix_links": [
     {
-     "label": "Security update KB5002927 (download)",
-     "url": "https://www.microsoft.com/en-us/download/details.aspx?id=108862"
+     "label": "Security update KB5132061 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132061"
     },
     {
-     "label": "KB5002927 support article",
-     "url": "https://support.microsoft.com/help/5002927"
+     "label": "KB5132061 support article",
+     "url": "https://support.microsoft.com/help/5132061"
+    },
+    {
+     "label": "KB5132043 support article",
+     "url": "https://support.microsoft.com/help/5132043"
+    },
+    {
+     "label": "Security update KB5131085 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131085"
+    },
+    {
+     "label": "KB5131085 support article",
+     "url": "https://support.microsoft.com/help/5131085"
+    },
+    {
+     "label": "Security update KB5131090 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131090"
+    },
+    {
+     "label": "KB5131090 support article",
+     "url": "https://support.microsoft.com/help/5131090"
+    },
+    {
+     "label": "Security update KB5131096 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131096"
+    },
+    {
+     "label": "KB5131096 support article",
+     "url": "https://support.microsoft.com/help/5131096"
+    },
+    {
+     "label": "Security update KB5131080 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131080"
+    },
+    {
+     "label": "KB5131080 support article",
+     "url": "https://support.microsoft.com/help/5131080"
+    },
+    {
+     "label": "KB5131077 support article",
+     "url": "https://support.microsoft.com/help/5131077"
+    },
+    {
+     "label": "Security update KB5131087 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131087"
+    },
+    {
+     "label": "KB5131087 support article",
+     "url": "https://support.microsoft.com/help/5131087"
+    },
+    {
+     "label": "Security update KB5132059 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5132059"
+    },
+    {
+     "label": "KB5132059 support article",
+     "url": "https://support.microsoft.com/help/5132059"
+    },
+    {
+     "label": "Security update KB5131291 (Microsoft Update Catalog)",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5131291"
+    },
+    {
+     "label": "KB5131291 support article",
+     "url": "https://support.microsoft.com/help/5131291"
     }
    ],
    "sources": [
     {
-     "label": "MSRC Security Update Guide: CVE-2026-70193",
-     "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-70193"
-    },
-    {
-     "label": "MSRC blog: Toward greater transparency: Unveiling Cloud Service CVEs (linked from the FAQ)",
-     "url": "https://aka.ms/MSRC-Cloud-CVEs"
+     "label": "MSRC Security Update Guide: CVE-2026-116928",
+     "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-116928"
     }
    ],
    "mention_ids": [
-    "CVE-2026-70193"
+    "CVE-2026-116928"
    ]
   }
  ],
- "cve_spotlight_ranking": "Ranked from MSRC CVRF data for November 2026 Microsoft-CNA CVEs: exploited first, then highest CVSS base score, then Critical before Important (a CVE rated differently per product counts at its highest severity). Ties are broken by MSRC exploitability assessment (Exploitation Detected, then More Likely, then Less Likely, then none), then Customer Action Required = Yes, then having a downloadable security update, then the lower CVE number.",
+ "cve_spotlight_ranking": "Ranked from MSRC CVRF data for November 2026 Microsoft-CNA CVEs: exploited first; then CVEs where MSRC marks Customer Action Required = Yes (a patch, update or configuration change), ahead of those MSRC says are fixed in the service with no customer action; then highest CVSS base score; then Critical before Important (a CVE rated differently per product counts at its highest severity). Ties are broken by MSRC exploitability assessment (Exploitation Detected, then More Likely, then Less Likely, then none), then having a downloadable security update, then the lower CVE number.",
  "items": [
   {
    "id": "v01",
@@ -27753,7 +27909,7 @@
    "section": "Ignite 2026: What's new in Microsoft Sentinel (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Starting November 17, 2026, existing Microsoft Sentinel customers with Microsoft 365 E5, Microsoft 365 E7, or Microsoft Defender Suite licenses can opt in to ISOC in Microsoft Defender, bringing SIEM and threat protection together. ISOC helps organizations simplify security operations, maximize the value of their existing Microsoft security investments, and give people and agents a shared foundation to work together more effectively.\n\nEligible customers get:\n\n90 days of retention up from 30 days for eligible Defender data.\n\nLower-cost ingestion at $2.4 per GB to broaden visibility across Microsoft and non-Microsoft data through 500+ connectors.\n\nIntegrated SIEM and threat protection within Microsoft Defender giving teams a shared view, richer context, and more connected workflows across security operations.\n\nBuilt-in data lake for historical hunting, investigations, and compliance.\n\nOpting in is optional. Customers can continue using Microsoft Sentinel as they do today or opt in to ISOC when it best aligns with their security needs and investments.",
+   "details": "From 17 November 2026, Sentinel customers holding Microsoft 365 E5, E7 or Defender Suite licences can choose to move to ISOC, Microsoft's combined SIEM and threat-protection experience inside Defender. The post lists 90-day retention for eligible Defender data (previously 30), ingestion priced at $2.4 per GB across more than 500 connectors, a shared Defender workspace and a built-in data lake for older investigations. Opting in is voluntary; existing Sentinel setups keep working unchanged.",
    "change_date": null,
    "change_type": null,
    "related": []
@@ -27781,7 +27937,7 @@
    "section": "Ignite 2026: What's new in Microsoft Sentinel (published November 17, 2026)",
    "status": "Preview",
    "in_window": true,
-   "details": "Investigate unexpected changes to your security automation with a record of who changed what and when. Now in public preview, audit logs in the Microsoft Defender portal lets you track the creation, editing, activation, deactivation, and deletion of automation rules and generated playbooks. Search, review, and export these records to trace configuration changes to support compliance and governance. Learn more.\n\nFigure 1: Use audit search in Microsoft Defender to investigate changes to automation rules and generated playbooks.",
+   "details": "A public preview adds audit records in the Defender portal for Sentinel automation. Admins can see when automation rules and generated playbooks were created, changed, turned on or off, or removed, and by whom. The records can be searched and exported, which helps explain unexpected automation behaviour and supports compliance reviews.",
    "change_date": null,
    "change_type": null,
    "related": []
@@ -27808,7 +27964,7 @@
    "section": "Ignite 2026: What's new in Microsoft Sentinel (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Microsoft Sentinel now offers 500+ data connectors, giving security teams broader visibility across their digital estate and richer context from their security data. New and expanded coverage include Microsoft Edge for Business, Microsoft Copilot for government cloud, Microsoft Purview Information Protection, Dragon Copilot, CrowdStrike API & RTEM, Wiz Push, Salesforce Audit Logs, OpenAI Audit Logs, and more.\n\nConnect more of your environment with less infrastructure to manage. Expanded CCF coverage and the modernization of 85+ Azure Functions-based connectors help reduce the need to host and maintain collection infrastructure. Multi-instance support also makes it easier to connect multiple source accounts to a single workspace using separate credentials while sharing ingestion infrastructure.\n\nExtend Microsoft protection across your environment. Bring Microsoft and non-Microsoft signals together to build richer incident context and uncover attacks that span heterogeneous environments. High-value CrowdStrike detections can be promoted into Microsoft Defender alerts and correlated with other security signals, while expanded AWS and Okta signals help identify compromised accounts and sessions and extend attack disruption to more attack scenarios.\n\nGain richer behavioral context. New UEBA and behavioral insights help analysts understand not only what happened, but why it matters. Behaviors now supports Fortinet logs, while UEBA coverage expands to AWS GuardDuty and Check Point, Zscaler, and Fortinet network data. These enhancements help teams distinguish suspicious firewall configuration changes and high-risk web access from routine activity, prioritize investigations, and respond faster.",
+   "details": "Sentinel's connector catalogue passes 500. New or expanded sources named in the post include Edge for Business, Copilot for government cloud, Purview Information Protection, Dragon Copilot, CrowdStrike, Wiz, Salesforce and OpenAI audit logs. More than 85 Azure Functions connectors were moved to the codeless framework, and one workspace can now take several accounts from the same source. CrowdStrike detections can become Defender alerts, AWS and Okta signals feed attack disruption, and UEBA adds Fortinet, Check Point, Zscaler and GuardDuty data.",
    "change_date": null,
    "change_type": null,
    "related": []
@@ -27835,7 +27991,7 @@
    "section": "Ignite 2026: What's new in Microsoft Sentinel (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Bring security logs from different sources into standardized schemas so your team can more easily analyze them together. Coming to public preview in December 2026, Microsoft Sentinel ingest-time normalization uses Microsoft-managed parsers to standardize selected data as it is ingested. Normalizing data once, rather than repeatedly at query time, simplifies queries, improves query performance, and makes the same data easier to use across detections, threat hunting, and investigations. The result is teams spend less time preparing data and more time identifying and responding to threats.\n\nFigure 2: Ingest time normalization",
+   "details": "Ingest-time normalisation will use Microsoft-maintained parsers to convert selected logs into standard schemas as they arrive, rather than each query doing the conversion. Microsoft says this makes queries simpler and faster and lets the same data serve detections, hunting and investigations. The post says public preview starts in December 2026.",
    "change_date": null,
    "change_type": null,
    "related": []
@@ -27862,7 +28018,7 @@
    "section": "Ignite 2026: What's new in Microsoft Sentinel (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "The Microsoft Sentinel Connector Builder Agent in VS Code will be generally available by the end of November, making it easier for developers and partners to build, validate, and deploy connectors with less manual effort.\n\nBuild connectors faster: Streamlined, AI-assisted workflows reduce the time and effort required to create connectors.\n\nAutomate repetitive development tasks: Generate schemas, polling logic, connector UI, and deployment assets.\n\nCatch issues earlier: Built-in validation helps identify and resolve issues before deployment.\n\nChoose the right AI model: Broader model support provides more flexibility for different development needs.",
+   "details": "The Connector Builder Agent runs in VS Code and uses AI to help developers and partners create Sentinel connectors. It generates schemas, polling logic, connector UI and deployment files, checks for problems before deployment, and supports a wider choice of AI models. Microsoft says it reaches general availability by the end of November.",
    "change_date": null,
    "change_type": null,
    "related": []
@@ -27890,7 +28046,7 @@
    "section": "Ignite 2026: What's new in Microsoft Sentinel (published November 17, 2026)",
    "status": "Preview",
    "in_window": true,
-   "details": "Now in public preview, the new Data & Connectors Overview tab in the Microsoft Defender portal provides a unified view of connector health, ingestion volumes, and trends across Analytics and Data Lake tiers.\n\nSecurity teams can quickly identify connector errors, investigate table-level ingestion fluctuations and latency, helping maintain reliable data collection. Learn more.\n\nFigure 3: Monitor connector health, ingestion volumes, and trends in one view.\n\nFigure 4: Investigate table-level ingestion volumes and latency to identify potential issues.\n\nFor on-premises security data, teams can monitor the health and performance of Azure Monitor pipeline log forwarders to identify and troubleshoot ingestion issues faster. Learn more.",
+   "details": "A new Data & Connectors Overview tab in the Defender portal, in public preview, shows connector health, ingestion volume and trends for both the analytics and data lake tiers. Teams can spot failing connectors and drill into per-table changes in volume and latency. For on-premises sources, the health and performance of Azure Monitor pipeline log forwarders can also be monitored.",
    "change_date": null,
    "change_type": null,
    "related": []
@@ -28476,6 +28632,304 @@
    "type": "learn",
    "source": "Microsoft Learn",
    "product": [
+    "Entra"
+   ],
+   "title": "General Availability - External users can be directly assigned to Access Packages",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---external-users-can-be-directly-assigned-to-access-packages",
+   "date": "2026-06-01",
+   "date_precision": "month",
+   "summary": "Entitlement management admins can give an outside person an access package by email; they join as a guest and stay governed.",
+   "asset": "research/2026-W47/assets/learn-entra.png",
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "learn_product": "Microsoft Entra",
+   "section": "June 2026",
+   "status": "GA",
+   "in_window": false,
+   "details": "Type: New feature\n\nService category: Entitlement Management\n\nProduct capability: Identity Governance\n\nThis feature allows Entitlement Management admins to directly assign external users who are not in the directory to an access package using the user's email. Users are invited into the tenant as Guest users and are governed (as long as Entra ID Governance is configured).",
+   "change_date": null,
+   "change_type": null,
+   "related": []
+  },
+  {
+   "id": "l29",
+   "type": "learn",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "General availability - Microsoft Entra Kerberos key rotation improved reliability for incoming trust referral flows",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---microsoft-entra-kerberos-key-rotation-improved-reliability-for-incoming-trust-referral-flows",
+   "date": "2026-06-01",
+   "date_precision": "month",
+   "summary": "Entra Kerberos now tries both the primary and secondary key, so key rotation no longer breaks referral sign-ins across trusts.",
+   "asset": "research/2026-W47/assets/learn-entra.png",
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "learn_product": "Microsoft Entra",
+   "section": "June 2026",
+   "status": "GA",
+   "in_window": false,
+   "details": "Type: Changed feature\n\nService category: Authentications (Logins)\n\nProduct capability: User Authentication\n\nGeneral availability of Microsoft Entra Kerberos key rotation improved reliability particularly for environments using incoming trust referral flows. Previously, authentication failures could occur during Kerberos key rotation if referral tickets were encrypted with a secondary key. The update enhances validation logic to attempt decryption with both primary and secondary Kerberos keys, improving resiliency during key rollover operations and reducing authentication disruption during rotation events. For more information, see: Rotate the Kerberos server key for Microsoft Entra Kerberos.",
+   "change_date": null,
+   "change_type": null,
+   "related": []
+  },
+  {
+   "id": "l30",
+   "type": "learn",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "General Availability - BYOD support for Windows client using Entra registration",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---byod-support-for-windows-client-using-entra-registration",
+   "date": "2026-06-01",
+   "date_precision": "month",
+   "summary": "Private Access traffic profiles can now be given to users on Entra-registered Windows devices, so those PCs need not be domain-joined.",
+   "asset": "research/2026-W47/assets/learn-entra.png",
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "learn_product": "Microsoft Entra",
+   "section": "June 2026",
+   "status": "GA",
+   "in_window": false,
+   "details": "Type: New feature\n\nService category: BYOD\n\nProduct capability: Network Access\n\nWe are excited to announce Bring Your Own Device (BYOD) support for Windows client using Entra-registered devices is now generally available. You can now enable users and partners to access corporate resources from their own devices. Administrators can assign the Private Application traffic profile to users with internal accounts, including internal guest users. This removes the previous requirement for Windows devices to be domain-joined. For more information, see: Bring Your Own Device.",
+   "change_date": null,
+   "change_type": null,
+   "related": []
+  },
+  {
+   "id": "l31",
+   "type": "learn",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "Generally available - Jailbreak/Root Detection in Authenticator App",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#generally-available---jailbreakroot-detection-in-authenticator-app",
+   "date": "2026-06-01",
+   "date_precision": "month",
+   "summary": "Authenticator now refuses work or school accounts on rooted or jailbroken phones, pushing users to compliant devices.",
+   "asset": "research/2026-W47/assets/learn-entra.png",
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "learn_product": "Microsoft Entra",
+   "section": "June 2026",
+   "status": "GA",
+   "in_window": false,
+   "details": "Type: New feature\n\nService category: Microsoft Authenticator App\n\nProduct capability: Identity Security & Protection\n\nMicrosoft Authenticator introduced jailbreak/root detection for Microsoft work or school accounts in the Authenticator app. Users with rooted/jailbroken devices will be blocked from adding/using work or school accounts in Authenticator app. Users must move to compliant devices to continue using work or school accounts in Authenticator. This capability is secure by default and does not require any admin configuration or control.",
+   "change_date": null,
+   "change_type": null,
+   "related": []
+  },
+  {
+   "id": "l32",
+   "type": "learn",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "Public Preview - Extended Conditional Access protections for Agent's user accounts",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---extended-conditional-access-protections-for-agents-user-accounts",
+   "date": "2026-06-01",
+   "date_precision": "month",
+   "summary": "Conditional Access can target individual AI agents that hold user accounts, react to agent risk and require compliant devices or networks.",
+   "asset": "research/2026-W47/assets/learn-entra.png",
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "learn_product": "Microsoft Entra",
+   "section": "June 2026",
+   "status": "Preview",
+   "in_window": false,
+   "details": "Type: New feature\n\nService category: Conditional Access\n\nProduct capability: Identity Security & Protection\n\nConditional Access now provides broader controls to secure AI agents that have a user account. Administrators can:\n\nTarget agent's user accounts with greater precision by including or excluding individual agents or dynamically grouping agents using Custom Security Attributes.\n\nProtect against risky agent activity by applying Conditional Access policies based on Agent Risk.\n\nRequire compliant devices for agents running on managed endpoints, including Windows 365 for Agents, ensuring agents can only operate from devices that meet your organization's compliance requirements.\n\nApply device platforms, filter for devices and compliant network conditions to agents running on endpoints, enabling policies based on device state and trusted network locations.\n\nThese capabilities extend Zero Trust protections to agent's user accounts while leveraging the familiar Conditional Access policy experience. For more information see: Target agent identities in Conditional Access policies.",
+   "change_date": null,
+   "change_type": null,
+   "related": []
+  },
+  {
+   "id": "l33",
+   "type": "learn",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "General Availability - Domainless SAML IdP federation for workforce tenants",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---domainless-saml-idp-federation-for-workforce-tenants",
+   "date": "2026-06-01",
+   "date_precision": "month",
+   "summary": "Guests can sign in through a SAML identity provider even when their email domain is not one configured for that provider.",
+   "asset": "research/2026-W47/assets/learn-entra.png",
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "learn_product": "Microsoft Entra",
+   "section": "June 2026",
+   "status": "GA",
+   "in_window": false,
+   "details": "Type: New feature\n\nService category: B2B\n\nProduct capability: B2B/B2C\n\nDomainless SAML federation with a SAML Identity Provider allows external users to authenticate into your apps or workforce resources using their IdP-managed credentials, regardless of their email domain. Domainless federation removes the need for domain matching between the user's email and preconfigured IdP domains during sign-in or invitation redemption. Learn more at Add a SAML/WS-Fed identity provider - Microsoft Entra External ID.",
+   "change_date": null,
+   "change_type": null,
+   "related": []
+  },
+  {
+   "id": "l34",
+   "type": "learn",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "General Availability - SCIM 2.0 APIs for Microsoft Entra ID in US Gov cloud",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---scim-20-apis-for-microsoft-entra-id-in-us-gov-cloud",
+   "date": "2026-06-01",
+   "date_precision": "month",
+   "summary": "The SCIM 2.0 provisioning APIs for Entra reach general availability in the US Government cloud.",
+   "asset": "research/2026-W47/assets/learn-entra.png",
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "learn_product": "Microsoft Entra",
+   "section": "June 2026",
+   "status": "GA",
+   "in_window": false,
+   "details": "Type: New feature\n\nService category: Provisioning\n\nProduct capability: Identity Lifecycle Management\n\nSCIM 2.0 APIs are now generally available in the US Gov cloud, giving customers, developers, and partners a standards-based option for managing users and groups in Microsoft Entra using the System for Cross-domain Identity Management (SCIM) 2.0 specification. For more information, see: Enable the SCIM Provisioning API in Microsoft Entra ID.",
+   "change_date": null,
+   "change_type": null,
+   "related": []
+  },
+  {
+   "id": "l35",
+   "type": "learn",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "General Availability - Microsoft Entra Backup and Recovery is now available",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#general-availability---microsoft-entra-backup-and-recovery-is-now-available",
+   "date": "2026-06-01",
+   "date_precision": "month",
+   "summary": "Entra Backup and Recovery is on by default, snapshots key directory objects daily and lets admins diff and restore them.",
+   "asset": "research/2026-W47/assets/learn-entra.png",
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "learn_product": "Microsoft Entra",
+   "section": "June 2026",
+   "status": "GA",
+   "in_window": false,
+   "details": "Type: New feature\n\nService category: Entra Backup and Recovery\n\nProduct capability: Entra Backup and Recovery\n\nMicrosoft Entra Backup and Recovery is a built-in solution to help restore your tenant after accidental changes or malicious updates. Always on by default, it automatically backs up critical directory objects — including users, groups, applications, service principals, managed identities, Conditional Access policies, named locations, agent IDs, and authentication and authorization policy, so admins can quickly restore them to a previously known good state.\n\nAt preview, Entra Backup and Recovery automatically takes daily backup of a tenant's supported directory objects. If a tenant has Microsoft Entra ID P1 or P2 licenses, one backup is taken each day and retained for 7 days. Admins can view available snapshots, generate difference reports to understand what has changed, and run recovery jobs to restore objects to a prior state.\n\nThis gives your organization a reliable, built-in safety net helping you recover with confidence, minimize downtime, and protect your tenant from accidental changes, misconfigurations, or security compromises. For more information, see: Microsoft Entra Backup and Recovery overview (Preview).",
+   "change_date": null,
+   "change_type": null,
+   "related": []
+  },
+  {
+   "id": "l36",
+   "type": "learn",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "Upcoming change - Improved restore experience for device-bound Authenticator app passkeys on iOS",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#upcoming-change---improved-restore-experience-for-device-bound-authenticator-app-passkeys-on-ios",
+   "date": "2026-06-01",
+   "date_precision": "month",
+   "summary": "From August 2026 iOS users get a smoother restore of device-bound Authenticator passkeys when iCloud Keychain backup is on; nobody needs to act.",
+   "asset": "research/2026-W47/assets/learn-entra.png",
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "learn_product": "Microsoft Entra",
+   "section": "June 2026",
+   "status": null,
+   "in_window": false,
+   "details": "Type: Plan for change\n\nService category: Microsoft Authenticator App\n\nProduct capability: Identity Security & Protection\n\nNo action is required.\n\nWhat is changing? Starting August 2026, users will see an improved restore experience for device-bound Authenticator app passkeys for iOS users. No admin or user action is required.\n\nWith this update:\n\nUsers who already have iCloud and iCloud Keychain backup enabled for the Authenticator app—and have device-bound Authenticator passkeys on their old device—will automatically benefit from this improved experience.\n\nUsers restoring their Authenticator app on a new iOS device will experience an updated restore flow.\n\nThis change streamlines the restore experience by directing users to the right recovery path based on access to their old device and helping them understand cross-device passkey authentication, resulting in a smoother transition to a new phone.\n\nThis update applies to iOS devices only. Android support will follow.\n\nLearn more about the changes to backup and restore in Authenticator app.",
+   "change_date": null,
+   "change_type": null,
+   "related": []
+  },
+  {
+   "id": "l37",
+   "type": "learn",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra",
+    "Defender"
+   ],
+   "title": "Public Preview - New built-in Entra role for SOC identity response in Microsoft Defender",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---new-built-in-entra-role-for-soc-identity-response-in-microsoft-defender",
+   "date": "2026-06-01",
+   "date_precision": "month",
+   "summary": "A new SOC Identity Responder role lets analysts disable users, revoke sessions and reset passwords from Defender without broad directory rights.",
+   "asset": "research/2026-W47/assets/learn-entra.png",
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "learn_product": "Microsoft Entra",
+   "section": "June 2026",
+   "status": "Preview",
+   "in_window": false,
+   "details": "Type: New feature\n\nService category: RBAC\n\nProduct capability: Identity Security & Protection\n\nStarting June 8 we're introducing a new built-in role in Microsoft Entra—SOC Identity Responder—to further improve how security teams execute identity containment actions initiated from Microsoft Defender using a least-privilege access model.\n\nPreviously, performing these actions required SOC analysts to hold multiple high-privilege Entra roles or depend on identity administrators, creating delays during active investigations.\n\nWith this update, SOC analysts can be assigned a dedicated role purpose-built for identity response actions, allowing them to perform key actions—such as disabling users, revoking sessions, and forcing password resets—without being granted broad directory administrative privileges.\n\nAccess to this role supports flexible assignment models, including role-assignable groups for managing permissions through group membership and delegated ownership. Optional integration with Privileged Identity Management (PIM) enables just-in-time activation and enhanced governance controls.\n\nThese actions continue to be enforced and audited by Microsoft Entra, ensuring consistency with existing RBAC and compliance controls.",
+   "change_date": null,
+   "change_type": null,
+   "related": []
+  },
+  {
+   "id": "l38",
+   "type": "learn",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "Public Preview - Prevent unauthorized changes to AD groups with AD group enforcement",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#public-preview---prevent-unauthorized-changes-to-ad-groups-with-ad-group-enforcement",
+   "date": "2026-06-01",
+   "date_precision": "month",
+   "summary": "Cloud Sync can lock chosen on-premises AD groups so only the Entra provisioning service may change them, preventing drift.",
+   "asset": "research/2026-W47/assets/learn-entra.png",
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "learn_product": "Microsoft Entra",
+   "section": "June 2026",
+   "status": "Preview",
+   "in_window": false,
+   "details": "Type: New feature\n\nService category: Provisioning\n\nProduct capability: Entra Cloud Sync\n\nFor customers leveraging group provisioning to AD, this capability ensures that changes to AD groups remain consistent with those managed in Microsoft Entra. With this preview, you can designate specific AD groups so that modifications to those groups can only be made through the Entra provisioning service. Changes made outside of Entra are blocked, helping prevent drift before it occurs and maintaining alignment between Entra ID and AD groups.\n\nLearn more: AD group enforcement documentation.",
+   "change_date": null,
+   "change_type": null,
+   "related": []
+  },
+  {
+   "id": "l39",
+   "type": "learn",
+   "source": "Microsoft Learn",
+   "product": [
     "Defender",
     "Azure"
    ],
@@ -28500,7 +28954,7 @@
    "related": []
   },
   {
-   "id": "l29",
+   "id": "l40",
    "type": "learn",
    "source": "Microsoft Perception Blog (Tech Community)",
    "product": [
@@ -28522,13 +28976,13 @@
    "section": "What's new with Microsoft Perception at Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Defending with AI takes more than adding individual agents to existing tools. It requires a new cyber stack connecting signals, intelligence, and orchestration so agents can work together across the entire security lifecycle.\n\nMicrosoft Perception turns signals from across the digital estate into actionable context for specialized models and teams of agents. Its orchestration harness assigns and coordinates work across investigation, protection, and remediation, while security teams set priorities and approve critical actions.",
+   "details": "Microsoft describes a security stack in which signals from across an organisation are turned into context for specialised AI models and teams of agents. Perception's orchestration layer hands out and coordinates investigation, protection and remediation work, while people set priorities and sign off on critical actions.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l30",
+   "id": "l41",
    "type": "learn",
    "source": "Microsoft Perception Blog (Tech Community)",
    "product": [
@@ -28550,13 +29004,13 @@
    "section": "What's new with Microsoft Perception at Ignite 2026 (published November 17, 2026)",
    "status": "GA",
    "in_window": true,
-   "details": "When we introduced Project Perception in July, we set out a vision for defense that could operate at the speed and scale of AI. Now generally available as Microsoft Perception, we’re advancing that vision with expanded agentic capabilities.\n\nPerception brings together specialized red, blue, and green team agents to transform how defenders protect their environments. Red agents find and validate potential paths to compromise. Blue agents triage alerts, investigate attacks, and turn threat intelligence into detections. Green agents identify the exposures that matter most and coordinate remediation to reduce risk. Together, they connect discovery, investigation, and action in a continuous cycle of defense—with humans in control.\n\nVideo provider requires cookies to play the video. Accept to continue or watch it directly on the provider's site.\n\nAccept\n\nPlaybooks orchestrate the right agents around a specific security outcome and deliver results defenders can review and act on. Teams can start with a playbook or describe what they need in chat, then follow the work and review results through an integrated session experience.",
+   "details": "Project Perception, first shown in July, is now generally available as Microsoft Perception. It groups agents into red teams that find and prove attack paths, blue teams that triage, investigate and write detections, and green teams that rank exposures and drive fixes. Playbooks assemble the agents needed for a given outcome; users can start from a playbook or a chat request and review results in a shared session view.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l31",
+   "id": "l42",
    "type": "learn",
    "source": "Microsoft Perception Blog (Tech Community)",
    "product": [
@@ -28578,13 +29032,13 @@
    "section": "What's new with Microsoft Perception at Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Microsoft Perception is advancing the agentic SOC, helping security teams scale operations and focus their expertise where it matters most. At Microsoft Ignite, we’re introducing new capabilities that build on that progress.\n\nScale triage and investigation\n\nSecurity teams need to move from an alert to a confident understanding of the attack without being constrained by queue size or analyst capacity. The Triage Agent can now triage about 80% of alerts in a typical Microsoft Defender queue*, reaching a verdict and explaining its reasoning so analysts can quickly review the evidence and act.\n\nFor TÜV SÜD, the agent’s broader coverage helps analysts review each incident with instant, relevant context. Karsten Bode, Enterprise IT Security Architect at the company, explained: “The Triage Agent covers many incidents, performing analyses and making the right threats available to analysts. This gives us a helpful foundation for making faster, more effective decisions and the necessary next steps.”\n\nOnce agentic triage narrows the focus to a much smaller set of confirmed threats that warrant deeper analysis, the Attack Investigation Agent can go deep on those incidents. It reasons across endpoints, identities, email, Active Directory, cloud resources, and relevant activity even when it didn’t generate an alert. The agent then reconstructs the attack timeline, identifies what was compromised, and recommends a prioritized response, such as containing an account or isolating a device.\n\nYou can also invoke the triage and investigation agents automatically based on triggers that run their respective playbooks. This allows agents to begin work before an analyst opens an alert and handle multiple attacks in parallel. Teams can scale analysis as demand changes, while security practitioners stay focused on the evidence, decisions, and outcomes that need their expertise.\n\nExpand what your agents can see and act on\n\nThreats do not stop at platform boundaries. Microsoft Perception brings third-party signals and external intelligence into agentic workflows, giving agents broader context to understand what is happening and helping teams turn new insight into protection faster.\n\nThe Attack Investigation, Detection Authoring, and Triage Agents can now reason across signals from specific third-party vendors, with support for additional vendors coming in the months ahead. The Attack Investigation Agent can follow evidence across more sources to build a more complete picture of an attack, the Detection Authoring Agent can use third-party data, tables, and schemas to build more tailored detection logic, and the Triage Agent can bring third-party alerts into its analysis to better assess and prioritize potential threats. Together, this helps agents make sense of more of the data already flowing through the SOC instead of stopping at the boundaries of the Microsoft security stack.\n\nAgent | Supported third-party signals\n\nAttack Investigation | Okta, AWS\n\nDetection Authoring | Okta, Salesforce, AWS\n\nTriage | Okta, Salesforce\n\nThat same principle extends beyond telemetry to threat intelligence. Valuable insight into a new threat may come from Microsoft, but it may just as easily surface in another security vendor’s research or a government advisory. The Threat Intelligence Agent can now turn external threat articles into structured findings, extracting the attacker behaviors, techniques, and indicators that matter and making that understanding available for action.\n\nWith the Detect emerging threats playbook, the Detection Authoring Agent can then translate that structured intelligence into tenant-aware KQL detection recommendations. Before a detection is activated, it is tested against historical tenant data to estimate alert volume and surface tuning needs, with analysts reviewing and adjusting the recommendation before deployment.",
+   "details": "Microsoft says the Triage Agent now reaches a verdict, with reasoning, on about 80% of alerts in a typical Defender queue. The Attack Investigation Agent then rebuilds the timeline of confirmed attacks and suggests responses such as containing an account. Both can start automatically from triggers. Agents can now use Okta, AWS and Salesforce signals, and a Detect emerging threats playbook turns outside threat reports into tested KQL detection suggestions for analyst review.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l32",
+   "id": "l43",
    "type": "learn",
    "source": "Microsoft Perception Blog (Tech Community)",
    "product": [
@@ -28606,13 +29060,13 @@
    "section": "What's new with Microsoft Perception at Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Security teams do not need another list of possible vulnerabilities. They need to know which weaknesses attackers can actually exploit and how to reduce the risk. Microsoft Perception is extending red-team testing to help defenders move from potential vulnerabilities to focused action.\n\nWith the Run web pen test playbook, defenders can safely conduct a penetration test. The Web App Pen Test Agent tests an authorized web application from an attacker’s perspective. It examines areas such as authentication, APIs, injection and business logic, providing defenders with the evidence they need to confirm which weaknesses are actually exploitable. For each identified weakness, it provides evidence, affected endpoints, severity, and proofs of concept.\n\nIn an independent benchmark conducted with Incalmo, the Web App Pen Test Agent achieved a 31.0% average task solve rate, about twice OpenAI Codex’s 15.2%, while staying within specified testing boundaries in 91% of safety-constrained tests. The results demonstrate its ability to help defenders focus on exploitable weaknesses, while operating within the intended scope of an authorized assessment. Read the full results here.\n\nThe Protect web app playbook extends the workflow from finding exploitable vulnerabilities to helping protect against them. It first uses the Web App Pen Test Agent to find weaknesses. Then, the Risk Reduction Agent leverages those findings to recommend targeted remediations, such as Web Application Firewall (WAF) rule changes in Azure Front Door, that can reduce exposure while teams work toward permanent fixes.\n\nBoth playbooks can optionally use code vulnerability scanning findings as input. One source for those findings is Codename MDASH, which can guide the agent toward relevant vulnerabilities to determine whether they are exploitable in the running application.\n\nWhen we introduced Codename MDASH earlier this year, we shared our approach to using a multi-model agentic system to uncover deep vulnerabilities in source code. At Ignite, MDASH can scan larger repositories more efficiently by breaking them into logical units and analyzing them in stages. Teams can track scan progress and spend less time on false positives. Expanded support for the MAI-Cyber model family—including MAI-Cyber-1.1-Flash and MAI-Cyber-2 in preview—further improves efficiency while maintaining the quality of security findings.\n\nTeams can run MDASH where development already happens—from the Microsoft Defender portal and command line to CI/CD workflows such as GitHub Actions and Azure DevOps. Developers can then review generated fixes locally or through an automated pull request.",
+   "details": "A Run web pen test playbook has an agent test an authorised web app as an attacker would, covering authentication, APIs, injection and business logic, and returning evidence and proofs of concept. A Protect web app playbook then proposes fixes such as Azure Front Door WAF rule changes. Both can take MDASH code-scanning findings as input. MDASH now scans large repositories in stages, supports MAI-Cyber models, and runs from Defender, the command line or CI/CD pipelines.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l33",
+   "id": "l44",
    "type": "learn",
    "source": "Microsoft Perception Blog (Tech Community)",
    "product": [
@@ -28635,13 +29089,13 @@
    "section": "What's new with Microsoft Perception at Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Security teams can see more vulnerabilities than they can possibly address. The challenge is knowing where risk demands action, and getting there before an attacker does. At Ignite, Perception is bringing exposure management and agents together to make that possible.\n\nThe AI Readiness Initiatives page organizes recommendations and agentic actions into focused, outcome-driven programs of work. Each initiative organizes the risks, recommendations, and agentic actions needed to achieve a specific security outcome, so teams can manage exposure as a coordinated effort rather than a series of disconnected fixes.\n\nOne new initiative helps organizations manage the surge of vulnerabilities that arrives with each monthly Windows update. It brings the highest-priority findings into a recurring initiative, where agents can help teams prioritize what matters, plan the response, and track the work through completion. Instead of treating every vulnerability as equally urgent, teams can focus their resources on the exposures most likely to put critical assets at risk.\n\nThe Reduce exposure risk playbook calls on the Risk Reduction Agent to assess the available paths for reducing risk and recommend the right response. When a permanent fix is ready, the agent can coordinate patching through Microsoft Intune, with IT maintaining control of deployment. When patching is not immediately possible or could disrupt the business, the agent can help shield vulnerabilities by providing targeted protection while teams work toward the permanent fix.\n\nLearn more about Microsoft Perception for exposure management and Microsoft Perception in Intune.",
+   "details": "An AI Readiness Initiatives page groups risks, recommendations and agent actions into outcome-based programmes, including a recurring one for the vulnerabilities that arrive with each monthly Windows update. A Reduce exposure risk playbook uses the Risk Reduction Agent to choose a response: coordinating patches through Intune under IT control, or shielding a vulnerability with targeted protection when patching has to wait.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l34",
+   "id": "l45",
    "type": "learn",
    "source": "Microsoft Perception Blog (Tech Community)",
    "product": [
@@ -28663,13 +29117,13 @@
    "section": "What's new with Microsoft Perception at Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "AI agents are gaining access to more sensitive data, tools, and systems—and their risk can change as their permissions, connections, and behavior evolve. Security teams need to identify the agents that require attention, understand why, and prioritize where to act.\n\nAt Ignite, we’re extending agentic security to help teams investigate and reduce AI agent risk. Together, Microsoft Perception and Microsoft 365 E7 bring signals, context, and registry data into a consistent view of the agent landscape. This foundation helps teams investigate an agent’s access and behavior, understand where concerns may arise, and identify the changes that can reduce the most risk.\n\nPlaybooks turn that understanding into prioritized remediation and coordinated response, helping teams contain risk and respond as agent behavior and access evolve. The result is a more adaptive approach to AI security, helping teams prioritize what matters most and respond at machine speed. Learn more in our recent blog.",
+   "details": "Perception and Microsoft 365 E7 combine signals, context and registry data to give security teams one view of the AI agents in use. Teams can look into an agent's access and behaviour, see where risk is building and which changes would cut it most, and then use playbooks to prioritise and coordinate remediation as agents change.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l35",
+   "id": "l46",
    "type": "learn",
    "source": "Microsoft Perception Blog (Tech Community)",
    "product": [
@@ -28691,13 +29145,13 @@
    "section": "What's new with Microsoft Perception at Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Agentic security should strengthen the workflows, integrations, and controls security teams already rely on. With APIs and Model Context Protocol (MCP) support, defenders can start Microsoft Perception playbooks from ITSM, SIEM, or SOAR tools, then bring agent sessions and artifacts back into those workflows.\n\nThe Government of Nunavut has explored that approach. As Arshad Sheikh, Senior Security Officer, Government of Nunavut, put it: “Using the Attack Investigation Agent and Recon Agent through Perception MCP and now with Microsoft Foundry, gave us a practical view of how agentic security can support defenders with deeper context and more efficient investigations while keeping people at the center of the process.”\n\nAnd as organizations bring agents into more workflows, they can plan and scale that usage with a clearer view of cost. New usage dashboards and a cost calculator provide visibility into agent activity and spending, helping teams plan investment and connect what they spend on agentic security to the outcomes they achieve.",
+   "details": "Perception playbooks can now be started from ITSM, SIEM or SOAR tools through APIs and Model Context Protocol support, with agent sessions and outputs sent back to those tools. The Government of Nunavut is cited as testing investigation agents this way. New usage dashboards and a cost calculator show agent activity and spending so teams can plan budgets.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l36",
+   "id": "l47",
    "type": "learn",
    "source": "Microsoft Learn",
    "product": [
@@ -28724,7 +29178,7 @@
    "related": []
   },
   {
-   "id": "l37",
+   "id": "l48",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -28746,13 +29200,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Many organizations build agents on more than one platform. A sales team might build in Salesforce Agentforce, a data team in Databricks Genie, and developers in Amazon Bedrock. Each platform may have its own console and its own record of its agents, so IT and security have to work in each one to see what's running and take actions to manage and control it.\n\nWith connected platforms, you connect a supported platform once, and Agent 365 syncs its agents into the registry alongside your Microsoft agents, with no changes to agent code. Connected agents bring important insights, including what the agent is, where it was created, who owns it, and the tools it uses. On support platforms you can also see the agent’s activity, what the agent was asked, what it did, which models, tools, or agents it called, and whether it succeeded. These insights give IT, security, and business leaders the context and evidence to manage, govern, secure, and get value from these agents, not just see them. At Ignite, three new updates build on that foundation:\n\nEntra Agent ID for more platforms: Identity is the foundation for governance and security. Connected agents now automatically receive a Microsoft Entra Agent ID, which brings them under identity management and helps IT and security tell agents apart from people in a shared identity inventory. With that identity, organizations can govern each agent's lifecycle, apply supported Conditional Access and security policies, assess identity risk, and revoke access when needed. Support is rolling out across Salesforce Agentforce, Amazon AgentCore, Google Vertex AI, Databricks, Snowflake, Anthropic Claude Managed Agents, OpenAI, Oracle, SAP, ServiceNow, and UiPath, and will complete in December.\n\nGuided setup for platform connections: Connecting a platform means setting things up in both Agent 365 and the source platform: choosing what to connect, granting access, and verifying the connection. A new step-by-step wizard walks admins through connecting a platform, tools registry, or gateway to Agent 365 so setup is easier to follow from start to finish.\n\nNo stored secrets for supported connections: Connections that rely on stored credentials need someone to create, store, and rotate them, and each one is another credential to protect. Secretless authentication uses Microsoft Entra workload identity federation to connect Agent 365 to supported platforms, removing the need to create, store, and rotate long-lived secrets for those connections.\n\nLearn more about connected platforms.\n\nAgent 365 now connects to more platforms, including Salesforce Agentforce, Amazon AgentCore, Google Vertex AI, Databricks, and Snowflake, with each agent getting a Microsoft Entra Agent ID.",
+   "details": "Connected platforms let admins link agent platforms such as Salesforce Agentforce, Databricks, Amazon Bedrock or AgentCore, Google Vertex AI and Snowflake once, after which their agents sync into the Agent 365 registry with owner, origin, tools and, where supported, activity details. Connected agents now automatically get an Entra Agent ID, with support across the listed platforms finishing in December. A setup wizard and secretless connections using workload identity federation were also added.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l38",
+   "id": "l49",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -28775,13 +29229,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Some of the agents in your organization never went through IT. Employees run agents locally on their own devices or bring them in without approval, so managing your AI estate also means managing the agents you may not even know about. Together, Microsoft Defender and Microsoft Entra Global Secure Access now discover more than 60 local AI agents, such as Claude Code and GitHub Copilot CLI, and their configured MCP servers. Defender supports managed Windows and macOS devices and ties each agent to its device and user, while Global Secure Access adds network-level visibility into each agent’s destinations, MCP servers, and resources. Agent 365 uses these signals to bring the local and shadow agents into the Agent registry. IT and security teams see AI running outside approved channels, often called shadow AI, in the same inventory they use for other agents. Local agent discovery in Microsoft Defender is now generally available, and network-level discovery in Microsoft Entra Global Secure Access and shadow AI discovery in the Agent registry are in preview.\n\nLearn more about discovery of local agents and shadow agents in Agent 365.\n\nLocal and shadow agents, such as Claude Code and GitHub Copilot CLI, discovered by Defender and Global Secure Access and added to the Agent 365 registry.",
+   "details": "Defender and Entra Global Secure Access now detect more than 60 locally run AI agents, such as Claude Code and GitHub Copilot CLI, together with their MCP servers. Defender links each agent to a managed Windows or Mac device and user; Global Secure Access shows where agents connect on the network. Agent 365 adds these to its registry as shadow AI. Defender discovery is generally available; the network and registry parts are in preview.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l39",
+   "id": "l50",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -28803,13 +29257,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": "Preview",
    "in_window": true,
-   "details": "Microsoft Entra Agent ID automatically assigns an identity to supported local agents discovered by Microsoft Defender on managed devices and by Microsoft Entra Global Secure Access on the network, starting with GitHub Copilot CLI and Claude Code. With a distinct identity for each local agent, organizations can tell agent activity apart from human activity and apply supported access controls. These capabilities are in preview.\n\nLearn more about Microsoft Entra Agent ID\n\nMicrosoft Entra Agent ID gives each discovered local agent, starting with GitHub Copilot CLI and Claude Code, its own identity, separate from the user's.",
+   "details": "In preview, Entra Agent ID gives local agents found by Defender or Global Secure Access their own identity, beginning with GitHub Copilot CLI and Claude Code. That separates agent actions from the user's own activity and lets supported access controls target the agent directly.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l40",
+   "id": "l51",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -28831,13 +29285,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": "Preview",
    "in_window": true,
-   "details": "As organizations adopt more cloud agents, admins need a consistent way to manage agent identity and access across services. Microsoft Entra Agent ID now extends to Microsoft Autopilot, building on existing support for agents built with Copilot Studio and Microsoft Foundry. This gives admins a consistent way to identify, authenticate, and govern these agents. This capability is in preview.\n\nLearn more about Microsoft Entra Agent ID",
+   "details": "Entra Agent ID, which already covers agents built in Copilot Studio and Microsoft Foundry, now also covers agents in Microsoft Autopilot, giving admins one way to identify, authenticate and govern them. This is in preview.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l41",
+   "id": "l52",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -28859,13 +29313,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Troubleshooting agent behavior requires detailed traces in the monitoring tools teams already use, with control over which prompts and responses are shared. The new Export Agent Activity feature allows admins to continuously sync agent traces from Agent 365 into their own Azure Monitor and Application Insights. They can filter by agent or platform and decide which prompts and responses are included. Developers, builders and SRE teams can also debug agent runs, model calls and tool calls with their existing dashboards and queries.\n\nLearn more about exporting agent activity\n\nExport Agent Activity syncs agent traces from Agent 365 into Azure Monitor and Application Insights, with filters for agent or platform and control over which prompts and responses are included.",
+   "details": "Export Agent Activity continuously copies agent traces from Agent 365 into a customer's own Azure Monitor and Application Insights. Admins choose which agents or platforms to include and whether prompts and responses are exported, and developers can debug agent runs, model calls and tool calls with their existing dashboards.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l42",
+   "id": "l53",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -28887,13 +29341,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Running AI at scale takes observability into more than the finished agents themselves. You also need to see the pieces their behavior builds on: the tools they use and the resources and services they connect to. The Agent 365 tools registry gives IT one centralized view of those pieces, so they can see which tools agents use and spot commonly used or potentially risky tools and connections. IT can also connect external catalogs, such as GitHub, Unity Catalog (Databricks), and gateways, so Microsoft and non-Microsoft tools appear in the same view. The tools registry is generally available today, and connecting external catalogs is coming to private preview in December.\n\nLearn more about Tools Registry\n\nThe Agent 365 tools registry gives IT one view of the tools agents use, including commonly used and potentially risky tools and connections.",
+   "details": "The Agent 365 tools registry shows in one place which tools, resources and services agents rely on, highlighting common and potentially risky connections. It is generally available now. Linking outside catalogues such as GitHub, Databricks Unity Catalog and gateways, so non-Microsoft tools appear too, enters private preview in December.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l43",
+   "id": "l54",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -28915,13 +29369,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": "Preview",
    "in_window": true,
-   "details": "As the number of agents grows, it becomes increasingly important to understand what work they are doing. That knowledge helps you avoid duplicated agents and focus your investment where it pays off. Agent map use cases classify agent sessions by the type of work performed, helping admins understand how agents are being used across the organization. These insights make it easier to identify adoption patterns, uncover overlapping or duplicative agents, and understand where agents are delivering the most value, helping organizations optimize investments as their agent estate grows. These capabilities are now in preview.\n\nLearn more about the Agent Map\n\nAgent map use cases classify agent sessions by the type of work performed, helping admins spot adoption patterns and overlapping agents.",
+   "details": "Agent map use cases, in preview, label agent sessions by the kind of work done. Admins can use this to see adoption patterns, find agents that duplicate each other and judge where agents add the most value.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l44",
+   "id": "l55",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -28943,13 +29397,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": "Preview",
    "in_window": true,
-   "details": "Partners manage many customer tenants, and some enterprises run separate tenants for their subsidiaries, regions, or acquisitions. Administering and governing agents one tenant at a time doesn't scale. Multi-tenant agent management provides partners and multi-tenant organizations with one view of Microsoft and non-Microsoft agents across the tenants they manage in Agent 365, within the Microsoft 365 admin center. From this centralized experience, admins can deploy agents to multiple tenants easily, compare how the same agent is configured across tenants, and who can access it in each tenant, then review its security, compliance, and risk details wherever it's deployed, and approve or block agents at scale. Partners can run agent management as a repeatable service across customers, allowing central IT to make each agent decision once instead of once per tenant. Multi-tenant agent management is in preview.\n\nLearn more in the multi-tenant management blog\n\nMulti-tenant agent management gives partners and multi-tenant organizations one view of agents across their tenants, to compare configuration and access and approve or block agents at scale.",
+   "details": "Multi-tenant agent management, in the Microsoft 365 admin center, gives partners and organisations with several tenants one view of Microsoft and other agents across them. Admins can deploy an agent to many tenants, compare its configuration and access in each, review security and compliance details, and approve or block agents in bulk, so one decision covers every tenant.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l45",
+   "id": "l56",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -28969,15 +29423,15 @@
    "engagement": null,
    "learn_product": "Agent 365",
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
-   "status": null,
+   "status": "GA",
    "in_window": true,
-   "details": "Microsoft is expanding access to Agent 365’s usage and activity insights in the Microsoft 365 admin center for Microsoft pre-built agents and agents built on Microsoft platforms. This change will provide additional core Agent 365 capabilities, including the agent overview, active users, and advanced usage metrics for activity, sessions, exception rate, run time, to users with qualifying Microsoft 365 subscriptions. This gives admins foundational visibility into agent usage and activity, and helps them understand where additional management, governance, and security capabilities may be needed. This licensing change is now GA.\n\nTo unlock premium capabilities including non-Microsoft agent management insights, and advanced governance and security capabilities, customers will still require an Agent 365 or ME7 license.\n\nLearn more about what’s included in Microsoft 365 subscriptions. (Microsoft Agent 365 - Service Descriptions | Microsoft Learn)\n\nAgent overview, active users, and usage metrics for Microsoft agents in the Microsoft 365 admin center, now available with qualifying Microsoft 365 subscriptions.",
+   "details": "Users with qualifying Microsoft 365 subscriptions now get core Agent 365 usage insights for Microsoft-built agents and agents on Microsoft platforms: agent overview, active users, sessions, exception rate and run time. Microsoft says this licensing change is generally available. Insights on non-Microsoft agents and the advanced governance and security features still need an Agent 365 or Microsoft 365 E7 licence.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l46",
+   "id": "l57",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -28999,13 +29453,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "The tools AI can reach decide what it can do. Administrators decide which plugins and skills are available in Microsoft 365 Copilot and Copilot Cowork, and assign them to specific users and groups. Expanded governance now brings MCP servers from Azure AI Gateway and third-party gateways, such as LiteLLM, into the same experience. Before blocking an MCP server, admins see which agents use it and which plugins depend on it, so they can block it without breaking the plugins people rely on. Plugins and skills governance is generally available, and Azure AI Gateway and LiteLLM gateway support is in preview.\n\nSee plugins, skills, MCP servers, and connectors in one place in the Microsoft 365 Admin Center tool registry.\n\nFor each MCP server, see usage, the agents using it, exceptions, and calls over time.\n\nLearn more about tools governance.",
+   "details": "Admins already control which plugins and skills Microsoft 365 Copilot and Copilot Cowork users can use; that governance is generally available. In preview, MCP servers from Azure AI Gateway and third-party gateways such as LiteLLM join the same view. Before blocking a server, admins can see which agents and plugins depend on it to avoid breaking them.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l47",
+   "id": "l58",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -29029,13 +29483,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": "Preview",
    "in_window": true,
-   "details": "Administrators can review discovered local agents and their MCP connections to decide which agents and tools to allow, restrict, or investigate. They can block unsanctioned local agents from the Agent registry using controls in Microsoft Intune, Microsoft Defender, and Microsoft Entra Global Secure Access. For approved agents, Microsoft Intune policies and Microsoft Execution Containers (MXC) on Windows help constrain tool execution, while Microsoft Entra provides task-scoped permissions and risk-based access controls. Local and shadow agent governance is now in preview.",
+   "details": "In preview, admins can review discovered local agents and their MCP connections and decide to allow, restrict or investigate them. Unapproved agents can be blocked with Intune, Defender and Global Secure Access controls. For approved ones, Intune policies and Microsoft Execution Containers on Windows limit what tools can do, and Entra adds task-scoped permissions and risk-based access.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l48",
+   "id": "l59",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -29057,13 +29511,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": "Preview",
    "in_window": true,
-   "details": "Managing your AI estate can now start with a plain-language question or request. Say what you want to know or do, and Copilot Cowork takes it from there. With the Agent 365 plugin for Cowork, administrators inspect their AI estate and automate governance by describing the outcome they want. Examples include keeping a departing employee's agents running or containing agents exposed to a compromised connector. Cowork pauses for admin approval before it takes consequential actions, so admins save manual steps and stay in control of each change. Copilot Cowork with Agent 365 is now in preview.\n\nAsk Copilot Cowork about your agents, and the Agent 365 plugin returns an inventory you can act on, including blocking an agent.",
+   "details": "An Agent 365 plugin for Copilot Cowork, in preview, lets admins ask about and govern their agents in plain language, for example keeping a leaver's agents running or containing agents tied to a compromised connector. Cowork asks for admin approval before significant actions.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l49",
+   "id": "l60",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -29083,15 +29537,15 @@
    "engagement": null,
    "learn_product": "Agent 365",
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
-   "status": "Preview",
+   "status": null,
    "in_window": true,
-   "details": "As agents multiply, a big part of governance is knowing where to start. An agent without an owner has no one accountable for it, and an inactive agent can keep access it no longer needs. Action center brings governance tasks into one focused experience, so administrators start with the agents that need attention rather than searching the full registry. It begins by surfacing inactive and ownerless agents for review and cleanup. Action center will be available in preview in December.",
+   "details": "Action center collects agent governance tasks in one place so admins start with agents that need attention instead of searching the whole registry. It first surfaces agents with no owner and agents that are inactive but may still hold access. The post says preview starts in December.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l50",
+   "id": "l61",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -29113,13 +29567,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": "Preview",
    "in_window": true,
-   "details": "Dynamic agent risk combines runtime signals across identity, access, data, endpoints, cloud, and network with exposure and blast radius to deliver one risk level per agent. The assessment updates as the agent takes new actions, becomes a target, or receives code or model updates. It appears in the Agent 365 registry in the Microsoft 365 admin center, and the same risk level shows as well as in Microsoft Defender, Microsoft Entra, and Microsoft Purview, so security teams can act on riskiest agents first. Microsoft is also working with partners such as Check Point, Cyera, Darktrace, and Zenity to add their runtime signals through Microsoft Sentinel. Dynamic agent risk is now in preview, and in expanded limited preview within Microsoft Perception.",
+   "details": "Dynamic agent risk, in preview, gives each agent a single risk level built from identity, access, data, endpoint, cloud and network signals plus its exposure and potential blast radius. The level updates as the agent acts, is targeted or is changed, and appears in Agent 365, Defender, Entra and Purview. Partners including Check Point, Cyera, Darktrace and Zenity are adding signals through Sentinel.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l51",
+   "id": "l62",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -29141,13 +29595,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Microsoft Entra Conditional Access dynamic controls evaluate policy at the point of action, not only at sign-in, so as agent risk and context change, organizations can restrict sensitive operations or require human approval while allowing lower-risk work to continue. Conditional Access also now lets admins set access policies for agents acting on a user's behalf, separate from that user's own policies. Together, these new capabilities help organizations apply more precise, adaptive protections to supported agent scenarios.\n\nLearn more about Conditional Access for agents",
+   "details": "Entra Conditional Access can now evaluate policy when an agent performs an action, not only at sign-in, so organisations can block sensitive steps or require human approval as risk changes while lower-risk work continues. Admins can also write separate policies for agents acting on a user's behalf.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l52",
+   "id": "l63",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -29169,13 +29623,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": "Preview",
    "in_window": true,
-   "details": "Microsoft Purview Data loss prevention can now detect and block sensitive information before Microsoft agents and key local agents process, expose, or transmit it. Key local agents include Claude Code, Claude Desktop, GitHub Copilot CLI, the GitHub Copilot app, and the Visual Studio Code extensions for GitHub Copilot and Claude Code. Flexible policy scoping lets administrators apply security policies to individual agents, groups of agents, or the whole organization. Data protection follows agents in the cloud and on supported devices. Data loss prevention for Microsoft agents and key local agents, and flexible policy scoping, are now in preview in the Microsoft Purview portal.\n\nLearn more about Microsoft Purview for AI",
+   "details": "In preview in the Purview portal, data loss prevention can detect and block sensitive data before Microsoft agents and key local agents handle or send it. The local agents named are Claude Code, Claude Desktop, GitHub Copilot CLI, the GitHub Copilot app and the VS Code extensions for GitHub Copilot and Claude Code. Policies can target one agent, a group of agents or the whole organisation.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l53",
+   "id": "l64",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -29197,13 +29651,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": "GA",
    "in_window": true,
-   "details": "Microsoft Defender extends runtime protection for local agents. Now generally available on Windows, Defender inspects critical points in the agent loop and can block malicious instructions before the agent acts. Supported agents include Claude Code, GitHub Copilot CLI, OpenClaw, ChatGPT Desktop (Chat) and more.\n\nEach detection raises an alert with agent and session context, correlated into incidents for your SOC; in Block mode, Defender also stops the action and notifies the user. Configure Audit or Block mode in the Microsoft Defender portal or Microsoft Intune. With Network DLP, Microsoft Entra and Microsoft Purview help keep sensitive data from leaving over the network.",
+   "details": "Defender runtime protection for local agents is now generally available on Windows. It checks key points in an agent's loop and can stop malicious instructions before the agent acts, for agents such as Claude Code, GitHub Copilot CLI, OpenClaw and ChatGPT Desktop. Detections raise alerts with agent and session context; Block mode also stops the action and tells the user. Audit or Block is set in Defender or Intune.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l54",
+   "id": "l65",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -29225,13 +29679,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": "Preview",
    "in_window": true,
-   "details": "Microsoft Defender now extends extends security posture assessment to agents built on Amazon Bedrock, Google Gemini, Google Vertex AI, and Anthropic Claude. Now in preview, they appear in the same AI agent inventory as your Microsoft Copilot Studio and Microsoft Foundry agents, with risk assessments and security recommendations, so you can prioritize risk across platforms. Bring them into scope by connecting their platforms to Agent 365 through connected platforms.\n\nLearn more about agent security posture in Defender.",
+   "details": "In preview, Defender's AI agent inventory and posture assessment now include agents built on Amazon Bedrock, Google Gemini, Google Vertex AI and Anthropic Claude, alongside Copilot Studio and Foundry agents, with risk assessments and recommendations. These platforms are brought in by connecting them to Agent 365.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l55",
+   "id": "l66",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -29254,13 +29708,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": "Preview",
    "in_window": true,
-   "details": "Microsoft Intune policies define the file and network boundaries that Microsoft Execution Containers (MXC) on Windows enforce for supported tool execution. Those boundaries are enforced outside the agent’s control, so the agent cannot grant itself more access. Device-wide restrictions remain a separate option: Intune can mark devices with unapproved agents as noncompliant so Microsoft Entra Conditional Access can block those devices from company resources.\n\nMicrosoft Entra Global Secure Access adds network visibility and control over local agents, cloud agents, and MCP servers, including MCP Firewall and network policies tailored to agent type and risk. IT and security act on agent risk at the device and the network as well as in the cloud. Intune controls for local agents and Global Secure Access controls for agents are now in preview.\n\nLearn more about Microsoft Intune\n\nIntune and Global Secure Access controls set file and network boundaries for local agents and MCP servers, enforced outside the agent's control.",
+   "details": "In preview, Intune policies set file and network limits that Microsoft Execution Containers enforce on Windows for supported tool use, outside the agent's reach. Intune can also mark devices running unapproved agents as noncompliant so Conditional Access blocks them. Global Secure Access adds network controls for local agents, cloud agents and MCP servers, including an MCP Firewall.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l56",
+   "id": "l67",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -29282,13 +29736,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "Agent 365 Business Analytics helps business leaders see where AI investments are delivering value, across Microsoft and non-Microsoft AI costs and outcomes. Built on the Agent 365 observability foundation, Business Analytics brings AI spend, usage, and value together in one place, helping leaders understand their spend, what value it's delivering, and where to invest next.\n\nAgent 365 Business Analytics overview page,bringing AI spend, usage, and value together in one place across Microsoft and non-Microsoft AI.\n\nUnderstand AI spend: See what’s driving costs in dollars, where spend is concentrated, find barriers to adoption, and survey employees directly from the app to understand how employees use AI alongside usage data.\n\nAgent 365 Business Analytics cost and forecast page, showing what's driving AI spend in dollars and where spend is concentrated.\n\nIdentify the value of AI: Breakdown AI usage into specific use cases to understand what work AI is completing and assess the value of AI through signals such as assisted hours, assisted value, success rate, and satisfaction.\n\nAgent 365 Business Analytics use cases pages, breaking AI usage into specific use cases with signals like assisted hours, assisted value, success rate, and satisfaction.\n\nTurn insights into investment decisions: Once costs and value are connected, make informed decisions to optimize investments with spend forecasts and scenario planning, explore insights in plain language, and share views through Outlook or Teams for deeper collaboration.\n\nAgent 365 Business Analytics customize forecast page, with spend forecasts and scenario planning to help make informed investment decisions.\n\nAgent 365 Business Analytics begins rolling out starting in Frontier today. Analytics for Microsoft services require at least one Microsoft 365 Copilot license in the tenant, while analytics for connected non-Microsoft AI services require Agent 365 and/or ME7 licensing.\n\nFor more details, please read our deeper blog on Agent 365 Business Analytics and visit our Learn page",
+   "details": "Agent 365 Business Analytics gives business leaders one view of AI spend, usage and value across Microsoft and other AI services. It shows cost drivers, breaks usage into use cases with measures such as assisted hours and success rate, and offers forecasts and scenario planning. It begins rolling out through the Frontier programme; licensing requirements differ for Microsoft and non-Microsoft services.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l57",
+   "id": "l68",
    "type": "learn",
    "source": "Agent 365 Blog (Tech Community)",
    "product": [
@@ -29310,13 +29764,13 @@
    "section": "What's new in Microsoft Agent 365: Ignite 2026 (published November 17, 2026)",
    "status": null,
    "in_window": true,
-   "details": "In addition to new tools for business leaders, we continue to enhance our core IT tools to control AI spend in Cost Management.\n\nAgent 365 Cost Management, showing what's driving AI spend across users, services, agents, and models, with spending limits and alerts to keep usage within budget.\n\nNew Cost Management capabilities help organizations understand what is driving AI spend and put the right guardrails in place as adoption scales:\n\nSee what's driving spend. Track consumption across users, services, agents, and models to understand where AI investment is going.\n\nSet the right guardrails. Apply spending limits and alerts at the user, group, organization, or resource level to keep usage aligned with budget.\n\nMatch intelligence to the work. Control which models teams can use so organizations can reserve premium intelligence for the work that requires it.\n\nShare controls with delegated access. Let business leaders and their delegates manage their own AI budgets and policies within Cost Management.\n\nConnect AI economics to your existing processes. Use Microsoft Graph APIs, data exports, and Fabric connectors to integrate AI spend into custom reporting, budgeting, and chargeback workflows.",
+   "details": "Cost Management adds ways to track AI consumption by user, service, agent and model, set spending limits and alerts at user, group, organisation or resource level, restrict which models teams can use, delegate budget control to business leaders, and feed spend data into reporting and chargeback through Graph APIs, exports and Fabric connectors.",
    "change_date": null,
    "change_type": null,
    "related": []
   },
   {
-   "id": "l58",
+   "id": "l69",
    "type": "learn",
    "source": "Microsoft Learn",
    "product": [
@@ -31435,6 +31889,31 @@
    "type": "change",
    "source": "Microsoft Learn",
    "product": [
+    "Entra"
+   ],
+   "title": "Plan for change - Switch from basic auth to workload identity based auth for SAP SuccessFactors provisioning integrations",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#plan-for-change---switch-from-basic-auth-to-workload-identity-based-auth-for-sap-successfactors-provisioning-integrations",
+   "date": "2026-04-01",
+   "date_precision": "month",
+   "summary": "SAP is retiring basic auth for SuccessFactors APIs, so Entra provisioning to and from SuccessFactors must use workload identity.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "Type: Plan for change Service category: Provisioning Product capability: Inbound to Entra ID\n\nMicrosoft Entra is introducing workload identity–based authentication for SAP SuccessFactors provisioning. This new capability allows the Microsoft Entra provisioning service to authenticate to SAP SuccessFactors using Entra workload identity and short‑lived tokens instead of static credentials (username and password).\n\nThis change helps customers transition to a more secure authentication model in preparation for SAP’s plan to deprecate basic authentication for SuccessFactors APIs by November 2026 .\n\nWhat's changing\n\nA new authentication option will be available starting May 2026 in the SAP SuccessFactors provisioning apps to use Entra workload identity-based authentication instead of basic authentication.\n\nCustomers can switch existing provisioning configurations from basic authentication to workload identity–based authentication directly through updated connectivity settings in the provisioning experience, without needing to recreate or restart their configuration.\n\nThis method removes the need to store long-lived credentials and uses a standards-based authentication method between Entra and SAP SuccessFactors through SAP Cloud Identity Services.\n\nThis capability applies to the following provisioning scenarios:\n\nSAP SuccessFactors to Active Directory user provisioning\n\nSAP SuccessFactors to Microsoft Entra ID user provisioning\n\nSAP SuccessFactors writeback (Entra to SuccessFactors)\n\nWhat this means for you\n\nIf you are currently using basic authentication for any of the above SAP SuccessFactors provisioning integrations, you must upgrade to workload identity-based authentication before November 2026 to ensure uninterrupted operation of the integrations.\n\nNo immediate action is required, but we recommend planning your migration early to avoid last-minute disruption.\n\nThe new method improves security by:\n\nEliminating stored passwords\n\nUsing short-lived, verifiable tokens\n\nAligning with SAP’s supported authentication model\n\nRecommended action\n\nEvaluate the new authentication option once available in your tenant\n\nPlan and test migration of existing provisioning jobs to workload identity-based authentication\n\nUpdate any internal documentation or operational processes that reference basic authentication\n\nAdditional information\n\nDetailed configuration guidance and step-by-step instructions will be published in Microsoft Learn documentation.",
+   "section": "April 2026",
+   "change_product": "Microsoft Entra ID",
+   "change_date": "2026-11",
+   "change_type": "deprecation",
+   "related": []
+  },
+  {
+   "id": "ch02",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
     "Defender"
    ],
    "title": "Upcoming deprecation of the Machines should have a vulnerability assessment solution recommendation",
@@ -31456,7 +31935,32 @@
    "related": []
   },
   {
-   "id": "ch02",
+   "id": "ch03",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Sentinel"
+   ],
+   "title": "Updated date: Microsoft Sentinel in the Azure portal to be retired March 2027",
+   "url": "https://learn.microsoft.com/en-us/azure/sentinel/whats-new#updated-date-microsoft-sentinel-in-the-azure-portal-to-be-retired-march-2027",
+   "date": "2026-01-01",
+   "date_precision": "month",
+   "summary": "After the Azure portal experience for Sentinel ends, it will be supported only in the Defender portal; start planning the move.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "Microsoft Sentinel is generally available in the Microsoft Defender portal , including for customers without Microsoft Defender XDR or an E5 license. This means that you can use Microsoft Sentinel in the Defender portal even if you aren't using other Microsoft Defender services.\n\nAfter March 31, 2027 , Microsoft Sentinel will no longer be supported in the Azure portal and will be available only in the Microsoft Defender portal.\n\nIf you're currently using Microsoft Sentinel in the Azure portal, we recommend that you start planning your transition to the Defender portal now to ensure a smooth transition and take full advantage of the unified security operations experience offered by Microsoft Defender .\n\nFor more information, see:\n\nMicrosoft Sentinel in the Microsoft Defender portal\n\nTransition your Microsoft Sentinel environment to the Defender portal\n\nPlanning your move to Microsoft Defender portal for all Microsoft Sentinel customers (blog)",
+   "section": "January 2026",
+   "change_product": "Microsoft Sentinel",
+   "change_date": "2027-03-31",
+   "change_type": "retirement",
+   "related": []
+  },
+  {
+   "id": "ch04",
    "type": "change",
    "source": "Microsoft Learn",
    "product": [
@@ -31481,7 +31985,7 @@
    "related": []
   },
   {
-   "id": "ch03",
+   "id": "ch05",
    "type": "change",
    "source": "Microsoft Learn",
    "product": [
@@ -31506,7 +32010,7 @@
    "related": []
   },
   {
-   "id": "ch04",
+   "id": "ch06",
    "type": "change",
    "source": "Microsoft Learn",
    "product": [
@@ -31531,7 +32035,7 @@
    "related": []
   },
   {
-   "id": "ch05",
+   "id": "ch07",
    "type": "change",
    "source": "Microsoft Learn",
    "product": [
@@ -31556,7 +32060,7 @@
    "related": []
   },
   {
-   "id": "ch06",
+   "id": "ch08",
    "type": "change",
    "source": "Microsoft Learn",
    "product": [
@@ -31581,7 +32085,7 @@
    "related": []
   },
   {
-   "id": "ch07",
+   "id": "ch09",
    "type": "change",
    "source": "Microsoft Learn",
    "product": [
@@ -31606,7 +32110,7 @@
    "related": []
   },
   {
-   "id": "ch08",
+   "id": "ch10",
    "type": "change",
    "source": "Microsoft Learn",
    "product": [
@@ -31631,7 +32135,82 @@
    "related": []
   },
   {
-   "id": "ch09",
+   "id": "ch11",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "Upcoming change - Enhanced admin authorization for Microsoft Entra Connect Sync configuration changes",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#upcoming-change---enhanced-admin-authorization-for-microsoft-entra-connect-sync-configuration-changes",
+   "date": "2026-05-01",
+   "date_precision": "month",
+   "summary": "Changing Entra Connect Sync settings through the wizard or PowerShell will need an interactive sign-in by an authorised cloud admin.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "Type: Changed feature Service category: Entra Connect Product capability: Entra Connect\n\nWe're enhancing the security posture of Microsoft Entra Connect Sync by introducing interactive admin authorization for configuration changes. With this update, an authorized administrator will need to sign in and explicitly approve changes to sync settings, ensuring that configuration updates are intentional and made by the right person.\n\nWhat’s changing\n\nInteractive admin authorization for sync configuration changes: Going forward, changes to sync configuration settings – such as enabling or disabling features – will require interactive authentication from an authorized cloud administrator. Whether you're using the Entra Connect wizard or PowerShell, a verified admin sign-in will be required to complete the action. This strengthens the authorization model for all sync-related configuration changes.\n\nGreater consistency in admin-driven configuration: We are aligning sync behavior so that configuration decisions made by cloud administrators are consistently respected. The cloud will serve as the source of truth for sync feature state, giving administrators greater confidence that their intended configuration is maintained.\n\nUpdated management paths: All management interfaces for Entra Connect will incorporate delegated admin authentication where needed. Specifically:\n\nEntra Connect wizard flows: The installation and configuration wizard will use delegated admin tokens for sync configuration changes, providing a more secure authorization flow.\n\nPowerShell cmdlets: PowerShell-based management of sync settings will now prompt for an interactive admin sign-in to complete configuration changes. Ensure you run these commands in a session where you can provide admin credentials.\n\nUninstall behavior: If you uninstall Entra Connect Sync and choose to make cloud-side changes such as converting the tenant to cloud-only synchronization, the uninstall process will require admin authentication before modifying settings in the cloud tenant.\n\nWhat’s not changing\n\nSync functionality and the end-user experience remain unchanged. Everything continues to work as expected when features are enabled or disabled.\n\nThere is no change to how administrators choose to enable or disable sync features; only that these actions now require interactive authentication.\n\nThe Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on Microsoft Entra admin center under Microsoft Entra Connect .\n\nCheck our version history page for more details on available versions.",
+   "section": "May 2026",
+   "change_product": "Microsoft Entra ID",
+   "change_date": null,
+   "change_type": "enforcement",
+   "related": []
+  },
+  {
+   "id": "ch12",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "Upcoming Change - Migrate from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#upcoming-change---migrate-from-microsoft-entra-connect-sync-to-microsoft-entra-cloud-sync",
+   "date": "2026-04-01",
+   "date_precision": "month",
+   "summary": "Tenants will be moved from Connect Sync to Cloud Sync in phases, each notified of its own transition timeline.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "Type: Plan for change Service category: Entra Connect Product capability: Entra Connect\n\nAs organizations look to strengthen identity security and advance their Zero Trust strategies, many are looking for simpler, more reliable ways to manage hybrid identity. To support these needs, we’re beginning the transition from Microsoft Entra Connect Sync to the cloud‑native Microsoft Entra Cloud Sync - helping reduce on‑premises complexity while improving security, reliability, and day‑to‑day manageability.\n\nThis shift is a key step toward a cloud-managed identity future that will provide a more secure, resilient, and easier-to-operate synchronization experience. As part of ongoing modernization efforts, Microsoft’s strategy remains to deliver stronger security, improved reliability, and simpler identity operations.\n\nWhat's next\n\nBeginning in July 2026, we will begin notifying customers through the M365 Message Center, Entra Connect Health, and targeted emails about their individual transition timelines. The transition will be rolled out in phases, and we will reach out directly to each organization when their assigned transition window begins. This phased approach ensures that we can provide tailored guidance and support to all our customers.\n\nInitial phases: In the first waves, we will focus on tenants for whom Entra Cloud Sync already meets all their identity synchronization needs. If your organization relies on advanced features or has a large directory, you will not be among the initial targeted groups. We will prioritize early transitions for customers with straightforward configurations that are fully supported by Entra Cloud Sync’s current capabilities.\n\nSubsequent phases: As Entra Cloud Sync’s capabilities expand, we will progressively notify the later groups and ensure they can transition successfully once equivalent support is available in Entra Cloud Sync\n\nWe are committed to supporting you by providing tooling and documentation for the transition to Entra Cloud Sync.\n\nWhat's changing\n\nOnce your organization is notified of its assigned transition window, you will receive detailed guidance and resources to help you begin the move to Entra Cloud Sync. During this period:\n\nYou will have review your current configuration, assess readiness, and familiarize yourself with Cloud Sync’s capabilities.\n\nYou will gain access to the transition tool and step-by-step documentation to support a smooth transition.\n\nYou will move and test your synchronization environment in Entra Cloud Sync before any permanent changes are made.\n\nOnce your transition to Entra Cloud Sync is successfully completed:\n\nEntra Cloud Sync will be the primary mechanism for identity synchronization capabilities between Active Directory and Entra ID, replacing the identity sync functionality in Entra Connect tool.\n\nWhat's not changing\n\nOnce you migrate to Cloud Sync, your hybrid authentication features that enable on‑premises credentials to be used for accessing cloud resources will continue to be available after migration on the Connect Sync config wizard.\n\nStart preparing today\n\nWe recommend that you take steps to begin your migration. You can begin familiarizing yourself with Entra Cloud Sync and review our dedicated resources to ensure a smooth transition:\n\nCloud Sync deep dive – how it works\n\nStep-by-step migration guidance\n\nMigration scenarios:\n\nMigrate to Microsoft Entra Cloud Sync for a synced Active Directory forest\n\nMigrate Microsoft Entra Connect Sync Group Writeback v2 to Microsoft Entra Cloud Sync\n\nMicrosoft Entra Cloud Sync vs. Microsoft Entra Connect Sync feature comparison\n\nMicrosoft Entra supports Source of Authority (SOA) capabilities that allow you to shift user and group management to the cloud while continuing to operate existing Connect Sync deployments. These capabilities can help simplify environments, reduce long‑term dependency on on‑prem infrastructure, and improve readiness for future transitions. If this aligns with your identity strategy, the following resources may be helpful:\n\nIT Architect Guidance for SOA planning: https://aka.ms/SOAITArchitectsGuidance\n\nUser SOA : Manage users directly in Entra ID while maintaining hybrid coexistence\n\nGroup SOA : Cloud‑managed groups with on‑premises impact where required\n\nThis is not a prerequisite to move to Cloud Sync, but provides an opportunity to prepare at your own pace.\n\nStay tuned to this page for further updates.",
+   "section": "April 2026",
+   "change_product": "Microsoft Entra ID",
+   "change_date": null,
+   "change_type": "enforcement",
+   "related": []
+  },
+  {
+   "id": "ch13",
+   "type": "change",
+   "source": "Microsoft Learn",
+   "product": [
+    "Entra"
+   ],
+   "title": "Plan for change - Update SCIM provisioning applications to use modern authentication",
+   "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#plan-for-change---update-scim-provisioning-applications-to-use-modern-authentication",
+   "date": "2026-04-01",
+   "date_precision": "month",
+   "summary": "SCIM provisioning apps using the OAuth authorization code grant must change to client credentials or workload identity; some gallery apps may be affected.",
+   "asset": null,
+   "severity": null,
+   "cvss": null,
+   "exploited": null,
+   "disclosed": null,
+   "engagement": null,
+   "details": "Type: Plan for change Service category: Provisioning Product capability: Outbound to SaaS Applications\n\nWhat is changing\n\nSCIM provisioning applications that use the OAuth 2.0 Authorization Code grant will be updated to support modern authentication methods, such as OAuth 2.0 Client Credentials and workload identity federation.\n\nExisting provisioning jobs will not switch automatically. Customers will need to update job configuration after the new method is available.\n\nA small number of applications that cannot support a modern method may be retired from the Microsoft Entra app gallery.\n\nWhen this is changing\n\nThis change will roll out over the coming months, and timing will vary by application. We will share impacted applications, customer deadlines, and supporting documentation through monthly What’s new articles and the Microsoft 365 Message Center.\n\nWhy this is changing\n\nThis update strengthens the security of Microsoft Entra provisioning integrations by moving away from older authentication patterns. Modern methods are better suited for service-to-service scenarios and can reduce credential management overhead, including the need to rotate shared secrets.\n\nAction required from customers\n\nIdentify existing provisioning jobs that use the OAuth 2.0 Authorization Code grant.\n\nWatch for announcements about affected applications and availability of updated authentication methods.\n\nUpdate and test provisioning job configuration when your application supports a modern authentication method.\n\nIf an application is retired, plan to migrate to a supported alternative.\n\nStay informed\n\nPlease monitor monthly What’s new articles and the Microsoft 365 Message Center for future announcements, migration guidance, deadlines, and documentation.",
+   "section": "April 2026",
+   "change_product": "Microsoft Entra ID",
+   "change_date": null,
+   "change_type": "enforcement",
+   "related": []
+  },
+  {
+   "id": "ch14",
    "type": "change",
    "source": "Microsoft Learn",
    "product": [
